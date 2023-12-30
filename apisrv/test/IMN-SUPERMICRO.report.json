@@ -1,0 +1,21 @@
+{
+  "type": "report/2",
+  "values": {
+    "host": {
+      "name": "Windows Server 2022 Standard Evaluation 10.0 id 2009",
+      "hostname": "IMN-SUPERMICRO",
+      "type": "windows",
+      "cpu_vendor": "GenuineIntel"
+    },
+    "smbios": {
+      "manufacturer": "Thomas-Krenn.AG",
+      "product": "1HE Intel Single-CPU RI1104H-XE Server",
+      "serial": "9000243568",
+      "uuid": "738ef800-57a2-11eb-8000-ac1f6bec897e",
+      "bios_release_date": "11/17/2020",
+      "bios_vendor": "American Megatrends Inc.",
+      "bios_version": "1.5"
+    }
+  },
+  "annotations": []
+}

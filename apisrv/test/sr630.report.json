@@ -1,0 +1,50 @@
+{
+  "type": "report/2",
+  "values": {
+    "host": {
+      "name": "Red Hat Enterprise Linux 8.6 (Ootpa)",
+      "hostname": "localhost.localdomain",
+      "type": "linux",
+      "cpu_vendor": "GenuineIntel"
+    },
+    "smbios": {
+      "manufacturer": "Lenovo",
+      "product": "ThinkSystem SR630 V2",
+      "serial": "J101WYR1",
+      "uuid": "b1a5d37e-5a35-11ec-aa6d-3a68dd61adef",
+      "bios_release_date": "11/04/2021",
+      "bios_vendor": "Lenovo",
+      "bios_version": "AFE114G-1.11"
+    },
+    "nics": [
+      {
+        "name": "ens4f0",
+        "ipv4": [
+          "10.93.193.100/26"
+        ],
+        "ipv6": [
+          "fe80::be97:e1ff:fe80:8940/64"
+        ],
+        "mac": "BC:97:E1:80:89:40"
+      },
+      {
+        "name": "ens4f1",
+        "mac": "BC:97:E1:80:89:41"
+      },
+      {
+        "name": "ens4f2",
+        "mac": "BC:97:E1:80:89:42"
+      },
+      {
+        "name": "ens4f3",
+        "mac": "BC:97:E1:80:89:43"
+      },
+      {
+        "name": "enp0s20f0u1u6",
+        "mac": "3A:68:DD:61:AD:EF"
+      }
+    ],
+    "agent_release": "v3.7.0-11-g51c30ba"
+  },
+  "annotations": []
+}

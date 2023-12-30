@@ -1,0 +1,74 @@
+[Version]
+Signature="$WINDOWS NT$"
+Class=System
+ClassGuid={4D36E97D-E325-11CE-BFC1-08002BE10318}
+Provider=%ManufacturerName%
+CatalogFile=immunePCI_flt.cat
+DriverVer= ; TODO: set DriverVer in stampinf property pages
+PnpLockdown=1
+
+[Manufacturer]
+%STDDEV%=immunePCI,NT$ARCH$
+
+[immunePCI.NT$ARCH$]
+%immunePCI.DeviceDesc%=immunePCI_flt, *pnp0a03
+
+;;;;; files ;;;;;
+
+[SourceDisksNames]
+1 = %DISK_NAME%,,,""
+
+[SourceDisksFiles]
+immunePCI_flt.sys = 1,,
+
+[Drivers_Dir]
+immunePCI_flt.sys
+
+[DestinationDirs]
+DefaultDestDir = 12
+
+[immunePCI_flt.NT]
+CopyFiles=Drivers_Dir
+
+;;;;; registry ;;;;;;
+
+[immunePCI_flt.NT.HW]
+AddReg = immunePCI_flt_AddReg
+
+[immunePCI_flt_AddReg]
+HKR,,"UpperFilters", 0x00010000, "immunePCI_flt"
+HKR,,Security,,"D:P"
+
+;;;;; install pcifilter service ;;;;;;
+
+[immunePCI_flt.NT.Services]
+AddService = pci, %SPSVCINST_ASSOCSERVICE%, pci_Service_Inst
+AddService = immunePCI_flt,,immunePCI_Service_Inst
+
+[immunePCI_flt.CoInstallers]
+
+[pci_Service_Inst]
+DisplayName    = "PCI Bus Driver"
+ServiceType    = 1               ; SERVICE_KERNEL_DRIVER
+StartType      = 0               ; SERVICE_BOOT_START
+ErrorControl   = 1               ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %12%\pci.sys
+LoadOrderGroup = "Boot Bus Extender"
+
+[immunePCI_Service_Inst]
+DisplayName    = %immunePCI.SVCDESC%
+ServiceType    = 1               ; SERVICE_KERNEL_DRIVER
+StartType      = 0               ; SERVICE_BOOT_START
+ErrorControl   = 1               ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %12%\immunePCI_flt.sys
+LoadOrderGroup = "PnP Filter"
+
+;;;;; string definition ;;;;;;;;
+
+[Strings]
+ManufacturerName="immune GmbH"
+STDDEV = "(Standard system devices)"
+immunePCI.DeviceDesc = "PCI Bus"
+immunePCI.SVCDESC = "immunePCI Filter Driver"
+DISK_NAME = "immunePCI Filter Driver Install Disk"
+SPSVCINST_ASSOCSERVICE = 0x00000002

@@ -1,0 +1,219 @@
+{"specversion":"1.0","id":"c095549a-b4ea-436a-9e0d-858b5264a198","source":"apisrv2","type":"ne.immu.v2.new-appraisal","subject":"cdae9771-4761-46cd-883e-e0f30d9b40a8","datacontenttype":"application/json","time":"2021-09-01T17:19:19.310419Z","data":{"device":{"id":"112233","cookie":"asasasas","name":"Device #1","attributes":null,"state":"vulnerable","hwid":"0000"},"next":{
+  "id": "",
+  "received": "2021-09-28T17:09:45Z",
+  "expires": "2021-09-29T17:09:45Z",
+  "verdict": {
+    "type": "verdict/1",
+    "result": false,
+    "bootchain": true,
+    "firmware": false,
+    "configuration": true
+  },
+  "report": {
+    "type": "report/2",
+    "values": {
+      "host": {
+        "name": "",
+        "hostname": "",
+        "type": "",
+        "cpu_vendor": "GenuineIntel"
+      },
+      "uefi": {
+        "mode": "",
+        "secureboot": false,
+        "platform_keys": [],
+        "exchange_keys": [],
+        "permitted_keys": [],
+        "forbidden_keys": []
+      },
+      "tpm": {
+        "manufacturer": "IBM",
+        "vendor_id": "SW   TPM",
+        "spec_version": "Level 0, rev. 164 (17 Mar 2021)",
+        "eventlog": null,
+        "pcr": {
+          "0": "0000000000000000000000000000000000000000000000000000000000000000",
+          "1": "0000000000000000000000000000000000000000000000000000000000000000",
+          "2": "0000000000000000000000000000000000000000000000000000000000000000",
+          "3": "0000000000000000000000000000000000000000000000000000000000000000",
+          "4": "0000000000000000000000000000000000000000000000000000000000000000",
+          "5": "0000000000000000000000000000000000000000000000000000000000000000",
+          "6": "0000000000000000000000000000000000000000000000000000000000000000",
+          "7": "0000000000000000000000000000000000000000000000000000000000000000",
+          "8": "0000000000000000000000000000000000000000000000000000000000000000"
+        }
+      },
+      "txt": {
+        "ready": false
+      }
+    },
+    "annotations": [
+      {
+        "id": "no-value",
+        "path": "/host/name",
+        "fatal": false
+      },
+      {
+        "id": "no-value",
+        "path": "/host/hostname",
+        "fatal": false
+      },
+      {
+        "id": "no-value",
+        "path": "/host/type",
+        "fatal": false
+      },
+      {
+        "id": "invalid-value",
+        "path": "/uefi/mode",
+        "fatal": true
+      },
+      {
+        "id": "unknown",
+        "path": "/tpm/eventlog",
+        "fatal": true
+      },
+      {
+        "id": "not-present",
+        "path": "/me",
+        "fatal": false
+      },
+      {
+        "id": "css-cpu-supports-txt",
+        "path": "/txt/ready",
+        "fatal": true
+      },
+      {
+        "id": "css-txt-register-space-accessible",
+        "path": "/txt/ready",
+        "fatal": true
+      },
+      {
+        "id": "css-cpu-supports-smx",
+        "path": "/txt/ready",
+        "fatal": true
+      },
+      {
+        "id": "css-cpu-supports-vmx",
+        "path": "/txt/ready",
+        "fatal": true
+      },
+      {
+        "id": "css-ia32_feature_control",
+        "path": "/txt/ready",
+        "fatal": true
+      },
+      {
+        "id": "css-txt-not-disabled-by-bios",
+        "path": "/txt/ready",
+        "fatal": true
+      },
+      {
+        "id": "css-txt-registers-are-locked",
+        "path": "/txt/ready",
+        "fatal": true
+      },
+      {
+        "id": "css-ia32-debug-interface-is-disabled",
+        "path": "/txt/ready",
+        "fatal": true
+      },
+      {
+        "id": "css-txt-heap-ranges-valid",
+        "path": "/txt/ready",
+        "fatal": true
+      },
+      {
+        "id": "css-txt-memory-reserved-in-e820",
+        "path": "/txt/ready",
+        "fatal": true
+      },
+      {
+        "id": "css-txt-memory-in-a-dma-protected-range",
+        "path": "/txt/ready",
+        "fatal": true
+      },
+      {
+        "id": "css-txt-dpr-register-locked",
+        "path": "/txt/ready",
+        "fatal": true
+      },
+      {
+        "id": "css-cpu-dpr-equals-hostbridge-dpr",
+        "path": "/txt/ready",
+        "fatal": true
+      },
+      {
+        "id": "css-cpu-hostbridge-dpr-register-locked",
+        "path": "/txt/ready",
+        "fatal": true
+      },
+      {
+        "id": "css-txt-region-contains-sinit-acm",
+        "path": "/txt/ready",
+        "fatal": true
+      },
+      {
+        "id": "css-sinit-acm-matches-chipset",
+        "path": "/txt/ready",
+        "fatal": true
+      },
+      {
+        "id": "css-sinit-acm-matches-cpu",
+        "path": "/txt/ready",
+        "fatal": true
+      },
+      {
+        "id": "css-bios-data-region-present",
+        "path": "/txt/ready",
+        "fatal": true
+      },
+      {
+        "id": "css-bios-data-region-valid",
+        "path": "/txt/ready",
+        "fatal": true
+      },
+      {
+        "id": "css-cpu-supports-mtrrs",
+        "path": "/txt/ready",
+        "fatal": true
+      },
+      {
+        "id": "css-cpu-supports-smrrs",
+        "path": "/txt/ready",
+        "fatal": true
+      },
+      {
+        "id": "css-smrr-covers-smm-memory",
+        "path": "/txt/ready",
+        "fatal": true
+      },
+      {
+        "id": "css-smrr-protection-active",
+        "path": "/txt/ready",
+        "fatal": true
+      },
+      {
+        "id": "css-tpm-connection",
+        "path": "/txt/ready",
+        "fatal": true
+      },
+      {
+        "id": "css-tpm-nvram-is-locked",
+        "path": "/txt/ready",
+        "fatal": true
+      },
+      {
+        "id": "css-aux-index-has-correct-config",
+        "path": "/txt/ready",
+        "fatal": true
+      },
+      {
+        "id": "not-present",
+        "path": "/sev",
+        "fatal": false
+      }
+    ]
+  },
+  "policy": null
+}}}

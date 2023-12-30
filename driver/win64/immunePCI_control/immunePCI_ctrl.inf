@@ -1,0 +1,81 @@
+;
+; immunePCI.inf
+;
+
+[Version]
+Signature="$WINDOWS NT$"
+Class=System
+ClassGuid={4d36e97d-e325-11ce-bfc1-08002be10318}
+Provider=%ManufacturerName%
+CatalogFile=immunePCI_ctrl.cat
+DriverVer= ; TODO: set DriverVer in stampinf property pages
+PnpLockDown=1
+DriverPackageType=KernelService
+
+[DestinationDirs]
+DefaultDestDir = 12
+immunePCI_CtrlDev_CoInstaller_CopyFiles = 11
+
+; ================= Class section =====================
+
+[SourceDisksNames]
+1 = %DiskName%,,,""
+
+[SourceDisksFiles]
+immunePCI_ctrl.sys = 1
+WdfCoInstaller$KMDFCOINSTALLERVERSION$.dll=1 ; make sure the number matches with SourceDisksNames
+
+;*****************************************
+; Install Section
+;*****************************************
+
+[DefaultInstall.NT]
+Needs = immunePCI_CtrlDev.NT.CoInstallers,immunePCI_CtrlDev.NT.Wdf
+CopyFiles = Drivers_Dir
+
+[DefaultUninstall.NT]
+DelFiles = Drivers_Dir
+
+[Drivers_Dir]
+immunePCI_ctrl.sys
+
+;-------------- Service installation
+[DefaultInstall.NT.Services]
+AddService = immunePCI_ctrl,%SPSVCINST_ASSOCSERVICE%, immunePCI_Service_Inst
+
+[DefaultUninstall.NT.Services]
+DelService = immunePCI_ctrl,0x200
+
+; -------------- immunePCI driver install sections
+[immunePCI_Service_Inst]
+DisplayName    = %immunePCI.SVCDESC%
+ServiceType    = 1               ; SERVICE_KERNEL_DRIVER
+StartType      = 3               ; SERVICE_DEMAND_START
+ErrorControl   = 1               ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %12%\immunePCI_ctrl.sys
+
+;--- immunePCI_CtrlDev Coinstaller installation ------
+;
+
+[immunePCI_CtrlDev.NT.CoInstallers]
+AddReg=immunePCI_CtrlDev_CoInstaller_AddReg
+CopyFiles=immunePCI_CtrlDev_CoInstaller_CopyFiles
+
+[immunePCI_CtrlDev_CoInstaller_AddReg]
+HKR,,CoInstallers32,0x00010000, "WdfCoInstaller$KMDFCOINSTALLERVERSION$.dll,WdfCoInstaller"
+
+[immunePCI_CtrlDev_CoInstaller_CopyFiles]
+WdfCoInstaller$KMDFCOINSTALLERVERSION$.dll
+
+[immunePCI_CtrlDev.NT.Wdf]
+KmdfService =  immunePCI_ctrl, immunePCI_wdfsect
+[immunePCI_wdfsect]
+KmdfLibraryVersion = $KMDFVERSION$
+
+
+[Strings]
+SPSVCINST_ASSOCSERVICE= 0x00000002
+ManufacturerName="immune GmbH"
+DiskName = "immune PCI Control Device Installation Disk"
+immunePCI.DeviceDesc = "immune PCI Control Device"
+immunePCI.SVCDESC = "immune PCI Control Service"

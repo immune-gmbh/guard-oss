@@ -1,0 +1,40 @@
+{
+  "data":
+  {
+      "type": "dashboard",
+      "id": "1",
+      "attributes":
+      {
+          "device_stats":
+          {
+              "num_trusted": 1,
+              "num_with_incident": 4,
+              "num_at_risk": 0,
+              "num_unresponsive": 107
+          },
+          "incident_count": 319,
+          "incident_dev_count": 109,
+          "risks":
+          [
+              {
+                  "issue_type_id": "uefi/official-dbx",
+                  "num_occurences": 3
+              },
+              {
+                  "issue_type_id": "fw/update",
+                  "num_occurences": 2
+              },
+              {
+                  "issue_type_id": "uefi/no-exit-boot-srv",
+                  "num_occurences": 1
+              }
+          ]
+      }
+  },
+  "meta":
+  {
+      "instance": "apisrv-deployment-v2-edge-7c4987c78-xnkgz",
+      "trace": "dd5c976a24d7454f30b08cc6e4eea8e1",
+      "version": "r224-2-g3eae7731"
+  }
+}

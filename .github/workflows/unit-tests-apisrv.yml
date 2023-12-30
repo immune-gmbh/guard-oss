@@ -1,0 +1,50 @@
+name: Unit tests (apisrv)
+on: 
+  pull_request: {}
+jobs:
+  apisrv:
+    timeout-minutes: 20
+    runs-on: ubuntu-20.04
+    defaults:
+      run:
+        working-directory: ./apisrv
+
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - uses: technote-space/get-diff-action@v5
+        with:
+          PATTERNS: |
+            apisrv/**
+            .github/workflows/unit-tests-apisrv.yml
+      - uses: actions/setup-go@v3
+        if: env.GIT_DIFF
+        with:
+          go-version: '1.20'
+      - id: go-cache-paths
+        if: env.GIT_DIFF
+        run: |
+          echo "::set-output name=go-build::$(go env GOCACHE)"
+          echo "::set-output name=go-mod::$(go env GOMODCACHE)"
+      - uses: actions/cache@v3
+        if: env.GIT_DIFF
+        with:
+          path: |
+            ${{ steps.go-cache-paths.outputs.go-build }}
+            ${{ steps.go-cache-paths.outputs.go-mod }}
+          key: ${{ runner.os }}-apisrv-${{ hashFiles('apisrv/go.sum') }}
+          restore-keys: |
+            ${{ runner.os }}-apisrv-
+      - name: Build service
+        if: env.GIT_DIFF
+        run: |
+          make
+      - name: Run unit and system tests
+        if: env.GIT_DIFF
+        run: |
+          make test
+      - name: Run license checker
+        if: ${{ contains(env.GIT_DIFF, 'go.mod') }}
+        run: |
+          make license-check

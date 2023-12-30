@@ -1,0 +1,221 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<Wix xmlns='http://schemas.microsoft.com/wix/2006/wi' xmlns:difx='http://schemas.microsoft.com/wix/DifxAppExtension'>
+
+  <!-- CONFIG -->
+
+  <!-- Get version from the executable file itself -->
+  <?define VersionNumber='!(bind.fileVersion.agentEXE)' ?>
+
+  <!-- Product subdirectory in ProgramData folder-->
+  <?define ProgramDataDir='immune-guard' ?>
+
+  <!-- URL to show in  'Add or Remove Programs'  -->
+  <?define Website='https://immune.gmbh/' ?>
+
+  <!-- Use binder vars to copy version from the exe manifest so we only have one data source to care about -->
+  <Product Name='!(loc.ApplicationName)' Id='*' UpgradeCode='A51F6851-DF93-432B-A91D-C5C0DB8D2CE9'
+    Language='!(loc.Language)' Version='$(var.VersionNumber)' Manufacturer='!(loc.ManufacturerFullName)'>
+
+    <Package Id='*' Keywords='Installer' Description='!(loc.ProductDescription)'
+      Comments='!(loc.Comments)' Manufacturer='!(loc.ManufacturerFullName)'
+      InstallerVersion='310' Languages='1033' Compressed='yes' SummaryCodepage='1252'
+      InstallPrivileges='elevated' InstallScope='perMachine' Platform='x64' />
+
+    <!-- UI customization -->
+    <WixVariable Id="WixUIBannerBmp" Value="img\banner-top.bmp" />
+    <WixVariable Id="WixUIDialogBmp" Value="img\background.bmp" />
+
+    <!-- Don't use prefabricated license dialog b/c it interferes with cusotm dialog sequence -->
+    <WixVariable Id='WixUILicenseRtf' Value='stub\dummy' />
+
+    <!-- Id needs to have the same extension as the source file, yes-->
+    <Icon Id='appicon.exe' SourceFile='img\immune.ico' />
+
+    <!-- Customize appearance in 'Add or Remove Programs' -->
+    <Property Id='ARPPRODUCTICON' Value='appicon.exe'/>
+    <Property Id='ARPHELPLINK' Value='$(var.Website)' />
+    <Property Id='ARPNOMODIFY' Value='yes' Secure='yes' />
+    <Property Id='ARPNOREPAIR' Value='yes' Secure='yes' />
+
+    <!-- Always allow upgrades, no two versions side-by-side  -->
+    <!-- AllowSameVersionUpgrades causes ICE61 which must be ignored -->
+    <MajorUpgrade DowngradeErrorMessage='!(loc.NewerInstalled)' AllowSameVersionUpgrades='yes' />
+
+    <Condition Message='!(loc.UnsupportedOS)'>
+      <![CDATA[Installed OR (VersionNT64 >= 601)]]>
+    </Condition>
+
+    <!-- Set install location property when it is known, for whatever exact reasons this needs to be done -->
+    <!-- https://robmensching.com/blog/posts/2011/1/14/arpinstalllocation-and-how-to-set-it-with-the-wix-toolset/ -->
+    <CustomAction Id='SetARPINSTALLLOCATION' Property='ARPINSTALLLOCATION' Value='[INSTALLDIR]' />
+    <InstallExecuteSequence>
+      <Custom Action='SetARPINSTALLLOCATION' After='InstallValidate'></Custom>
+    </InstallExecuteSequence>
+
+    <!-- Save the command line value INSTALLDIR and restore it later in the sequence or it will be overwritten by the value saved to the registry during an upgrade -->
+    <!-- http://robmensching.com/blog/posts/2010/5/2/the-wix-toolsets-remember-property-pattern/ -->
+    <CustomAction Id='SaveCmdLineValueINSTALLDIR' Property='CMDLINE_INSTALLDIR' Value='[INSTALLDIR]' Execute='firstSequence' />
+    <CustomAction Id='SetFromCmdLineValueINSTALLDIR' Property='INSTALLDIR' Value='[CMDLINE_INSTALLDIR]' Execute='firstSequence' />
+    <InstallUISequence>
+        <Custom Action='SaveCmdLineValueINSTALLDIR' Before='AppSearch' />
+        <Custom Action='SetFromCmdLineValueINSTALLDIR' After='AppSearch'>
+          CMDLINE_INSTALLDIR
+        </Custom>
+    </InstallUISequence>
+    <InstallExecuteSequence>
+        <Custom Action='SaveCmdLineValueINSTALLDIR' Before='AppSearch' />
+        <Custom Action='SetFromCmdLineValueINSTALLDIR' After='AppSearch'>
+          CMDLINE_INSTALLDIR
+        </Custom>
+    </InstallExecuteSequence>
+
+    <!-- Store install dir of previous install, if any -->
+    <Property Id='INSTALLDIR'>
+        <RegistrySearch Id='DetermineInstallLocation' Type='raw' Root='HKLM' Key='Software\!(loc.ManufacturerName)\InstalledProducts\!(loc.ApplicationName)' Name='InstallLocation' />
+    </Property>
+
+    <Media Id='1' Cabinet='data.cab' EmbedCab='yes' />
+
+    <!-- Describe our install directory structure -->
+    <Directory Id='TARGETDIR' Name='SourceDir'>
+      <Directory Id='ProgramFiles64Folder'>
+        <Directory Id='CompanyFolder' Name='!(loc.ManufacturerName)'>
+          <Directory Id='INSTALLDIR' Name='guard'>
+
+            <Component Id='MainExecutable' Guid='E9DEE415-D1BF-4A55-8084-9D0704300F2F' Win64='yes'>
+              <File Id='agentEXE' Name='guard-win.exe' DiskId='1' Source='guard-win.exe' KeyPath='yes' />
+              <ServiceControl Id="controlImmuneGuardSvc" Name="immuneGuard" Start="install" Stop="both" Remove="uninstall" Wait="yes" /> 
+            </Component>
+
+            <Directory Id='Drivers' Name='Drivers'>
+
+              <Directory Id='immune' Name='immune'>
+                  <Component Id='ImmuneDrv' Guid='33d19540-4e44-4aed-8f60-ef97751a4367' Win64='yes'>
+                    <File Id='immuneSYS' Name='immune.sys' DiskId='1' Source='drv\immune\immune.sys' KeyPath='yes' />
+                  </Component>
+              </Directory>
+
+              <Directory Id='intelMEI' Name='intelMEI'>
+                  <Directory Id='intelMEIx64' Name='x64'>
+                    <Component Id='IntelMEIx64' Guid='' Win64='yes'>
+                      <File Id='heciSYS64' Name='TEEDriverW10x64.sys' DiskId='1' Source='drv\heci\x64\TEEDriverW10x64.sys' KeyPath='yes' />
+                    </Component>
+                  </Directory>
+                  <Directory Id='intelMEIx86' Name='x86'>
+                    <Component Id='IntelMEIx86' Guid='' Win64='yes'>
+                      <File Id='heciSYS' Name='TEEDriverW10.sys' DiskId='1' Source='drv\heci\x86\TEEDriverW10.sys' KeyPath='yes'/>
+                    </Component>
+                  </Directory>
+                  <Component Id='IntelMEI' Guid='6289b14a-ba1f-4c59-874d-120053423139' Win64='yes' Permanent='yes'>
+                    <File Id='heciINF' Name='heci.inf' DiskId='1' Source='drv\heci\heci.inf' KeyPath='yes'/>
+                    <File Id='heciCAT' Name='heci.cat' DiskId='1' Source='drv\heci\heci.cat' />
+                    <difx:Driver  DeleteFiles='no' ForceInstall='yes' PlugAndPlayPrompt='no' AddRemovePrograms="no" />
+                  </Component>
+              </Directory>
+
+            </Directory>
+          </Directory>
+        </Directory>
+      </Directory>
+
+      <!-- Registry entries -->
+      <Component Id='RegValInstallLocation_comp' Guid='83AA7367-4EEE-45B3-A546-E8069314ECBA'>
+        <!-- Use a key different from the default key, because the default key gets removed on uninstall / update -->
+        <RegistryKey Root='HKLM' Key='Software\!(loc.ManufacturerName)\InstalledProducts\!(loc.ApplicationName)'>
+            <RegistryValue Name='InstallLocation' Value='[INSTALLDIR]' Type='string' KeyPath='yes' />
+        </RegistryKey>
+      </Component>
+    </Directory>
+
+    <!-- Define just one feature, as we only have one way to install our application -->
+    <Feature Id='Complete' Level='1' Title='!(loc.ApplicationName)' Description='!(loc.FeatureCompleteDescription)' Absent='disallow' AllowAdvertise='no'>
+      <ComponentRef Id='MainExecutable' />
+      <ComponentRef Id='RegValInstallLocation_comp' />
+      <ComponentRef Id='ImmuneDrv' />
+      <ComponentRef Id='IntelMEI' />
+      <ComponentRef Id='IntelMEIx64' />
+      <ComponentRef Id='IntelMEIx86' />
+    </Feature>
+
+    <!-- Run the just installed application silently (no cmd box flashing) to enroll with the servers -->
+    <!-- Set the enrollAction property via action to installed file path, see https://kamivaniea.com/?p=632 -->
+    <CustomAction Id='enrollActionId'  Property='enrollAction' Execute='immediate' Value='"[#agentEXE]" enroll --standalone --no-attest [ENROLLEXTRAARGS] [ENROLLKEY]'/>
+    <CustomAction Id='enrollAction'
+                  BinaryKey='WixCA'
+                  DllEntry='CAQuietExec64'
+                  Execute='deferred'
+                  Return='check'
+                  HideTarget='no'
+                  Impersonate='no'/>
+
+    <!-- Install the agent as windows service -->
+    <CustomAction Id='installSvcActionId'  Property='installSvcAction' Execute='immediate' Value='"[#agentEXE]" winsvc install --force'/>
+    <CustomAction Id='installSvcAction'
+                  BinaryKey='WixCA'
+                  DllEntry='CAQuietExec64'
+                  Execute='deferred'
+                  Return='check'
+                  HideTarget='no'
+                  Impersonate='no'/>
+
+    <!-- Remove the agent as windows service -->
+    <CustomAction Id='rollbackSvcActionId'  Property='rollbackSvcAction' Execute='immediate' Value='"[#agentEXE]" winsvc remove'/>
+    <CustomAction Id='rollbackSvcAction'
+                  BinaryKey='WixCA'
+                  DllEntry='CAQuietExec64'
+                  Execute='rollback'
+                  Return='ignore'
+                  HideTarget='no'
+                  Impersonate='no'/>
+
+    <!-- Remove a scheduled task-->
+    <CustomAction Id='removeScheduledTaskId'  Property='removeScheduledTask'
+        Execute='immediate'
+        Value='"[SystemFolder]SCHTASKS.EXE" /DELETE /TN "immune Guard Agent" /F' />
+    <CustomAction Id='removeScheduledTask' 
+        Return='ignore' 
+        Impersonate='no' 
+        Execute='deferred'
+        BinaryKey='WixCA'
+        DllEntry='CAQuietExec' />
+
+    <!-- Remove program data subdir -->
+    <!-- This is a bit hacky b/c the folder is not created by the installer but by the app itself -->
+    <!-- Removing such folders with wix utils has more drawbacks it seems -->
+    <CustomAction Id='removeProgramDataId'  Property='removeProgramData'
+        Execute='immediate'
+        Value='"powershell.exe" rm $(env.ProgramData)\$(var.ProgramDataDir) -r' />
+    <CustomAction Id='removeProgramData' 
+        Return='ignore' 
+        Impersonate='no' 
+        Execute='deferred'
+        BinaryKey='WixCA'
+        DllEntry='CAQuietExec' />
+        
+    <!-- Execute enroll and schedule boot task -->
+    <InstallExecuteSequence>
+      <Custom Action='rollbackSvcActionId' After='InstallFiles'>(NOT REMOVE) AND (NOT Installed) AND (NOT WIX_UPGRADE_DETECTED)</Custom>
+      <Custom Action='rollbackSvcAction' After='InstallFiles' >(NOT REMOVE) AND (NOT Installed) AND (NOT WIX_UPGRADE_DETECTED)</Custom>
+      <Custom Action='installSvcActionId' After='InstallFiles'>(NOT REMOVE) AND (NOT Installed) AND (NOT WIX_UPGRADE_DETECTED)</Custom>
+      <Custom Action='installSvcAction' After='rollbackSvcAction' >(NOT REMOVE) AND (NOT Installed) AND (NOT WIX_UPGRADE_DETECTED)</Custom>
+      <Custom Action='enrollActionId' After='InstallFiles'>(NOT REMOVE) AND (NOT Installed) AND (NOT WIX_UPGRADE_DETECTED) AND (NOT NOENROLL)</Custom>
+      <Custom Action='enrollAction' After='installSvcAction' >(NOT REMOVE) AND (NOT Installed) AND (NOT WIX_UPGRADE_DETECTED) AND (NOT NOENROLL)</Custom>
+      <Custom Action='removeScheduledTaskId' Before='InstallFinalize'>1</Custom>
+      <Custom Action='removeScheduledTask' Before='InstallFinalize'>1</Custom>
+      <Custom Action='removeProgramDataId' Before='InstallFinalize'>Installed AND NOT UPGRADINGPRODUCTCODE</Custom>
+      <Custom Action='removeProgramData' Before='InstallFinalize'>Installed AND NOT UPGRADINGPRODUCTCODE</Custom>
+    </InstallExecuteSequence>
+
+    <!-- Our custom UI -->
+    <UI>
+      <UIRef Id='WixUI_agent' />
+      <UIRef Id='WixUI_ErrorProgressText' />
+    </UI>
+
+    <!-- Hide enrollkey from log -->
+    <Property Id='ENROLLKEY' Hidden='yes' />
+
+    <!-- Set property name our UI uses for enrollment key -->
+    <Property Id='WIXUI_ENROLLKEY' Value='ENROLLKEY' Hidden='yes' />
+  </Product>
+</Wix>

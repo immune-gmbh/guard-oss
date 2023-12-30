@@ -1,0 +1,57 @@
+name: Unit tests (authsrv)
+on: 
+  pull_request: {}
+jobs:
+  authsrv:
+    timeout-minutes: 20
+    runs-on: ubuntu-20.04
+    defaults:
+      run:
+        working-directory: ./authsrv2
+
+    services:
+      postgres:
+        image: postgres:12
+        env:
+          POSTGRES_HOST_AUTH_METHOD: trust
+          POSTGRES_DB: authsrv2_test
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          - 5432:5432
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: technote-space/get-diff-action@v5
+        with:
+          PATTERNS: |
+            authsrv2/**
+            .github/workflows/unit-tests-authsrv.yml
+      - uses: ruby/setup-ruby@v1
+        if: env.GIT_DIFF
+        with:
+          ruby-version: 3.0.1
+          bundler-cache: true
+          working_directory: authsrv2
+      - name: Install deps
+        if: env.GIT_DIFF
+        run: |
+          gem install bundler
+          bundle config path vendor/bundle
+          bundle install --jobs 4 --retry 3
+      - name: Run unit test
+        if: env.GIT_DIFF
+        env:
+          AUTHSRV_DATABASE_USER: postgres
+        run: |
+          bundle exec rails db:migrate RAILS_ENV=test
+          bundle exec rails test
+      - uses: codecov/codecov-action@v1
+        if: env.GIT_DIFF
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          flags: authsrv
+          directory: authsrv2/coverage

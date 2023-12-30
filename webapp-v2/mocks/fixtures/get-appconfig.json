@@ -1,0 +1,11 @@
+{
+  "config": {
+    "release": "unreleased",
+    "agent_urls": {
+      "ubuntu": "https://packages.immune.app/r97/guard_1-r97.1_amd64.deb",
+      "fedora": "https://packages.immune.app/r97/guard-1-r97-1.x86_64.rpm",
+      "generic": "https://packages.immune.app/r97/guard-linux-r97",
+      "windows": "https://packages.immune.app/r97/immuneGuard_en-us-r97.msi"
+    }
+  }
+}

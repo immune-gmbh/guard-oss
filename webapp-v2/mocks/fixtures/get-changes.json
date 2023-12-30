@@ -1,0 +1,1325 @@
+{
+  "data": [
+    {
+      "type": "changes",
+      "id": "2543",
+      "attributes": {
+        "actor": "agent",
+        "timestamp": "2021-12-21T13:05:37Z",
+        "type": "instanciate"
+      },
+      "relationships": {
+        "policies": {
+          "data": {
+            "type": "policies",
+            "id": "1370"
+          }
+        }
+      }
+    },
+    {
+      "type": "changes",
+      "id": "2542",
+      "attributes": {
+        "actor": "(No actor)",
+        "timestamp": "2021-12-21T13:05:36Z",
+        "type": "enroll"
+      },
+      "relationships": {
+        "devices": {
+          "data": {
+            "type": "devices",
+            "id": "1772"
+          }
+        }
+      }
+    },
+    {
+      "type": "changes",
+      "id": "2541",
+      "attributes": {
+        "actor": "(No actor)",
+        "timestamp": "2021-12-21T13:05:36Z",
+        "type": "template"
+      },
+      "relationships": {
+        "policies": {
+          "data": {
+            "type": "policies",
+            "id": "1370"
+          }
+        }
+      }
+    },
+    {
+      "type": "changes",
+      "id": "2540",
+      "attributes": {
+        "actor": "(No actor)",
+        "timestamp": "2021-12-21T13:05:36Z",
+        "type": "associate"
+      },
+      "relationships": {
+        "devices": {
+          "data": {
+            "type": "devices",
+            "id": "1772"
+          }
+        },
+        "policies": {
+          "data": {
+            "type": "policies",
+            "id": "1370"
+          }
+        }
+      }
+    },
+    {
+      "type": "changes",
+      "id": "2534",
+      "attributes": {
+        "actor": "agent",
+        "timestamp": "2021-12-14T22:21:54Z",
+        "type": "instanciate"
+      },
+      "relationships": {
+        "policies": {
+          "data": {
+            "type": "policies",
+            "id": "1368"
+          }
+        }
+      }
+    },
+    {
+      "type": "changes",
+      "id": "2533",
+      "attributes": {
+        "actor": "(No actor)",
+        "timestamp": "2021-12-14T22:21:53Z",
+        "type": "enroll"
+      },
+      "relationships": {
+        "devices": {
+          "data": {
+            "type": "devices",
+            "id": "1770"
+          }
+        }
+      }
+    },
+    {
+      "type": "changes",
+      "id": "2532",
+      "attributes": {
+        "actor": "(No actor)",
+        "timestamp": "2021-12-14T22:21:53Z",
+        "type": "template"
+      },
+      "relationships": {
+        "policies": {
+          "data": {
+            "type": "policies",
+            "id": "1368"
+          }
+        }
+      }
+    },
+    {
+      "type": "changes",
+      "id": "2531",
+      "attributes": {
+        "actor": "(No actor)",
+        "timestamp": "2021-12-14T22:21:53Z",
+        "type": "associate"
+      },
+      "relationships": {
+        "devices": {
+          "data": {
+            "type": "devices",
+            "id": "1770"
+          }
+        },
+        "policies": {
+          "data": {
+            "type": "policies",
+            "id": "1368"
+          }
+        }
+      }
+    },
+    {
+      "type": "changes",
+      "id": "2530",
+      "attributes": {
+        "actor": "tag:immu.ne,2021:user/307f78d7-877b-53d0-abb3-c063159413fc",
+        "timestamp": "2021-12-14T22:21:35Z",
+        "type": "retire"
+      },
+      "relationships": {
+        "devices": {
+          "data": {
+            "type": "devices",
+            "id": "1758"
+          }
+        }
+      }
+    },
+    {
+      "type": "changes",
+      "id": "2524",
+      "attributes": {
+        "actor": "(No actor)",
+        "timestamp": "2021-12-10T16:12:23Z",
+        "type": "enroll"
+      },
+      "relationships": {
+        "devices": {
+          "data": {
+            "type": "devices",
+            "id": "1769"
+          }
+        }
+      }
+    },
+    {
+      "type": "changes",
+      "id": "2523",
+      "attributes": {
+        "actor": "(No actor)",
+        "timestamp": "2021-12-10T16:12:23Z",
+        "type": "associate"
+      },
+      "relationships": {
+        "devices": {
+          "data": {
+            "type": "devices",
+            "id": "1769"
+          }
+        },
+        "policies": {
+          "data": {
+            "type": "policies",
+            "id": "1367"
+          }
+        }
+      }
+    },
+    {
+      "type": "changes",
+      "id": "2522",
+      "attributes": {
+        "actor": "(No actor)",
+        "timestamp": "2021-12-10T16:09:50Z",
+        "type": "enroll"
+      },
+      "relationships": {
+        "devices": {
+          "data": {
+            "type": "devices",
+            "id": "1768"
+          }
+        }
+      }
+    },
+    {
+      "type": "changes",
+      "id": "2521",
+      "attributes": {
+        "actor": "(No actor)",
+        "timestamp": "2021-12-10T16:09:50Z",
+        "type": "associate"
+      },
+      "relationships": {
+        "devices": {
+          "data": {
+            "type": "devices",
+            "id": "1768"
+          }
+        },
+        "policies": {
+          "data": {
+            "type": "policies",
+            "id": "1367"
+          }
+        }
+      }
+    },
+    {
+      "type": "changes",
+      "id": "2520",
+      "attributes": {
+        "actor": "agent",
+        "timestamp": "2021-12-10T15:30:35Z",
+        "type": "instanciate"
+      },
+      "relationships": {
+        "policies": {
+          "data": {
+            "type": "policies",
+            "id": "1367"
+          }
+        }
+      }
+    },
+    {
+      "type": "changes",
+      "id": "2519",
+      "attributes": {
+        "actor": "(No actor)",
+        "timestamp": "2021-12-10T15:30:34Z",
+        "type": "enroll"
+      },
+      "relationships": {
+        "devices": {
+          "data": {
+            "type": "devices",
+            "id": "1767"
+          }
+        }
+      }
+    },
+    {
+      "type": "changes",
+      "id": "2518",
+      "attributes": {
+        "actor": "(No actor)",
+        "timestamp": "2021-12-10T15:30:34Z",
+        "type": "template"
+      },
+      "relationships": {
+        "policies": {
+          "data": {
+            "type": "policies",
+            "id": "1367"
+          }
+        }
+      }
+    },
+    {
+      "type": "changes",
+      "id": "2517",
+      "attributes": {
+        "actor": "(No actor)",
+        "timestamp": "2021-12-10T15:30:34Z",
+        "type": "associate"
+      },
+      "relationships": {
+        "devices": {
+          "data": {
+            "type": "devices",
+            "id": "1767"
+          }
+        },
+        "policies": {
+          "data": {
+            "type": "policies",
+            "id": "1367"
+          }
+        }
+      }
+    },
+    {
+      "type": "changes",
+      "id": "2506",
+      "attributes": {
+        "actor": "tag:immu.ne,2021:user/0001f9f2-d12a-48c6-b530-8628d614b0c5",
+        "timestamp": "2021-12-07T14:15:51Z",
+        "type": "associate"
+      },
+      "relationships": {
+        "devices": {
+          "data": {
+            "type": "devices",
+            "id": "1758"
+          }
+        },
+        "policies": {
+          "data": {
+            "type": "policies",
+            "id": "1361"
+          }
+        }
+      }
+    },
+    {
+      "type": "changes",
+      "id": "2505",
+      "attributes": {
+        "actor": "tag:immu.ne,2021:user/0001f9f2-d12a-48c6-b530-8628d614b0c5",
+        "timestamp": "2021-12-07T14:15:51Z",
+        "type": "revoke"
+      },
+      "relationships": {
+        "policies": {
+          "data": {
+            "type": "policies",
+            "id": "1359"
+          }
+        }
+      }
+    },
+    {
+      "type": "changes",
+      "id": "2504",
+      "attributes": {
+        "actor": "tag:immu.ne,2021:user/0001f9f2-d12a-48c6-b530-8628d614b0c5",
+        "timestamp": "2021-12-07T14:15:51Z",
+        "type": "new"
+      },
+      "relationships": {
+        "policies": {
+          "data": {
+            "type": "policies",
+            "id": "1361"
+          }
+        }
+      }
+    },
+    {
+      "type": "changes",
+      "id": "2503",
+      "attributes": {
+        "actor": "tag:immu.ne,2021:user/0001f9f2-d12a-48c6-b530-8628d614b0c5",
+        "timestamp": "2021-12-06T17:25:31Z",
+        "type": "associate"
+      },
+      "relationships": {
+        "devices": {
+          "data": {
+            "type": "devices",
+            "id": "1758"
+          }
+        },
+        "policies": {
+          "data": {
+            "type": "policies",
+            "id": "1359"
+          }
+        }
+      }
+    },
+    {
+      "type": "changes",
+      "id": "2502",
+      "attributes": {
+        "actor": "tag:immu.ne,2021:user/0001f9f2-d12a-48c6-b530-8628d614b0c5",
+        "timestamp": "2021-12-06T17:25:31Z",
+        "type": "new"
+      },
+      "relationships": {
+        "policies": {
+          "data": {
+            "type": "policies",
+            "id": "1359"
+          }
+        }
+      }
+    },
+    {
+      "type": "changes",
+      "id": "2501",
+      "attributes": {
+        "actor": "(No actor)",
+        "timestamp": "2021-12-06T14:57:17Z",
+        "type": "enroll"
+      },
+      "relationships": {
+        "devices": {
+          "data": {
+            "type": "devices",
+            "id": "1763"
+          }
+        }
+      }
+    },
+    {
+      "type": "changes",
+      "id": "2500",
+      "attributes": {
+        "actor": "(No actor)",
+        "timestamp": "2021-12-06T14:57:17Z",
+        "type": "associate"
+      },
+      "relationships": {
+        "devices": {
+          "data": {
+            "type": "devices",
+            "id": "1763"
+          }
+        },
+        "policies": {
+          "data": {
+            "type": "policies",
+            "id": "1199"
+          }
+        }
+      }
+    },
+    {
+      "type": "changes",
+      "id": "2499",
+      "attributes": {
+        "actor": "(No actor)",
+        "timestamp": "2021-12-06T14:57:17Z",
+        "type": "associate"
+      },
+      "relationships": {
+        "devices": {
+          "data": {
+            "type": "devices",
+            "id": "1763"
+          }
+        },
+        "policies": {
+          "data": {
+            "type": "policies",
+            "id": "1197"
+          }
+        }
+      }
+    },
+    {
+      "type": "changes",
+      "id": "2498",
+      "attributes": {
+        "actor": "(No actor)",
+        "timestamp": "2021-12-06T14:57:17Z",
+        "type": "associate"
+      },
+      "relationships": {
+        "devices": {
+          "data": {
+            "type": "devices",
+            "id": "1763"
+          }
+        },
+        "policies": {
+          "data": {
+            "type": "policies",
+            "id": "1212"
+          }
+        }
+      }
+    },
+    {
+      "type": "changes",
+      "id": "2497",
+      "attributes": {
+        "actor": "(No actor)",
+        "timestamp": "2021-12-06T14:55:49Z",
+        "type": "enroll"
+      },
+      "relationships": {
+        "devices": {
+          "data": {
+            "type": "devices",
+            "id": "1762"
+          }
+        }
+      }
+    },
+    {
+      "type": "changes",
+      "id": "2496",
+      "attributes": {
+        "actor": "(No actor)",
+        "timestamp": "2021-12-06T14:55:49Z",
+        "type": "associate"
+      },
+      "relationships": {
+        "devices": {
+          "data": {
+            "type": "devices",
+            "id": "1762"
+          }
+        },
+        "policies": {
+          "data": {
+            "type": "policies",
+            "id": "1212"
+          }
+        }
+      }
+    },
+    {
+      "type": "changes",
+      "id": "2495",
+      "attributes": {
+        "actor": "(No actor)",
+        "timestamp": "2021-12-06T14:55:49Z",
+        "type": "associate"
+      },
+      "relationships": {
+        "devices": {
+          "data": {
+            "type": "devices",
+            "id": "1762"
+          }
+        },
+        "policies": {
+          "data": {
+            "type": "policies",
+            "id": "1197"
+          }
+        }
+      }
+    },
+    {
+      "type": "changes",
+      "id": "2494",
+      "attributes": {
+        "actor": "(No actor)",
+        "timestamp": "2021-12-06T14:55:49Z",
+        "type": "associate"
+      },
+      "relationships": {
+        "devices": {
+          "data": {
+            "type": "devices",
+            "id": "1762"
+          }
+        },
+        "policies": {
+          "data": {
+            "type": "policies",
+            "id": "1199"
+          }
+        }
+      }
+    },
+    {
+      "type": "changes",
+      "id": "2484",
+      "attributes": {
+        "actor": "(No actor)",
+        "timestamp": "2021-11-30T14:52:43Z",
+        "type": "enroll"
+      },
+      "relationships": {
+        "devices": {
+          "data": {
+            "type": "devices",
+            "id": "1758"
+          }
+        }
+      }
+    },
+    {
+      "type": "changes",
+      "id": "2483",
+      "attributes": {
+        "actor": "(No actor)",
+        "timestamp": "2021-11-30T14:52:43Z",
+        "type": "associate"
+      },
+      "relationships": {
+        "devices": {
+          "data": {
+            "type": "devices",
+            "id": "1758"
+          }
+        },
+        "policies": {
+          "data": {
+            "type": "policies",
+            "id": "1202"
+          }
+        }
+      }
+    },
+    {
+      "type": "changes",
+      "id": "2482",
+      "attributes": {
+        "actor": "(No actor)",
+        "timestamp": "2021-11-30T14:52:43Z",
+        "type": "associate"
+      },
+      "relationships": {
+        "devices": {
+          "data": {
+            "type": "devices",
+            "id": "1758"
+          }
+        },
+        "policies": {
+          "data": {
+            "type": "policies",
+            "id": "1201"
+          }
+        }
+      }
+    },
+    {
+      "type": "changes",
+      "id": "2456",
+      "attributes": {
+        "actor": "(No actor)",
+        "timestamp": "2021-11-26T14:13:10Z",
+        "type": "enroll"
+      },
+      "relationships": {
+        "devices": {
+          "data": {
+            "type": "devices",
+            "id": "1750"
+          }
+        }
+      }
+    },
+    {
+      "type": "changes",
+      "id": "2455",
+      "attributes": {
+        "actor": "(No actor)",
+        "timestamp": "2021-11-26T14:13:10Z",
+        "type": "associate"
+      },
+      "relationships": {
+        "devices": {
+          "data": {
+            "type": "devices",
+            "id": "1750"
+          }
+        },
+        "policies": {
+          "data": {
+            "type": "policies",
+            "id": "1199"
+          }
+        }
+      }
+    },
+    {
+      "type": "changes",
+      "id": "2454",
+      "attributes": {
+        "actor": "(No actor)",
+        "timestamp": "2021-11-26T14:13:10Z",
+        "type": "associate"
+      },
+      "relationships": {
+        "devices": {
+          "data": {
+            "type": "devices",
+            "id": "1750"
+          }
+        },
+        "policies": {
+          "data": {
+            "type": "policies",
+            "id": "1197"
+          }
+        }
+      }
+    },
+    {
+      "type": "changes",
+      "id": "2453",
+      "attributes": {
+        "actor": "(No actor)",
+        "timestamp": "2021-11-26T14:13:10Z",
+        "type": "associate"
+      },
+      "relationships": {
+        "devices": {
+          "data": {
+            "type": "devices",
+            "id": "1750"
+          }
+        },
+        "policies": {
+          "data": {
+            "type": "policies",
+            "id": "1212"
+          }
+        }
+      }
+    },
+    {
+      "type": "changes",
+      "id": "2452",
+      "attributes": {
+        "actor": "(No actor)",
+        "timestamp": "2021-11-26T13:50:22Z",
+        "type": "enroll"
+      },
+      "relationships": {
+        "devices": {
+          "data": {
+            "type": "devices",
+            "id": "1749"
+          }
+        }
+      }
+    },
+    {
+      "type": "changes",
+      "id": "2451",
+      "attributes": {
+        "actor": "(No actor)",
+        "timestamp": "2021-11-26T13:50:22Z",
+        "type": "associate"
+      },
+      "relationships": {
+        "devices": {
+          "data": {
+            "type": "devices",
+            "id": "1749"
+          }
+        },
+        "policies": {
+          "data": {
+            "type": "policies",
+            "id": "1197"
+          }
+        }
+      }
+    },
+    {
+      "type": "changes",
+      "id": "2450",
+      "attributes": {
+        "actor": "(No actor)",
+        "timestamp": "2021-11-26T13:50:22Z",
+        "type": "associate"
+      },
+      "relationships": {
+        "devices": {
+          "data": {
+            "type": "devices",
+            "id": "1749"
+          }
+        },
+        "policies": {
+          "data": {
+            "type": "policies",
+            "id": "1212"
+          }
+        }
+      }
+    },
+    {
+      "type": "changes",
+      "id": "2449",
+      "attributes": {
+        "actor": "(No actor)",
+        "timestamp": "2021-11-26T13:50:22Z",
+        "type": "associate"
+      },
+      "relationships": {
+        "devices": {
+          "data": {
+            "type": "devices",
+            "id": "1749"
+          }
+        },
+        "policies": {
+          "data": {
+            "type": "policies",
+            "id": "1199"
+          }
+        }
+      }
+    },
+    {
+      "type": "changes",
+      "id": "2448",
+      "attributes": {
+        "actor": "(No actor)",
+        "timestamp": "2021-11-26T13:49:19Z",
+        "type": "enroll"
+      },
+      "relationships": {
+        "devices": {
+          "data": {
+            "type": "devices",
+            "id": "1748"
+          }
+        }
+      }
+    },
+    {
+      "type": "changes",
+      "id": "2447",
+      "attributes": {
+        "actor": "(No actor)",
+        "timestamp": "2021-11-26T13:49:19Z",
+        "type": "associate"
+      },
+      "relationships": {
+        "devices": {
+          "data": {
+            "type": "devices",
+            "id": "1748"
+          }
+        },
+        "policies": {
+          "data": {
+            "type": "policies",
+            "id": "1199"
+          }
+        }
+      }
+    },
+    {
+      "type": "changes",
+      "id": "2446",
+      "attributes": {
+        "actor": "(No actor)",
+        "timestamp": "2021-11-26T13:49:19Z",
+        "type": "associate"
+      },
+      "relationships": {
+        "devices": {
+          "data": {
+            "type": "devices",
+            "id": "1748"
+          }
+        },
+        "policies": {
+          "data": {
+            "type": "policies",
+            "id": "1197"
+          }
+        }
+      }
+    },
+    {
+      "type": "changes",
+      "id": "2445",
+      "attributes": {
+        "actor": "(No actor)",
+        "timestamp": "2021-11-26T13:49:19Z",
+        "type": "associate"
+      },
+      "relationships": {
+        "devices": {
+          "data": {
+            "type": "devices",
+            "id": "1748"
+          }
+        },
+        "policies": {
+          "data": {
+            "type": "policies",
+            "id": "1212"
+          }
+        }
+      }
+    },
+    {
+      "type": "changes",
+      "id": "2444",
+      "attributes": {
+        "actor": "(No actor)",
+        "timestamp": "2021-11-26T13:44:59Z",
+        "type": "enroll"
+      },
+      "relationships": {
+        "devices": {
+          "data": {
+            "type": "devices",
+            "id": "1747"
+          }
+        }
+      }
+    },
+    {
+      "type": "changes",
+      "id": "2443",
+      "attributes": {
+        "actor": "(No actor)",
+        "timestamp": "2021-11-26T13:44:59Z",
+        "type": "associate"
+      },
+      "relationships": {
+        "devices": {
+          "data": {
+            "type": "devices",
+            "id": "1747"
+          }
+        },
+        "policies": {
+          "data": {
+            "type": "policies",
+            "id": "1212"
+          }
+        }
+      }
+    },
+    {
+      "type": "changes",
+      "id": "2442",
+      "attributes": {
+        "actor": "(No actor)",
+        "timestamp": "2021-11-26T13:44:59Z",
+        "type": "associate"
+      },
+      "relationships": {
+        "devices": {
+          "data": {
+            "type": "devices",
+            "id": "1747"
+          }
+        },
+        "policies": {
+          "data": {
+            "type": "policies",
+            "id": "1199"
+          }
+        }
+      }
+    },
+    {
+      "type": "changes",
+      "id": "2441",
+      "attributes": {
+        "actor": "(No actor)",
+        "timestamp": "2021-11-26T13:44:59Z",
+        "type": "associate"
+      },
+      "relationships": {
+        "devices": {
+          "data": {
+            "type": "devices",
+            "id": "1747"
+          }
+        },
+        "policies": {
+          "data": {
+            "type": "policies",
+            "id": "1197"
+          }
+        }
+      }
+    },
+    {
+      "type": "changes",
+      "id": "2440",
+      "attributes": {
+        "actor": "(No actor)",
+        "timestamp": "2021-11-26T13:32:48Z",
+        "type": "enroll"
+      },
+      "relationships": {
+        "devices": {
+          "data": {
+            "type": "devices",
+            "id": "1746"
+          }
+        }
+      }
+    },
+    {
+      "type": "changes",
+      "id": "2439",
+      "attributes": {
+        "actor": "(No actor)",
+        "timestamp": "2021-11-26T13:32:48Z",
+        "type": "associate"
+      },
+      "relationships": {
+        "devices": {
+          "data": {
+            "type": "devices",
+            "id": "1746"
+          }
+        },
+        "policies": {
+          "data": {
+            "type": "policies",
+            "id": "1206"
+          }
+        }
+      }
+    },
+    {
+      "type": "changes",
+      "id": "2438",
+      "attributes": {
+        "actor": "(No actor)",
+        "timestamp": "2021-11-26T13:32:48Z",
+        "type": "associate"
+      },
+      "relationships": {
+        "devices": {
+          "data": {
+            "type": "devices",
+            "id": "1746"
+          }
+        },
+        "policies": {
+          "data": {
+            "type": "policies",
+            "id": "1197"
+          }
+        }
+      }
+    },
+    {
+      "type": "changes",
+      "id": "2437",
+      "attributes": {
+        "actor": "(No actor)",
+        "timestamp": "2021-11-26T13:32:48Z",
+        "type": "associate"
+      },
+      "relationships": {
+        "devices": {
+          "data": {
+            "type": "devices",
+            "id": "1746"
+          }
+        },
+        "policies": {
+          "data": {
+            "type": "policies",
+            "id": "1326"
+          }
+        }
+      }
+    },
+    {
+      "type": "changes",
+      "id": "2436",
+      "attributes": {
+        "actor": "(No actor)",
+        "timestamp": "2021-11-26T13:32:48Z",
+        "type": "associate"
+      },
+      "relationships": {
+        "devices": {
+          "data": {
+            "type": "devices",
+            "id": "1746"
+          }
+        },
+        "policies": {
+          "data": {
+            "type": "policies",
+            "id": "1200"
+          }
+        }
+      }
+    },
+    {
+      "type": "changes",
+      "id": "2435",
+      "attributes": {
+        "actor": "(No actor)",
+        "timestamp": "2021-11-26T13:32:48Z",
+        "type": "associate"
+      },
+      "relationships": {
+        "devices": {
+          "data": {
+            "type": "devices",
+            "id": "1746"
+          }
+        },
+        "policies": {
+          "data": {
+            "type": "policies",
+            "id": "1208"
+          }
+        }
+      }
+    },
+    {
+      "type": "changes",
+      "id": "2412",
+      "attributes": {
+        "actor": "(No actor)",
+        "timestamp": "2021-11-17T16:18:28Z",
+        "type": "enroll"
+      },
+      "relationships": {
+        "devices": {
+          "data": {
+            "type": "devices",
+            "id": "1740"
+          }
+        }
+      }
+    },
+    {
+      "type": "changes",
+      "id": "2411",
+      "attributes": {
+        "actor": "(No actor)",
+        "timestamp": "2021-11-17T16:18:28Z",
+        "type": "associate"
+      },
+      "relationships": {
+        "devices": {
+          "data": {
+            "type": "devices",
+            "id": "1740"
+          }
+        },
+        "policies": {
+          "data": {
+            "type": "policies",
+            "id": "1199"
+          }
+        }
+      }
+    },
+    {
+      "type": "changes",
+      "id": "2410",
+      "attributes": {
+        "actor": "(No actor)",
+        "timestamp": "2021-11-17T16:18:28Z",
+        "type": "associate"
+      },
+      "relationships": {
+        "devices": {
+          "data": {
+            "type": "devices",
+            "id": "1740"
+          }
+        },
+        "policies": {
+          "data": {
+            "type": "policies",
+            "id": "1212"
+          }
+        }
+      }
+    },
+    {
+      "type": "changes",
+      "id": "2409",
+      "attributes": {
+        "actor": "(No actor)",
+        "timestamp": "2021-11-17T16:18:28Z",
+        "type": "associate"
+      },
+      "relationships": {
+        "devices": {
+          "data": {
+            "type": "devices",
+            "id": "1740"
+          }
+        },
+        "policies": {
+          "data": {
+            "type": "policies",
+            "id": "1197"
+          }
+        }
+      }
+    },
+    {
+      "type": "changes",
+      "id": "2378",
+      "attributes": {
+        "actor": "tag:immu.ne,2021:user/307f78d7-877b-53d0-abb3-c063159413fc",
+        "timestamp": "2021-10-28T11:47:07Z",
+        "type": "associate"
+      },
+      "relationships": {
+        "devices": {
+          "data": {
+            "type": "devices",
+            "id": "1733"
+          }
+        },
+        "policies": {
+          "data": {
+            "type": "policies",
+            "id": "1326"
+          }
+        }
+      }
+    },
+    {
+      "type": "changes",
+      "id": "2377",
+      "attributes": {
+        "actor": "tag:immu.ne,2021:user/307f78d7-877b-53d0-abb3-c063159413fc",
+        "timestamp": "2021-10-28T11:47:07Z",
+        "type": "new"
+      },
+      "relationships": {
+        "policies": {
+          "data": {
+            "type": "policies",
+            "id": "1326"
+          }
+        }
+      }
+    },
+    {
+      "type": "changes",
+      "id": "2376",
+      "attributes": {
+        "actor": "(No actor)",
+        "timestamp": "2021-10-28T11:24:39Z",
+        "type": "enroll"
+      },
+      "relationships": {
+        "devices": {
+          "data": {
+            "type": "devices",
+            "id": "1733"
+          }
+        }
+      }
+    },
+    {
+      "type": "changes",
+      "id": "2375",
+      "attributes": {
+        "actor": "(No actor)",
+        "timestamp": "2021-10-28T11:24:39Z",
+        "type": "associate"
+      },
+      "relationships": {
+        "devices": {
+          "data": {
+            "type": "devices",
+            "id": "1733"
+          }
+        },
+        "policies": {
+          "data": {
+            "type": "policies",
+            "id": "1197"
+          }
+        }
+      }
+    },
+    {
+      "type": "changes",
+      "id": "2374",
+      "attributes": {
+        "actor": "(No actor)",
+        "timestamp": "2021-10-28T11:24:39Z",
+        "type": "associate"
+      },
+      "relationships": {
+        "devices": {
+          "data": {
+            "type": "devices",
+            "id": "1733"
+          }
+        },
+        "policies": {
+          "data": {
+            "type": "policies",
+            "id": "1208"
+          }
+        }
+      }
+    }
+  ],
+  "meta": {
+    "instance": "apisrv-v2-deployment-5f76b59b97-4xsjr",
+    "trace": "d66c36c6741e85021696147f7f8b4f6e",
+    "version": "r134"
+  }
+}

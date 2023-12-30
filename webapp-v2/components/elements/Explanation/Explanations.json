@@ -1,0 +1,34 @@
+[
+  {
+    "name": "Intel Secure Guard Extension (SGX)",
+    "text": "SGX is an instruction set extension that allows running arbitrary code in encrypted containers that are inaccssible even by the operating system.\n\n In order to be secure the UEFI or operating system has to lock a set of configuration registers in the CPU.\n\n If the Flexible Launch Control feature is used SGX works without Intel-provided attestation SaaS backend."
+  },
+  {
+    "name": "Boot chain",
+    "text": "During boot firmware, UEFI, boot loader and the operating system record code and data used for the system’s boot as a set of cryptographic checksums, so called measurements. If malware or other malicios code is placed in the boot chain the checkusm change and alllow us to detect this.\n\n Each checksum is computed and store in an area called Platform Configuration Register (PCR) inside a separate chip. Every PCR is assgined a component of the boot process, or is left free for the operating system to use.\n\n The immune Guard Agent colllects a signed version of the set of PCRs plus a log detailling the values that make up each PCR’s content."
+  },
+  {
+    "name": "Trust Anchor",
+    "text": "In cryptography, a trust anchor is an authoritative entity for which trust is assumed. Modern IT hardware uses TPM2.0 as a trust anchor. TPM (Trusted Platform Module) is an international standard for a secure cryptoprocessor dedicated to secure a platform through integrated cryptographic keys.\nIt is a key technology on which the immune Guard is built upon."
+  },
+  {
+    "name": "UEFI Secure Boot",
+    "text": "The Unified Extensible Firmware Interface (UEFI) is a publicly available specification that defines a software interface between an operating system and platform firmware. UEFI replaces the legacy Basic Input/Output System (BIOS) firmware interface.\nNot being part of the operating system, firmware is the perfect hideout for advanced persistent malware."
+  },
+  {
+    "name": "Intel Management Engine",
+    "text": "The Intel Management Engine (ME), also known as the Intel Manageability Engine is an autonomous subsystem that has been incorporated in virtually all of Intel's processor chipsets since 2008. It is located in the Platform Controller Hub of modern Intel motherboards.\nThe ME must be configured properly and kept up to date to minimize the attack surface."
+  },
+  {
+    "name": "Intel Trusted Execution Technology",
+    "text": "Intel Trusted Execution Technology (TXT) is a computer hardware technology meant to help attest to the authenticity of a platform and its operating system. It is assuring that an authentic operating system starts in an environment, which can be considered trusted.\nIntel TXT requires a complex configuration to work. We analyze it to validate its correctness."
+  },
+  {
+    "name": "Intel Boot Guard",
+    "text": "Production fuses not burned. Intel Boot Guard enforces signature checks of the inital part of the UEFI firmware using keys provided by the platform’s manufacturer. Boot Guard works in conjunction with UEFI Secure Boot to ensure all major parts of the boot chain are signed.\n\n On modern systems Boot Guard includes the functionality of Intel TXT."
+  },
+  {
+    "name": "AMD Secure Encrypted Virtualizaton (SEV)",
+    "text": "AMD SEV is hardware accelerated memory encryption to protect data-in-use. It can protect applications and operating systems inside virtual machines.\nAMD SEV requires a complex configuration to work. We analyze it to validate its correctness."
+  }
+]

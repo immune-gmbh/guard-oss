@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html charset=UTF-8" />
+    <title>Immune Guard</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        background-color: #410028;
+        width: 100%;
+        color: #ffffff;
+        word-break: break-word;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 400;
+        line-height: 1.5;
+        font-size: 16px;
+      }
+
+      h2,
+      h3,
+      b,
+      .button {
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+      }
+
+      h2 {
+        font-size: 35px;
+        color: #ff193c;
+        margin-bottom: 15px;
+      }
+
+      h3 {
+        margin: 0;
+        font-size: 18px;
+        font-weight: bold;
+        line-height: 1.4;
+        color: #ffffff;
+      }
+
+      p {
+        font-size: 16px;
+        margin: 0;
+        line-height: 1.5;
+        color: #ffffff;
+      }
+
+      a {
+        text-decoration: none;
+        color: #ff193c;
+      }
+
+      .button-container {
+        width: 100%;
+        text-align: center;
+      }
+
+      .button {
+        margin-top: 30px;
+        display: inline-block;
+        background-color: #ff193c;
+        padding: 5px 30px;
+        color: #ffffff;
+        border-radius: 4px;
+        text-decoration: none;
+        text-align: center;
+        font-size: 20px;
+        line-height: 1.5;
+      }
+
+      .inline-link {
+        text-decoration: underline;
+        line-height: 1.5;
+        font-size: 16px;
+      }
+
+      #email {
+        max-width: 1200px;
+        margin: auto;
+        background-color: #410028;
+        background-image: url(<%= ActionController::Base.asset_host + '/' + 'mailer-bg-header.png' %>);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: top;
+      }
+
+      .email-header {
+        width: 100%;
+        padding-top: 45px;
+      }
+
+      .email-header td {
+        text-align: center;
+      }
+
+      .email-header img {
+        width: 66.66%;
+        max-width: 350px;
+      }
+
+      .table-body {
+        margin-top: 95px;
+        padding: 0 8.33%;
+        border: 0;
+        color: #ffffff;
+      }
+
+      .flow > p + p {
+        margin-top: 16px;
+      }
+
+      .table-footer {
+        width: 100%;
+        margin-top: 50px;
+        padding: 0 8.33% 290px;
+        background-image: url(<%= ActionController::Base.asset_host + '/' + 'mailer-bg-footer.png' %>);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center bottom;
+      }
+
+      .table-footer h3,
+      .table-footer ul > li {
+        margin-bottom: 10px;
+      }
+
+      .table-footer p {
+        font-size: 18px;
+        color: #ffffff;
+      }
+
+      .unsubscribe td {
+        padding-top: 25px;
+      }
+
+      .table-footer__text {
+        color: #ffffff;
+        width: 50%;
+      }
+
+      .list {
+        list-style-type: disc;
+        font-size: 18px;
+        margin-left: 25px;
+      }
+
+      ul {
+        list-style-type: none;
+        font-size: 18px;
+      }
+
+      li {
+        color: #ffffff;
+      }
+
+      @media screen and (max-width: 580px) {
+        .table-footer__text {
+          display: block;
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="email">
+      <table role="presentation" class="email-header" style="width: 100%">
+        <tr>
+          <td>
+            <h1>
+              <img
+                alt="Immune Logo"
+                src="<%= ActionController::Base.asset_host + '/' + (@alert ? 'mailer-logo-with-alert.png' : 'mailer-logo.png') %>"
+                aria-label="Logo of Immune"
+              />
+            </h1>
+          </td>
+        </tr>
+      </table>
+
+      <table
+        role="presentation"
+        class="table-body"
+        cellpadding="0"
+        cellspacing="0"
+      >
+        <tr>
+          <td class="flow">
+            <%= yield %>
+          </td>
+        </tr>
+      </table>
+
+      <table
+        class="table-footer"
+        role="presentation"
+        border="0"
+        cellpadding="0"
+      >
+        <tr>
+          <td colspan="2">
+            <h3>immune GmbH</h3>
+          </td>
+        </tr>
+        <tr>
+          <td class="table-footer__text">
+            <ul style="margin: 0; padding: 0">
+              <li style="margin: 0; padding: 0">Kortumstraße 19 - 21</li>
+              <li style="margin: 0; padding: 0">44787 Bochum, Germany</li>
+            </ul>
+          </td>
+
+          <td class="table-footer__text">
+            <ul style="margin: 0; padding: 0">
+              <li style="padding: 0; margin: 0;">
+                Tel.:
+                <a href="#" style="color: #ff193c;">+49 234 689 4188</a>
+              </li>
+              <li style="padding: 0; margin: 0;">
+                Mail:
+                <a href="#" style="color: #ff193c;">contact@immune.gmbh</a>
+              </li>
+            </ul>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>

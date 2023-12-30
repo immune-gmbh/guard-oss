@@ -1,0 +1,117 @@
+{
+  "data": {
+    "id": "c6a1e8b6-08b4-5824-a1d9-9cae7c037550",
+    "type": "membership",
+    "attributes": {
+      "role": "user",
+      "notify_device_update": false,
+      "notify_invoice": false,
+      "can_delete": true,
+      "token": "eyJraWQiOiI4OGZhZWY0YmQyNzVjMmQ3IiwiYWxnIjoiRVMyNTYifQ.eyJhY3QiOnsic3ViIjoidGFnOmltbXUubmUsMjAyMTp1c2VyL2E3ZjdjNGVmLWE5NmItNWQzNy1iNDQyLTlmY2UzMWU2ZDZmNCIsIm5hbWUiOiJLYWkgTm90aWZ5IHRoZSAxc3QiLCJyb2wiOiJ1c2VyIn0sInN1YiI6InRhZzppbW11Lm5lLDIwMjE6b3JnYW5pc2F0aW9uL2EzZTg1Y2U0LTc2ODctNTA3OC04NzE2LWM2YzNkZmFmNTU0ZiIsImp0aSI6ImY2NDk2YjBkMjlkYzFiYTVlNjBjYjRhMjVhMzg5NTIwIiwiZXhwIjoxNjQyNTkxOTA5LCJuYmYiOjE2NDI1MDU1MDksImlhdCI6MTY0MjUwNTUwOSwiaXNzIjoidGFnOmltbXUubmUsMjAyMTpzZXJ2aWNlL2F1dGhzcnYifQ.vltFFeK3ukmI4cSjTx1sAdGmJg69MZvdFWgQ8mmHMFon1-_AvcAO7qLfqCQJOmXNDpJpgXMoHg7SNvhGEIc5Cw",
+      "enrollment_token": "eyJraWQiOiI4OGZhZWY0YmQyNzVjMmQ3IiwiYWxnIjoiRVMyNTYifQ.eyJhY3QiOnsic3ViIjoidGFnOmltbXUubmUsMjAyMTphZ2VudCJ9LCJzdWIiOiJ0YWc6aW1tdS5uZSwyMDIxOm9yZ2FuaXNhdGlvbi9hM2U4NWNlNC03Njg3LTUwNzgtODcxNi1jNmMzZGZhZjU1NGYiLCJqdGkiOiJmNjQ5NmIwZDI5ZGMxYmE1ZTYwY2I0YTI1YTM4OTUyMCIsImV4cCI6MTY0MjU5MTkwOSwibmJmIjoxNjQyNTA1NTA5LCJpYXQiOjE2NDI1MDU1MDksImlzcyI6InRhZzppbW11Lm5lLDIwMjE6c2VydmljZS9hdXRoc3J2In0.z9bQ_tFPFN1ksUZazoM2_hgjpmei141_fOsfu5Zp2gz7UNTn5ggVWfFfpWy7suZ6jPXBJM432_Nu4LiFQAfH8g"
+    },
+    "relationships": {
+      "organisation": {
+        "data": {
+          "id": "a3e85ce4-7687-5078-8716-c6c3dfaf554f",
+          "type": "organisation"
+        }
+      },
+      "user": {
+        "data": {
+          "id": "a7f7c4ef-a96b-5d37-b442-9fce31e6d6f4",
+          "type": "user"
+        }
+      }
+    }
+  },
+  "included": [
+    {
+      "id": "233eca70-6419-5d2b-8006-1b6a6392046b",
+      "type": "subscription",
+      "attributes": {
+        "status": "created",
+        "current_devices_amount": 0,
+        "max_devices_amount": 50,
+        "period_start": "2022-01-13",
+        "period_end": "2022-01-23",
+        "tax_rate": null,
+        "monthly_base_fee": 15,
+        "monthly_fee_per_device": 5,
+        "action_required": false,
+        "billing_details": {
+          "free_credits": 0
+        },
+        "setup_intent_secret": null
+      }
+    },
+    {
+      "id": "a3e85ce4-7687-5078-8716-c6c3dfaf554f",
+      "type": "organisation",
+      "attributes": {
+        "name": "Kai's Organisation",
+        "vat_number": null,
+        "splunk_enabled": true,
+        "splunk_accept_all_server_certificates": true,
+        "splunk_event_collector_url": "https://siem.example.com/splunk/services/collector",
+        "splunk_authentication_token": "deadbeef",
+        "syslog_enabled": true,
+        "syslog_hostname_or_address": "siem.example.com",
+        "syslog_udp_port": "514",
+        "invoice_name": null,
+        "status": "created",
+        "freeloader": false,
+        "member_count": 3,
+        "can_edit": true,
+        "can_delete": true,
+        "can_read": true
+      },
+      "relationships": {
+        "memberships": {
+          "data": [
+            {
+              "id": "628cf88a-94a9-55bf-bea4-fea7e6f4f4bc",
+              "type": "membership"
+            },
+            {
+              "id": "c6a1e8b6-08b4-5824-a1d9-9cae7c037550",
+              "type": "membership"
+            },
+            {
+              "id": "581a833c-ef2b-5744-8c26-4286f5f1785c",
+              "type": "membership"
+            }
+          ]
+        },
+        "users": {
+          "data": [
+            {
+              "id": "307f78d7-877b-53d0-abb3-c063159413fc",
+              "type": "user"
+            },
+            {
+              "id": "a7f7c4ef-a96b-5d37-b442-9fce31e6d6f4",
+              "type": "user"
+            },
+            {
+              "id": "6f06976d-7a1a-558b-a304-33183497d32a",
+              "type": "user"
+            }
+          ]
+        },
+        "subscription": {
+          "data": {
+            "id": "233eca70-6419-5d2b-8006-1b6a6392046b",
+            "type": "subscription"
+          }
+        },
+        "address": {
+          "data": {
+            "id": "4d9a5fa8-08bc-5b02-a478-76b1f4d30e90",
+            "type": "address"
+          }
+        }
+      }
+    }
+  ]
+}

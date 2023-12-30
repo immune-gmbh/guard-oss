@@ -1,0 +1,145 @@
+.DS_Store
+node_modules
+.vscode
+
+# --- agent ---
+/agent/
+
+# --- apisrv ---
+/apisrv/server
+/apisrv/migration
+/apisrv/coverage.*
+/apisrv/apisrv
+/apisrv/ops
+/apisrv/peacemaker
+/apisrv/apisrv.yaml
+/apisrv/test/output/*
+
+# --- webapp ---
+/webapp/dist/main.js*
+/webapp/dist/*.eot
+/webapp/dist/*.ttf
+/webapp/dist/*.woff
+/webapp/dist/*.woff2
+/webapp/dist/*.png
+/webapp/stats.json
+/webapp/coverage
+/webapp/dist
+
+# --- webapp ---
+/webapp-v2/.nyc_output
+
+# --- authsrv ---
+# Ignore bundler config.
+/authsrv/.bundle
+
+# Ignore the default SQLite database.
+/authsrv/db/*.sqlite3
+/authsrv/db/*.sqlite3-journal
+/authsrv/db/*.sqlite3-*
+
+# Ignore all logfiles and tempfiles.
+/authsrv/log/*
+/authsrv/tmp/*
+!/authsrv/log/.keep
+!/authsrv/tmp/.keep
+
+# Ignore pidfiles, but keep the directory.
+/authsrv/tmp/pids/*
+!/authsrv/tmp/pids/
+!/authsrv/tmp/pids/.keep
+
+# Ignore uploaded files in development.
+/authsrv/storage/*
+!/authsrv/storage/.keep
+
+/authsrv/public/assets
+.byebug_history
+
+# Ignore master key for decrypting credentials and more.
+/authsrv/config/master.key
+
+/authsrv/public/packs
+/authsrv/public/packs-test
+/authsrv/yarn-error.log
+yarn-debug.log*
+.yarn-integrity
+
+/authsrv/public/packs
+/authsrv/public/packs-test
+/authsrv/public/assets
+/authsrv/coverage
+
+# --- simulator ---
+/_acceptance/support/extend-pcr0
+/_acceptance/specs/__image_snapshots__
+
+# --- docs ---
+/_documentation/whitepaper/main.toc
+/_documentation/whitepaper/main.aux
+/_documentation/whitepaper/main.fls
+/_documentation/whitepaper/main.fdb_latexmk
+/_documentation/whitepaper/main.log
+/_documentation/whitepaper/main.out
+/_documentation/whitepaper/main.pdf
+/_documentation/whitepaper/main.synctex.gz
+/_documentation/whitepaper/main.xdv
+/_documentation/whitepaper/missfont.log
+/_documentation/apisrv-v2/dist/*.js
+/_documentation/apisrv-v2/dist/*.js.map
+
+# --- visual studio artifacts --- #
+/driver/win64/**/*.user
+/driver/win64/**/.vs
+/driver/win64/.vs
+/driver/win64/x64
+/driver/win64/Debug
+/driver/win64/Release
+/driver/win64/**/x64
+/driver/win64/**/Debug
+/driver/win64/**/Release
+
+# --- kernel build system --- #
+/driver/linux/**/build
+
+# --- authsrv v2 ---
+# Ignore bundler config.
+/authsrv2/.bundle
+
+# Ignore all logfiles and tempfiles.
+/authsrv2/log/*
+/authsrv2/tmp/*
+!/authsrv2/log/.keep
+!/authsrv2/tmp/.keep
+
+# Ignore pidfiles, but keep the directory.
+/authsrv2/tmp/pids/*
+!/authsrv2/tmp/pids/
+!/authsrv2/tmp/pids/.keep
+
+# Ignore uploaded files in development.
+/authsrv2/storage/*
+!/authsrv2/storage/.keep
+
+/authsrv2/public/assets
+/authsrv2.byebug_history
+
+# Ignore master key for decrypting credentials and more.
+/authsrv2/config/master.key
+/authsrv2/config/credentials/development.key
+/authsrv2/config/credentials/production.key
+
+/authsrv2/coverage
+/authsrv2/logs
+/authsrv2/test/fixtures/output
+
+# Ignore Mock bin folder
+/_mock/bin/rackup
+
+# package build artifacts
+/_packaging/**/*.msi
+/_packaging/driver/**/*.deb
+/_packaging/driver/**/*.rpm
+/_packaging/driver/**/*.tar.gz
+/_packaging/driver/**/dkms
+/_packaging/driver/**/dkms_src

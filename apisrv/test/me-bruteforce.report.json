@@ -1,0 +1,127 @@
+{
+  "type": "report/2",
+  "values": {
+    "host": {
+      "name": "Debian GNU/Linux 10 (buster)",
+      "hostname": "stboot",
+      "type": "linux",
+      "cpu_vendor": ""
+    },
+    "me": {
+      "variant": "Consumer CSME",
+      "version": [
+        11,
+        8,
+        70,
+        3626
+      ],
+      "fitc_version": [
+        11,
+        6,
+        20,
+        1221
+      ],
+      "recovery_version": [
+        11,
+        8,
+        70,
+        3626
+      ],
+      "available_features": [
+        "Manageability",
+        "Capability Licensing Service",
+        "Protected Audio Video Path",
+        "Dynamic Application Loader",
+        "Cipher Transport Layer",
+        "Wireless Display",
+        "Platform Trust Technology"
+      ],
+      "enabled_features": [
+        "Manageability",
+        "Capability Licensing Service",
+        "Protected Audio Video Path",
+        "Dynamic Application Loader",
+        "Cipher Transport Layer",
+        "Wireless Display",
+        "Platform Trust Technology"
+      ],
+      "flash_locked": true
+    },
+    "amt": {
+      "enabled": false,
+      "provisioned": false,
+      "type": "Desktop, corporate",
+      "webui": {
+        "enabled": false,
+        "active": false
+      },
+      "fuse": false,
+      "flash_protections": false,
+      "update": false,
+      "hw_crypto": false,
+      "zero_touch": false
+    }
+  },
+  "annotations": [
+    {
+      "id": "host-cpu-ven",
+      "path": "/host/cpu_vendor",
+      "fatal": false
+    },
+    {
+      "id": "uefi-vars-miss",
+      "path": "/uefi",
+      "fatal": false
+    },
+    {
+      "id": "tpm-miss",
+      "path": "/tpm",
+      "fatal": false
+    },
+    {
+      "id": "me-miss",
+      "path": "/me",
+      "fatal": false
+    },
+    {
+      "id": "me-version-miss",
+      "path": "/me/version",
+      "fatal": true
+    },
+    {
+      "id": "me-version-miss",
+      "path": "/amt/versions",
+      "fatal": true
+    },
+    {
+      "id": "me-version-miss",
+      "path": "/amt/zero_touch",
+      "fatal": true
+    },
+    {
+      "id": "me-version-miss",
+      "path": "/amt",
+      "fatal": true
+    },
+    {
+      "id": "amt-log-miss",
+      "path": "/me/audit_log",
+      "fatal": false
+    },
+    {
+      "id": "sgx-missing",
+      "path": "/sgx",
+      "fatal": false
+    },
+    {
+      "id": "txt-public-miss",
+      "path": "/txt",
+      "fatal": false
+    },
+    {
+      "id": "sev-miss",
+      "path": "/sev",
+      "fatal": false
+    }
+  ]
+}

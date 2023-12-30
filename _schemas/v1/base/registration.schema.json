@@ -1,0 +1,32 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://immu.ne/api-v1-registration.schema.json",
+
+  "title": "Registration",
+  "description": "Initial client data for enrollment",
+
+  "type": "object",
+  "properties": {
+    "name_hint":{
+      "description":"Human readable name of the device",
+      "type": "string"
+    },
+    "ek_public":{
+      "description":"TPM2_PUBLIC of the endorsement key",
+      "type": "string"
+    },
+    "ek_certificate":{
+      "description":"X.509 certificate of the endorsement key",
+      "type": "string"
+    },
+    "root_key":{
+      "description":"TPM2_PUBLIC of the fresh root key",
+      "type": "string"
+    },
+     "quote_key":{
+      "description":"Attestation key under root",
+      "type": "object"
+    }
+  },
+  "required":[ "name_hint", "ek_public", "root_key", "quote_key" ]
+}

@@ -1,0 +1,28 @@
+digraph state {
+    subgraph device {
+        init -> new [label="POST /v2/devices"]
+        
+        new -> unseen [label="POST /v2/enroll"]
+        unseen -> vuln [label="POST /v2/attest"]
+        vuln -> vuln [label="POST /v2/attest"]
+        vuln -> outdated [label="(apisrv cronjob)"]
+        outdated -> vuln [label="POST /v2/attest"]
+            
+        new -> retired [label="PATCH /v2/devices/:id"]
+        vuln -> retired [label="PATCH /v2/devices/:id"]
+        unseen -> retired [label="PATCH /v2/devices/:id"]
+        outdated -> retired [label="PATCH /v2/devices/:id"]
+    }
+    
+    subgraph policy {
+        init2 -> templated [label="POST /v2/policies"]
+        init2 -> active [label="POST /v2/policies"]
+        
+        templated -> active [label="POST /v2/attest"]
+        active -> inactive [label="PATCH /v2/devices/:id"]
+        templated -> inactive [label="PATCH /v2/devices/:id"]
+        
+        templated -> revoked [label="DELETE /v2/policies/:id"]
+        active -> revoked [label="POST /v2/policies"]
+    }  
+}

@@ -1,0 +1,36 @@
+name: Unit tests (wix)
+on: 
+  pull_request: {}
+jobs:
+  wix-msi:
+    timeout-minutes: 20
+    runs-on: ubuntu-20.04
+    defaults:
+      run:
+        working-directory: ./_packaging/agent/wix
+
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          lfs: true
+      - uses: technote-space/get-diff-action@v5
+        with:
+          PATTERNS: |
+            _packaging/agent/wix/**
+            .github/workflows/unit-tests-wix.yml
+      - name: Mock build inputs
+        if: env.GIT_DIFF
+        run: |
+          mv stub/dummy.exe guard-win.exe
+      - name: Make the wix/ directory writable for the dockerized WIX tools
+        if: env.GIT_DIFF
+        run: |
+          chmod g+w .
+          chgrp 101 .
+      - name: Build MSI package from XML sources
+        if: env.GIT_DIFF
+        run: |
+          make \
+            CANDLE="docker run --rm -e ProgramData=\"C:\\ProgramData\" -v $(pwd):/wix:rw dactiv/wix candle" \
+            LIGHT="docker run --rm -v $(pwd):/wix:rw dactiv/wix light" \
+            WIXLIBDIR="Z:\\home\\wine\\wix\\"

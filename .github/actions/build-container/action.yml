@@ -1,0 +1,71 @@
+name: 'Build container'
+description: 'Build and push a docker container'
+inputs:
+  dockerfile:
+    description: 'Path to the Dockerfile'
+    required: true
+  basename:
+    description: 'Name of the container'
+    required: true
+  prefix:
+    description: 'Container registry host and path'
+    required: true
+    default: "ghcr.io/immune-gmbh"
+  cr_token:
+    description: 'Github container registry token'
+    required: true
+  always_push:
+    description: 'Push container even when not tagged'
+    required: false
+outputs:
+  sha_tag:
+    description: 'Docker image tag of the form sha-1122334455'
+    value: ${{ steps.locals.outputs.sha_tag }}
+runs:
+  using: "composite"
+  steps:
+    - uses: docker/setup-buildx-action@v1
+
+    - uses: docker/metadata-action@v3
+      name: Setup docker tags
+      id: docker
+      with:
+        images: ${{ inputs.prefix }}/${{ inputs.basename }}
+        labels: |
+          maintainer=kai.michaelis@immu.ne
+          org.opencontainers.image.title=${{ inputs.basename }}
+          org.opencontainers.image.vendor=immune GmbH
+        flavor: |
+          latest=true
+        tags: |
+          type=sha
+          type=match,pattern=r\d+
+
+    - name: Setup action variables
+      id: locals
+      shell: bash
+      run: |
+        echo "::set-output name=release_id::$(git describe --tags)"
+        echo "::set-output name=cache_image::${{ inputs.prefix }}/${{ inputs.basename }}:cache"
+        echo "::set-output name=sha_tag::$(echo "${{ steps.docker.outputs.tags }}" | head -1)"
+
+    - uses: docker/login-action@v1 
+      with:
+        registry: ghcr.io
+        username: ${{ github.repository_owner }}
+        password: ${{ inputs.cr_token }}
+    - uses: crazy-max/ghaction-dump-context@v1
+    - name: Build and push container
+      uses: docker/build-push-action@v2
+      with:
+        context: ./
+        file: ${{ inputs.dockerfile }}
+        cache-to: type=registry,ref=${{ steps.locals.outputs.cache_image }}
+        cache-from: type=registry,ref=${{ steps.locals.outputs.cache_image }}
+        push: ${{ github.event_name == 'push' && (startsWith(github.ref, 'refs/tags/') || inputs.always_push) }}
+        secrets: |
+          GIT_AUTH_TOKEN=${{ github.token }}
+        build-args: |
+          RELEASE_ID=${{ steps.locals.outputs.release_id }}
+        tags: ${{ steps.docker.outputs.tags }}
+        labels: ${{ steps.docker.outputs.labels }}

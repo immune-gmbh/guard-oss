@@ -1,0 +1,43 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://immu.ne/api-v1-appraisal.schema.json",
+
+  "title": "Appraisal",
+  "description": "Result of validating a quote against the device's policies",
+
+  "type": "object",
+  "properties": {
+    "verdict":{
+      "type":"boolean",
+      "description":"Result of the appraisal. Trusted if true, modified if false"
+    },
+    "received":{
+      "type": "string",
+      "pattern": "^[0-9]+$",
+      "description":"Unix timestamp when the quote was received"
+    },
+    "valid_pcrs":{
+      "type":"object",
+      "description":"PCRs and values that match the policy"
+    },
+    "invalid_pcrs":{
+      "type":"object",
+      "description":"PCRs and values that are present in the policy but don't match it"
+    },
+    "ignored_pcrs":{
+      "type":"object",
+      "description":"PCRs and values that are not mentioned in the policy"
+    },
+    "report":{
+      "type":"object",
+      "description":"Security report of the platform"
+    },
+    "policy":{
+      "type":"string",
+      "description":"Matched policy ID",
+      "minLength": 1
+    }
+  },
+  "required":[ "verdict", "received", "policy", "valid_pcrs", "invalid_pcrs", "ignored_pcrs" ],
+  "readOnly": true
+}

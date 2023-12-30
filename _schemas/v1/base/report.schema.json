@@ -1,0 +1,216 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://immu.ne/api-v1-report.schema.json",
+
+  "title": "Report",
+  "description": "Firmware report send as part of the attestation.",
+
+  "type": "object",
+  "properties": {
+    "os":{
+      "type":"object",
+      "description":"OS specific data.",
+      "properties":{
+        "name":{
+          "type":"string"
+        },
+        "hostname":{
+          "type":"string"
+        }
+      }
+    },
+    "smbios":{
+      "type":"object",
+      "properties":{
+        "manufacturer": {
+          "type": "string"
+        },
+        "product":{
+          "type":"string"
+        },
+        "bios_release_date":{
+          "type":"string"
+        },
+        "bios_vendor":{
+          "type":"string"
+        },
+        "bios_version":{
+          "type":"string"
+        }
+      }
+    },
+    "uefi":{
+      "type":"object",
+      "properties":{
+        "secureboot": {
+          "type": "string",
+          "enum": [
+            "enabled", "disabled", "setup"
+          ]
+        },
+        "platform_keys":{
+          "type":"array",
+          "items": {
+            "type": "string"
+          }
+        },
+         "exchange_keys":{
+          "type":"array",
+          "items": {
+            "type": "string"
+          }
+        },
+         "permitted_keys":{
+          "type":"array",
+          "items": {
+            "type": "string"
+          }
+        },
+         "forbidden_keys":{
+          "type":"array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+   "tpm":{
+      "type":"object",
+      "properties":{
+        "manufacturer": {
+          "type": "string"
+        },
+        "vendor_id": {
+          "type": "string"
+        },
+        "spec_version":{
+          "type":"integer"
+        },
+        "event_log": {
+          "type": "string"
+        }
+      }
+    },
+   "csme":{
+      "type":"object",
+      "properties":{
+        "variant": {
+          "type": "string",
+          "enum": ["icu", "txe", "consumer", "business", "light", "sps", "unknown"]
+        },
+        "version":{
+          "type":"array",
+          "items":{
+            "type": "integer"
+          },
+          "minItems":4,
+          "maxItems":4
+        },
+        "recovery_version":{
+          "type":"array",
+          "items":{
+            "type": "integer"
+          },
+          "minItems":4,
+          "maxItems":4
+        },
+         "fitc_version":{
+          "type":"array",
+          "items":{
+            "type": "integer"
+          },
+          "minItems":4,
+          "maxItems":4
+        }
+       }
+    },
+
+    "sgx": {
+      "type":"object",
+      "properties":{
+        "version": {
+          "type": "integer"
+        },
+        "enabled":{
+          "type":"boolean"
+        },
+        "flc":{
+          "type":"boolean"
+        },
+        "kss":{
+          "type":"boolean"
+        },
+        "enclave_size_32": {
+          "type": "integer"
+        },
+        "enclave_size_64": {
+          "type": "integer"
+        },
+        "epc":{
+          "type":"array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "base": {
+                "type": "integer"
+              },
+              "size": {
+                "type": "integer"
+              },
+              "cir_protection": {
+                "type": "boolean"
+              }
+            }
+          }
+        }
+      }
+    },
+   "txt":{
+      "type":"object",
+      "properties":{
+        "ready": {
+          "type": "boolean"
+        }
+      }
+    },
+    "sev": {
+      "type":"object",
+      "properties":{
+        "enabled": {
+          "type": "boolean"
+        },
+        "version":{
+          "type":"array",
+          "items":{
+            "type": "integer"
+          },
+          "minItems":3,
+          "maxItems":3
+        },
+        "sme": {
+          "type": "boolean"
+        },
+        "es": {
+          "type": "boolean"
+        },
+        "vte": {
+          "type": "boolean"
+        },
+        "snp": {
+          "type": "boolean"
+        },
+        "vmpl": {
+          "type": "boolean"
+        },   
+        "guests": {
+          "type": "integer"
+        },
+        "min_asid": {
+          "type": "integer"
+        }
+      }
+    }
+  },
+  "required":[],
+  "readOnly": true
+}

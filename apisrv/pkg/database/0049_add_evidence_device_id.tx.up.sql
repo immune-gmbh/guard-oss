@@ -1,0 +1,2 @@
+ALTER TABLE v2.evidence
+ADD COLUMN device_id BIGINT REFERENCES v2.devices DEFAULT NULL;

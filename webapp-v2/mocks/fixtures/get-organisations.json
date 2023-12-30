@@ -1,0 +1,376 @@
+{
+  "data": [
+    {
+      "id": "a3e85ce4-7687-5078-8716-c6c3dfaf554f",
+      "type": "organisation",
+      "attributes": {
+        "name": "Kai's Organisation",
+        "subscription_id": "233eca70-6419-5d2b-8006-1b6a6392046b",
+        "vat_number": null,
+        "splunk_enabled": true,
+        "splunk_accept_all_server_certificates": true,
+        "splunk_event_collector_url": "https://siem.example.com/splunk/services/collector",
+        "splunk_authentication_token": "deadbeef",
+        "syslog_enabled": true,
+        "syslog_hostname_or_address": "siem.example.com",
+        "syslog_udp_port": "514",
+        "invoice_name": null,
+        "status": "created",
+        "freeloader": false,
+        "can_edit": true,
+        "can_delete": true,
+        "can_read": true
+      },
+      "relationships": {
+        "memberships": {
+          "data": [
+            {
+              "id": "628cf88a-94a9-55bf-bea4-fea7e6f4f4bc",
+              "type": "membership"
+            },
+            {
+              "id": "c6a1e8b6-08b4-5824-a1d9-9cae7c037550",
+              "type": "membership"
+            },
+            {
+              "id": "581a833c-ef2b-5744-8c26-4286f5f1785c",
+              "type": "membership"
+            }
+          ]
+        },
+        "users": {
+          "data": [
+            {
+              "id": "a7f7c4ef-a96b-5d37-b442-9fce31e6d6f4",
+              "type": "user"
+            },
+            {
+              "id": "6f06976d-7a1a-558b-a304-33183497d32a",
+              "type": "user"
+            },
+            {
+              "id": "307f78d7-877b-53d0-abb3-c063159413fc",
+              "type": "user"
+            }
+          ]
+        },
+        "subscription": {
+          "data": {
+            "id": "233eca70-6419-5d2b-8006-1b6a6392046b",
+            "type": "subscription"
+          }
+        },
+        "address": {
+          "data": {
+            "id": "4d9a5fa8-08bc-5b02-a478-76b1f4d30e90",
+            "type": "address"
+          }
+        }
+      }
+    },
+    {
+      "id": "3ceecfd9-1f59-53a2-b2ff-636900e70668",
+      "type": "organisation",
+      "attributes": {
+        "name": "Testy's Organisation",
+        "subscription_id": null,
+        "vat_number": null,
+        "splunk_enabled": null,
+        "splunk_accept_all_server_certificates": true,
+        "splunk_event_collector_url": null,
+        "splunk_authentication_token": null,
+        "syslog_enabled": null,
+        "syslog_hostname_or_address": null,
+        "syslog_udp_port": null,
+        "invoice_name": null,
+        "status": "created",
+        "freeloader": false,
+        "can_edit": false,
+        "can_delete": false,
+        "can_read": true
+      },
+      "relationships": {
+        "memberships": {
+          "data": [
+            {
+              "id": "a27058c8-a6d9-5463-9eca-d9ef18d36bf0",
+              "type": "membership"
+            },
+            {
+              "id": "88bb0164-2a74-5f3b-b0b0-0928de530b93",
+              "type": "membership"
+            }
+          ]
+        },
+        "users": {
+          "data": [
+            {
+              "id": "7abc53af-a587-5175-9627-08dffa7bb969",
+              "type": "user"
+            },
+            {
+              "id": "307f78d7-877b-53d0-abb3-c063159413fc",
+              "type": "user"
+            }
+          ]
+        },
+        "subscription": {
+          "data": null
+        },
+        "address": {
+          "data": null
+        }
+      }
+    },
+    {
+      "id": "0c3bc2ba-3da1-5e61-be33-c795d01a19f3",
+      "type": "organisation",
+      "attributes": {
+        "name": "Payment reminder Organisation",
+        "subscription_id": null,
+        "vat_number": null,
+        "splunk_enabled": null,
+        "splunk_accept_all_server_certificates": true,
+        "splunk_event_collector_url": null,
+        "splunk_authentication_token": null,
+        "syslog_enabled": null,
+        "syslog_hostname_or_address": null,
+        "syslog_udp_port": null,
+        "invoice_name": null,
+        "status": "active",
+        "freeloader": false,
+        "can_edit": true,
+        "can_delete": true,
+        "can_read": true
+      },
+      "relationships": {
+        "memberships": {
+          "data": [
+            {
+              "id": "52b80f97-fdfa-560b-a170-b68e0c28a9ac",
+              "type": "membership"
+            }
+          ]
+        },
+        "users": {
+          "data": [
+            {
+              "id": "307f78d7-877b-53d0-abb3-c063159413fc",
+              "type": "user"
+            }
+          ]
+        },
+        "subscription": {
+          "data": null
+        },
+        "address": {
+          "data": null
+        }
+      }
+    }
+  ],
+  "included": [
+    {
+      "id": "628cf88a-94a9-55bf-bea4-fea7e6f4f4bc",
+      "type": "membership",
+      "attributes": {
+        "name": "Kai's Organisation",
+        "user_name": "Kai Michaelis",
+        "user_email": "kai.michaelis@immu.ne",
+        "role": "owner",
+        "notify_device_update": true,
+        "notify_invoice": false,
+        "organisation_id": "a3e85ce4-7687-5078-8716-c6c3dfaf554f",
+        "can_delete": true,
+        "token": "eyJraWQiOiJiZDAwN2I5ZjExODAwMTUwIiwiYWxnIjoiRVMyNTYifQ.eyJhY3QiOnsic3ViIjoidGFnOmltbXUubmUsMjAyMTp1c2VyLzMwN2Y3OGQ3LTg3N2ItNTNkMC1hYmIzLWMwNjMxNTk0MTNmYyIsIm5hbWUiOiJLYWkgTWljaGFlbGlzIiwicm9sIjoidXNlciJ9LCJzdWIiOiJ0YWc6aW1tdS5uZSwyMDIxOm9yZ2FuaXNhdGlvbi9hM2U4NWNlNC03Njg3LTUwNzgtODcxNi1jNmMzZGZhZjU1NGYiLCJqdGkiOiJkMWY2YzUyMDMwNGI3ZDAzNjQyMjYwOGJjYjZhZTQ2MSIsImV4cCI6MTY0MDg4ODQwNSwibmJmIjoxNjQwODAyMDA1LCJpYXQiOjE2NDA4MDIwMDUsImlzcyI6InRhZzppbW11Lm5lLDIwMjE6c2VydmljZS9hdXRoc3J2In0._pkmFDSxlqHc2kxlSNPucTOSKARcTjrSNxfiim1jrgFBSS7P5e1FBzzEAJfJzw2ojFnfR9VB2cm-7TiDc0M0jg",
+        "enrollment_token": "eyJraWQiOiJiZDAwN2I5ZjExODAwMTUwIiwiYWxnIjoiRVMyNTYifQ.eyJhY3QiOnsic3ViIjoidGFnOmltbXUubmUsMjAyMTphZ2VudCJ9LCJzdWIiOiJ0YWc6aW1tdS5uZSwyMDIxOm9yZ2FuaXNhdGlvbi9hM2U4NWNlNC03Njg3LTUwNzgtODcxNi1jNmMzZGZhZjU1NGYiLCJqdGkiOiJkMWY2YzUyMDMwNGI3ZDAzNjQyMjYwOGJjYjZhZTQ2MSIsImV4cCI6MTY0MDg4ODQwNSwibmJmIjoxNjQwODAyMDA1LCJpYXQiOjE2NDA4MDIwMDUsImlzcyI6InRhZzppbW11Lm5lLDIwMjE6c2VydmljZS9hdXRoc3J2In0.hSPRk8kCF6HUk3j5G90EZGAzf9K8--G-YTB8ZRn0aVQrxkUe94wsOs-A678Wv5wCSy5f4hnbFa1Hj-9ckXk8mw"
+      },
+      "relationships": {
+        "organisation": {
+          "data": {
+            "id": "a3e85ce4-7687-5078-8716-c6c3dfaf554f",
+            "type": "organisation"
+          }
+        },
+        "user": {
+          "data": {
+            "id": "307f78d7-877b-53d0-abb3-c063159413fc",
+            "type": "user"
+          }
+        }
+      }
+    },
+    {
+      "id": "c6a1e8b6-08b4-5824-a1d9-9cae7c037550",
+      "type": "membership",
+      "attributes": {
+        "name": "Kai's Organisation",
+        "user_name": "Kai Notify the 1st",
+        "user_email": "kai1@immu.ne",
+        "role": "user",
+        "notify_device_update": false,
+        "notify_invoice": false,
+        "organisation_id": "a3e85ce4-7687-5078-8716-c6c3dfaf554f",
+        "can_delete": true,
+        "token": "eyJraWQiOiJiZDAwN2I5ZjExODAwMTUwIiwiYWxnIjoiRVMyNTYifQ.eyJhY3QiOnsic3ViIjoidGFnOmltbXUubmUsMjAyMTp1c2VyL2E3ZjdjNGVmLWE5NmItNWQzNy1iNDQyLTlmY2UzMWU2ZDZmNCIsIm5hbWUiOiJLYWkgTm90aWZ5IHRoZSAxc3QiLCJyb2wiOiJ1c2VyIn0sInN1YiI6InRhZzppbW11Lm5lLDIwMjE6b3JnYW5pc2F0aW9uL2EzZTg1Y2U0LTc2ODctNTA3OC04NzE2LWM2YzNkZmFmNTU0ZiIsImp0aSI6IjkyZWIzNzg1ZWEwNGYwMDMwMTBiZDIzMWI4ZTk0NDM4IiwiZXhwIjoxNjQwODg4NDA1LCJuYmYiOjE2NDA4MDIwMDUsImlhdCI6MTY0MDgwMjAwNSwiaXNzIjoidGFnOmltbXUubmUsMjAyMTpzZXJ2aWNlL2F1dGhzcnYifQ.CMem6AiGBIDpBuK3igc0FsShmM0ysRbZrSqm7W4b-gkq2y3D31QvlbxC4Qupok7QDpDl21tXQJetm7Nlue-THQ",
+        "enrollment_token": "eyJraWQiOiJiZDAwN2I5ZjExODAwMTUwIiwiYWxnIjoiRVMyNTYifQ.eyJhY3QiOnsic3ViIjoidGFnOmltbXUubmUsMjAyMTphZ2VudCJ9LCJzdWIiOiJ0YWc6aW1tdS5uZSwyMDIxOm9yZ2FuaXNhdGlvbi9hM2U4NWNlNC03Njg3LTUwNzgtODcxNi1jNmMzZGZhZjU1NGYiLCJqdGkiOiI5MmViMzc4NWVhMDRmMDAzMDEwYmQyMzFiOGU5NDQzOCIsImV4cCI6MTY0MDg4ODQwNSwibmJmIjoxNjQwODAyMDA1LCJpYXQiOjE2NDA4MDIwMDUsImlzcyI6InRhZzppbW11Lm5lLDIwMjE6c2VydmljZS9hdXRoc3J2In0.V_3g3hbNwaOMJy7KU0NtsU7LDyHOtilJ4_oG5NoV4TGRe5PSjB0j0CSOUVR4ao5878ZvoV1Fcs6VHbI8pMoXDQ"
+      },
+      "relationships": {
+        "organisation": {
+          "data": {
+            "id": "a3e85ce4-7687-5078-8716-c6c3dfaf554f",
+            "type": "organisation"
+          }
+        },
+        "user": {
+          "data": {
+            "id": "a7f7c4ef-a96b-5d37-b442-9fce31e6d6f4",
+            "type": "user"
+          }
+        }
+      }
+    },
+    {
+      "id": "581a833c-ef2b-5744-8c26-4286f5f1785c",
+      "type": "membership",
+      "attributes": {
+        "name": "Kai's Organisation",
+        "user_name": "Kai Notify the 2nd",
+        "user_email": "kai2@immu.ne",
+        "role": "user",
+        "notify_device_update": false,
+        "notify_invoice": false,
+        "organisation_id": "a3e85ce4-7687-5078-8716-c6c3dfaf554f",
+        "can_delete": true,
+        "token": "eyJraWQiOiJiZDAwN2I5ZjExODAwMTUwIiwiYWxnIjoiRVMyNTYifQ.eyJhY3QiOnsic3ViIjoidGFnOmltbXUubmUsMjAyMTp1c2VyLzZmMDY5NzZkLTdhMWEtNTU4Yi1hMzA0LTMzMTgzNDk3ZDMyYSIsIm5hbWUiOiJLYWkgTm90aWZ5IHRoZSAybmQiLCJyb2wiOiJ1c2VyIn0sInN1YiI6InRhZzppbW11Lm5lLDIwMjE6b3JnYW5pc2F0aW9uL2EzZTg1Y2U0LTc2ODctNTA3OC04NzE2LWM2YzNkZmFmNTU0ZiIsImp0aSI6IjM5NzU3Y2VjOGRiNDY3NTZiOTRiZjA1ZmMyYmE0NWFlIiwiZXhwIjoxNjQwODg4NDA1LCJuYmYiOjE2NDA4MDIwMDUsImlhdCI6MTY0MDgwMjAwNSwiaXNzIjoidGFnOmltbXUubmUsMjAyMTpzZXJ2aWNlL2F1dGhzcnYifQ.AdJYFmLPTJ0-n0kJ95sO2cQuNrj_7tyKb4Hta-qwqfbrmVjiWhDT0g90YY_VUHGWiEyakXMzr3_KXesvsN4dSQ",
+        "enrollment_token": "eyJraWQiOiJiZDAwN2I5ZjExODAwMTUwIiwiYWxnIjoiRVMyNTYifQ.eyJhY3QiOnsic3ViIjoidGFnOmltbXUubmUsMjAyMTphZ2VudCJ9LCJzdWIiOiJ0YWc6aW1tdS5uZSwyMDIxOm9yZ2FuaXNhdGlvbi9hM2U4NWNlNC03Njg3LTUwNzgtODcxNi1jNmMzZGZhZjU1NGYiLCJqdGkiOiIzOTc1N2NlYzhkYjQ2NzU2Yjk0YmYwNWZjMmJhNDVhZSIsImV4cCI6MTY0MDg4ODQwNSwibmJmIjoxNjQwODAyMDA1LCJpYXQiOjE2NDA4MDIwMDUsImlzcyI6InRhZzppbW11Lm5lLDIwMjE6c2VydmljZS9hdXRoc3J2In0.Wl976IDzgJZCM9giHQji92hz5vUJalZOz8ltM_KY0MxGhLPTmIO3HNP7QPsBkLUBAagBvyCshJpeO-ihGKcrxQ"
+      },
+      "relationships": {
+        "organisation": {
+          "data": {
+            "id": "a3e85ce4-7687-5078-8716-c6c3dfaf554f",
+            "type": "organisation"
+          }
+        },
+        "user": {
+          "data": {
+            "id": "6f06976d-7a1a-558b-a304-33183497d32a",
+            "type": "user"
+          }
+        }
+      }
+    },
+    {
+      "id": "a27058c8-a6d9-5463-9eca-d9ef18d36bf0",
+      "type": "membership",
+      "attributes": {
+        "name": "Testy's Organisation",
+        "user_name": "Kai Michaelis",
+        "user_email": "kai.michaelis@immu.ne",
+        "role": "user",
+        "notify_device_update": false,
+        "notify_invoice": false,
+        "organisation_id": "3ceecfd9-1f59-53a2-b2ff-636900e70668",
+        "can_delete": true,
+        "token": "eyJraWQiOiJiZDAwN2I5ZjExODAwMTUwIiwiYWxnIjoiRVMyNTYifQ.eyJhY3QiOnsic3ViIjoidGFnOmltbXUubmUsMjAyMTp1c2VyLzMwN2Y3OGQ3LTg3N2ItNTNkMC1hYmIzLWMwNjMxNTk0MTNmYyIsIm5hbWUiOiJLYWkgTWljaGFlbGlzIiwicm9sIjoidXNlciJ9LCJzdWIiOiJ0YWc6aW1tdS5uZSwyMDIxOm9yZ2FuaXNhdGlvbi8zY2VlY2ZkOS0xZjU5LTUzYTItYjJmZi02MzY5MDBlNzA2NjgiLCJqdGkiOiI2ZDM2YTBjNTdiOTRmYTUyZmRlNGJlYzZkNzMyNDE4MSIsImV4cCI6MTY0MDg4ODQwNSwibmJmIjoxNjQwODAyMDA1LCJpYXQiOjE2NDA4MDIwMDUsImlzcyI6InRhZzppbW11Lm5lLDIwMjE6c2VydmljZS9hdXRoc3J2In0.9DdzDRRgv2iONUeSBZkwPVuZ3AH82smFfvNzPS-gd9lbwtlXpsnJ7h7nhNXHFfmZB6t3mvw7BH27fXsqNU02Iw",
+        "enrollment_token": "eyJraWQiOiJiZDAwN2I5ZjExODAwMTUwIiwiYWxnIjoiRVMyNTYifQ.eyJhY3QiOnsic3ViIjoidGFnOmltbXUubmUsMjAyMTphZ2VudCJ9LCJzdWIiOiJ0YWc6aW1tdS5uZSwyMDIxOm9yZ2FuaXNhdGlvbi8zY2VlY2ZkOS0xZjU5LTUzYTItYjJmZi02MzY5MDBlNzA2NjgiLCJqdGkiOiI2ZDM2YTBjNTdiOTRmYTUyZmRlNGJlYzZkNzMyNDE4MSIsImV4cCI6MTY0MDg4ODQwNSwibmJmIjoxNjQwODAyMDA1LCJpYXQiOjE2NDA4MDIwMDUsImlzcyI6InRhZzppbW11Lm5lLDIwMjE6c2VydmljZS9hdXRoc3J2In0._r4mEu3-Yq2t1D0ZXep2R_zFoo-4lMRVZINoS_RazYHH70QWrsGtTd75yaRGXhyYSSVvZJlEqWOluqLy-CFFXQ"
+      },
+      "relationships": {
+        "organisation": {
+          "data": {
+            "id": "3ceecfd9-1f59-53a2-b2ff-636900e70668",
+            "type": "organisation"
+          }
+        },
+        "user": {
+          "data": {
+            "id": "307f78d7-877b-53d0-abb3-c063159413fc",
+            "type": "user"
+          }
+        }
+      }
+    },
+    {
+      "id": "88bb0164-2a74-5f3b-b0b0-0928de530b93",
+      "type": "membership",
+      "attributes": {
+        "name": "Testy's Organisation",
+        "user_name": "Testy McTest",
+        "user_email": "test@example.com",
+        "role": "owner",
+        "notify_device_update": false,
+        "notify_invoice": false,
+        "organisation_id": "3ceecfd9-1f59-53a2-b2ff-636900e70668",
+        "can_delete": false,
+        "token": "eyJraWQiOiJiZDAwN2I5ZjExODAwMTUwIiwiYWxnIjoiRVMyNTYifQ.eyJhY3QiOnsic3ViIjoidGFnOmltbXUubmUsMjAyMTp1c2VyLzdhYmM1M2FmLWE1ODctNTE3NS05NjI3LTA4ZGZmYTdiYjk2OSIsIm5hbWUiOiJUZXN0eSBNY1Rlc3QiLCJyb2wiOiJ1c2VyIn0sInN1YiI6InRhZzppbW11Lm5lLDIwMjE6b3JnYW5pc2F0aW9uLzNjZWVjZmQ5LTFmNTktNTNhMi1iMmZmLTYzNjkwMGU3MDY2OCIsImp0aSI6ImNjMjI2YmE1OTZmYjNhMzA5MzkxMDU5NTQyZTE5OWY1IiwiZXhwIjoxNjQwODg4NDA1LCJuYmYiOjE2NDA4MDIwMDUsImlhdCI6MTY0MDgwMjAwNSwiaXNzIjoidGFnOmltbXUubmUsMjAyMTpzZXJ2aWNlL2F1dGhzcnYifQ.OD9KKWE9cNaLUZHtrT2pfk2w6RbqY2OoGnJwodkQJEzp0RcmPW2fcnyHovpW0Bc2N_tidNEiL4l9DovdffT16A",
+        "enrollment_token": "eyJraWQiOiJiZDAwN2I5ZjExODAwMTUwIiwiYWxnIjoiRVMyNTYifQ.eyJhY3QiOnsic3ViIjoidGFnOmltbXUubmUsMjAyMTphZ2VudCJ9LCJzdWIiOiJ0YWc6aW1tdS5uZSwyMDIxOm9yZ2FuaXNhdGlvbi8zY2VlY2ZkOS0xZjU5LTUzYTItYjJmZi02MzY5MDBlNzA2NjgiLCJqdGkiOiJjYzIyNmJhNTk2ZmIzYTMwOTM5MTA1OTU0MmUxOTlmNSIsImV4cCI6MTY0MDg4ODQwNSwibmJmIjoxNjQwODAyMDA1LCJpYXQiOjE2NDA4MDIwMDUsImlzcyI6InRhZzppbW11Lm5lLDIwMjE6c2VydmljZS9hdXRoc3J2In0.No-rmvfrE_abkipfMxFW-iDZIPzmuSCEqi3Uo2xWcUGDm0Q155yb5KtE5_5G0tO9S0Ks_aymt7Tg5-5bcqWJ_w"
+      },
+      "relationships": {
+        "organisation": {
+          "data": {
+            "id": "3ceecfd9-1f59-53a2-b2ff-636900e70668",
+            "type": "organisation"
+          }
+        },
+        "user": {
+          "data": {
+            "id": "7abc53af-a587-5175-9627-08dffa7bb969",
+            "type": "user"
+          }
+        }
+      }
+    },
+    {
+      "id": "52b80f97-fdfa-560b-a170-b68e0c28a9ac",
+      "type": "membership",
+      "attributes": {
+        "name": "Payment reminder Organisation",
+        "user_name": "Kai Michaelis",
+        "user_email": "kai.michaelis@immu.ne",
+        "role": "owner",
+        "notify_device_update": false,
+        "notify_invoice": false,
+        "organisation_id": "0c3bc2ba-3da1-5e61-be33-c795d01a19f3",
+        "can_delete": true,
+        "token": "eyJraWQiOiJiZDAwN2I5ZjExODAwMTUwIiwiYWxnIjoiRVMyNTYifQ.eyJhY3QiOnsic3ViIjoidGFnOmltbXUubmUsMjAyMTp1c2VyLzMwN2Y3OGQ3LTg3N2ItNTNkMC1hYmIzLWMwNjMxNTk0MTNmYyIsIm5hbWUiOiJLYWkgTWljaGFlbGlzIiwicm9sIjoidXNlciJ9LCJzdWIiOiJ0YWc6aW1tdS5uZSwyMDIxOm9yZ2FuaXNhdGlvbi8wYzNiYzJiYS0zZGExLTVlNjEtYmUzMy1jNzk1ZDAxYTE5ZjMiLCJqdGkiOiI0YTMzZTc4ZmQ3OGUwOTRkZWYzODZmNzZmNGNmM2U2YiIsImV4cCI6MTY0MDg4ODQwNSwibmJmIjoxNjQwODAyMDA1LCJpYXQiOjE2NDA4MDIwMDUsImlzcyI6InRhZzppbW11Lm5lLDIwMjE6c2VydmljZS9hdXRoc3J2In0.Csb6AihCIIhW37Seqix9-ZBoGAOkSm816RPYjGUG4Bx2RE66Pk4NtJjkAuL3UK7QZg41aWwRuTTwdZb6HHc7Cw",
+        "enrollment_token": "eyJraWQiOiJiZDAwN2I5ZjExODAwMTUwIiwiYWxnIjoiRVMyNTYifQ.eyJhY3QiOnsic3ViIjoidGFnOmltbXUubmUsMjAyMTphZ2VudCJ9LCJzdWIiOiJ0YWc6aW1tdS5uZSwyMDIxOm9yZ2FuaXNhdGlvbi8wYzNiYzJiYS0zZGExLTVlNjEtYmUzMy1jNzk1ZDAxYTE5ZjMiLCJqdGkiOiI0YTMzZTc4ZmQ3OGUwOTRkZWYzODZmNzZmNGNmM2U2YiIsImV4cCI6MTY0MDg4ODQwNSwibmJmIjoxNjQwODAyMDA1LCJpYXQiOjE2NDA4MDIwMDUsImlzcyI6InRhZzppbW11Lm5lLDIwMjE6c2VydmljZS9hdXRoc3J2In0.3hFvGnk1cnmlwrLSWfXfLNvlQh6FppCmltfxmslTRMF7WOBZ7xMihbzqz24hAEUq04Dw_DXrm4_bF75SWo6RAA"
+      },
+      "relationships": {
+        "organisation": {
+          "data": {
+            "id": "0c3bc2ba-3da1-5e61-be33-c795d01a19f3",
+            "type": "organisation"
+          }
+        },
+        "user": {
+          "data": {
+            "id": "307f78d7-877b-53d0-abb3-c063159413fc",
+            "type": "user"
+          }
+        }
+      }
+    },
+    {
+      "id": "00010b5f-a789-4430-a9b9-414a0bd73faa",
+      "type": "subscription",
+      "attributes": {
+        "status": "created",
+        "current_devices_amount": 0,
+        "max_devices_amount": 50,
+        "period_start": "2021-10-15",
+        "period_end": "2021-11-15",
+        "tax_rate": null,
+        "monthly_base_fee": 15,
+        "monthly_fee_per_device": 5,
+        "action_required": false,
+        "billing_details": { "free_credits": 0 },
+        "setup_intent_secret": null
+      },
+      "meta": {
+        "version": 42,
+        "instance": "Marv.fritz.box",
+        "trace": "00000000000000000000000000000000"
+      }
+    }
+  ]
+}

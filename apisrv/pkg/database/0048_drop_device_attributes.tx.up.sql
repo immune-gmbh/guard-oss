@@ -1,0 +1,1 @@
+ALTER TABLE v2.devices DROP COLUMN attributes;

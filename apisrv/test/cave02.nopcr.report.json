@@ -1,0 +1,28 @@
+{
+  "type": "report/2",
+  "values": {
+    "host": {
+      "name": "",
+      "hostname": "",
+      "type": "",
+      "cpu_vendor": "GenuineIntel"
+    }
+  },
+  "annotations": [
+    {
+      "id": "host-type",
+      "path": "/host/name",
+      "fatal": false
+    },
+    {
+      "id": "host-hostname",
+      "path": "/host/hostname",
+      "fatal": false
+    },
+    {
+      "id": "host-type",
+      "path": "/host/type",
+      "fatal": false
+    }
+  ]
+}

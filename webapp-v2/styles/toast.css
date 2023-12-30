@@ -1,0 +1,76 @@
+/* Override Toastifies Container Style to match CI */
+
+/** Used to define container behavior: width, position: fixed etc... **/
+/* .Toastify__toast-container {
+} */
+
+/** Used to define the position of the ToastContainer **/
+/* .Toastify__toast-container--top-left {
+}
+.Toastify__toast-container--top-center {
+}
+.Toastify__toast-container--top-right {
+}
+.Toastify__toast-container--bottom-left {
+}
+.Toastify__toast-container--bottom-center {
+}
+.Toastify__toast-container--bottom-right {
+} */
+
+/** Classes for the displayed toast **/
+.Toastify__toast {
+  font-family: theme('fontFamily.sans');
+  @apply rounded-none text-gray-800 shadow-md;
+}
+/*
+.Toastify__toast--rtl {
+}
+.Toastify__toast--dark {
+}
+.Toastify__toast--default {
+}
+*/
+.Toastify__toast--info {
+  @apply bg-gray-400;
+}
+.Toastify__toast--success {
+  @apply bg-green-valid-light;
+}
+/* .Toastify__toast--warning {
+} */
+.Toastify__toast--error {
+  @apply bg-red-toast text-white;
+}
+.Toastify__toast--error .Toastify__close-button > svg {
+  @apply text-white;
+}
+.Toastify__toast-body {
+  @apply flex flex-col space-y-2 text-base;
+}
+
+/** Classes for the close button. Better use your own closeButton **/
+/* .Toastify__close-button {
+}
+.Toastify__close-button--default {
+} */
+.Toastify__close-button > svg {
+  @apply text-gray-900;
+}
+/* .Toastify__close-button:hover, .Toastify__close-button:focus {
+} */
+
+/** Classes for the progress bar **/
+/*
+.Toastify__progress-bar {
+}
+.Toastify__progress-bar--animated {
+}
+.Toastify__progress-bar--controlled {
+}
+.Toastify__progress-bar--rtl {
+}
+.Toastify__progress-bar--default {
+}
+.Toastify__progress-bar--dark {
+} */

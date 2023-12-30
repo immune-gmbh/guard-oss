@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+   <Fragment>
+      <UI Id="WixUI_agent">
+         <TextStyle Id="WixUI_Font_Normal" FaceName="Tahoma" Size="8" />
+         <TextStyle Id="WixUI_Font_Bigger" FaceName="Tahoma" Size="12" />
+         <TextStyle Id="WixUI_Font_Desc" FaceName="Tahoma" Size="9" Red="255" Green="255" Blue="255" />
+         <TextStyle Id="WixUI_Font_Title" FaceName="Tahoma" Size="12" Bold="yes" Red="255" Green="255" Blue="255" />
+
+         <Property Id="DefaultUIFont" Value="WixUI_Font_Normal" />
+         <Property Id="WixUI_Mode" Value="Minimal" />
+
+         <!-- Stock dialogs -->
+         <DialogRef Id="ErrorDlg" />
+         <DialogRef Id="FatalError" />
+         <DialogRef Id="FilesInUse" />
+         <DialogRef Id="MsiRMFilesInUse" />
+         <DialogRef Id="PrepareDlg" />
+         <DialogRef Id="ProgressDlg" />
+         <DialogRef Id="ResumeDlg" />
+         <DialogRef Id="UserExit" />
+         <DialogRef Id="WelcomeDlg" />
+         
+         <!-- Project dialogs -->
+         <DialogRef Id="LicenseDlg_immune" />
+         <DialogRef Id="EnrollKeyDlg" />
+         <DialogRef Id="InvalidEnrollKeyDlg" />
+
+         <!-- Implement custom sequence by overriding next/back button actions -->
+         <Publish Dialog="ExitDialog" Control="Finish" Event="EndDialog" Value="Return" Order="999">1</Publish>
+
+         <Publish Dialog="EnrollKeyDlg" Control="Back" Event="NewDialog" Value="LicenseDlg_immune">1</Publish>
+         <Publish Dialog="EnrollKeyDlg" Control="Next" Property="ErrorMessage" Value="!(loc.EnrollKeyRequired)" Order="1">NOT ENROLLKEY</Publish>
+         <Publish Dialog="EnrollKeyDlg" Control="Next" Event="SpawnDialog" Value="InvalidEnrollKeyDlg" Order="2">NOT ENROLLKEY</Publish>
+         <Publish Dialog="EnrollKeyDlg" Control="Next" Event="NewDialog" Value="VerifyReadyDlg">1</Publish>
+
+         <Publish Dialog="WelcomeDlg" Control="Next" Event="NewDialog" Value="LicenseDlg_immune">NOT Installed AND (NOT WIX_UPGRADE_DETECTED)</Publish>
+         <Publish Dialog="WelcomeDlg" Control="Next" Event="NewDialog" Value="VerifyReadyDlg">Installed OR WIX_UPGRADE_DETECTED</Publish>
+
+         <Publish Dialog="VerifyReadyDlg" Control="Back" Event="NewDialog" Value="EnrollKeyDlg">NOT Installed AND (NOT WIX_UPGRADE_DETECTED)</Publish>
+         <Publish Dialog="VerifyReadyDlg" Control="Back" Event="NewDialog" Value="WelcomeDlg">Installed OR WIX_UPGRADE_DETECTED</Publish>
+
+         <Publish Dialog="LicenseDlg_immune" Control="Back" Event="NewDialog" Value="WelcomeDlg">1</Publish>
+         <Publish Dialog="LicenseDlg_immune" Control="Next" Event="NewDialog" Value="EnrollKeyDlg">LicenseAccepted = "1"</Publish>
+      </UI>
+
+      <UIRef Id="WixUI_Common" />
+   </Fragment>
+</Wix>

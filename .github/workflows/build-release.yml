@@ -1,0 +1,246 @@
+name: Build release
+concurrency: repo-state-aptly
+on:
+  push:
+    tags:
+      - r*
+  pull_request: {}
+
+env:
+  AGENT_RELEASE_TAG: 'v3.13.3'
+
+jobs:
+  preflight:
+    timeout-minutes: 20
+    runs-on: ubuntu-20.04
+    outputs:
+      doit: ${{ steps.git-diff.outputs.diff != '' || (github.event_name == 'push' && startsWith(github.ref, 'refs/tags/r')) }}
+    steps:
+      - uses: actions/checkout@v3
+        if: ${{ github.event_name != 'push' && !startsWith(github.ref, 'refs/tags/r') }}
+        with:
+          fetch-depth: 0
+
+      - uses: technote-space/get-diff-action@v5
+        if: ${{ github.event_name != 'push' && !startsWith(github.ref, 'refs/tags/r') }}
+        id: git-diff
+        with:
+          PATTERNS: |
+            .github/workflows/build-release.yml
+
+      - run: |
+          echo "${{ steps.git-diff.outputs.diff }}"
+          echo "${{ steps.git-diff.outputs.diff == '' }}"
+          echo "${{ github.event_name == 'push' }}"
+          echo "${{ startsWith(github.ref, 'refs/tags/r') }}"
+          echo "${{ github.ref }}"
+          echo "${{ github.event_name }}"
+          echo "${{ steps.git-diff.outputs.diff != '' || (github.event_name == 'push' && startsWith(github.ref, 'refs/tags/r')) }}"
+
+
+  agent:
+    timeout-minutes: 20
+    needs:
+      - preflight
+    runs-on: ubuntu-20.04
+    defaults:
+      run:
+        working-directory: ./
+    env:
+      CERTIFICATE_PATH: ./.github/workflows/xxxxxx.cer
+      HSM_KEY: xxxx
+      CONNECTOR: http://xxx.xxx.xxx.xxx:31338
+      TIMESERV: http://timestamp.digicert.com
+    steps:
+      - uses: actions/checkout@v3
+        if: ${{ needs.preflight.outputs.doit == 'true' }}
+        with:
+          lfs: true
+
+      - uses: actions/checkout@v3
+        if: ${{ needs.preflight.outputs.doit == 'true' }}
+        with:
+          repository: immune-gmbh/agent
+          ref: ${{ env.AGENT_RELEASE_TAG }}
+          path: ./agent
+          lfs: true
+
+      - uses: actions/setup-go@v3
+        if: ${{ needs.preflight.outputs.doit == 'true' }}
+        with:
+          go-version: '1.20'
+
+      - id: go-cache-paths
+        if: ${{ needs.preflight.outputs.doit == 'true' }}
+        run: |
+          echo "::set-output name=go-build::$(go env GOCACHE)"
+          echo "::set-output name=go-mod::$(go env GOMODCACHE)"
+
+      # shared with unit-tests-agent
+      - uses: actions/cache@v3
+        if: ${{ needs.preflight.outputs.doit == 'true' }}
+        with:
+          path: |
+            ${{ steps.go-cache-paths.outputs.go-build }}
+            ${{ steps.go-cache-paths.outputs.go-mod }}
+          key: ${{ runner.os }}-agent-${{ hashFiles('agent/go.sum') }}
+          restore-keys: |
+            ${{ runner.os }}-agent-
+
+      - name: Setup action variables
+        if: ${{ needs.preflight.outputs.doit == 'true' }}
+        id: locals
+        run: |
+          cd agent
+          echo "::set-output name=release_id::$(git describe --tags)"
+
+      - name: Build for Windows
+        if: ${{ needs.preflight.outputs.doit == 'true' }}
+        env:
+          LDFLAGS_EXTRA: -s
+        run: |
+          cd agent
+          make Windows
+
+      - name: Install OpenVPN
+        if: ${{ needs.preflight.outputs.doit == 'true' }}
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y openvpn openvpn-systemd-resolved
+
+      - name: Connect to VPN
+        if: ${{ needs.preflight.outputs.doit == 'true' }}
+        uses: "kota65535/github-openvpn-connect-action@v1"
+        with:
+          config_file: ./.github/workflows/immune_VPN_to_Sec_immune_ci.ovpn
+          username: ${{ secrets.OVPN_HSM_UNAME }}
+          password: ${{ secrets.OVPN_HSM_PWORD }}
+
+      - name: Sign guard-win.exe
+        if: ${{ needs.preflight.outputs.doit == 'true' }}
+        uses: ./.github/actions/authenticode-sign-yubi
+        with:
+          source: ./agent/guard-win.exe
+          target: ./agent/guard-win-signed.exe
+          cert: ${{ env.CERTIFICATE_PATH }}
+          login: ${{ secrets.HSM_AUTH_SECRET }}
+          key: ${{ env.HSM_KEY }}
+          connector: ${{ env.CONNECTOR }}
+          timeserver: ${{ env.TIMESERV }}
+          description: guard-win.exe
+
+      - name: Move signed windows executable into wix folder
+        if: ${{ needs.preflight.outputs.doit == 'true' }}
+        run: |
+          mv ./agent/guard-win-signed.exe ./_packaging/agent/wix/guard-win.exe
+
+      - name: Make the wix/ directory writable for the dockerized WIX tools
+        if: ${{ needs.preflight.outputs.doit == 'true' }}
+        run: |
+          chmod g+w ./_packaging/agent/wix
+          chgrp 101 ./_packaging/agent/wix
+
+      - name: Build MSI installer package
+        if: ${{ needs.preflight.outputs.doit == 'true' }}
+        run: |
+          cd ./_packaging/agent/wix
+          make \
+            CANDLE="docker run --rm -e ProgramData=\"C:\\ProgramData\" -v $(pwd):/wix:rw dactiv/wix candle" \
+            LIGHT="docker run --rm -v $(pwd):/wix:rw dactiv/wix light" \
+            WIXLIBDIR="Z:\\home\\wine\\wix\\"
+
+      - name: Sign immuneGuard_en-us.msi
+        if: ${{ needs.preflight.outputs.doit == 'true' }}
+        uses: ./.github/actions/authenticode-sign-yubi
+        with:
+          source: ./_packaging/agent/wix/immuneGuard_en-us.msi
+          target: ./_packaging/agent/wix/immuneGuard_en-us_signed.msi 
+          cert: ${{ env.CERTIFICATE_PATH }}
+          login: ${{ secrets.HSM_AUTH_SECRET }}
+          key: ${{ env.HSM_KEY }}
+          connector: ${{ env.CONNECTOR }}
+          timeserver: ${{ env.TIMESERV }}
+          description: immuneGuard_en-us-${{ steps.locals.outputs.release_id }}.msi
+
+      - name: Setup artifact dir
+        if: ${{ needs.preflight.outputs.doit == 'true' }}
+        run: |
+          mkdir ./agent-binaries
+          cp ./_packaging/agent/wix/immuneGuard_en-us_signed.msi ./agent-binaries/"immuneGuard_en-us-${{ steps.locals.outputs.release_id }}.msi"
+
+      - uses: BetaHuhn/do-spaces-action@v2
+        if: ${{ needs.preflight.outputs.doit == 'true' }}
+        with:
+          access_key: ${{ secrets.DO_ACCESS_KEY}}
+          secret_key: ${{ secrets.DO_SECRET_KEY }}
+          space_name: "package-registry"
+          space_region: "fra1"
+          source: ./agent-binaries
+          out_dir: ${{ steps.locals.outputs.release_id }}
+
+
+  apisrv:
+    timeout-minutes: 20
+    needs:
+      - preflight
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v3
+        if: ${{ needs.preflight.outputs.doit == 'true' }}
+        with:
+          fetch-depth: 0
+          lfs: true
+
+      - uses: docker/setup-buildx-action@v1
+        if: ${{ needs.preflight.outputs.doit == 'true' }}
+
+      - uses: ./.github/actions/build-container
+        if: ${{ needs.preflight.outputs.doit == 'true' }}
+        with:
+          basename: apisrv
+          dockerfile: ./apisrv/build/Dockerfile
+          cr_token: ${{ secrets.CR_TOKEN }}
+
+
+  authsrv:
+    timeout-minutes: 20
+    needs:
+      - preflight
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v3
+        if: ${{ needs.preflight.outputs.doit == 'true' }}
+        with:
+          fetch-depth: 0
+
+      - uses: docker/setup-buildx-action@v1
+        if: ${{ needs.preflight.outputs.doit == 'true' }}
+
+      - uses: ./.github/actions/build-container
+        if: ${{ needs.preflight.outputs.doit == 'true' }}
+        with:
+          basename: authsrv
+          dockerfile: ./authsrv2/build/Dockerfile
+          cr_token: ${{ secrets.CR_TOKEN }}
+
+
+  appsrv:
+    timeout-minutes: 20
+    needs:
+      - preflight
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v3
+        if: ${{ needs.preflight.outputs.doit == 'true' }}
+        with:
+          fetch-depth: 0
+
+      - uses: docker/setup-buildx-action@v1
+        if: ${{ needs.preflight.outputs.doit == 'true' }}
+        
+      - uses: ./.github/actions/build-container
+        if: ${{ needs.preflight.outputs.doit == 'true' }}
+        with:
+          basename: appsrv
+          dockerfile: ./webapp-v2/build/Dockerfile
+          cr_token: ${{ secrets.CR_TOKEN }}

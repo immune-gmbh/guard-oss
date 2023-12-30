@@ -1,0 +1,71 @@
+kai:
+  name: "Kai Michaelis"
+  email: "kai.michaelis@immu.ne"
+  salt: <%= salt = "asdasdastr4325234324sdfds" %>
+  crypted_password: <%= Sorcery::CryptoProviders::BCrypt.encrypt("secret", salt) %>
+  activation_state: active
+  address: bochum
+  created_at: <%= 5.day.ago.to_s(:db) %>
+  updated_at: <%= 5.day.ago.to_s(:db) %>
+
+not_active:
+  name: "Kai (Not active)"
+  email: "kai.not-active@immu.ne"
+  salt: <%= salt = "asdasdastr4325234324sdfds" %>
+  crypted_password: <%= Sorcery::CryptoProviders::BCrypt.encrypt("secret", salt) %>
+  activation_state: pending
+  address: bochum
+  created_at: <%= 5.day.ago.to_s(:db) %>
+  updated_at: <%= 5.day.ago.to_s(:db) %>
+
+no_address:
+  name: "Kai (No address)"
+  email: "kai.no-address@immu.ne"
+  salt: <%= salt = "asdasdastr4325234324sdfds" %>
+  crypted_password: <%= Sorcery::CryptoProviders::BCrypt.encrypt("secret", salt) %>
+  activation_state: pending
+  created_at: <%= 5.day.ago.to_s(:db) %>
+  updated_at: <%= 5.day.ago.to_s(:db) %>
+
+no_org:
+  name: "Kai (No org)"
+  email: "kai.no-org@immu.ne"
+  salt: <%= salt = "asdasdastr4325234324sdfds" %>
+  crypted_password: <%= Sorcery::CryptoProviders::BCrypt.encrypt("secret", salt) %>
+  activation_state: pending
+  created_at: <%= 5.day.ago.to_s(:db) %>
+  updated_at: <%= 5.day.ago.to_s(:db) %>
+
+kai_notify1:
+  name: "Kai Notify the 1st"
+  email: "kai1@immu.ne"
+  crypted_password: "secure"
+  address: bochum
+  created_at: <%= 5.day.ago.to_s(:db) %>
+  updated_at: <%= 5.day.ago.to_s(:db) %>
+
+kai_notify2:
+  name: "Kai Notify the 2nd"
+  email: "kai2@immu.ne"
+  crypted_password: "secure"
+  address: bochum
+  created_at: <%= 5.day.ago.to_s(:db) %>
+  updated_at: <%= 5.day.ago.to_s(:db) %>
+
+testy:
+  name: "Testy McTest"
+  email: "test@example.com"
+  crypted_password: "secure"
+  address: bochum
+  created_at: <%= 5.day.ago.to_s(:db) %>
+  updated_at: <%= 5.day.ago.to_s(:db) %>
+
+admin:
+  name: "Admin"
+  email: "admin@example.com"
+  crypted_password: "secure"
+  address: bochum
+  role: 0 # admin
+  activation_state: active
+  created_at: <%= 5.day.ago.to_s(:db) %>
+  updated_at: <%= 5.day.ago.to_s(:db) %>

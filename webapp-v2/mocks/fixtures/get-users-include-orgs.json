@@ -1,0 +1,363 @@
+{
+  "data": [
+    {
+      "id": "307f78d7-877b-53d0-abb3-c063159413fc",
+      "type": "user",
+      "attributes": {
+        "name": "Kai Michaelis",
+        "email": "kai.michaelis@immu.ne",
+        "invited": false,
+        "role": "user",
+        "activation_state": "active",
+        "has_seen_intro": false,
+        "has_password": true,
+        "authenticated_google": false,
+        "authenticated_github": false
+      },
+      "relationships": {
+        "organisations": {
+          "data": [
+            {
+              "id": "a3e85ce4-7687-5078-8716-c6c3dfaf554f",
+              "type": "organisation"
+            },
+            {
+              "id": "3ceecfd9-1f59-53a2-b2ff-636900e70668",
+              "type": "organisation"
+            },
+            {
+              "id": "0c3bc2ba-3da1-5e61-be33-c795d01a19f3",
+              "type": "organisation"
+            },
+            {
+              "id": "0001be3c-e067-428b-b6bc-497aaa855b2f",
+              "type": "organisation"
+            }
+          ]
+        },
+        "address": {
+          "data": {
+            "id": "4d9a5fa8-08bc-5b02-a478-76b1f4d30e90",
+            "type": "address"
+          }
+        }
+      },
+      "meta": {
+        "version": "unreleased",
+        "instance": "cave02.local",
+        "trace": "00000000000000000000000000000000"
+      }
+    },
+    {
+      "id": "a7f7c4ef-a96b-5d37-b442-9fce31e6d6f4",
+      "type": "user",
+      "attributes": {
+        "name": "Kai Notify the 1st",
+        "email": "kai1@immu.ne",
+        "invited": false,
+        "role": "user",
+        "activation_state": null,
+        "has_seen_intro": false,
+        "has_password": true,
+        "authenticated_google": false,
+        "authenticated_github": false
+      },
+      "relationships": {
+        "organisations": {
+          "data": [
+            {
+              "id": "a3e85ce4-7687-5078-8716-c6c3dfaf554f",
+              "type": "organisation"
+            }
+          ]
+        },
+        "address": {
+          "data": {
+            "id": "4d9a5fa8-08bc-5b02-a478-76b1f4d30e90",
+            "type": "address"
+          }
+        }
+      },
+      "meta": {
+        "version": "unreleased",
+        "instance": "cave02.local",
+        "trace": "00000000000000000000000000000000"
+      }
+    },
+    {
+      "id": "6f06976d-7a1a-558b-a304-33183497d32a",
+      "type": "user",
+      "attributes": {
+        "name": "Kai Notify the 2nd",
+        "email": "kai2@immu.ne",
+        "invited": false,
+        "role": "user",
+        "activation_state": null,
+        "has_seen_intro": false,
+        "has_password": true,
+        "authenticated_google": false,
+        "authenticated_github": false
+      },
+      "relationships": {
+        "organisations": {
+          "data": [
+            {
+              "id": "a3e85ce4-7687-5078-8716-c6c3dfaf554f",
+              "type": "organisation"
+            }
+          ]
+        },
+        "address": {
+          "data": {
+            "id": "4d9a5fa8-08bc-5b02-a478-76b1f4d30e90",
+            "type": "address"
+          }
+        }
+      },
+      "meta": {
+        "version": "unreleased",
+        "instance": "cave02.local",
+        "trace": "00000000000000000000000000000000"
+      }
+    }
+  ],
+  "included": [
+    {
+      "id": "a3e85ce4-7687-5078-8716-c6c3dfaf554f",
+      "type": "organisation",
+      "attributes": {
+        "name": "Kai's Organisation",
+        "vat_number": null,
+        "splunk_enabled": true,
+        "splunk_accept_all_server_certificates": true,
+        "splunk_event_collector_url": "https://siem.example.com/splunk/services/collector",
+        "splunk_authentication_token": "deadbeef",
+        "syslog_enabled": true,
+        "syslog_hostname_or_address": "siem.example.com",
+        "syslog_udp_port": "514",
+        "invoice_name": null,
+        "status": "created",
+        "freeloader": false,
+        "member_count": 3,
+        "can_edit": null,
+        "can_delete": null,
+        "can_read": null
+      },
+      "relationships": {
+        "memberships": {
+          "data": [
+            {
+              "id": "628cf88a-94a9-55bf-bea4-fea7e6f4f4bc",
+              "type": "membership"
+            },
+            {
+              "id": "c6a1e8b6-08b4-5824-a1d9-9cae7c037550",
+              "type": "membership"
+            },
+            {
+              "id": "581a833c-ef2b-5744-8c26-4286f5f1785c",
+              "type": "membership"
+            }
+          ]
+        },
+        "users": {
+          "data": [
+            {
+              "id": "307f78d7-877b-53d0-abb3-c063159413fc",
+              "type": "user"
+            },
+            {
+              "id": "a7f7c4ef-a96b-5d37-b442-9fce31e6d6f4",
+              "type": "user"
+            },
+            {
+              "id": "6f06976d-7a1a-558b-a304-33183497d32a",
+              "type": "user"
+            }
+          ]
+        },
+        "subscription": {
+          "data": {
+            "id": "233eca70-6419-5d2b-8006-1b6a6392046b",
+            "type": "subscription"
+          }
+        },
+        "address": {
+          "data": {
+            "id": "4d9a5fa8-08bc-5b02-a478-76b1f4d30e90",
+            "type": "address"
+          }
+        }
+      },
+      "meta": {
+        "version": "unreleased",
+        "instance": "cave02.local",
+        "trace": "00000000000000000000000000000000"
+      }
+    },
+    {
+      "id": "3ceecfd9-1f59-53a2-b2ff-636900e70668",
+      "type": "organisation",
+      "attributes": {
+        "name": "Testy's Organisation",
+        "vat_number": null,
+        "splunk_enabled": null,
+        "splunk_accept_all_server_certificates": true,
+        "splunk_event_collector_url": null,
+        "splunk_authentication_token": null,
+        "syslog_enabled": null,
+        "syslog_hostname_or_address": null,
+        "syslog_udp_port": null,
+        "invoice_name": null,
+        "status": "created",
+        "freeloader": false,
+        "member_count": 2,
+        "can_edit": null,
+        "can_delete": null,
+        "can_read": null
+      },
+      "relationships": {
+        "memberships": {
+          "data": [
+            {
+              "id": "a27058c8-a6d9-5463-9eca-d9ef18d36bf0",
+              "type": "membership"
+            },
+            {
+              "id": "88bb0164-2a74-5f3b-b0b0-0928de530b93",
+              "type": "membership"
+            }
+          ]
+        },
+        "users": {
+          "data": [
+            {
+              "id": "307f78d7-877b-53d0-abb3-c063159413fc",
+              "type": "user"
+            },
+            {
+              "id": "7abc53af-a587-5175-9627-08dffa7bb969",
+              "type": "user"
+            }
+          ]
+        },
+        "subscription": {
+          "data": null
+        },
+        "address": {
+          "data": null
+        }
+      },
+      "meta": {
+        "version": "unreleased",
+        "instance": "cave02.local",
+        "trace": "00000000000000000000000000000000"
+      }
+    },
+    {
+      "id": "0c3bc2ba-3da1-5e61-be33-c795d01a19f3",
+      "type": "organisation",
+      "attributes": {
+        "name": "Payment reminder Organisation",
+        "vat_number": null,
+        "splunk_enabled": null,
+        "splunk_accept_all_server_certificates": true,
+        "splunk_event_collector_url": null,
+        "splunk_authentication_token": null,
+        "syslog_enabled": null,
+        "syslog_hostname_or_address": null,
+        "syslog_udp_port": null,
+        "invoice_name": null,
+        "status": "active",
+        "freeloader": false,
+        "member_count": 1,
+        "can_edit": null,
+        "can_delete": null,
+        "can_read": null
+      },
+      "relationships": {
+        "memberships": {
+          "data": [
+            {
+              "id": "52b80f97-fdfa-560b-a170-b68e0c28a9ac",
+              "type": "membership"
+            }
+          ]
+        },
+        "users": {
+          "data": [
+            {
+              "id": "307f78d7-877b-53d0-abb3-c063159413fc",
+              "type": "user"
+            }
+          ]
+        },
+        "subscription": {
+          "data": null
+        },
+        "address": {
+          "data": null
+        }
+      },
+      "meta": {
+        "version": "unreleased",
+        "instance": "cave02.local",
+        "trace": "00000000000000000000000000000000"
+      }
+    },
+    {
+      "id": "0001be3c-e067-428b-b6bc-497aaa855b2f",
+      "type": "organisation",
+      "attributes": {
+        "name": "New Orga",
+        "vat_number": "DE345789003",
+        "splunk_enabled": null,
+        "splunk_accept_all_server_certificates": true,
+        "splunk_event_collector_url": null,
+        "splunk_authentication_token": null,
+        "syslog_enabled": null,
+        "syslog_hostname_or_address": null,
+        "syslog_udp_port": null,
+        "invoice_name": "Someone",
+        "status": "created",
+        "freeloader": false,
+        "member_count": 1,
+        "can_edit": null,
+        "can_delete": null,
+        "can_read": null
+      },
+      "relationships": {
+        "memberships": {
+          "data": [
+            {
+              "id": "000164b8-08a5-42a7-83c0-e22897b81bf0",
+              "type": "membership"
+            }
+          ]
+        },
+        "users": {
+          "data": [
+            {
+              "id": "307f78d7-877b-53d0-abb3-c063159413fc",
+              "type": "user"
+            }
+          ]
+        },
+        "subscription": {
+          "data": null
+        },
+        "address": {
+          "data": {
+            "id": "00018f9f-3775-4a1b-8b9e-2161a2855fd3",
+            "type": "address"
+          }
+        }
+      },
+      "meta": {
+        "version": "unreleased",
+        "instance": "cave02.local",
+        "trace": "00000000000000000000000000000000"
+      }
+    }
+  ]
+}

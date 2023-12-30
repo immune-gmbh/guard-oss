@@ -1,0 +1,26 @@
+name: Garbage Collector
+
+on:
+  schedule:
+    - cron: '0 20 * * 1-5'
+
+permissions:
+  issues: write
+  pull-requests: write
+
+jobs:
+  gc:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/stale@v4
+        with:
+          exempt-all-pr-assignees: true
+          exempt-all-milestones: true
+          days-before-stale: 30
+          days-before-close: 5
+          stale-issue-message: |
+            No activity for 30 days. This issue will be closed in 5 days.
+          stale-pr-message: |
+            No activity for 30 days. This pull request will be closed in 5 days.
+          stale-issue-label: 'stale 🧟'
+          stale-pr-label: 'stale 🧟'

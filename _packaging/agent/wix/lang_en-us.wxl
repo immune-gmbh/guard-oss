@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WixLocalization Culture="en-us" Codepage="1252" xmlns="http://schemas.microsoft.com/wix/2006/localization">
+   <String Id="Language">1033</String>
+   
+   <!-- The following value end up in registry keys and program folders, don't change them if you plan for the installer -->
+   <!-- to be able to update a previous install without a major upgrade (that is uninstall the old version)-->
+   <String Id="ApplicationName">immune Guard agent</String>
+   <String Id="ManufacturerName">immune</String>
+
+   <String Id="ManufacturerFullName">immune GmbH</String>
+   <String Id="ProductDescription">immune Guard agent installer</String>
+   <String Id="Comments">(c)2021 immune GmbH</String>
+
+   <String Id="LicenseRtf" Overridable="yes">eula\eula-en-us.rtf</String>
+
+   <String Id="UnsupportedOS">This application is only supported on 64-bit versions of Windows 7, Windows Server 2008 R2, or higher.</String>
+   <String Id="NewerInstalled">A newer version of this product is already installed.</String>
+
+   <String Id="FeatureCompleteDescription">The immune Guard agent protects your computer against attempts to covertly manipulate the system.</String>
+
+   <String Id="EnrollKeyDlg_Title">Enrollment</String>
+   <String Id="EnrollKeyDlgTitle">{\WixUI_Font_Title}Enrollment</String>
+   <String Id="EnrollKeyDlgDescription">{\WixUI_Font_Desc}Collect enrollment token</String>
+   <String Id="EnrollKeyDlgKeyLabel">Enter the enrollment token provided by the web interface.</String>
+   <String Id="EnrollKeyRequired">Please enter an enrollment token to continue.</String>
+
+   <String Id="InvalidEnrollKeyDlg_Title">Invalid enrollment token.</String>
+
+   <String Id="LicenseAgreementDlgTitle">{\WixUI_Font_Title}End-User License Agreement</String>
+   <String Id="LicenseAgreementDlgDescription">{\WixUI_Font_Desc}Please read the following license agreement carefully</String>
+</WixLocalization>

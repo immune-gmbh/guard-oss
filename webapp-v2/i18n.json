@@ -1,0 +1,10 @@
+{
+  "locales": ["en"],
+  "defaultLocale": "en",
+  "pages": {
+    "*": ["common", "risks", "incidents", "dashboard", "binarly", "utils"],
+    "/docs/risks": ["binarly", "risks"],
+    "/docs/incidents": ["binarly"],
+    "/dashboard/devices/[did]": ["binarly"]
+  }
+}

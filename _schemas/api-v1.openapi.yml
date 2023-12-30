@@ -1,0 +1,469 @@
+---
+openapi: "3.0.3"
+info:
+  title: immune Guard attestation server API
+  description: API implemented by xxxx.xxxx.xxxx
+  version: "1"
+  contact:
+    name: Kai Michaelis
+    email: kai.michaelis@immu.ne
+servers:
+  - url: https://xxx.xxx.xxx/v1/
+    description: SaaS production API
+  - url: https://xxx.xxx.xxx/v1/
+    description: Staging environment
+components:
+  securitySchemes:
+    appAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+    enrollmentAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+  responses:
+    unauthorized:
+      description: Request's authentication token is invalid, expired, revoked or not valid for this device
+      content:
+        application/json:
+          schema:
+            $ref: response.schema.json#/Response
+    internalError:
+      description: Internal server error
+paths:
+  /devices/{device-id-set}:
+    summary: Devices that can be attested
+    get:
+      operationId: devicesGet
+      tags:
+        - devices
+      description: Get a set of devices by ID
+      security:
+        - appAuth: [] 
+      parameters:
+        - in: path
+          name: device-id-set
+          description: Comma separated list of numeric device IDs.
+          required: true
+          schema:
+            type: string
+            pattern: "\\d+(,\\d+)*"
+          example: 42,22
+      responses:
+        200:
+          description: If a single device was queried it will be returned as the response subject, otherwise the devices will be in the changes list.
+          content:
+            application/json:
+              schema:
+                $ref: response.schema.json#/Response
+        400:
+          description: Illformed or too large device ID set
+          content:
+            application/json:
+              schema:
+                $ref: response.schema.json#/Response
+        401:
+          $ref: '#/components/responses/unauthorized'
+        404:
+          description: No ID in the list matches any device
+          content:
+           application/json:
+             schema:
+               $ref: response.schema.json#/Response
+        default:
+          $ref: '#/components/responses/internalError'
+  /devices/{device-id}:
+    summary: Devices that can be attested
+    patch:
+      operationId: devicesPatch
+      tags:
+        - devices
+      description: Modify an existing device. Not all values of an device can be mutated. If an immutable device value is changed a new device is created instead. In this case the old device is retired.
+      security:
+        - appAuth: [] 
+      parameters:
+        - in: path
+          name: device-id
+          description: The device's numeric ID
+          required: true
+          schema:
+            type: integer
+          example: 42
+      requestBody:
+        description: The new device values
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: device.schema.json#/Device
+      responses:
+        200:
+          description: The response subject is the device pointed to by the ID. If an new device was created as part of the request (see description) this will be part of the response side effects.
+          content:
+            application/json:
+              schema:
+                $ref: response.schema.json#/Response
+        400:
+          description: Illformed device ID or request body
+          content:
+            application/json:
+              schema:
+                $ref: response.schema.json#/Response
+        401:
+          $ref: '#/components/responses/unauthorized'
+        404:
+          description: No such device
+          content:
+           application/json:
+             schema:
+               $ref: response.schema.json#/Response
+        default:
+          $ref: '#/components/responses/internalError'
+    delete:
+      operationId: devicesRetire
+      tags:
+        - devices
+      description: Retire an active device.
+      security:
+        - appAuth: [] 
+      parameters:
+        - in: path
+          name: device-id
+          description: The device's numeric ID
+          required: true
+          schema:
+            type: integer
+          example: 42
+      responses:
+        200:
+          description: The device was retired.
+          content:
+            application/json:
+              schema:
+                $ref: response.schema.json#/Response
+        400:
+          description: Illformed device ID
+          content:
+            application/json:
+              schema:
+                $ref: response.schema.json#/Response
+        401:
+          $ref: '#/components/responses/unauthorized'
+        404:
+          description: No such device
+          content:
+           application/json:
+             schema:
+               $ref: response.schema.json#/Response
+        default:
+          $ref: '#/components/responses/internalError'
+  /devices:
+    get:
+      operationId: devicesGet
+      tags:
+        - devices
+      description: Fetch batches of devices. The response will have the 'next' field set.
+      security:
+        - appAuth: [] 
+      parameters:
+        - in: query
+          name: continue
+          description: Cursor at with to continue the query.
+          required: false
+          schema:
+            type: string
+          example: dlsjdlsa==
+      responses:
+        200:
+          description: The response changes include a batch of device.
+          content:
+            application/json:
+              schema:
+                $ref: response.schema.json#/Response
+        400:
+          description: Illformed cursor
+          content:
+            application/json:
+              schema:
+                $ref: response.schema.json#/Response
+        401:
+          $ref: '#/components/responses/unauthorized'
+        default:
+          $ref: '#/components/responses/internalError' 
+    post:
+      operationId: devicesNew
+      tags:
+        - devices
+      description: Register a new device. The request must include a name, device fingerprint and optional policies array. All other values are ignored.
+      security:
+        - appAuth: [] 
+      requestBody:
+        description: The new device values
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: device.schema.json#/Device
+      responses:
+        200:
+          description: The response subject is the new device.
+          content:
+            application/json:
+              schema:
+                $ref: response.schema.json#/Response
+        400:
+          description: Illformed request body or duplicate device
+          content:
+            application/json:
+              schema:
+                $ref: response.schema.json#/Response
+        401:
+          $ref: '#/components/responses/unauthorized'
+        default:
+          $ref: '#/components/responses/internalError' 
+  /devices/attest:
+    post:
+      operationId: devicesAttest
+      tags:
+        - attestation
+      description: Attest a device by verifing a quote and a device's security report against configured policies.
+      security:
+        - enrollmentAuth: [] 
+      requestBody:
+        description: A signed Quote and security report
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: evidence.schema.json#/Evidence
+      responses:
+        200:
+          description: The response subject is the new device.
+          content:
+            application/jwt:
+              schema:
+                type: string
+        400:
+          description: Illformed request body or duplicate device
+        default:
+          $ref: '#/components/responses/internalError' 
+  /devices/enroll:
+    post:
+      description: Enroll (potentially registered) device
+      operationId: devicesEnroll
+      security:
+        - enrollmentAuth: [] 
+      tags:
+        - attestation
+      requestBody:
+        description: TODO
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: enrollment-request.schema.json#/EnrollmentRequest
+      responses:
+        200:
+          description: TODO
+          content:
+            application/json:
+              schema:
+                $ref: enrollment-response.schema.json#/EnrollmentResponse
+        400:
+          description: Illformed request body
+        401:
+          description: Device is not registered and auto-registration is disabled, or enrollment token is invalid.
+        403:
+          description: Customer's device quota is full.
+        default:
+          $ref: '#/components/responses/internalError' 
+  /policies/{policy-id-set}:
+    summary: Devices that can be attested
+    get:
+      operationId: policiesGet
+      tags:
+        - policies
+      description: Get a set of devices by ID
+      security:
+        - appAuth: [] 
+      parameters:
+        - in: path
+          name: policy-id-set
+          description: Comma separated list of numeric device IDs.
+          required: true
+          schema:
+            type: string
+            pattern: "\\d+(,\\d+)*"
+          example: 42,22
+      responses:
+        200:
+          description: If a single device was queried it will be returned as the response subject, otherwise the devices will be in the changes list.
+          content:
+            application/json:
+              schema:
+                $ref: response.schema.json#/Response
+        400:
+          description: Illformed or too large device ID set
+          content:
+            application/json:
+              schema:
+                $ref: response.schema.json#/Response
+        401:
+          $ref: '#/components/responses/unauthorized'
+        404:
+          description: No ID in the list matches any device
+          content:
+           application/json:
+             schema:
+               $ref: response.schema.json#/Response
+        default:
+          $ref: '#/components/responses/internalError'
+  /policies/{policy-id}:
+    patch:
+      operationId: policiesPatch
+      tags:
+        - policies
+      description: Modify an existing device. Not all values of an device can be mutated. If an immutable device value is changed a new device is created instead. In this case the old device is retired.
+      security:
+        - appAuth: [] 
+      parameters:
+        - in: path
+          name: device-id
+          description: The device's numeric ID
+          required: true
+          schema:
+            type: integer
+          example: 42
+      requestBody:
+        description: The new device values
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: device.schema.json#/Device
+      responses:
+        200:
+          description: The response subject is the device pointed to by the ID. If an new device was created as part of the request (see description) this will be part of the response side effects.
+          content:
+            application/json:
+              schema:
+                $ref: response.schema.json#/Response
+        400:
+          description: Illformed device ID or request body
+          content:
+            application/json:
+              schema:
+                $ref: response.schema.json#/Response
+        401:
+          $ref: '#/components/responses/unauthorized'
+        404:
+          description: No such device
+          content:
+           application/json:
+             schema:
+               $ref: response.schema.json#/Response
+        default:
+          $ref: '#/components/responses/internalError'
+    delete:
+      operationId: policiesRetire
+      tags:
+        - policies
+      description: Retire an active policy.
+      security:
+        - appAuth: [] 
+      parameters:
+        - in: path
+          name: policy-id
+          description: The policy's numeric ID
+          required: true
+          schema:
+            type: integer
+          example: 42
+      responses:
+        200:
+          description: The policy was revoked
+          content:
+            application/json:
+              schema:
+                $ref: response.schema.json#/Response
+        400:
+          description: Illformed policy ID
+          content:
+            application/json:
+              schema:
+                $ref: response.schema.json#/Response
+        401:
+          $ref: '#/components/responses/unauthorized'
+        404:
+          description: No such policy
+          content:
+           application/json:
+             schema:
+               $ref: response.schema.json#/Response
+        default:
+          $ref: '#/components/responses/internalError'
+  /policies:
+    get:
+      operationId: policiesGet
+      tags:
+        - policies
+      description: Fetch batches of policies. The response will have the 'next' field set.
+      security:
+        - appAuth: [] 
+      parameters:
+        - in: query
+          name: continue
+          description: Cursor at with to continue the query.
+          required: false
+          schema:
+            type: string
+          example: dlsjdlsa==
+      responses:
+        200:
+          description: The response changes include a batch of policies.
+          content:
+            application/json:
+              schema:
+                $ref: response.schema.json#/Response
+        400:
+          description: Illformed cursor
+          content:
+            application/json:
+              schema:
+                $ref: response.schema.json#/Response
+        401:
+          $ref: '#/components/responses/unauthorized'
+        default:
+          $ref: '#/components/responses/internalError' 
+    post:
+      operationId: policiesNew
+      tags:
+        - policies
+      description: Create a new policy. The request must include a name.
+      security:
+        - appAuth: [] 
+      requestBody:
+        description: The new policy
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: policy.schema.json#/Policy
+      responses:
+        200:
+          description: The response subject is the new policy.
+          content:
+            application/json:
+              schema:
+                $ref: response.schema.json#/Response
+        400:
+          description: Illformed request body or duplicate policy
+          content:
+            application/json:
+              schema:
+                $ref: response.schema.json#/Response
+        401:
+          $ref: '#/components/responses/unauthorized'
+        default:
+          $ref: '#/components/responses/internalError' 

@@ -1,0 +1,50 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://immu.ne/api-v1-response.schema.json",
+
+  "title": "Response",
+  "description": "Response of v1 API calls",
+
+  "type": "object",
+  "properties": {
+    "code": {
+      "description": "Response status. Indicates whether the request was successful",
+      "type": "string",
+      "enum": [ "ok", "error" ]
+    },
+    "errors": {
+      "description": "Errors that occured during the request. Only present if code is 'error'",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+
+    "policies": {
+      "description": "",
+      "type": "array",
+      "items": {
+        "$ref": "https://immu.ne/api-v1-policy.schema.json"
+      },
+      "minItems": 1
+    },
+
+    "devices": {
+      "description": "",
+      "type": "array",
+      "items": {
+        "$ref": "https://immu.ne/api-v1-device.schema.json"
+      },
+      "minItems": 1
+    },
+
+    "next": {
+      "description": "Cursor for the next batch of changes if the query was on a collection.",
+      "type": "string"
+    }
+  },
+  "required": ["code"],
+  "readOnly": true
+}

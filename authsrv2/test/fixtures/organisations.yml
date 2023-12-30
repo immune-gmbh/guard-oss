@@ -1,0 +1,78 @@
+kais_org:
+  name: "Kai's Organisation"
+  address: bochum
+  splunk_enabled: true
+  splunk_event_collector_url: "https://siem.example.com/splunk/services/collector"
+  splunk_authentication_token: "deadbeef"
+  syslog_enabled: true
+  syslog_udp_port: 514
+  syslog_hostname_or_address: "siem.example.com"
+  stripe_customer_id: "test-stripe-id"
+  created_at: <%= 5.day.ago.to_s(:db) %>
+  updated_at: <%= 5.day.ago.to_s(:db) %>
+
+fixed_id_org:
+  public_id: "cdae9771-4761-46cd-883e-e0f30d9b40a8"
+  name: "Fixed ID Organisation"
+  created_at: <%= 5.day.ago.to_s(:db) %>
+  updated_at: <%= 5.day.ago.to_s(:db) %>
+
+<%
+  [
+		"d5d70fad-c11f-4609-8cab-17438305f0b0",
+		"39f5930f-d9cf-49d4-9ad4-2054ae4dfea5",
+		"3fab3a3e-c286-47cf-a096-dfc899441c8e",
+		"f2561288-76e5-42cb-bea8-90c8d6265a63",
+		"ad89ec0a-d2a7-40a9-8297-d87fae349311",
+		"f8e47633-a3b5-4f7e-bcaa-3272fe51f7fa",
+		"1222fe6a-e762-41b9-8252-5af7a6547342"
+  ].each_with_index do |uu,idx| %>
+billing_org_<%= idx %>:
+  public_id: <%= uu %>
+  name: <%= "Billing Organisation ##{idx}" %>
+  created_at: <%= 5.day.ago.to_s(:db) %>
+  updated_at: <%= 5.day.ago.to_s(:db) %>
+<% end %>
+
+testys_org:
+  name: "Testy's Organisation"
+  created_at: <%= 5.day.ago.to_s(:db) %>
+  updated_at: <%= 5.day.ago.to_s(:db) %>
+
+payment_reminder_org:
+  name: "Payment reminder Organisation"
+  status: "active"
+  invoice_email_address: "test@example.com"
+  created_at: <%= (14.day.ago + 5.hours).to_s(:db) %>
+  updated_at: <%= (14.day.ago + 5.hours).to_s(:db) %> 
+
+stripe1_org:
+  name: "Stripe org #1"
+  status: "active"
+  stripe_customer_id: "cus_1"
+  created_at: <%= 5.day.ago.to_s(:db) %>
+  updated_at: <%= 5.day.ago.to_s(:db) %>
+
+stripe2_org:
+  name: "Stripe org #2"
+  status: "active"
+  stripe_customer_id: "cus_2"
+  created_at: <%= 5.day.ago.to_s(:db) %>
+  updated_at: <%= 5.day.ago.to_s(:db) %>
+
+stripe3_org:
+  name: "Stripe org #3"
+  status: "active"
+  stripe_customer_id: "cus_3"
+  created_at: <%= 5.day.ago.to_s(:db) %>
+  updated_at: <%= 5.day.ago.to_s(:db) %>
+
+invalid_kai_org:
+  name: "Invalid Kai's Organisation"
+  created_at: <%= 5.day.ago.to_s(:db) %>
+  updated_at: <%= 5.day.ago.to_s(:db) %>
+
+admin_org:
+  name: "Admin Org"
+  created_at: <%= 5.day.ago.to_s(:db) %>
+  updated_at: <%= 5.day.ago.to_s(:db) %>

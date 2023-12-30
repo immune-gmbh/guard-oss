@@ -1,0 +1,10 @@
+.git/
+.github/workflows/
+_acceptance/
+_deployment/
+_documentation/
+_performance/
+_schemas/
+authsrv2/
+driver/
+webapp-v2/

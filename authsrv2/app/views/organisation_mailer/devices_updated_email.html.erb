@@ -1,0 +1,21 @@
+Hello, <%= @user.name %>
+<br><br>
+We updated the number of devices being billed, to your latest usage.
+<br><br>
+Old amount of devices: <strong><%= @current_devices_amount %></strong>
+<br>
+New amount of devices: <strong><%= @new_devices_amount %></strong>
+<br><br>
+<% if @organisation.freeloader %>
+  As your organisation is running on our free plan, you will not be charged for anything.
+<% else %>
+  You will be charged: <%= @price %>
+  <% if @free_credits %>
+  <br>
+  We will first use your remaining free credits of <strong><%= @free_credits %></strong>
+  <% end %>
+<% end %>
+<br><br>
+Here is a link to your invoices, if you want to check directly: <%= link_to "#{Settings.external_frontend_url}/dashboard/organisations/#{@organisation.public_id}?tab=billing", "#{Settings.external_frontend_url}/dashboard/organisations/#{@organisation.public_id}?tab=billing", style: 'color: #ff193c;' %>
+<br><br>
+Thank you for being a customer and have a great day!

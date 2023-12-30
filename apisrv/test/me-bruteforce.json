@@ -1,0 +1,192 @@
+{
+  "uefi": [],
+  "msrs": [],
+  "cpuid": [],
+  "me": [
+    {
+      "guid": "8e6a6715-9abc-4043-88ef-9e39c6f63e0f",
+      "commands": [
+        {
+          "command": "AwIAAAAAAAA=",
+          "response": "A4IAAAAAAAAETBEweQ=="
+        },
+        {
+          "command": "AwIAAAcAAAA=",
+          "response": "A4IAAAcAAAAEAQAAAA=="
+        },
+        {
+          "command": "AwIAAAkAAAA=",
+          "response": "A4IAAAkAAAAEBAAAAA=="
+        },
+        {
+          "command": "AwIAAB0AAAA=",
+          "response": "A4IAAB0AAAAEIlQkEg=="
+        },
+        {
+          "command": "AwIAACAAAAA=",
+          "response": "A4IAACAAAAAETBEweQ=="
+        },
+        {
+          "command": "AwIAACsAAAA=",
+          "response": "A4IAACsAAAAEAAAAAA=="
+        },
+        {
+          "command": "AwIAADAAAAA=",
+          "response": "A4IAADAAAAAEAQAAAA=="
+        },
+        {
+          "command": "BQEAAAAAAAAAAAAA",
+          "response": "BYEAAAAAAAAAAAAAAQAAAA=="
+        },
+        {
+          "command": "BQMAAA==",
+          "response": "BYMAAAEAAAA="
+        },
+        {
+          "command": "ChwAAA==",
+          "response": "CpwACw=="
+        },
+        {
+          "command": "/wIAAA==",
+          "response": "/4IAAAgACwAqDkYACAALACoORgAGAAsAxQQUAA=="
+        }
+      ]
+    },
+    {
+      "guid": "309dcde8-ccb1-4062-8f78-600115a34327",
+      "commands": [
+        {
+          "command": "HgAAAA==",
+          "response": "HwAAAAAAAADAAQAAAAABAAsACABGACoOCwAIAEYAKg4xAAAAIaEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAEwQIHnf/////////wAAAQADAAAAHAEAAAAAAAAAAAAACAAAACJUJBIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEUCAJQGgRCDAAAAAAIATE9DTAAAAAALAAgARgAqDgEAAAAAAAAQAQAAAAAAABAAAAAAAAAAAAAAAAAAAAAAV0NPRAAAAAALAAgARgAqDvMkAAAAAAEA8yQAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+        }
+      ]
+    },
+    {
+      "guid": "12f80028-b4b7-4b2d-aca8-46e0ff65814c",
+      "commands": [
+        {
+          "command": "ChwAAA=="
+        }
+      ]
+    },
+    {
+      "guid": "05b79a6f-4628-4d7f-899d-a91514cb32ab",
+      "commands": [
+        {
+          "command": "ChwAAA=="
+        }
+      ]
+    },
+    {
+      "guid": "6733a4db-0476-4e7b-b3af-bcfc29bee7a7",
+      "commands": [
+        {
+          "command": "ChwAAA==",
+          "response": "wAAAAAEAAAAAAAAA/nIrRCR8R0olr1eare4JFmkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+        }
+      ]
+    },
+    {
+      "guid": "b638ab7e-94e2-4ea2-a552-d1c54b627f04",
+      "commands": [
+        {
+          "command": "ChwAAA==",
+          "response": "//////////8BEAAAAAAAAA=="
+        }
+      ]
+    },
+    {
+      "guid": "fbf6fcf1-96cf-4e2e-a6a6-1bab8cbe36b1",
+      "commands": [
+        {
+          "command": "ChwAAA==",
+          "response": "//////////8AEAAAAAAAAA=="
+        }
+      ]
+    },
+    {
+      "guid": "082ee5a7-7c25-470a-9643-0c06f0466ea1",
+      "commands": [
+        {
+          "command": "ChwAAA==",
+          "response": "AIQAAA=="
+        }
+      ]
+    },
+    {
+      "guid": "f908627d-13bf-4a04-b91f-a64e9245323d",
+      "commands": [
+        {
+          "command": "ChwAAA==",
+          "response": "ChwAAAAAgAAEAAAAIQAAAA=="
+        }
+      ]
+    },
+    {
+      "guid": "309dcde8-ccb1-4062-8f78-600115a34327",
+      "commands": [
+        {
+          "command": "ChwAAA==",
+          "response": "/wAAAEUCAAA="
+        }
+      ]
+    },
+    {
+      "guid": "8c2f4425-77d6-4755-aca3-891fdbc66a58",
+      "commands": [
+        {
+          "command": "ChwAAA==",
+          "response": "ChwAAKqqqqoEAAAAqqqqqqqqqqo="
+        }
+      ]
+    },
+    {
+      "guid": "8e6a6715-9abc-4043-88ef-9e39c6f63e0f",
+      "commands": [
+        {
+          "command": "ChwAAA==",
+          "response": "CpwACw=="
+        }
+      ]
+    },
+    {
+      "guid": "cea154ea-8ff5-4f94-9290-0bb7355a34db",
+      "commands": [
+        {
+          "command": "ChwAAA==",
+          "response": "igQAAA=="
+        }
+      ]
+    }
+  ],
+  "tpm2_properties": [],
+  "pci": [],
+  "acpi": {
+    "tables": {}
+  },
+  "smbios": {
+    "data": ""
+  },
+  "txt": {
+    "data": ""
+  },
+  "vtd": {
+    "error": "not-impl"
+  },
+  "flash": {
+    "data": ""
+  },
+  "event_log": {
+    "error": "no-resp"
+  },
+  "mac": {
+    "addrs": []
+  },
+  "os": {
+    "hostname": "stboot",
+    "name": "Debian GNU/Linux 10 (buster)"
+  },
+  "memory": {
+    "error": "not-impl"
+  }
+}

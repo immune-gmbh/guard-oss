@@ -1,0 +1,68 @@
+service_name: "authsrv"
+internal_apisrv_url: "http://apisrv-v2.svc.default.cluster.local:8000"
+external_api_url: "https://xxx.xxx.xxx/v2"
+external_frontend_url: "https://xxx.xxx"
+cors_origins:
+  - "https://xxx.xxx"
+authentication:
+  disable_registration: false
+  disable_activation: false
+
+  # generate new key every start
+  private_key_path: null
+
+  static_keys: {}
+  api_token_lifetime_seconds: <%= 3600 * 24 %>
+  enrollment_token_lifetime_seconds: <%= 3600 * 24 %>
+  service_token_lifetime_seconds: 10
+  label_selector: 'xxxxxxxxx'
+
+  twitter:
+    api_key: xxxxxxxxxxxxxxxxxxxxxxxx
+    # api_secret: $AUTHSRV_TWITTER_API_SECRET
+    callback_url: "https://xxxx.xxx.xxx/v2/oauth/callback/twitter"
+
+  google:
+    api_key: xxxxxxxxxxxxxxxxxxxxxxxxxx.xxxxxxx.xxxxxxxxx
+    # api_secret: $AUTHSRV_GOOGLE_API_SECRET
+    callback_url: "https://xxxxxxx.xxxxx.xxxxxxxx/v2/oauth/callback/google"
+
+  github:
+    api_key: xxxxxxxxxxxxxxxxxxxxxxxxxxxx
+    # api_secret: $AUTHSRV_GITHUB_API_SECRET
+    callback_url: "https://xxxxx.xxxxxxx.xxxxxxx/v2/oauth/callback/github"
+
+payment:
+  disable: false
+  stripe_public_key: xxxxxxxxxxxxxxxxx
+  # stripe_secret_key: $AUTHSRV_STRIPE_SECRET_KEY
+  price_id: xxxxxxxxxxxxxxx
+  # EUR cents
+  free_credits: 5000
+  device_quota: 50
+
+development:
+  disable_events: false
+
+telemetry:
+  enabled: true
+  protocol: otlp
+  endpoint: localhost
+  name: "authsrv"
+  # AUTHSRV_OTLP_TOKEN
+
+features:
+  alert_emails: []
+
+# Configuration controller
+release: "unreleased"
+agent_urls:
+  ubuntu: "https://xxxx.xxxx.xxxx/r97/guard_1-r97.1_amd64.deb"
+  fedora: "https://xxxx.xxxx.xxxx/r97/guard-1-r97-1.x86_64.rpm"
+  generic: "https://xxxx.xxxx.xxxx/r97/guard-linux-r97"
+  windows: "https://xxxx.xxxx.xxxx/r97/immuneGuard_en-us-r97.msi"
+
+mail:
+  mailgun_domain: xxxx.xxxx.xxxx
+  sender_domain: xxxx.xxxx
+  asset_domain: xxxx.xxxx.xxxx"

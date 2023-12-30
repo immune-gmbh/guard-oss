@@ -1,0 +1,34 @@
+external_frontend_url: "http://localhost:8080"
+internal_apisrv_url: "http://localhost:8000"
+cors_origins:
+  - "http://localhost:8080"
+
+authentication:
+  private_key_path: './token.dev.key'
+  stripe:
+    public_key: pk_test_51IIaENHjcZEmWzJMFhzmRJBoreNgLqLzXwDWHzfz0MnqCabL4zaz6P1Y1RqJT5AnLwCQQJB6O9WpEcbLHbNiOBw7007stRufdR
+
+  twitter:
+    api_key: kma2yvB6LTaQV599uauKRosVJ
+
+  google:
+    api_key: 978624175613-1s1a8le5rnkuaajf2roo858fa9224n1a.apps.googleusercontent.com
+    callback_url: http://localhost:3000/v2/oauth/callback/google
+
+  github:
+    api_key: 2b8b30123db9de2e3c79
+    callback_url: http://localhost:3000/v2/oauth/callback/github
+
+development:
+  disable_events: true
+
+release: 42
+
+telemetry:
+  enabled: false
+
+agent_urls:
+  ubuntu: https://packages.immune.app/r80/guard_1-r80.1_amd64.deb
+  fedora: https://packages.immune.app/r80/guard-1-r80-1.x86_64.rpm
+  generic: https://packages.immune.app/r80/guard-linux-r80
+  windows: https://packages.immune.app/r80/immuneGuard_en-us.msi

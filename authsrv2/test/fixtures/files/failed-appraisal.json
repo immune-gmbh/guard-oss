@@ -1,0 +1,102 @@
+{
+  "specversion": "1.0",
+  "id": "c095549a-b4ea-436a-9e0d-858b5264a198",
+  "source": "apisrv2",
+  "type": "ne.immu.v2.new-appraisal",
+  "subject": "cdae9771-4761-46cd-883e-e0f30d9b40a8",
+  "datacontenttype": "application/json",
+  "time": "2021-09-01T17:19:19.310419Z",
+  "data": {
+    "device": {
+      "id": "112233",
+      "cookie": "asasasas",
+      "name": "Device #1",
+      "attributes": null,
+      "state": "vulnerable",
+      "hwid": "0000"
+    },
+    "next": {
+      "id": "testlalala",
+      "received": "2021-08-22T17:19:19.310188Z",
+      "expires": "2021-09-11T17:19:19.310189Z",
+      "verdict": false,
+      "report": {
+        "type": "report/1",
+        "host": {
+          "name": "Windows 10 RC2",
+          "hostname": "example.com",
+          "type": "windows",
+          "cpu_vendor": "GenuineIntel"
+        },
+        "smbios": {
+          "manufacturer": "Lenovo",
+          "product": "ThinkPad X230",
+          "bios_release_date": "11/2/2011",
+          "bios_vendor": "Lenovo",
+          "bios_version": "1.0"
+        },
+        "uefi": {
+          "mode": "deployed",
+          "secureboot": true,
+          "platform_keys": [],
+          "exchange_keys": [],
+          "permitted_keys": [],
+          "forbidden_keys": []
+        },
+        "tpm": {
+          "manufacturer": "IFX",
+          "vendor_id": "Opti",
+          "spec_version": "2",
+          "eventlog": []
+        },
+        "me": {
+          "features": null,
+          "variant": "",
+          "version": null,
+          "recovery_version": null,
+          "fitc_version": null,
+          "api_version": null,
+          "updatable": "",
+          "chipset_version": "0",
+          "chip_id": "0",
+          "size": "0",
+          "signature": ""
+        },
+        "sgx": {
+          "version": 2,
+          "enabled": true,
+          "flc": true,
+          "kss": true,
+          "enclave_size_32": 1000,
+          "enclave_size_64": 10000,
+          "epc": []
+        },
+        "txt": {
+          "ready": true
+        },
+        "sev": {
+          "enabled": true,
+          "version": [
+            1,
+            18
+          ],
+          "sme": true,
+          "es": true,
+          "vte": true,
+          "snp": true,
+          "vmpl": true,
+          "guests": 3,
+          "min_asid": 1
+        },
+        "annotations": null
+      },
+      "policy": {
+        "id": "112233",
+        "name": "",
+        "revoked": false,
+        "devices": null,
+        "changes": null
+      }
+    }
+  }
+}

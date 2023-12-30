@@ -1,0 +1,71 @@
+{
+  "data": {
+    "id": "000139cc-15d6-4e26-b59f-483ffd5cd787",
+    "type": "organisation",
+    "attributes": {
+      "name": "New Orga",
+      "subscription_id": null,
+      "vat_number": "DE345789003",
+      "splunk_enabled": null,
+      "splunk_accept_all_server_certificates": true,
+      "splunk_event_collector_url": null,
+      "splunk_authentication_token": null,
+      "syslog_enabled": null,
+      "syslog_hostname_or_address": null,
+      "syslog_udp_port": null,
+      "invoice_name": "Someone",
+      "status": "created",
+      "freeloader": false,
+      "can_edit": true,
+      "can_delete": true,
+      "can_read": true
+    },
+    "relationships": {
+      "memberships": {
+        "data": [
+          {
+            "id": "0001dc49-3798-4924-a2b5-a28362d6a8bc",
+            "type": "membership"
+          }
+        ]
+      },
+      "users": {
+        "data": [
+          {
+            "id": "307f78d7-877b-53d0-abb3-c063159413fc",
+            "type": "user"
+          }
+        ]
+      },
+      "subscription": {
+        "data": null
+      },
+      "address": {
+        "data": {
+          "id": "0001d247-b958-44f6-917e-06c00a70d909",
+          "type": "address"
+        }
+      }
+    }
+  },
+  "included": [
+    {
+      "id": "0001dc49-3798-4924-a2b5-a28362d6a8bc",
+      "type": "membership",
+      "attributes": {
+        "organisation_id": "000139cc-15d6-4e26-b59f-483ffd5cd787",
+        "role": "owner",
+        "notify_device_update": true,
+        "notify_invoice": true,
+        "token": "eyJraWQiOiJiZDAwN2I5ZjExODAwMTUwIiwiYWxnIjoiRVMyNTYifQ.eyJhY3QiOnsic3ViIjoidGFnOmltbXUubmUsMjAyMTp1c2VyLzMwN2Y3OGQ3LTg3N2ItNTNkMC1hYmIzLWMwNjMxNTk0MTNmYyIsIm5hbWUiOiJLYWkgTWljaGFlbGlzIiwicm9sIjoidXNlciJ9LCJzdWIiOiJ0YWc6aW1tdS5uZSwyMDIxOm9yZ2FuaXNhdGlvbi8wMDAxMzljYy0xNWQ2LTRlMjYtYjU5Zi00ODNmZmQ1Y2Q3ODciLCJqdGkiOiI5Yzg2MTUzYmI1YmFiMzUwNTZlYzM2OGQyZmMwN2EyOCIsImV4cCI6MTY0MDg4ODQwNSwibmJmIjoxNjQwODAyMDA1LCJpYXQiOjE2NDA4MDIwMDUsImlzcyI6InRhZzppbW11Lm5lLDIwMjE6c2VydmljZS9hdXRoc3J2In0.Yai6xo-gZiYvj-CsUZETr8laTm3KN-gDafiac_QfieX2FAVVZIzTjKk5RBF37p7_R_lfuTJk5wmmHm3CepaHqQ",
+        "enrollment_token": "eyJraWQiOiJiZDAwN2I5ZjExODAwMTUwIiwiYWxnIjoiRVMyNTYifQ.eyJhY3QiOnsic3ViIjoidGFnOmltbXUubmUsMjAyMTphZ2VudCJ9LCJzdWIiOiJ0YWc6aW1tdS5uZSwyMDIxOm9yZ2FuaXNhdGlvbi8wMDAxMzljYy0xNWQ2LTRlMjYtYjU5Zi00ODNmZmQ1Y2Q3ODciLCJqdGkiOiI5Yzg2MTUzYmI1YmFiMzUwNTZlYzM2OGQyZmMwN2EyOCIsImV4cCI6MTY0MDg4ODQwNSwibmJmIjoxNjQwODAyMDA1LCJpYXQiOjE2NDA4MDIwMDUsImlzcyI6InRhZzppbW11Lm5lLDIwMjE6c2VydmljZS9hdXRoc3J2In0.VfxpZ4QNc_40FwtXsLAjN06Uuk8K_Fs8NBk-Ncbc6IxPwnkiLB79N_Syw8qLrSYeu4rnDdpqruE9NUvlPFP88Q",
+        "name": "New Orga",
+        "user_name": "Kai Michaelis",
+        "user_email": "kai.michaelis@immu.ne",
+        "can_delete": true
+      },
+      "relationships": {
+      }
+    }
+  ]
+}

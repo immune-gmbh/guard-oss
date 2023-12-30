@@ -1,0 +1,49 @@
+{
+  "type": "report/2",
+  "values": {
+    "host": {
+      "name": "Ubuntu 21.10",
+      "hostname": "ludmilla",
+      "type": "linux",
+      "cpu_vendor": "AuthenticAMD"
+    },
+    "smbios": {
+      "manufacturer": "LENOVO",
+      "product": "20UH001QGE",
+      "serial": "PC1SC0VK",
+      "uuid": "b112304c-28f2-11b2-a85c-fb492b570fd7",
+      "bios_release_date": "10/20/2021",
+      "bios_vendor": "LENOVO",
+      "bios_version": "R1CET67W(1.36 )"
+    },
+    "nics": [
+      {
+        "name": "enp2s0f0",
+        "ipv4": [
+          "10.93.129.131/23"
+        ],
+        "ipv6": [
+          "fd3b:cfd7:9601:9ec5:2694:52c7:6dbc:fd20/64",
+          "fd3b:cfd7:9601:9ec5:a5af:4c79:9d9:571c/64",
+          "fe80::1482:b81d:eef:9401/64"
+        ],
+        "mac": "8C:8C:AA:86:52:8C"
+      },
+      {
+        "name": "wlp3s0",
+        "ipv4": [
+          "172.25.20.132/24"
+        ],
+        "ipv6": [
+          "fd3b:cfd7:9601:9e1e::d001/128",
+          "fd3b:cfd7:9601:9e1e:a620:b567:b605:7550/64",
+          "fd3b:cfd7:9601:9e1e:3542:e771:baaf:ed45/64",
+          "fe80::4ac9:6d1:6c57:a065/64"
+        ],
+        "mac": "70:9C:D1:B2:AA:2F"
+      }
+    ],
+    "agent_release": ""
+  },
+  "annotations": []
+}

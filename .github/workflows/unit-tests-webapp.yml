@@ -1,0 +1,34 @@
+name: Unit tests (webapp)
+on:
+  pull_request: {}
+jobs:
+  webapp:
+    timeout-minutes: 30
+    runs-on: ubuntu-20.04
+    defaults:
+      run:
+        working-directory: ./webapp-v2
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: technote-space/get-diff-action@v5
+        with:
+          PATTERNS: |
+            webapp-v2/**
+            .github/workflows/unit-tests-webapp.yml
+      - uses: actions/setup-node@v2
+        if: env.GIT_DIFF
+        with:
+          node-version: '16.3'
+          cache: 'npm'
+          cache-dependency-path: ./webapp-v2/package-lock.json
+      - name: Install deps
+        if: env.GIT_DIFF
+        run: npm install
+      - name: Typecheck
+        if: env.GIT_DIFF
+        run: npm run build
+      - name: Unit Tests
+        id: UnitTests
+        if: env.GIT_DIFF
+        run: npm run test

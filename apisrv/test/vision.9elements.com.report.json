@@ -1,0 +1,21 @@
+{
+  "type": "report/2",
+  "values": {
+    "host": {
+      "name": "Ubuntu 18.04.5 LTS",
+      "hostname": "vision.9elements.com",
+      "type": "linux",
+      "cpu_vendor": "AuthenticAMD"
+    },
+    "smbios": {
+      "manufacturer": "Micro-Star International Co., Ltd.",
+      "product": "MS-7A38",
+      "serial": "To be filled by O.E.M.",
+      "uuid": "00000000-0000-0000-0000-309c2388f294",
+      "bios_release_date": "09/17/2018",
+      "bios_vendor": "American Megatrends Inc.",
+      "bios_version": "A.EF"
+    }
+  },
+  "annotations": []
+}

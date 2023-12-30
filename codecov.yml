@@ -1,0 +1,40 @@
+coverage:
+  status:
+    patch: off
+    project:
+      default: off
+      apisrv:
+        flags: apisrv
+        target: 80%
+        threshold: 1%
+      authsrv:
+        flags: authsrv
+        target: 80%
+        threshold: 1%
+      agent:
+        flags: agent
+        target: 80%
+        threshold: 1%
+      webapp:
+        flags: webapp
+        target: 80%
+        threshold: 1%
+
+comment:
+  layout: "diff"
+  branches:
+    - master
+
+flags:
+  apisrv:
+    paths:
+      - apisrv/v2
+  agent:
+    paths:
+      - agent/
+  authsrv:
+    paths:
+      - authsrv2/
+  webapp:
+    paths:
+      - webapp-v2/

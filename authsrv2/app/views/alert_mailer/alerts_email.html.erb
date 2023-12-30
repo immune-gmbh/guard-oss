@@ -1,0 +1,32 @@
+<% dedupd_alerts = @alerts.sort {|a,b| a.description <=> b.description}.uniq(&:description) %>
+<% dedupd_devices = @alerts.map(&:name).sort.uniq %>
+<% if dedupd_alerts.size == 1 %>
+  <% alert_multiplicity = "a security issue" %>
+<% else %>
+  <% alert_multiplicity = "#{dedupd_alerts.size} security issues" %>
+<% end %>
+<% if dedupd_devices.size == 1 %>
+  <% review_url = device_url(@alerts.first.device, @organisation.id) %>
+  <% device_multiplicity = dedupd_devices.first %>
+<% else %>
+  <% review_url = vulnerable_devices_url(@organisation.id) %>
+  <% device_multiplicity = "the affected devices" %>
+<% end %>
+
+Hello, <%= @user.name %>
+<br><br>
+<% if @earliest %>
+  On <%= @earliest.to_date.to_formatted_s(:long) %> at <%= @earliest.to_time.to_formatted_s(:time) %> <%= @earliest.to_time.formatted_offset %> immune Guard detected <%= alert_multiplicity %> with <%= humanize_list(dedupd_devices, " device", " devices") %>.
+<% else %>
+  immune Guard detected <%= alert_multiplicity %> with <%= humanize_list(dedupd_devices, " device", " devices") %>.
+<% end %>
+<br><br>
+<ul class="list">
+<% dedupd_alerts.each do |alert| %>
+  <li><p><%= alert.description %></p></li>
+<% end %>
+</ul>
+<br>
+We marked <%= device_multiplicity %> as untrusted in response to this. You can <%= link_to "review the details", review_url, style: 'color: #ff193c;' %> and accept the changes in case you believe they were the result of a legitimate action.
+<br><br>
+Thank you for being a customer and have a great day!

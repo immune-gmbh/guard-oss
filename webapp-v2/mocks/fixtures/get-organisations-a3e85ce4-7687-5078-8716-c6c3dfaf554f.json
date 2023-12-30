@@ -1,0 +1,82 @@
+{
+  "data": {
+    "id": "a3e85ce4-7687-5078-8716-c6c3dfaf554f",
+    "type": "organisation",
+    "attributes": {
+      "name": "Kai's Organisation",
+      "subscription_id": "233eca70-6419-5d2b-8006-1b6a6392046b",
+      "vat_number": null,
+      "splunk_enabled": true,
+      "splunk_accept_all_server_certificates": true,
+      "splunk_event_collector_url": "https://siem.example.com/splunk/services/collector",
+      "splunk_authentication_token": "deadbeef",
+      "syslog_enabled": true,
+      "syslog_hostname_or_address": "siem.example.com",
+      "syslog_udp_port": "514",
+      "invoice_name": null,
+      "status": "created",
+      "freeloader": false,
+      "can_edit": true,
+      "can_delete": true,
+      "can_read": true
+    },
+    "relationships": {
+      "memberships": {
+        "data": [
+          {
+            "id": "628cf88a-94a9-55bf-bea4-fea7e6f4f4bc",
+            "type": "membership"
+          },
+          {
+            "id": "c6a1e8b6-08b4-5824-a1d9-9cae7c037550",
+            "type": "membership"
+          },
+          {
+            "id": "581a833c-ef2b-5744-8c26-4286f5f1785c",
+            "type": "membership"
+          }
+        ]
+      },
+      "users": {
+        "data": [
+          {
+            "id": "a7f7c4ef-a96b-5d37-b442-9fce31e6d6f4",
+            "type": "user"
+          },
+          {
+            "id": "6f06976d-7a1a-558b-a304-33183497d32a",
+            "type": "user"
+          },
+          {
+            "id": "307f78d7-877b-53d0-abb3-c063159413fc",
+            "type": "user"
+          }
+        ]
+      },
+      "subscription": {
+        "data": {
+          "id": "233eca70-6419-5d2b-8006-1b6a6392046b",
+          "type": "subscription"
+        }
+      },
+      "address": {
+        "data": {
+          "id": "4d9a5fa8-08bc-5b02-a478-76b1f4d30e90",
+          "type": "address"
+        }
+      }
+    }
+  },
+  "included": [
+    {
+      "id": "4d9a5fa8-08bc-5b02-a478-76b1f4d30e90",
+      "type": "address",
+      "attributes": {
+        "street_and_number": "Kortumstraße 19-22",
+        "city": "Bochum",
+        "postal_code": "44789",
+        "country": "Germany"
+      }
+    }
+  ]
+}

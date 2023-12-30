@@ -1,0 +1,53 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://immu.ne/api-v1-device.schema.json",
+
+  "title": "Device",
+  "description": "A single managed device.",
+
+  "type": "object",
+  "properties": {
+    "name":{
+      "description":"Human readable name of the device",
+      "type": "string"
+    },
+    "policies":{
+      "type":"array",
+      "items":{
+        "type":"string",
+        "description": "Policy database ID",
+        "minLength": 1
+      },
+      "description":"Associated policies",
+      "uniqueItems": true
+    },
+    "fpr":{
+      "description":"Fingerprint of the machine.",
+      "type": "string",
+      "pattern": "^([0-9a-fA-F]{2})+$"
+    },
+    "state":{
+      "type": "string",
+      "enum":["new", "unseen", "trusted", "modified", "retired" ],
+      "readOnly": true
+    },
+    "id":{
+      "type":"string",
+      "description": "Immutable database ID of the policy",
+      "readOnly": true,
+      "minLength": 1
+    },  
+    "state_timestamp":{
+      "type":"string",
+      "description":"Unix timestamp of the last state change",
+      "readOnly": true,
+      "pattern": "^[0-9]+$"
+    },
+    "last_appraisal":{
+      "description":"Last issued appraisal",
+      "$ref": "https://immu.ne/api-v1-appraisal.schema.json",
+      "readOnly": true
+    }
+  },
+  "required":[ "name", "fpr", "policies", "state", "state_timestamp", "id" ]
+}

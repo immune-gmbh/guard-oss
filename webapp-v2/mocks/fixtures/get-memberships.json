@@ -1,0 +1,346 @@
+{
+  "data": [
+    {
+      "id": "628cf88a-94a9-55bf-bea4-fea7e6f4f4bc",
+      "type": "membership",
+      "attributes": {
+        "role": "owner",
+        "notify_device_update": true,
+        "notify_invoice": false,
+        "can_delete": true,
+        "token": "eyJraWQiOiI4OGZhZWY0YmQyNzVjMmQ3IiwiYWxnIjoiRVMyNTYifQ.eyJhY3QiOnsic3ViIjoidGFnOmltbXUubmUsMjAyMTp1c2VyLzMwN2Y3OGQ3LTg3N2ItNTNkMC1hYmIzLWMwNjMxNTk0MTNmYyIsIm5hbWUiOiJLYWkgTWljaGFlbGlzIiwicm9sIjoidXNlciJ9LCJzdWIiOiJ0YWc6aW1tdS5uZSwyMDIxOm9yZ2FuaXNhdGlvbi9hM2U4NWNlNC03Njg3LTUwNzgtODcxNi1jNmMzZGZhZjU1NGYiLCJqdGkiOiI3NTQ1MmIyNDg3NmFkOTUxYWZiYzc0MGM1ZWNiNDYxNCIsImV4cCI6MTY0MjU5MTkwOSwibmJmIjoxNjQyNTA1NTA5LCJpYXQiOjE2NDI1MDU1MDksImlzcyI6InRhZzppbW11Lm5lLDIwMjE6c2VydmljZS9hdXRoc3J2In0.E3TuCZh6zMFhi6uKzkaDnf3A-ziv1sXD-RkZQZyp84fbofpJzRCJkENdARGcB-1-ZNUCMRQUzOO2VEV8M5IofQ",
+        "enrollment_token": "eyJraWQiOiI4OGZhZWY0YmQyNzVjMmQ3IiwiYWxnIjoiRVMyNTYifQ.eyJhY3QiOnsic3ViIjoidGFnOmltbXUubmUsMjAyMTphZ2VudCJ9LCJzdWIiOiJ0YWc6aW1tdS5uZSwyMDIxOm9yZ2FuaXNhdGlvbi9hM2U4NWNlNC03Njg3LTUwNzgtODcxNi1jNmMzZGZhZjU1NGYiLCJqdGkiOiI3NTQ1MmIyNDg3NmFkOTUxYWZiYzc0MGM1ZWNiNDYxNCIsImV4cCI6MTY0MjU5MTkwOSwibmJmIjoxNjQyNTA1NTA5LCJpYXQiOjE2NDI1MDU1MDksImlzcyI6InRhZzppbW11Lm5lLDIwMjE6c2VydmljZS9hdXRoc3J2In0.GwY2BT92jpr8UhVNLCQNYbaBCg9-TTiLxBnZOonGIYCO3eKAXNxOan07LeHopklTCISg6Rvkbg6vdlR1T7yBLg"
+      },
+      "relationships": {
+        "organisation": {
+          "data": {
+            "id": "a3e85ce4-7687-5078-8716-c6c3dfaf554f",
+            "type": "organisation"
+          }
+        },
+        "user": {
+          "data": {
+            "id": "307f78d7-877b-53d0-abb3-c063159413fc",
+            "type": "user"
+          }
+        }
+      }
+    },
+    {
+      "id": "a27058c8-a6d9-5463-9eca-d9ef18d36bf0",
+      "type": "membership",
+      "attributes": {
+        "role": "user",
+        "notify_device_update": false,
+        "notify_invoice": false,
+        "can_delete": true,
+        "token": "eyJraWQiOiI4OGZhZWY0YmQyNzVjMmQ3IiwiYWxnIjoiRVMyNTYifQ.eyJhY3QiOnsic3ViIjoidGFnOmltbXUubmUsMjAyMTp1c2VyLzMwN2Y3OGQ3LTg3N2ItNTNkMC1hYmIzLWMwNjMxNTk0MTNmYyIsIm5hbWUiOiJLYWkgTWljaGFlbGlzIiwicm9sIjoidXNlciJ9LCJzdWIiOiJ0YWc6aW1tdS5uZSwyMDIxOm9yZ2FuaXNhdGlvbi8zY2VlY2ZkOS0xZjU5LTUzYTItYjJmZi02MzY5MDBlNzA2NjgiLCJqdGkiOiI4YWYwYzYxNjJkZDY4ZDk5MjNiOWFmNzI2MjNiM2VhMCIsImV4cCI6MTY0MjU5MTkwOSwibmJmIjoxNjQyNTA1NTA5LCJpYXQiOjE2NDI1MDU1MDksImlzcyI6InRhZzppbW11Lm5lLDIwMjE6c2VydmljZS9hdXRoc3J2In0.9Ys-12ATlKckKK2kQzsjzWcV9je00p-KSfDY0J43nlJqO4LXDDjwthLTFJrGNlLWbSa8wyuH5j8LL7dWSQBQrw",
+        "enrollment_token": "eyJraWQiOiI4OGZhZWY0YmQyNzVjMmQ3IiwiYWxnIjoiRVMyNTYifQ.eyJhY3QiOnsic3ViIjoidGFnOmltbXUubmUsMjAyMTphZ2VudCJ9LCJzdWIiOiJ0YWc6aW1tdS5uZSwyMDIxOm9yZ2FuaXNhdGlvbi8zY2VlY2ZkOS0xZjU5LTUzYTItYjJmZi02MzY5MDBlNzA2NjgiLCJqdGkiOiI4YWYwYzYxNjJkZDY4ZDk5MjNiOWFmNzI2MjNiM2VhMCIsImV4cCI6MTY0MjU5MTkwOSwibmJmIjoxNjQyNTA1NTA5LCJpYXQiOjE2NDI1MDU1MDksImlzcyI6InRhZzppbW11Lm5lLDIwMjE6c2VydmljZS9hdXRoc3J2In0.txSdltItfx6MsmDtB0DE7uQU75_0R5GFI_ITJpfENwCiVu5ErjYXYqvuU5EppPA8tGIXqqDtQt82kzKXBSpCdw"
+      },
+      "relationships": {
+        "organisation": {
+          "data": {
+            "id": "3ceecfd9-1f59-53a2-b2ff-636900e70668",
+            "type": "organisation"
+          }
+        },
+        "user": {
+          "data": {
+            "id": "307f78d7-877b-53d0-abb3-c063159413fc",
+            "type": "user"
+          }
+        }
+      }
+    },
+    {
+      "id": "52b80f97-fdfa-560b-a170-b68e0c28a9ac",
+      "type": "membership",
+      "attributes": {
+        "role": "owner",
+        "notify_device_update": false,
+        "notify_invoice": false,
+        "can_delete": true,
+        "token": "eyJraWQiOiI4OGZhZWY0YmQyNzVjMmQ3IiwiYWxnIjoiRVMyNTYifQ.eyJhY3QiOnsic3ViIjoidGFnOmltbXUubmUsMjAyMTp1c2VyLzMwN2Y3OGQ3LTg3N2ItNTNkMC1hYmIzLWMwNjMxNTk0MTNmYyIsIm5hbWUiOiJLYWkgTWljaGFlbGlzIiwicm9sIjoidXNlciJ9LCJzdWIiOiJ0YWc6aW1tdS5uZSwyMDIxOm9yZ2FuaXNhdGlvbi8wYzNiYzJiYS0zZGExLTVlNjEtYmUzMy1jNzk1ZDAxYTE5ZjMiLCJqdGkiOiI4MmRjMmVmNDQyYzM0ZTFiZmRkN2IwYjRkNDg0NDhiYyIsImV4cCI6MTY0MjU5MTkwOSwibmJmIjoxNjQyNTA1NTA5LCJpYXQiOjE2NDI1MDU1MDksImlzcyI6InRhZzppbW11Lm5lLDIwMjE6c2VydmljZS9hdXRoc3J2In0.HqoRHuAbgb4nTw5B3_u368Tjt8LD9VAh6AjH4IF2BKtYdcEZZBkZpLia8TCuAL2J1rgROzbb6LLqDvnZ-YNVhg",
+        "enrollment_token": "eyJraWQiOiI4OGZhZWY0YmQyNzVjMmQ3IiwiYWxnIjoiRVMyNTYifQ.eyJhY3QiOnsic3ViIjoidGFnOmltbXUubmUsMjAyMTphZ2VudCJ9LCJzdWIiOiJ0YWc6aW1tdS5uZSwyMDIxOm9yZ2FuaXNhdGlvbi8wYzNiYzJiYS0zZGExLTVlNjEtYmUzMy1jNzk1ZDAxYTE5ZjMiLCJqdGkiOiI4MmRjMmVmNDQyYzM0ZTFiZmRkN2IwYjRkNDg0NDhiYyIsImV4cCI6MTY0MjU5MTkwOSwibmJmIjoxNjQyNTA1NTA5LCJpYXQiOjE2NDI1MDU1MDksImlzcyI6InRhZzppbW11Lm5lLDIwMjE6c2VydmljZS9hdXRoc3J2In0.vNYfveE7rJ-cW3BN2VA1_HRlQ0k7wLbf8eeeYkj-5vh8N-ptpAqAGz-djj-nwtMMESesnVxje52mgFqDrhu9xQ"
+      },
+      "relationships": {
+        "organisation": {
+          "data": {
+            "id": "0c3bc2ba-3da1-5e61-be33-c795d01a19f3",
+            "type": "organisation"
+          }
+        },
+        "user": {
+          "data": {
+            "id": "307f78d7-877b-53d0-abb3-c063159413fc",
+            "type": "user"
+          }
+        }
+      }
+    },
+    {
+      "id": "000158e0-d50d-4bbe-9fad-bb4deb40ac72",
+      "type": "membership",
+      "attributes": {
+        "role": "owner",
+        "notify_device_update": true,
+        "notify_invoice": true,
+        "can_delete": true,
+        "token": "eyJraWQiOiI4OGZhZWY0YmQyNzVjMmQ3IiwiYWxnIjoiRVMyNTYifQ.eyJhY3QiOnsic3ViIjoidGFnOmltbXUubmUsMjAyMTp1c2VyLzMwN2Y3OGQ3LTg3N2ItNTNkMC1hYmIzLWMwNjMxNTk0MTNmYyIsIm5hbWUiOiJLYWkgTWljaGFlbGlzIiwicm9sIjoidXNlciJ9LCJzdWIiOiJ0YWc6aW1tdS5uZSwyMDIxOm9yZ2FuaXNhdGlvbi8wMDAxMzgxMS0xNTQ3LTQ0MDEtOTFjOS0zNTE5NDM3ZWM0YWEiLCJqdGkiOiJmZTdiZjU0YzQzMTUwOWJkNWI0YjhhNjFlNjc2ZjgzMiIsImV4cCI6MTY0MjU5MTkwOSwibmJmIjoxNjQyNTA1NTA5LCJpYXQiOjE2NDI1MDU1MDksImlzcyI6InRhZzppbW11Lm5lLDIwMjE6c2VydmljZS9hdXRoc3J2In0.yd5hgn3kYxJ0NmZcT7SFqZPY8mLTESs4QZ4ZIO0O2fMo3g_euOpxlWQM1gxUKsI8g6BIpxz2A-b21__E166xKA",
+        "enrollment_token": "eyJraWQiOiI4OGZhZWY0YmQyNzVjMmQ3IiwiYWxnIjoiRVMyNTYifQ.eyJhY3QiOnsic3ViIjoidGFnOmltbXUubmUsMjAyMTphZ2VudCJ9LCJzdWIiOiJ0YWc6aW1tdS5uZSwyMDIxOm9yZ2FuaXNhdGlvbi8wMDAxMzgxMS0xNTQ3LTQ0MDEtOTFjOS0zNTE5NDM3ZWM0YWEiLCJqdGkiOiJmZTdiZjU0YzQzMTUwOWJkNWI0YjhhNjFlNjc2ZjgzMiIsImV4cCI6MTY0MjU5MTkwOSwibmJmIjoxNjQyNTA1NTA5LCJpYXQiOjE2NDI1MDU1MDksImlzcyI6InRhZzppbW11Lm5lLDIwMjE6c2VydmljZS9hdXRoc3J2In0.LsYpxBVgMfCYI-EGiZ3zoAWsXTCcIUC-cjcY3ky_FeCY-EogXy2__qTVxBCFx1DboQ-rOffzSZIlA9FHTl0KoA"
+      },
+      "relationships": {
+        "organisation": {
+          "data": {
+            "id": "00013811-1547-4401-91c9-3519437ec4aa",
+            "type": "organisation"
+          }
+        },
+        "user": {
+          "data": {
+            "id": "307f78d7-877b-53d0-abb3-c063159413fc",
+            "type": "user"
+          }
+        }
+      }
+    }
+  ],
+  "included": [
+    {
+      "id": "233eca70-6419-5d2b-8006-1b6a6392046b",
+      "type": "subscription",
+      "attributes": {
+        "status": "created",
+        "current_devices_amount": 0,
+        "max_devices_amount": 50,
+        "period_start": "2022-01-13",
+        "period_end": "2022-01-23",
+        "tax_rate": null,
+        "monthly_base_fee": 15,
+        "monthly_fee_per_device": 5,
+        "action_required": false,
+        "billing_details": {
+          "free_credits": 0
+        },
+        "setup_intent_secret": null
+      }
+    },
+    {
+      "id": "a3e85ce4-7687-5078-8716-c6c3dfaf554f",
+      "type": "organisation",
+      "attributes": {
+        "name": "Kai's Organisation",
+        "vat_number": null,
+        "splunk_enabled": true,
+        "splunk_accept_all_server_certificates": true,
+        "splunk_event_collector_url": "https://siem.example.com/splunk/services/collector",
+        "splunk_authentication_token": "deadbeef",
+        "syslog_enabled": true,
+        "syslog_hostname_or_address": "siem.example.com",
+        "syslog_udp_port": "514",
+        "invoice_name": null,
+        "status": "created",
+        "freeloader": false,
+        "member_count": 3,
+        "can_edit": true,
+        "can_delete": true,
+        "can_read": true
+      },
+      "relationships": {
+        "memberships": {
+          "data": [
+            {
+              "id": "628cf88a-94a9-55bf-bea4-fea7e6f4f4bc",
+              "type": "membership"
+            },
+            {
+              "id": "c6a1e8b6-08b4-5824-a1d9-9cae7c037550",
+              "type": "membership"
+            },
+            {
+              "id": "581a833c-ef2b-5744-8c26-4286f5f1785c",
+              "type": "membership"
+            }
+          ]
+        },
+        "users": {
+          "data": [
+            {
+              "id": "307f78d7-877b-53d0-abb3-c063159413fc",
+              "type": "user"
+            },
+            {
+              "id": "a7f7c4ef-a96b-5d37-b442-9fce31e6d6f4",
+              "type": "user"
+            },
+            {
+              "id": "6f06976d-7a1a-558b-a304-33183497d32a",
+              "type": "user"
+            }
+          ]
+        },
+        "subscription": {
+          "data": {
+            "id": "233eca70-6419-5d2b-8006-1b6a6392046b",
+            "type": "subscription"
+          }
+        },
+        "address": {
+          "data": {
+            "id": "4d9a5fa8-08bc-5b02-a478-76b1f4d30e90",
+            "type": "address"
+          }
+        }
+      }
+    },
+    {
+      "id": "3ceecfd9-1f59-53a2-b2ff-636900e70668",
+      "type": "organisation",
+      "attributes": {
+        "name": "Testy's Organisation",
+        "vat_number": null,
+        "splunk_enabled": null,
+        "splunk_accept_all_server_certificates": true,
+        "splunk_event_collector_url": null,
+        "splunk_authentication_token": null,
+        "syslog_enabled": null,
+        "syslog_hostname_or_address": null,
+        "syslog_udp_port": null,
+        "invoice_name": null,
+        "status": "created",
+        "freeloader": false,
+        "member_count": 2,
+        "can_edit": false,
+        "can_delete": false,
+        "can_read": true
+      },
+      "relationships": {
+        "memberships": {
+          "data": [
+            {
+              "id": "a27058c8-a6d9-5463-9eca-d9ef18d36bf0",
+              "type": "membership"
+            },
+            {
+              "id": "88bb0164-2a74-5f3b-b0b0-0928de530b93",
+              "type": "membership"
+            }
+          ]
+        },
+        "users": {
+          "data": [
+            {
+              "id": "307f78d7-877b-53d0-abb3-c063159413fc",
+              "type": "user"
+            },
+            {
+              "id": "7abc53af-a587-5175-9627-08dffa7bb969",
+              "type": "user"
+            }
+          ]
+        },
+        "subscription": {
+          "data": null
+        },
+        "address": {
+          "data": null
+        }
+      }
+    },
+    {
+      "id": "0c3bc2ba-3da1-5e61-be33-c795d01a19f3",
+      "type": "organisation",
+      "attributes": {
+        "name": "Payment reminder Organisation",
+        "vat_number": null,
+        "splunk_enabled": null,
+        "splunk_accept_all_server_certificates": true,
+        "splunk_event_collector_url": null,
+        "splunk_authentication_token": null,
+        "syslog_enabled": null,
+        "syslog_hostname_or_address": null,
+        "syslog_udp_port": null,
+        "invoice_name": null,
+        "status": "active",
+        "freeloader": false,
+        "member_count": 1,
+        "can_edit": true,
+        "can_delete": true,
+        "can_read": true
+      },
+      "relationships": {
+        "memberships": {
+          "data": [
+            {
+              "id": "52b80f97-fdfa-560b-a170-b68e0c28a9ac",
+              "type": "membership"
+            }
+          ]
+        },
+        "users": {
+          "data": [
+            {
+              "id": "307f78d7-877b-53d0-abb3-c063159413fc",
+              "type": "user"
+            }
+          ]
+        },
+        "subscription": {
+          "data": null
+        },
+        "address": {
+          "data": null
+        }
+      }
+    },
+    {
+      "id": "00013811-1547-4401-91c9-3519437ec4aa",
+      "type": "organisation",
+      "attributes": {
+        "name": "New Orga",
+        "vat_number": "DE345789003",
+        "splunk_enabled": null,
+        "splunk_accept_all_server_certificates": true,
+        "splunk_event_collector_url": null,
+        "splunk_authentication_token": null,
+        "syslog_enabled": null,
+        "syslog_hostname_or_address": null,
+        "syslog_udp_port": null,
+        "invoice_name": "Someone",
+        "status": "created",
+        "freeloader": false,
+        "member_count": 1,
+        "can_edit": true,
+        "can_delete": true,
+        "can_read": true
+      },
+      "relationships": {
+        "memberships": {
+          "data": [
+            {
+              "id": "000158e0-d50d-4bbe-9fad-bb4deb40ac72",
+              "type": "membership"
+            }
+          ]
+        },
+        "users": {
+          "data": [
+            {
+              "id": "307f78d7-877b-53d0-abb3-c063159413fc",
+              "type": "user"
+            }
+          ]
+        },
+        "subscription": {
+          "data": null
+        },
+        "address": {
+          "data": {
+            "id": "000117fc-76d0-4fcb-b6a2-5a45bf5759ad",
+            "type": "address"
+          }
+        }
+      }
+    }
+  ]
+}

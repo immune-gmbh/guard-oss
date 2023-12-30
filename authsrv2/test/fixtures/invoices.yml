@@ -1,0 +1,21 @@
+kais_invoice1:
+  subscription: kais_subscription
+  stripe_invoice_id: "test-id"
+  stripe_invoice_number: "1234"
+  stripe_pdf_url: "http://example.com/invoice.pdf"
+  finalized_at: <%= DateTime.now %>
+  tax_rate: 0.19
+  subtotal: 100
+  total: 119
+  status: open
+
+kais_invoice2:
+  subscription: kais_subscription
+  stripe_invoice_id: "test-id"
+  stripe_invoice_number: "1234"
+  stripe_pdf_url: "http://example.com/invoice.pdf"
+  finalized_at: <%= DateTime.now %>
+  tax_rate: 0.19
+  subtotal: 100
+  total: 119
+  status: open

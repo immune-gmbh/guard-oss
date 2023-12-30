@@ -1,0 +1,182 @@
+{
+  "specversion": "1.0",
+  "id": "c095549a-b4ea-436a-9e0d-858b5264a198",
+  "source": "apisrv2",
+  "type": "ne.immu.v2.new-appraisal",
+  "subject": "cdae9771-4761-46cd-883e-e0f30d9b40a8",
+  "datacontenttype": "application/json",
+  "time": "2021-09-01T17:19:19.310419Z",
+  "data": {
+    "device": {
+      "id": "1000",
+      "name": "Test Device",
+      "attributes": {},
+      "state": "",
+      "hwid": "0042000d562b94a76f2c2433db294d0b387b291e86d9be5afc927a2047ffd726f2c5678ae2003a4862e302ec3c95215cddafbe4bdc8bcc2bed286e02ccb7b8a2bb21056",
+      "update_scheduled": false
+    },
+    "next": {
+      "id": "1000",
+      "received": "2021-12-10T16:47:24.539604+01:00",
+      "appraised": "2021-12-10T15:47:24.539604Z",
+      "expires": "2021-12-11T15:47:24.539604Z",
+      "verdict": {
+        "type": "verdict/1",
+        "result": false,
+        "bootchain": true,
+        "firmware": true,
+        "configuration": false
+      },
+      "evidence": {
+        "type": "evidence/1",
+        "quote": "/1RDR4AYACIACwz0RiqkJu9nvoQQrE3Au6MVgtBl0E3mdLAvShO3KHQ0ACDZ3rOoxjpX/tY6CLu4p9Asz9MiNzDulpsFQO71Bllp5PG+i7FsSNoAAAAAFgAAAAsBAAAAAAAAACoAAAAAAAykO2AjAJPEZtFQu8c=",
+        "signature": "ABgACwAgnAnPoaCcL6EJi84Rx7dLVN/We1IJnq+rGpvi4qhrCfQAIO45soVDkxYWBCg5meEJolSAs1mYAOE8iswXeR1N9tsp",
+        "algorithm": "11",
+        "pcrs": {},
+        "firmware": {
+          "uefi": [
+            {
+              "vendor": "8be4df61-93ca-11d2-aa0d-00e098032b8c",
+              "name": "PK",
+              "error": "aaaaaaaaaaaaaaa"
+            }
+          ],
+          "acpi": {},
+          "smbios": {},
+          "txt": {},
+          "vtd": {},
+          "flash": {},
+          "event_log": {},
+          "mac": {
+            "addrs": null
+          },
+          "os": {
+            "hostname": "",
+            "name": ""
+          },
+          "memory": {}
+        },
+        "cookie": ""
+      },
+      "report": {
+        "type": "report/2",
+        "values": {
+          "host": {
+            "name": "",
+            "hostname": "",
+            "type": "",
+            "cpu_vendor": ""
+          },
+          "uefi": {
+            "mode": "",
+            "secureboot": false,
+            "platform_keys": [],
+            "exchange_keys": [],
+            "permitted_keys": [],
+            "forbidden_keys": [],
+            "drivers": null
+          },
+          "tpm": {
+            "manufacturer": "",
+            "vendor_id": "",
+            "spec_version": "",
+            "eventlog": null,
+            "pcr": {}
+          },
+          "me": {
+            "variant": ""
+          }
+        },
+        "annotations": [
+          {
+            "id": "host-type",
+            "path": "/host/name",
+            "fatal": false
+          },
+          {
+            "id": "host-hostname",
+            "path": "/host/hostname",
+            "fatal": false
+          },
+          {
+            "id": "host-type",
+            "path": "/host/type",
+            "fatal": false
+          },
+          {
+            "id": "host-cpu-ven",
+            "path": "/host/cpu_vendor",
+            "fatal": false
+          },
+          {
+            "id": "uefi-pk-miss",
+            "path": "/uefi/platform_keys",
+            "fatal": true
+          },
+          {
+            "id": "uefi-kek-miss",
+            "path": "/uefi/exchange_keys",
+            "fatal": true
+          },
+          {
+            "id": "uefi-db-miss",
+            "path": "/uefi/permitted_keys",
+            "fatal": true
+          },
+          {
+            "id": "uefi-dbx-miss",
+            "path": "/uefi/forbidden_keys",
+            "fatal": true
+          },
+          {
+            "id": "uefi-mode-inv",
+            "path": "/uefi/mode",
+            "fatal": false
+          },
+          {
+            "id": "uefi-deployed-secure-boot",
+            "path": "/uefi/mode",
+            "fatal": false
+          },
+          {
+            "id": "tpm-miss",
+            "path": "/tpm",
+            "fatal": false
+          },
+          {
+            "id": "me-access",
+            "path": "/me",
+            "fatal": true
+          },
+          {
+            "id": "me-miss",
+            "path": "/me",
+            "fatal": false
+          },
+          {
+            "id": "sgx-missing",
+            "path": "/sgx",
+            "fatal": false
+          },
+          {
+            "id": "txt-public-miss",
+            "path": "/txt",
+            "fatal": false
+          },
+          {
+            "id": "sev-miss",
+            "path": "/sev",
+            "fatal": false
+          }
+        ]
+      },
+      "policy": {
+        "id": "0",
+        "name": "",
+        "revoked": false,
+        "devices": null,
+        "changes": null
+      }
+    }
+  }
+}

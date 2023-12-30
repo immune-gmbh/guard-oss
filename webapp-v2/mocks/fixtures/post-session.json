@@ -1,0 +1,263 @@
+{
+  "data": {
+    "id": "1",
+    "type": "session",
+    "attributes": {
+      "next_path": "https://xxxx.xxxx/dashboard/welcome",
+      "default_organisation": "0c3bc2ba-3da1-5e61-be33-c795d01a19f3"
+    },
+    "relationships": {
+      "user": {
+        "data": {
+          "id": "307f78d7-877b-53d0-abb3-c063159413fc",
+          "type": "user"
+        }
+      },
+      "memberships": {
+        "data": [
+          {
+            "id": "628cf88a-94a9-55bf-bea4-fea7e6f4f4bc",
+            "type": "membership"
+          },
+          {
+            "id": "a27058c8-a6d9-5463-9eca-d9ef18d36bf0",
+            "type": "membership"
+          },
+          {
+            "id": "52b80f97-fdfa-560b-a170-b68e0c28a9ac",
+            "type": "membership"
+          }
+        ]
+      }
+    }
+  },
+  "included": [
+    {
+      "id": "4d9a5fa8-08bc-5b02-a478-76b1f4d30e90",
+      "type": "address",
+      "attributes": {
+        "street_and_number": "Kortumstraße 19-22",
+        "city": "Bochum",
+        "postal_code": "44789",
+        "country": "Germany"
+      }
+    },
+    {
+      "id": "233eca70-6419-5d2b-8006-1b6a6392046b",
+      "type": "subscription",
+      "attributes": {
+        "status": "created",
+        "current_devices_amount": 0,
+        "max_devices_amount": 50,
+        "period_start": "2021-12-24",
+        "period_end": "2022-01-03",
+        "tax_rate": null,
+        "monthly_base_fee": 15,
+        "monthly_fee_per_device": 5,
+        "action_required": false,
+        "billing_details": {
+          "free_credits": 0
+        },
+        "setup_intent_secret": null
+      }
+    },
+    {
+      "id": "a3e85ce4-7687-5078-8716-c6c3dfaf554f",
+      "type": "organisation",
+      "attributes": {
+        "name": "Kai's Organisation",
+        "subscription_id": "233eca70-6419-5d2b-8006-1b6a6392046b",
+        "vat_number": null,
+        "splunk_enabled": true,
+        "splunk_accept_all_server_certificates": true,
+        "splunk_event_collector_url": "https://siem.example.com/splunk/services/collector",
+        "splunk_authentication_token": "deadbeef",
+        "syslog_enabled": true,
+        "syslog_hostname_or_address": "siem.example.com",
+        "syslog_udp_port": "514",
+        "invoice_name": null,
+        "status": "created",
+        "freeloader": false,
+        "can_edit": true,
+        "can_delete": true,
+        "can_read": true
+      },
+      "relationships": {
+        "subscription": {
+          "data": {
+            "id": "233eca70-6419-5d2b-8006-1b6a6392046b",
+            "type": "subscription"
+          }
+        },
+        "address": {
+          "data": {
+            "id": "4d9a5fa8-08bc-5b02-a478-76b1f4d30e90",
+            "type": "address"
+          }
+        }
+      }
+    },
+    {
+      "id": "3ceecfd9-1f59-53a2-b2ff-636900e70668",
+      "type": "organisation",
+      "attributes": {
+        "name": "Testy's Organisation",
+        "subscription_id": null,
+        "vat_number": null,
+        "splunk_enabled": null,
+        "splunk_accept_all_server_certificates": true,
+        "splunk_event_collector_url": null,
+        "splunk_authentication_token": null,
+        "syslog_enabled": null,
+        "syslog_hostname_or_address": null,
+        "syslog_udp_port": null,
+        "invoice_name": null,
+        "status": "created",
+        "freeloader": false,
+        "can_edit": false,
+        "can_delete": false,
+        "can_read": true
+      },
+      "relationships": {
+        "subscription": {
+          "data": null
+        },
+        "address": {
+          "data": null
+        }
+      }
+    },
+    {
+      "id": "0c3bc2ba-3da1-5e61-be33-c795d01a19f3",
+      "type": "organisation",
+      "attributes": {
+        "name": "Payment reminder Organisation",
+        "subscription_id": null,
+        "vat_number": null,
+        "splunk_enabled": null,
+        "splunk_accept_all_server_certificates": true,
+        "splunk_event_collector_url": null,
+        "splunk_authentication_token": null,
+        "syslog_enabled": null,
+        "syslog_hostname_or_address": null,
+        "syslog_udp_port": null,
+        "invoice_name": null,
+        "status": "active",
+        "freeloader": false,
+        "can_edit": true,
+        "can_delete": true,
+        "can_read": true
+      },
+      "relationships": {
+        "subscription": {
+          "data": null
+        },
+        "address": {
+          "data": null
+        }
+      }
+    },
+    {
+      "id": "307f78d7-877b-53d0-abb3-c063159413fc",
+      "type": "user",
+      "attributes": {
+        "name": "Kai Michaelis",
+        "email": "kai.michaelis@immu.ne",
+        "invited": false,
+        "role": "admin",
+        "activation_state": "active",
+        "has_seen_intro": false,
+        "has_password": true,
+        "authenticated_github": false,
+        "authenticated_google": false
+      },
+      "relationships": {
+        "organisations": {
+          "data": [
+            {
+              "id": "a3e85ce4-7687-5078-8716-c6c3dfaf554f",
+              "type": "organisation"
+            },
+            {
+              "id": "3ceecfd9-1f59-53a2-b2ff-636900e70668",
+              "type": "organisation"
+            },
+            {
+              "id": "0c3bc2ba-3da1-5e61-be33-c795d01a19f3",
+              "type": "organisation"
+            }
+          ]
+        },
+        "address": {
+          "data": {
+            "id": "4d9a5fa8-08bc-5b02-a478-76b1f4d30e90",
+            "type": "address"
+          }
+        }
+      }
+    },
+    {
+      "id": "628cf88a-94a9-55bf-bea4-fea7e6f4f4bc",
+      "type": "membership",
+      "attributes": {
+        "user_name": "Kai Michaelis",
+        "user_email": "kai.michaelis@immu.ne",
+        "role": "owner",
+        "organisation_id": "a3e85ce4-7687-5078-8716-c6c3dfaf554f",
+        "can_delete": true,
+        "token": "eyJraWQiOiJiZDAwN2I5ZjExODAwMTUwIiwiYWxnIjoiRVMyNTYifQ.eyJhY3QiOnsic3ViIjoidGFnOmltbXUubmUsMjAyMTp1c2VyLzMwN2Y3OGQ3LTg3N2ItNTNkMC1hYmIzLWMwNjMxNTk0MTNmYyIsIm5hbWUiOiJLYWkgTWljaGFlbGlzIiwicm9sIjoidXNlciJ9LCJzdWIiOiJ0YWc6aW1tdS5uZSwyMDIxOm9yZ2FuaXNhdGlvbi9hM2U4NWNlNC03Njg3LTUwNzgtODcxNi1jNmMzZGZhZjU1NGYiLCJqdGkiOiJiODM0ZWE5ODVmMmY3YjQ3MDRjY2E4M2JiMjQ5N2YwYiIsImV4cCI6MTY0MDg4ODQxMSwibmJmIjoxNjQwODAyMDExLCJpYXQiOjE2NDA4MDIwMTEsImlzcyI6InRhZzppbW11Lm5lLDIwMjE6c2VydmljZS9hdXRoc3J2In0.APU0MILUkuwfP5uW1vo9-GoHjPDwQiK-ukDJUdsl_qQWR3lLVrucSZHoIziEz72ygq-FtMPHHMQTFrymHR0oqA",
+        "enrollment_token": "eyJraWQiOiJiZDAwN2I5ZjExODAwMTUwIiwiYWxnIjoiRVMyNTYifQ.eyJhY3QiOnsic3ViIjoidGFnOmltbXUubmUsMjAyMTphZ2VudCJ9LCJzdWIiOiJ0YWc6aW1tdS5uZSwyMDIxOm9yZ2FuaXNhdGlvbi9hM2U4NWNlNC03Njg3LTUwNzgtODcxNi1jNmMzZGZhZjU1NGYiLCJqdGkiOiJiODM0ZWE5ODVmMmY3YjQ3MDRjY2E4M2JiMjQ5N2YwYiIsImV4cCI6MTY0MDg4ODQxMSwibmJmIjoxNjQwODAyMDExLCJpYXQiOjE2NDA4MDIwMTEsImlzcyI6InRhZzppbW11Lm5lLDIwMjE6c2VydmljZS9hdXRoc3J2In0.cUhB5_bZ8d-8Gmzy8WWI7QgTuQNYnZNmM4uZhh3_n-SLyYmQ87SBUCpVd0d5MBRUI42qhsINc5VUnzm5M_SFeQ"
+      },
+      "relationships": {
+        "organisation": {
+          "data": {
+            "id": "a3e85ce4-7687-5078-8716-c6c3dfaf554f",
+            "type": "organisation"
+          }
+        }
+      }
+    },
+    {
+      "id": "a27058c8-a6d9-5463-9eca-d9ef18d36bf0",
+      "type": "membership",
+      "attributes": {
+        "user_name": "Kai Michaelis",
+        "user_email": "kai.michaelis@immu.ne",
+        "role": "user",
+        "organisation_id": "3ceecfd9-1f59-53a2-b2ff-636900e70668",
+        "can_delete": true,
+        "token": "eyJraWQiOiJiZDAwN2I5ZjExODAwMTUwIiwiYWxnIjoiRVMyNTYifQ.eyJhY3QiOnsic3ViIjoidGFnOmltbXUubmUsMjAyMTp1c2VyLzMwN2Y3OGQ3LTg3N2ItNTNkMC1hYmIzLWMwNjMxNTk0MTNmYyIsIm5hbWUiOiJLYWkgTWljaGFlbGlzIiwicm9sIjoidXNlciJ9LCJzdWIiOiJ0YWc6aW1tdS5uZSwyMDIxOm9yZ2FuaXNhdGlvbi8zY2VlY2ZkOS0xZjU5LTUzYTItYjJmZi02MzY5MDBlNzA2NjgiLCJqdGkiOiJkMzAzNTYzODUxY2VlZGNiMGNiZGViNzQ5N2JhNTE3ZSIsImV4cCI6MTY0MDg4ODQxMSwibmJmIjoxNjQwODAyMDExLCJpYXQiOjE2NDA4MDIwMTEsImlzcyI6InRhZzppbW11Lm5lLDIwMjE6c2VydmljZS9hdXRoc3J2In0.qTjrrBC9NtHLPjoTK1k864DrUb5Pw5G_fm7MGy4LojjSOgTf9cd8Rd3hHdkhhLG1Gof-MUsyOmAtw66oyZzQKg",
+        "enrollment_token": "eyJraWQiOiJiZDAwN2I5ZjExODAwMTUwIiwiYWxnIjoiRVMyNTYifQ.eyJhY3QiOnsic3ViIjoidGFnOmltbXUubmUsMjAyMTphZ2VudCJ9LCJzdWIiOiJ0YWc6aW1tdS5uZSwyMDIxOm9yZ2FuaXNhdGlvbi8zY2VlY2ZkOS0xZjU5LTUzYTItYjJmZi02MzY5MDBlNzA2NjgiLCJqdGkiOiJkMzAzNTYzODUxY2VlZGNiMGNiZGViNzQ5N2JhNTE3ZSIsImV4cCI6MTY0MDg4ODQxMSwibmJmIjoxNjQwODAyMDExLCJpYXQiOjE2NDA4MDIwMTEsImlzcyI6InRhZzppbW11Lm5lLDIwMjE6c2VydmljZS9hdXRoc3J2In0.esDeVTJhEjs7fdPL69oKgWHwC2rTp0ulhYClO2bOlGrx7SoIB2HrhXcZt8FYNAmcoeYhEROwvNq8JFPTxV_4Ng"
+      },
+      "relationships": {
+        "organisation": {
+          "data": {
+            "id": "3ceecfd9-1f59-53a2-b2ff-636900e70668",
+            "type": "organisation"
+          }
+        }
+      }
+    },
+    {
+      "id": "52b80f97-fdfa-560b-a170-b68e0c28a9ac",
+      "type": "membership",
+      "attributes": {
+        "user_name": "Kai Michaelis",
+        "user_email": "kai.michaelis@immu.ne",
+        "role": "owner",
+        "organisation_id": "0c3bc2ba-3da1-5e61-be33-c795d01a19f3",
+        "can_delete": true,
+        "token": "eyJraWQiOiJiZDAwN2I5ZjExODAwMTUwIiwiYWxnIjoiRVMyNTYifQ.eyJhY3QiOnsic3ViIjoidGFnOmltbXUubmUsMjAyMTp1c2VyLzMwN2Y3OGQ3LTg3N2ItNTNkMC1hYmIzLWMwNjMxNTk0MTNmYyIsIm5hbWUiOiJLYWkgTWljaGFlbGlzIiwicm9sIjoidXNlciJ9LCJzdWIiOiJ0YWc6aW1tdS5uZSwyMDIxOm9yZ2FuaXNhdGlvbi8wYzNiYzJiYS0zZGExLTVlNjEtYmUzMy1jNzk1ZDAxYTE5ZjMiLCJqdGkiOiJlNmVhODIxMTY2NjJmM2VhNzYxYmY1ZmQ2YWY5NmU2ZiIsImV4cCI6MTY0MDg4ODQxMSwibmJmIjoxNjQwODAyMDExLCJpYXQiOjE2NDA4MDIwMTEsImlzcyI6InRhZzppbW11Lm5lLDIwMjE6c2VydmljZS9hdXRoc3J2In0.d7-mfgCVW3HzhZG-Q4S0miHnS_WsRUZ0SWeOFiRep99UL2SMcEIay7yr1QQp77iVhPcKjs7ZLRUnx0dHFsCHcQ",
+        "enrollment_token": "eyJraWQiOiJiZDAwN2I5ZjExODAwMTUwIiwiYWxnIjoiRVMyNTYifQ.eyJhY3QiOnsic3ViIjoidGFnOmltbXUubmUsMjAyMTphZ2VudCJ9LCJzdWIiOiJ0YWc6aW1tdS5uZSwyMDIxOm9yZ2FuaXNhdGlvbi8wYzNiYzJiYS0zZGExLTVlNjEtYmUzMy1jNzk1ZDAxYTE5ZjMiLCJqdGkiOiJlNmVhODIxMTY2NjJmM2VhNzYxYmY1ZmQ2YWY5NmU2ZiIsImV4cCI6MTY0MDg4ODQxMSwibmJmIjoxNjQwODAyMDExLCJpYXQiOjE2NDA4MDIwMTEsImlzcyI6InRhZzppbW11Lm5lLDIwMjE6c2VydmljZS9hdXRoc3J2In0._O5l0p9m-beaiIvG15pg9FUdvtEtxfrdX9IESLt3y1wR5qt1DAQ1cRr4v57h_069ciTLD109hEUteTReXWB9YQ"
+      },
+      "relationships": {
+        "organisation": {
+          "data": {
+            "id": "0c3bc2ba-3da1-5e61-be33-c795d01a19f3",
+            "type": "organisation"
+          }
+        }
+      }
+    }
+  ]
+}

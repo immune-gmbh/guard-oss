@@ -1,0 +1,63 @@
+type Evidence {
+  id: ID!
+  received_at: String!
+
+  raw_values: String!
+  raw_binarly: String
+}
+
+type Job {
+  id: ID!
+  reference: String!
+  type: String!
+  args: String
+
+  scheduled_at: String!
+  next_run_at: String!
+  last_run_at: String
+
+  locked_at: String
+  locked_until: String
+  locked_by: String
+  error_count: Int!
+
+  successful: Boolean
+  finished_at: String
+}
+
+enum JobStatus {
+  RUNNING
+  QUEUED
+  FAILED
+  DONE
+}
+
+input JobFilter {
+  id: [ID!]
+  id_lt: ID
+  reference: [String!]
+  reference_lt: String
+  scheduled_at_le: String
+  locked_at_le: String
+  next_run_at_le: String
+  finished_at_le: String
+  type: [String!]
+  stauts: JobStatus
+}
+
+enum JobSort {
+  ID
+  SCHEDULED_AT
+  LOCKED_AT
+  FINISHED_AT
+  NEXT_RUN_AT
+  REFERENCE
+}
+
+type Query {
+  # id or (type, reference)
+  job(id: ID, type: String, reference: String): Job!
+  jobs(limit: Int, filter: JobFilter, order: JobSort): [Job!]!
+
+  evidence(device_id: ID, org_id: ID, ref: ID): Evidence!
+}

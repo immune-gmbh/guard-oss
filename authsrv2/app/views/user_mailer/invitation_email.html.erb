@@ -1,0 +1,7 @@
+Welcome to immune Guard <%= @user.name || @user.email %>,
+<br><br>
+You have been invited to join <%= @membership.organisation.name %> as <%= @membership.role %>.
+<br>
+Please click <%= link_to "here", @url, style: 'color: #ff193c;' %> to accept the invitation.
+<br><br>
+Thank you for joining and have a great day!

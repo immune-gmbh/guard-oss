@@ -1,0 +1,516 @@
+{
+  "type": "evidence/1",
+  "algorithm": "",
+  "pcrs": {
+  },
+  "firmware": {
+    "uefi": [
+      {
+        "vendor": "8be4df61-93ca-11d2-aa0d-00e098032b8c",
+        "name": "SetupMode",
+        "error": "unkn"
+      },
+      {
+        "vendor": "8be4df61-93ca-11d2-aa0d-00e098032b8c",
+        "name": "AuditMode",
+        "error": "unkn"
+      },
+      {
+        "vendor": "8be4df61-93ca-11d2-aa0d-00e098032b8c",
+        "name": "DeployedMode",
+        "error": "unkn"
+      },
+      {
+        "vendor": "8be4df61-93ca-11d2-aa0d-00e098032b8c",
+        "name": "SecureBoot",
+        "error": "unkn"
+      },
+      {
+        "vendor": "8be4df61-93ca-11d2-aa0d-00e098032b8c",
+        "name": "PK",
+        "error": "unkn"
+      },
+      {
+        "vendor": "8be4df61-93ca-11d2-aa0d-00e098032b8c",
+        "name": "PKDefault",
+        "error": "unkn"
+      },
+      {
+        "vendor": "8be4df61-93ca-11d2-aa0d-00e098032b8c",
+        "name": "KEK",
+        "error": "unkn"
+      },
+      {
+        "vendor": "8be4df61-93ca-11d2-aa0d-00e098032b8c",
+        "name": "KEKDefault",
+        "error": "unkn"
+      },
+      {
+        "vendor": "d719b2cb-3d3a-4596-a3bc-dad00e67656f",
+        "name": "db",
+        "error": "unkn"
+      },
+      {
+        "vendor": "8be4df61-93ca-11d2-aa0d-00e098032b8c",
+        "name": "dbDefault",
+        "error": "unkn"
+      },
+      {
+        "vendor": "d719b2cb-3d3a-4596-a3bc-dad00e67656f",
+        "name": "dbx",
+        "error": "unkn"
+      },
+      {
+        "vendor": "8be4df61-93ca-11d2-aa0d-00e098032b8c",
+        "name": "dbxDefault",
+        "error": "unkn"
+      }
+    ],
+    "msrs": [
+      {
+        "msr": "158",
+        "error": "unkn"
+      },
+      {
+        "msr": "254",
+        "error": "unkn"
+      },
+      {
+        "msr": "498",
+        "error": "unkn"
+      },
+      {
+        "msr": "499",
+        "error": "unkn"
+      },
+      {
+        "msr": "58",
+        "error": "unkn"
+      },
+      {
+        "msr": "23",
+        "error": "unkn"
+      },
+      {
+        "msr": "3200",
+        "error": "unkn"
+      },
+      {
+        "msr": "3221291024",
+        "error": "unkn"
+      }
+    ],
+    "cpuid": [
+      {
+        "leaf_eax": "0",
+        "leaf_ecx": "0",
+        "eax": "7",
+        "ebx": "1970169159",
+        "ecx": "1818588270",
+        "edx": "1231384169"
+      },
+      {
+        "leaf_eax": "1",
+        "leaf_ecx": "0",
+        "eax": "132800",
+        "ebx": "67584",
+        "ecx": "43524623",
+        "edx": "260803349"
+      },
+      {
+        "leaf_eax": "2147483650",
+        "leaf_ecx": "0",
+        "eax": "1953655126",
+        "ebx": "1097621877",
+        "ecx": "1701605488",
+        "edx": "840974368"
+      },
+      {
+        "leaf_eax": "2147483651",
+        "leaf_ecx": "0",
+        "eax": "1194341678",
+        "ebx": "31304",
+        "ecx": "0",
+        "edx": "0"
+      },
+      {
+        "leaf_eax": "2147483652",
+        "leaf_ecx": "0",
+        "eax": "0",
+        "ebx": "0",
+        "ecx": "0",
+        "edx": "0"
+      },
+      {
+        "leaf_eax": "7",
+        "leaf_ecx": "0",
+        "eax": "0",
+        "ebx": "0",
+        "ecx": "0",
+        "edx": "0"
+      },
+      {
+        "leaf_eax": "18",
+        "leaf_ecx": "0",
+        "eax": "0",
+        "ebx": "0",
+        "ecx": "0",
+        "edx": "0"
+      },
+      {
+        "leaf_eax": "18",
+        "leaf_ecx": "1",
+        "eax": "0",
+        "ebx": "0",
+        "ecx": "0",
+        "edx": "0"
+      },
+      {
+        "leaf_eax": "18",
+        "leaf_ecx": "2",
+        "eax": "0",
+        "ebx": "0",
+        "ecx": "0",
+        "edx": "0"
+      },
+      {
+        "leaf_eax": "18",
+        "leaf_ecx": "3",
+        "eax": "0",
+        "ebx": "0",
+        "ecx": "0",
+        "edx": "0"
+      },
+      {
+        "leaf_eax": "18",
+        "leaf_ecx": "4",
+        "eax": "0",
+        "ebx": "0",
+        "ecx": "0",
+        "edx": "0"
+      },
+      {
+        "leaf_eax": "18",
+        "leaf_ecx": "5",
+        "eax": "0",
+        "ebx": "0",
+        "ecx": "0",
+        "edx": "0"
+      },
+      {
+        "leaf_eax": "18",
+        "leaf_ecx": "6",
+        "eax": "0",
+        "ebx": "0",
+        "ecx": "0",
+        "edx": "0"
+      },
+      {
+        "leaf_eax": "18",
+        "leaf_ecx": "7",
+        "eax": "0",
+        "ebx": "0",
+        "ecx": "0",
+        "edx": "0"
+      },
+      {
+        "leaf_eax": "18",
+        "leaf_ecx": "8",
+        "eax": "0",
+        "ebx": "0",
+        "ecx": "0",
+        "edx": "0"
+      },
+      {
+        "leaf_eax": "18",
+        "leaf_ecx": "9",
+        "eax": "0",
+        "ebx": "0",
+        "ecx": "0",
+        "edx": "0"
+      },
+      {
+        "leaf_eax": "2147483679",
+        "leaf_ecx": "0",
+        "eax": "0",
+        "ebx": "0",
+        "ecx": "0",
+        "edx": "0"
+      }
+    ],
+    "me": [
+      {
+        "guid": "8e6a6715-9abc-4043-88ef-9e39c6f63e0f",
+        "commands": [
+          {
+            "command": "/wIAAA=="
+          },
+          {
+            "command": "AwIAACAAAAA="
+          },
+          {
+            "command": "AwIAAAAAAAA="
+          },
+          {
+            "command": "AwIAAAcAAAA="
+          },
+          {
+            "command": "AwIAAAkAAAA="
+          },
+          {
+            "command": "AwIAAB0AAAA="
+          },
+          {
+            "command": "AwIAACsAAAA="
+          },
+          {
+            "command": "AwIAADAAAAA="
+          },
+          {
+            "command": "BQEAAAAAAAAAAAAA"
+          },
+          {
+            "command": "BQMAAA=="
+          },
+          {
+            "command": "/yEAAA=="
+          },
+          {
+            "command": "/yMAAA=="
+          },
+          {
+            "command": "/xwAAAAAAAA="
+          }
+        ],
+        "error": "unkn"
+      },
+      {
+        "guid": "55213584-9a29-4916-badf-0fb7edf62aeb",
+        "commands": [
+          {
+            "command": "/wIAAA=="
+          },
+          {
+            "command": "AwIAACAAAAA="
+          },
+          {
+            "command": "AwIAAAAAAAA="
+          },
+          {
+            "command": "AwIAAAcAAAA="
+          },
+          {
+            "command": "AwIAAAkAAAA="
+          },
+          {
+            "command": "AwIAAB0AAAA="
+          },
+          {
+            "command": "AwIAACsAAAA="
+          },
+          {
+            "command": "AwIAADAAAAA="
+          },
+          {
+            "command": "BQEAAAAAAAAAAAAA"
+          },
+          {
+            "command": "BQMAAA=="
+          },
+          {
+            "command": "/yEAAA=="
+          },
+          {
+            "command": "/yMAAA=="
+          },
+          {
+            "command": "/xwAAAAAAAA="
+          }
+        ],
+        "error": "unkn"
+      },
+      {
+        "guid": "309dcde8-ccb1-4062-8f78-600115a34327",
+        "commands": [
+          {
+            "command": "HgAAAA=="
+          }
+        ],
+        "error": "unkn"
+      },
+      {
+        "guid": "6861ec7b-d07a-4673-856c-7f22b4d55769",
+        "commands": [
+          {
+            "command": "CggAAA=="
+          },
+          {
+            "command": "ChwAAA=="
+          },
+          {
+            "command": "CgoAAAC5ARAAAAAAAQAAAAA="
+          }
+        ],
+        "error": "unkn"
+      },
+      {
+        "guid": "12f80028-b4b7-4b2d-aca8-46e0ff65814c",
+        "commands": [
+          {
+            "command": "AQEAAAEAAAEQAAAAAAAAAAAAAAAAAAAAAAAAAQ=="
+          },
+          {
+            "command": "AQEAAIcAAAQEAAAAAQAAAA=="
+          },
+          {
+            "command": "AQEAAIwAAAAUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="
+          },
+          {
+            "command": "AQEAAFAAAAQAAAAA"
+          },
+          {
+            "command": "AQEAAAgAAAQAAAAA"
+          },
+          {
+            "command": "AQEAABsAAAQAAAAA"
+          },
+          {
+            "command": "AQEAAAEAAAEQAAAAAAAAAAAAAAAAAAAAAAAAAQ=="
+          },
+          {
+            "command": "AQEAABoAAAQAAAAA"
+          },
+          {
+            "command": "AQEAADAAAAQAAAAA"
+          },
+          {
+            "command": "AQEAAEkAAAQEAAAAAAAAAA=="
+          },
+          {
+            "command": "AQEAAEkAAAQEAAAABAAAAA=="
+          },
+          {
+            "command": "AQEAAEkAAAQEAAAAAgAAAA=="
+          },
+          {
+            "command": "AQEAAEYAAAQAAAAA"
+          }
+        ],
+        "error": "unkn"
+      }
+    ],
+    "tpm2_properties": [
+      {
+        "property": "261",
+        "error": "no-resp"
+      },
+      {
+        "property": "262",
+        "error": "no-resp"
+      },
+      {
+        "property": "263",
+        "error": "no-resp"
+      },
+      {
+        "property": "264",
+        "error": "no-resp"
+      },
+      {
+        "property": "265",
+        "error": "no-resp"
+      },
+      {
+        "property": "257",
+        "error": "no-resp"
+      },
+      {
+        "property": "258",
+        "error": "no-resp"
+      },
+      {
+        "property": "259",
+        "error": "no-resp"
+      },
+      {
+        "property": "260",
+        "error": "no-resp"
+      }
+    ],
+    "tpm2_nvram": [
+      {
+        "index": "29425923",
+        "error": "not-impl"
+      },
+      {
+        "index": "25165825",
+        "error": "not-impl"
+      },
+      {
+        "index": "29425922",
+        "error": "not-impl"
+      },
+      {
+        "index": "25165827",
+        "error": "not-impl"
+      },
+      {
+        "index": "29425926",
+        "error": "not-impl"
+      },
+      {
+        "index": "20971521",
+        "error": "not-impl"
+      }
+    ],
+    "pci": [
+      {
+        "bus": "0",
+        "device": "0",
+        "function": "0",
+        "error": "unkn"
+      },
+      {
+        "bus": "0",
+        "device": "22",
+        "function": "0",
+        "error": "unkn"
+      },
+      {
+        "bus": "0",
+        "device": "31",
+        "function": "5",
+        "error": "unkn"
+      }
+    ],
+    "acpi": {
+      "error": "unkn"
+    },
+    "smbios": {
+      "error": "unkn"
+    },
+    "txt": {
+      "error": "unkn"
+    },
+    "vtd": {
+      "error": "not-impl"
+    },
+    "flash": {
+      "error": "unkn"
+    },
+    "event_log": {},
+    "mac": {
+      "addrs": null,
+      "error": "unkn"
+    },
+    "os": {
+      "hostname": "",
+      "name": "",
+      "error": "unkn"
+    },
+    "memory": {
+      "error": "not-impl"
+    }
+  },
+  "cookie": ""
+}

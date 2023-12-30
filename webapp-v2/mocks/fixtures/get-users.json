@@ -1,0 +1,105 @@
+{
+  "data": [
+    {
+      "id": "307f78d7-877b-53d0-abb3-c063159413fc",
+      "type": "user",
+      "attributes": {
+        "name": "Kai Michaelis",
+        "email": "kai.michaelis@immu.ne",
+        "invited": false,
+        "role": "user",
+        "activation_state": "active",
+        "has_seen_intro": false,
+        "has_password": true,
+        "authenticated_google": false,
+        "authenticated_github": false
+      },
+      "relationships": {
+        "organisations": {
+          "data": [
+            {
+              "id": "a3e85ce4-7687-5078-8716-c6c3dfaf554f",
+              "type": "organisation"
+            },
+            {
+              "id": "3ceecfd9-1f59-53a2-b2ff-636900e70668",
+              "type": "organisation"
+            },
+            {
+              "id": "0c3bc2ba-3da1-5e61-be33-c795d01a19f3",
+              "type": "organisation"
+            }
+          ]
+        },
+        "address": {
+          "data": {
+            "id": "4d9a5fa8-08bc-5b02-a478-76b1f4d30e90",
+            "type": "address"
+          }
+        }
+      }
+    },
+    {
+      "id": "a7f7c4ef-a96b-5d37-b442-9fce31e6d6f4",
+      "type": "user",
+      "attributes": {
+        "name": "Kai Notify the 1st",
+        "email": "kai1@immu.ne",
+        "invited": false,
+        "role": "user",
+        "activation_state": null,
+        "has_seen_intro": false,
+        "has_password": true,
+        "authenticated_google": false,
+        "authenticated_github": false
+      },
+      "relationships": {
+        "organisations": {
+          "data": [
+            {
+              "id": "a3e85ce4-7687-5078-8716-c6c3dfaf554f",
+              "type": "organisation"
+            }
+          ]
+        },
+        "address": {
+          "data": {
+            "id": "4d9a5fa8-08bc-5b02-a478-76b1f4d30e90",
+            "type": "address"
+          }
+        }
+      }
+    },
+    {
+      "id": "6f06976d-7a1a-558b-a304-33183497d32a",
+      "type": "user",
+      "attributes": {
+        "name": "Kai Notify the 2nd",
+        "email": "kai2@immu.ne",
+        "invited": false,
+        "role": "user",
+        "activation_state": null,
+        "has_seen_intro": false,
+        "has_password": true,
+        "authenticated_google": false,
+        "authenticated_github": false
+      },
+      "relationships": {
+        "organisations": {
+          "data": [
+            {
+              "id": "a3e85ce4-7687-5078-8716-c6c3dfaf554f",
+              "type": "organisation"
+            }
+          ]
+        },
+        "address": {
+          "data": {
+            "id": "4d9a5fa8-08bc-5b02-a478-76b1f4d30e90",
+            "type": "address"
+          }
+        }
+      }
+    }
+  ]
+}

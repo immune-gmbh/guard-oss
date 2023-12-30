@@ -1,0 +1,54 @@
+{
+  "data": {
+    "type": "dashboard",
+    "attributes": {
+      "incidents": [
+        {
+          "issue_type_id": "policy/endpoint-protection",
+          "latest_occurence": "2023-02-24T15:14:00.087453Z",
+          "devices_affected": 2
+        },
+        {
+          "issue_type_id": "uefi/boot-app-set",
+          "latest_occurence": "2023-02-24T15:14:00.087453Z",
+          "devices_affected": 4
+        },
+        {
+          "issue_type_id": "tsc/pcr-values",
+          "latest_occurence": "2023-02-24T14:52:22.820498Z",
+          "devices_affected": 1
+        },
+        {
+          "issue_type_id": "tpm/invalid-eventlog",
+          "latest_occurence": "2023-02-24T14:37:53.363005Z",
+          "devices_affected": 3
+        },
+        {
+          "issue_type_id": "uefi/boot-order",
+          "latest_occurence": "2023-02-08T12:19:42.420871Z",
+          "devices_affected": 1
+        },
+        {
+          "issue_type_id": "ima/invalid-log",
+          "latest_occurence": "2023-01-24T15:28:32.14154Z",
+          "devices_affected": 103
+        },
+        {
+          "issue_type_id": "tpm/dummy",
+          "latest_occurence": "2022-12-24T02:29:02.710228Z",
+          "devices_affected": 102
+        },
+        {
+          "issue_type_id": "uefi/boot-failure",
+          "latest_occurence": "2022-12-24T02:29:02.710228Z",
+          "devices_affected": 102
+        }
+      ]
+    }
+  },
+  "meta": {
+    "instance": "apisrv-deployment-v2-edge-59847c697d-wvghc",
+    "trace": "e862e986a6e93aa3650fba63c326c025",
+    "version": "r224-19-g35bc1404"
+  }
+}

@@ -1,0 +1,7 @@
+bochum:
+  street_and_number: "Kortumstraße 19-22"
+  city: "Bochum"
+  postal_code: "44789"
+  country: "Germany"
+  created_at: <%= 5.day.ago.to_s(:db) %>
+  updated_at: <%= 5.day.ago.to_s(:db) %>

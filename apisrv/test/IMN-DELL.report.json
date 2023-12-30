@@ -1,0 +1,21 @@
+{
+  "type": "report/2",
+  "values": {
+    "host": {
+      "name": "Windows Server 2019 Essentials 10.0 id 1809",
+      "hostname": "IMN-DELL",
+      "type": "windows",
+      "cpu_vendor": "GenuineIntel"
+    },
+    "smbios": {
+      "manufacturer": "Dell Inc.",
+      "product": "PowerEdge R340",
+      "serial": "PowerEdge",
+      "uuid": "4c4c4544-0036-3610-8031-c4c04f4e4633",
+      "bios_release_date": "04/16/2021",
+      "bios_vendor": "Dell Inc.",
+      "bios_version": "2.5.1"
+    }
+  },
+  "annotations": []
+}

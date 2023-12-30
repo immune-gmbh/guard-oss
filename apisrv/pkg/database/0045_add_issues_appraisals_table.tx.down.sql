@@ -1,0 +1,1 @@
+DROP TABLE IF EXISTS v2.issues_appraisals;

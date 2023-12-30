@@ -1,0 +1,174 @@
+{
+  "type": "report/2",
+  "values": {
+    "host": {
+      "name": "Windows 10 Enterprise 10.0 id 2009",
+      "hostname": "DESKTOP-2AG9807",
+      "type": "windows",
+      "cpu_vendor": "GenuineIntel"
+    },
+    "smbios": {
+      "manufacturer": "LENOVO",
+      "product": "20XWCTO1WW",
+      "bios_release_date": "07/16/2021",
+      "bios_vendor": "LENOVO",
+      "bios_version": "N32ET68W (1.44 )"
+    },
+    "uefi": {
+      "mode": "user",
+      "secureboot": true,
+      "platform_keys": [
+        {
+          "type": "certificate",
+          "subject": "CN=Lenovo Ltd. PK CA 2012,O=Lenovo Ltd.,L=Yokohama,ST=Kanagawa,C=JP",
+          "fingerprint": "fbe14729e6a1d72e49c15e245f165f5e10fc77cfed5f460bf8dbbd0bfed732f5",
+          "not_before": "2021-08-13T13:32:46Z",
+          "not_after": "2026-08-13T13:32:46Z",
+          "algorithm": "RSA SHA256-RSA"
+        },
+        {
+          "type": "certificate",
+          "subject": "CN=Platform Key,C=Platform Key",
+          "fingerprint": "5b6f822dbf5f85fde7f34e8f04554758e196d515a984240fedee17324a599fab",
+          "not_before": "2021-08-13T13:32:46Z",
+          "not_after": "2026-08-13T13:32:46Z",
+          "algorithm": "RSA SHA256-RSA"
+        }
+      ],
+      "exchange_keys": [
+        {
+          "type": "certificate",
+          "subject": "CN=Lenovo Ltd. KEK CA 2012,O=Lenovo Ltd.,L=Yokohama,ST=Kanagawa,C=JP",
+          "fingerprint": "a9087d1044ad18f7a94916d284cbc01827cf23cd8f60b79072c9caa1fef4d649",
+          "not_before": "2011-06-24T20:41:29Z",
+          "not_after": "2026-06-24T20:51:29Z",
+          "algorithm": "RSA SHA256-RSA"
+        },
+        {
+          "type": "certificate",
+          "subject": "CN=Key Exchange Key,C=Key Exchange Key",
+          "fingerprint": "6a8fce07c2fe271decfab62df52a29250491413a1f75455644581f56edd5a49f",
+          "not_before": "2011-06-24T20:41:29Z",
+          "not_after": "2026-06-24T20:51:29Z",
+          "algorithm": "RSA SHA256-RSA"
+        },
+        {
+          "type": "certificate",
+          "subject": "CN=Microsoft Corporation KEK CA 2011,O=Microsoft Corporation,L=Redmond,ST=Washington,C=US",
+          "issuer": "CN=Microsoft Corporation Third Party Marketplace Root,O=Microsoft Corporation,L=Redmond,ST=Washington,C=US",
+          "fingerprint": "a1117f516a32cefcba3f2d1ace10a87972fd6bbe8fe0d0b996e09e65d802a503",
+          "not_before": "2011-06-24T20:41:29Z",
+          "not_after": "2026-06-24T20:51:29Z",
+          "algorithm": "RSA SHA256-RSA"
+        }
+      ],
+      "permitted_keys": [
+        {
+          "type": "certificate",
+          "subject": "CN=Lenovo UEFI CA 2014,O=Lenovo,ST=North Carolina,C=US",
+          "fingerprint": "99abba42419f80cc967a95cbb6a0ecd754f4d243accb778ed2fef17899d3618e",
+          "not_before": "2011-06-27T21:22:45Z",
+          "not_after": "2026-06-27T21:32:45Z",
+          "algorithm": "RSA SHA256-RSA"
+        },
+        {
+          "type": "certificate",
+          "subject": "CN=ThinkPad Product CA 2012,O=Lenovo Ltd.,L=Yokohama,ST=Kanagawa,C=JP",
+          "issuer": "CN=Lenovo Ltd. Root CA 2012,O=Lenovo Ltd.,L=Yokohama,ST=Kanagawa,C=JP",
+          "fingerprint": "1101477d213640926822a22710c6898b24a42c1efbb9e6881c4859b483a571dd",
+          "not_before": "2011-06-27T21:22:45Z",
+          "not_after": "2026-06-27T21:32:45Z",
+          "algorithm": "RSA SHA256-RSA"
+        },
+        {
+          "type": "certificate",
+          "subject": "CN=Microsoft Windows Production PCA 2011,O=Microsoft Corporation,L=Redmond,ST=Washington,C=US",
+          "issuer": "CN=Microsoft Root Certificate Authority 2010,O=Microsoft Corporation,L=Redmond,ST=Washington,C=US",
+          "fingerprint": "e8e95f0733a55e8bad7be0a1413ee23c51fcea64b3c8fa6a786935fddcc71961",
+          "not_before": "2011-06-27T21:22:45Z",
+          "not_after": "2026-06-27T21:32:45Z",
+          "algorithm": "RSA SHA256-RSA"
+        },
+        {
+          "type": "certificate",
+          "subject": "CN=Microsoft Corporation UEFI CA 2011,O=Microsoft Corporation,L=Redmond,ST=Washington,C=US",
+          "issuer": "CN=Microsoft Corporation Third Party Marketplace Root,O=Microsoft Corporation,L=Redmond,ST=Washington,C=US",
+          "fingerprint": "48e99b991f57fc52f76149599bff0a58c47154229b9f8d603ac40d3500248507",
+          "not_before": "2011-06-27T21:22:45Z",
+          "not_after": "2026-06-27T21:32:45Z",
+          "algorithm": "RSA SHA256-RSA"
+        }
+      ],
+      "forbidden_keys": [],
+      "drivers": null
+    },
+    "tpm": {
+      "manufacturer": "ST Microelectronics",
+      "vendor_id": "",
+      "spec_version": "Level 0, rev. 138 (9 Jan 2018)",
+      "eventlog": [],
+      "pcr": null
+    },
+    "me": {
+      "variant": "Consumer CSME",
+      "version": [
+        15,
+        0,
+        23,
+        1706
+      ],
+      "fitc_version": [
+        15,
+        0,
+        23,
+        1706
+      ],
+      "recovery_version": [
+        15,
+        0,
+        23,
+        1706
+      ],
+      "available_features": [
+        "Intel Sensor Hub",
+        "Protected Audio Video Path",
+        "Dynamic Application Loader",
+        "Cipher Transport Layer",
+        "Wireless Display",
+        "Platform Trust Technology"
+      ]
+    }
+  },
+  "annotations": [
+    {
+      "id": "uefi-dbx-miss",
+      "path": "/uefi/forbidden_keys",
+      "fatal": true
+    },
+    {
+      "id": "uefi-deployed-secure-boot",
+      "path": "/uefi/mode",
+      "fatal": false
+    },
+    {
+      "id": "me-miss",
+      "path": "/me",
+      "fatal": false
+    },
+    {
+      "id": "sgx-disabled",
+      "path": "/sgx",
+      "fatal": false
+    },
+    {
+      "id": "txt-public-miss",
+      "path": "/txt",
+      "fatal": false
+    },
+    {
+      "id": "sev-miss",
+      "path": "/sev",
+      "fatal": false
+    }
+  ]
+}

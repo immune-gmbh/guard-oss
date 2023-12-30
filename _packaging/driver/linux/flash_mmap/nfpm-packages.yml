@@ -1,0 +1,35 @@
+#
+# check https://nfpm.goreleaser.com/configuration for detailed usage
+#
+name: "flash-mmap-module"
+arch: "amd64"
+platform: "linux"
+version: "1-${RELEASE_ID}"
+version_schema: "none"
+section: "default"
+priority: "extra"
+depends: ["dkms"]
+maintainer: "Hans-Gert Dahmen <hans-gert.dahmen@immu.ne>"
+description: |
+  Kernel module to map 16MiB of UEFI platform flash to sysfs.
+vendor: "immune GmbH"
+homepage: "https://github.com/immune-gmbh"
+license: "GPL"
+
+contents:
+  - src: flash_mmap-1.0.dkms.tar.gz
+    dst: /usr/src/flash_mmap-1.0.dkms.tar.gz
+    file_info:
+      mode: 0755
+      owner: root
+      group: root
+
+overrides:
+  rpm:
+    scripts:
+      postinstall: ./postinstall.sh
+      postremove: ./postremove.sh
+  deb:
+    scripts:
+      postinstall: ./postinstall.sh
+      postremove: ./postremove.sh

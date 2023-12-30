@@ -1,0 +1,21 @@
+{
+  "data": {
+    "id": "233eca70-6419-5d2b-8006-1b6a6392046b",
+    "type": "subscription",
+    "attributes": {
+      "status": "created",
+      "current_devices_amount": 0,
+      "max_devices_amount": 50,
+      "period_start": "2021-12-24",
+      "period_end": "2022-01-03",
+      "tax_rate": null,
+      "monthly_base_fee": 15,
+      "monthly_fee_per_device": 5,
+      "action_required": false,
+      "billing_details": {
+        "free_credits": 0
+      },
+      "setup_intent_secret": null
+    }
+  }
+}

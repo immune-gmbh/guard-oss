@@ -1,0 +1,45 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://immu.ne/api-v1-evidence.schema.json",
+
+  "title": "Evidence",
+  "description": "Quote and platform report to be appraised",
+
+  "type": "object",
+  "properties": {
+    "fpr":{
+      "type": "string",
+      "pattern": "^[0-9a-fA-F]+$",
+      "description":"Endorsement key fingerprint"
+    },
+    "quote_key_certificate":{
+      "type": "string",
+      "description":"Attestation key certificate"
+    },
+    "quote_key":{
+      "type": "string",
+      "description":"Attestation key"
+    },
+    "tpms_attest":{
+      "type": "string",
+      "description":"Quote"
+    },
+    "tpms_signature":{
+      "type": "string",
+      "description":"Quote signature"
+    },
+    "hash_algorithm":{
+      "type": "integer",
+      "description":"PCR bank quoted"
+    },
+    "pcrs":{
+      "type":"object",
+      "description":"PCRs and values that match the policy"
+    },
+    "report":{
+      "type":"object",
+      "description":"Security report of the platform"
+    }
+  },
+  "required":[ "pcrs", "report", "fpr", "quote_key_certificate", "quote_key", "tpms_signature", "tpms_attest", "hash_algorithm" ]
+}

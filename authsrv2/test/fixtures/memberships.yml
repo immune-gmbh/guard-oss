@@ -1,0 +1,83 @@
+kai_at_kais_org:
+  user: kai
+  organisation: kais_org
+  jwt_token_key: <%= SecureRandom.hex %>
+  role: 0 # owner
+  status: 1 # active
+  notify_device_update: true
+  created_at: <%= 5.day.ago.to_s(:db) %>
+  updated_at: <%= 5.day.ago.to_s(:db) %>
+
+kai1_at_kais_org:
+  user: kai_notify1
+  notify_device_update: false
+  organisation: kais_org
+  jwt_token_key: <%= SecureRandom.hex %>
+  role: 2 # user
+  status: 1 # active
+  created_at: <%= 5.day.ago.to_s(:db) %>
+  updated_at: <%= 5.day.ago.to_s(:db) %>
+
+kai2_at_kais_org:
+  user: kai_notify2
+  notify_device_update: false
+  organisation: kais_org
+  jwt_token_key: <%= SecureRandom.hex %>
+  role: 2 # user
+  status: 1 # active
+  created_at: <%= 5.day.ago.to_s(:db) %>
+  updated_at: <%= 5.day.ago.to_s(:db) %>
+
+kai_at_testys_org:
+  user: kai
+  organisation: testys_org
+  jwt_token_key: <%= SecureRandom.hex %>
+  role: 2 # user
+  status: 1 # active
+  created_at: <%= 5.day.ago.to_s(:db) %>
+  updated_at: <%= 5.day.ago.to_s(:db) %>
+
+testy_at_testys_org:
+  user: testy
+  organisation: testys_org
+  jwt_token_key: <%= SecureRandom.hex %>
+  role: 0 # owner
+  status: 1 # active
+  created_at: <%= 5.day.ago.to_s(:db) %>
+  updated_at: <%= 5.day.ago.to_s(:db) %>
+
+kai_at_payment_reminder_org:
+  user: kai
+  organisation: payment_reminder_org
+  jwt_token_key: <%= SecureRandom.hex %>
+  role: 0 # owner
+  status: 1 # active
+  created_at: <%= 5.day.ago.to_s(:db) %>
+  updated_at: <%= 5.day.ago.to_s(:db) %>
+
+no_address_at_invalid_org:
+  user: no_address
+  organisation: invalid_kai_org
+  jwt_token_key: <%= SecureRandom.hex %>
+  role: 0 # owner
+  status: 1 # active
+  created_at: <%= 5.day.ago.to_s(:db) %>
+  updated_at: <%= 5.day.ago.to_s(:db) %>
+
+not_active_at_invalid_org:
+  user: not_active
+  organisation: invalid_kai_org
+  jwt_token_key: <%= SecureRandom.hex %>
+  role: 0 # owner
+  status: 1 # active
+  created_at: <%= 5.day.ago.to_s(:db) %>
+  updated_at: <%= 5.day.ago.to_s(:db) %>
+
+admin_at_admin_org:
+  user: admin
+  organisation: admin_org
+  jwt_token_key: <%= SecureRandom.hex %>
+  role: 0 # owner
+  status: 1 # active
+  created_at: <%= 5.day.ago.to_s(:db) %>
+  updated_at: <%= 5.day.ago.to_s(:db) %>

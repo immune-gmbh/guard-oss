@@ -1,0 +1,12 @@
+.styled-table {
+  @apply w-full table-fixed;
+}
+.styled-table thead tr {
+  @apply bg-gray-200;
+}
+.styled-table thead th {
+  @apply px-4 py-2 text-left;
+}
+.styled-table tbody td{
+  @apply px-4 py-2 bg-gray-50;
+}

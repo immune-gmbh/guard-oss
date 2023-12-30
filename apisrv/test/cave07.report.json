@@ -1,0 +1,67 @@
+{
+  "type": "report/2",
+  "values": {
+    "host": {
+      "name": "Ubuntu 20.10",
+      "hostname": "cave07",
+      "type": "linux",
+      "cpu_vendor": "GenuineIntel"
+    },
+    "smbios": {
+      "manufacturer": "FUJITSU",
+      "product": " ",
+      "bios_release_date": "05/28/2020",
+      "bios_vendor": "FUJITSU // American Megatrends Inc.",
+      "bios_version": "V5.0.0.12 R1.27.0 for D3401-H2x                   "
+    },
+    "me": {
+      "variant": "Business CSME",
+      "state": "normal",
+      "version": [
+        11,
+        8,
+        70,
+        3626
+      ],
+      "fitc_version": [
+        11,
+        6,
+        20,
+        1221
+      ],
+      "recovery_version": [
+        11,
+        8,
+        70,
+        3626
+      ]
+    }
+  },
+  "annotations": [
+    {
+      "id": "uefi-vars-miss",
+      "path": "/uefi",
+      "fatal": false
+    },
+    {
+      "id": "tpm-miss",
+      "path": "/tpm",
+      "fatal": false
+    },
+    {
+      "id": "sgx-disabled",
+      "path": "/sgx",
+      "fatal": false
+    },
+    {
+      "id": "tpm-miss",
+      "path": "/txt",
+      "fatal": false
+    },
+    {
+      "id": "sev-miss",
+      "path": "/sev",
+      "fatal": false
+    }
+  ]
+}

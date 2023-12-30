@@ -1,0 +1,40 @@
+{
+  "incidents": {
+    "title": "Incidents",
+    "description": "{{ count }} incidents found in {{ devices }} devices.",
+    "type": "Incident"
+  },
+  "risks": {
+    "title": "Risks",
+    "type": "Risk"
+  },
+  "issuesTable": {
+    "name": "Name",
+    "component": "Component",
+    "devices": "Affected devices",
+    "noIssues": "There are currently no {{ issueType }}"
+  },
+  "timestamp": "Past 24 hours",
+  "risksRanking": {
+    "title": "Top Risks",
+    "showAll": "Show All",
+    "byTrustchain": "Broken down by affected component",
+    "noRisks": "No risks found for the device fleet\nin the last 24 hours"
+  },
+  "deviceStatus": {
+    "title": "Device Status",
+    "devices": "devices"
+  },
+  "devices": {
+    "linkBack": "Back to the list of {{ issueTitle }}",
+    "title": "Devices",
+    "searchPlaceholder": "Search for Name, IDs, Risk Levels, ...",
+    "filteredByIssue": "Filtered by {{ issueType }}",
+    "resetFilter": "Reset Filter",
+    "filterByTags": "Filter by Tags",
+    "selectAll": "Select All",
+    "loading": "Loading devices...",
+    "loadNextDevices": "Load next devices",
+    "allLoaded": "All devices loaded"
+  }
+}

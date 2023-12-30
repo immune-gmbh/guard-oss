@@ -1,0 +1,147 @@
+{
+  "data": [
+    {
+      "type": "devices",
+      "id": "1770",
+      "attributes": {
+        "policy": {
+          "endpoint_protection": "if-present",
+          "intel_tsc": "if-present"
+        },
+        "hwid": "0022000b695e18b680c19b103db1570f01e4e01b9a0b57de1d1b68d73cce65f9822b0e3",
+        "name": "fedora",
+        "state": "outdated"
+      },
+      "relationships": {
+        "appraisals": {
+          "data": [
+            {
+              "type": "appraisals",
+              "id": "11496"
+            }
+          ],
+          "links": {
+            "next": "https:/api.immu.ne/v2/devices/1770/appraisals?i=11496",
+            "self": "https:/api.immu.ne/v2/devices/1770/appraisals"
+          }
+        },
+        "policies": {
+          "data": [
+            {
+              "type": "policies",
+              "id": "1370"
+            }
+          ],
+          "links": {
+            "next": "https:/api.immu.ne/v2/devices/1770/policies?i=1371",
+            "self": "https:/api.immu.ne/v2/devices/1770/policies"
+          }
+        },
+        "tags": {
+          "data": [
+            {
+              "type": "tags",
+              "id": "2AWyQQrMmzb5XFl3m20vlEOys9E"
+            },
+            {
+              "type": "tags",
+              "id": "2AWyQQeGWaL0DumSKL9PNiP629U"
+            },
+            {
+              "type": "tags",
+              "id": "2AWyQOwltw1hL5lIfGfX23uNAjw"
+            }
+          ]
+        }
+      },
+      "links": {
+        "appraisals": "https:/api.immu.ne/v2/devices/1770/appraisals",
+        "self": "https:/api.immu.ne/v2/devices/1770"
+      }
+    },
+    {
+      "type": "devices",
+      "id": "1772",
+      "attributes": {
+        "policy": {
+          "endpoint_protection": "if-present",
+          "intel_tsc": "if-present"
+        },
+        "hwid": "0022000b74795e64b75f5694800e30e7568fd7af0bff38ba3f50d0716e505ac1624af2e",
+        "name": "ludmilla",
+        "state": "trusted"
+      },
+      "relationships": {
+        "appraisals": {
+          "data": [
+            {
+              "type": "appraisals",
+              "id": "11496"
+            }
+          ],
+          "links": {
+            "next": "https:/api.immu.ne/v2/devices/1772/appraisals?i=11496",
+            "self": "https:/api.immu.ne/v2/devices/1772/appraisals"
+          }
+        },
+        "tags": {
+          "data": [
+            {
+              "type": "tags",
+              "id": "2AWyQQrMmzb5XFl3m20vlEOys9E"
+            }
+          ]
+        }
+      },
+      "links": {
+        "appraisals": "https:/api.immu.ne/v2/devices/1772/appraisals",
+        "self": "https:/api.immu.ne/v2/devices/1772"
+      }
+    }
+  ],
+  "included": [
+    {
+      "type": "appraisals",
+      "id": "11496",
+      "attributes": {
+        "appraised": "2022-01-11T14:23:38Z",
+        "verdict": {
+          "type": "verdict/1",
+          "result": "vulnerable",
+          "bootchain": "vulnerable",
+          "firmware": "trusted",
+          "configuration": "trusted"
+        }
+      }
+    },
+    {
+      "type": "tags",
+      "id": "2AWyQQrMmzb5XFl3m20vlEOys9E",
+      "attributes":
+      {
+          "key": "SUPERDUPERTAG"
+      }
+    },
+    {
+      "type": "tags",
+      "id": "2AWyQQeGWaL0DumSKL9PNiP629U",
+      "attributes":
+      {
+          "key": "ludmillatag"
+      }
+    },
+    {
+      "type": "tags",
+      "id": "2AWyQOwltw1hL5lIfGfX23uNAjw",
+      "attributes":
+      {
+          "key": "Bochum"
+      }
+    }
+  ],
+  "meta": {
+    "instance": "apisrv-v2-deployment-5f76b59b97-4xsjr",
+    "trace": "0d05409d37483b7533c98d054e04bfa7",
+    "version": "r134"
+  }
+}

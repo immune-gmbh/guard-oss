@@ -1,0 +1,2 @@
+x86_64_flash_mmap-$(CONFIG_X86_64) := flash_mmap.o
+obj-m  += $(x86_64_flash_mmap-y)

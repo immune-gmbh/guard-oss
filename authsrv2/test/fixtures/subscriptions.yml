@@ -1,0 +1,26 @@
+<%
+  [
+		"d5d70fad-c11f-4609-8cab-17438305f0b0",
+		"39f5930f-d9cf-49d4-9ad4-2054ae4dfea5",
+		"3fab3a3e-c286-47cf-a096-dfc899441c8e",
+		"f2561288-76e5-42cb-bea8-90c8d6265a63",
+		"ad89ec0a-d2a7-40a9-8297-d87fae349311",
+		"f8e47633-a3b5-4f7e-bcaa-3272fe51f7fa",
+		"1222fe6a-e762-41b9-8252-5af7a6547342"
+  ].each_with_index do |uu,idx| %>
+billing_org_<%= idx %>_subscription:
+  organisation_id: <%= uu %>
+  stripe_subscription_id: "test"
+  stripe_subscription_item_id: "test"
+  period_start: <%= 5.day.ago.to_s(:db) %>
+  period_end: <%= (Time.now + 5.day).to_s(:db) %>
+  new_devices_amount: 0
+<% end %>
+
+kais_subscription:
+  organisation: kais_org
+  stripe_subscription_id: "test"
+  stripe_subscription_item_id: "test"
+  period_start: <%= 5.day.ago.to_s(:db) %>
+  period_end: <%= (Time.now + 5.day).to_s(:db) %>
+  new_devices_amount: 100

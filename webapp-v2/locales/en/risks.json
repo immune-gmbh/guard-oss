@@ -1,0 +1,42 @@
+{
+  "fw/update": {
+    "slug": "Device Firmware Outdated",
+    "description": {
+      "d1_0": "Firmware updates are available for some components attached to the device. The updates can be installed using the firmware update daemon <code>fwupd</code>.",
+      "d1_one": "Firmware updates are available for one component attached to the device. The updates can be installed using the firmware update daemon <code>fwupd</code>.",
+      "d1_other": "Firmware updates are available for {{ count }} components attached to the device. The updates can be installed using the firmware update daemon <code>fwupd</code>.",
+      "d2": "immune Guard extracted the following list of outdated components.",
+      "d3": "immune Guard queries the <lvfsLink>Linux Vendor Firmware Service</lvfsLink> for updates for all components of the device."
+    }
+  },
+  "uefi/no-exit-boot-srv": {
+    "slug": "Critical Interfaces Accessible",
+    "description": {
+      "d1": "The logs immune Guard received from the device indicate that security UEFI BIOS interfaces were not locked down before booting the operating system. Either the boot loader failed to do so or the UEFI BIOS is faulty.",
+      "d2": "Before handing control of the device off to the operating system the UEFI boot application must call the <code>ExitBootServices()</code> to finalize system startup and to lock down critical interfaces that can be used for privilege escalation."
+    },
+    "forensics": {
+      "entered": "The <code>ExitBootServices()</code> function was called but it did not return.",
+      "not_entered": "The <code>ExitBootServices()</code> function was not called by to boot loader."
+    }
+  },
+  "uefi/official-dbx": {
+    "slug": "Compromised Keys in Use",
+    "description": {
+      "d1_0": "immune Guard was able to extract the list of keys and signatures removed. The list of compromised keys and signatures maintained by the device's UEFI BIOS does not match the official list of the UEFI Forum. Some entries are missing. This means code signed with these keys is allowed to run during device startup. This could include vulnerable drivers and known malware.",
+      "d1_one": "immune Guard was able to extract the list of keys and signatures removed. The list of compromised keys and signatures maintained by the device's UEFI BIOS does not match the official list of the UEFI Forum. One entry is missing. This means code signed with these keys is allowed to run during device startup. This could include vulnerable drivers and known malware.",
+      "d1_other": "immune Guard was able to extract the list of keys and signatures removed. The list of compromised keys and signatures maintained by the device's UEFI BIOS does not match the official list of the UEFI Forum. {{ count }} entries are missing. This means code signed with these keys is allowed to run during device startup. This could include vulnerable drivers and known malware.",
+      "d2": "The UEFI BIOS verifies all code loaded during device startup using cryptographic signatures. The UEFI maintains two sets of keys to decide which signatures to accept and which to reject. The set of signatures and keys to reject -- so called revocation list a.k.a. <code>dbx</code> needs to be updated regularly as keys get compromised and vulnerabilities are found in already signed drivers. Removing elements from the list is dangerous as the signed code is still available to attackers. We recommend to manually update the <code>dbx</code> by Windows Update Service or Linux LVFS. If the problem persists, the UEFI Forum provides the authoritative <code>dbx</code> on  <revocationLink>its website</revocationLink>."
+    }
+  },
+  "windows/boot-config": {
+    "slug": "Insecure Windows Boot Settings",
+    "description": {
+      "d1_0": "",
+      "d1_one": "The {{ bootCfg }} option of the Windows boot configuration is in an insecure state.",
+      "d1_other": "{{ count }} options of the Windows boot configuration are in an insecure state.",
+      "d2": "Windows records what options are set by the boot loader when starting. Some have an impact on the device's security like enabling kernel-mode debugging and Data Execution Prevention (DEP). Outside of driver development none of these options should be changed from their secure default setting."
+    }
+  }
+}
+ 

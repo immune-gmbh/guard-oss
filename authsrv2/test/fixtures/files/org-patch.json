@@ -1,0 +1,27 @@
+{
+    "id": "00018be4-2a7e-41c2-a955-08f096b3c38b",
+    "address": {
+        "country": "Germany",
+        "city": "Bochum",
+        "id": "00018e6a-9e5c-4d5a-998d-39037f61799c",
+        "type": "address",
+        "street_and_number": "Test 12",
+        "postal_code": "32334"
+    },
+    "name": "immune",
+    "type": "organisation",
+    "status": "active",
+    "freeloader": true,
+    "invoice_name": "a",
+    "vat_number": null,
+    "splunk_enabled": true,
+    "splunk_accept_all_server_certificates": true,
+    "splunk_event_collector_url": "https://prd-p-72lw4.splunkcloud.com/",
+    "splunk_authentication_token": "eyJraWQiOiJzcGx1bmsuc2VjcmV0IiwiYWxnIjoiSFM1MTIiLCJ2ZXIiOiJ2MiIsInR0eXAiOiJzdGF0aWMifQ.eyJpc3MiOiJzY19hZG1pbiBmcm9tIHNpLWktMDU0Y2FlM2I2MzhiOTExMDMiLCJzdWIiOiJzY19hZG1pbiIsImF1ZCI6IlRlc3QiLCJpZHAiOiJTcGx1bmsiLCJqdGkiOiIzYWIyOWIyODQ5YTVkYWNjNTQ2MDdiM2UzOGViZmExMGUyZjFmMWRmODdjYTg4ZTgyOWY1YzA4MGVkMTNjODU5IiwiaWF0IjoxNjM2NTU1MTY2LCJleHAiOjE2MzkxNDcxNjYsIm5iciI6MTYzOTE0NzE2Nn0.q_Sv8kNkrOxaMHJkUedLSJO-lnVe-2de6ktSzi7wG1mpw_Yf4XeWlIpkcJLim3NooQSRQMqfv8pbUaHqA1KQBg",
+    "syslog_enabled": null,
+    "syslog_hostname_or_address": null,
+    "syslog_udp_port": null,
+    "can_edit": true,
+    "can_delete": true,
+    "can_read": true
+} 

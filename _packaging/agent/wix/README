@@ -1,0 +1,54 @@
+== Wix Installer ==
+
+This implements a Wix installer for the guard agent with the following properties:
+- Localization support
+- Custom artwork
+- EULA
+- Install application executable to program files folder
+- Set up a registry value pointing to our installation
+- Ask for enrollment token and enroll TPM during setup or fail to install
+- Install a service and eventlog source during install (with proper rollback) using agent "winsvc install" command
+- Seamless upgrades but now downgrades by running another MSI
+- Silent installation using /quiet parameter in msiexec cmdline
+- Uninstall completely removes files in program data directory
+- Uninstall removes the scheduled task
+- Require at least 64-bit Windows 7 or Server 2008 R2
+- Install third party (Intel) HECI PNP drivers using DIFxAPP extension
+
+Caveats:
+- Installing PNP and non-PNP drivers is a mess; the non-PNP drivers are now managed by the
+  agent itself during runtime
+- We need the agent to setup its service along with eventlog source as the Wix capabilities
+  to do so are limited
+- I couldn't get the remove service custom action to properly run before removing the agent
+  exe, so we now rely on the service control element to remove the service on uninstall;
+  this leaves the event log source registry entry on the system
+
+== Build Instructions ==
+
+This needs installer needs the Wix 3.x toolset and must be run under 64-bit Windows.
+Just run 'make' to build.
+
+== Install Instructions ==
+
+Enable installer verbose logging:
+    msiexec /i installer.msi /L*V log.txt
+
+Pass extra args during enroll, f.e. to use edge servers
+    msiexec /i installer.msi ENROLLEXTRAARGS="
+
+Enable verbose logging of agent during enroll
+    msiexec /i installer.msi ENROLLEXTRAARGS="--verbose"
+
+**************************************************************************************
+* IMPORTANT: Never change the UpgradeCode GUID.                                      *
+**************************************************************************************
+
+
+== License ==
+
+The EULA can be localized and it is only asked for upon first install. If ever a revised
+license needs to be accepted, we need to create a LICENSEVERSION registry tag and start
+storing the version of the license that last was accepted there. The installer would
+need conidions that compare the license version and modify the UI sequence to force
+re-acceptance when a newer license version is shipped within the MSI.

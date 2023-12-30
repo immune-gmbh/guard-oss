@@ -1,0 +1,12 @@
+{
+  "data": {
+    "id": "76bc03a1-229d-54b0-a17f-38d651c24c98",
+    "type": "invoice",
+    "attributes": {
+      "total": 119,
+      "status": "open",
+      "stripe_invoice_number": "1234",
+      "finalized_at": "2021-12-29T18:20:00.000Z"
+    }
+  }
+}

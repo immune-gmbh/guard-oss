@@ -1,0 +1,87 @@
+{
+  "data":
+  [
+      {
+          "type": "tags",
+          "id": "2AWyQQrMmzb5XFl3m20vlEOys9E",
+          "attributes":
+          {
+              "key": "SUPERDUPERTAG"
+          }
+      },
+      {
+          "type": "tags",
+          "id": "2AWyQQeGWaL0DumSKL9PNiP629U",
+          "attributes":
+          {
+              "key": "ludmillatag"
+          }
+      },
+      {
+          "type": "tags",
+          "id": "2AWyQOwltw1hL5lIfGfX23uNAjw",
+          "attributes":
+          {
+              "key": "Bochum"
+          }
+      },
+      {
+          "type": "tags",
+          "id": "2AWyQNYZigHh1nWExJOPmLEikaP",
+          "attributes":
+          {
+              "key": "Intel"
+          }
+      },
+      {
+          "type": "tags",
+          "id": "2AWyQMGJ6ZJVfHZRlVzHFrn4JPr",
+          "attributes":
+          {
+              "key": "Blahblub"
+          }
+      },
+      {
+          "type": "tags",
+          "id": "2AWyQLqA89lbgz13AUlhYzkYvR2",
+          "attributes":
+          {
+              "key": "KAISNEUERTAG"
+          }
+      },
+      {
+          "type": "tags",
+          "id": "2AWyQLOrae9kVQFYODVIeiQ3Y6Z",
+          "attributes":
+          {
+              "key": "newtag"
+          }
+      },
+      {
+          "type": "tags",
+          "id": "2AWyQKSSDWs5L7NYCikJNtt6Sg3",
+          "attributes":
+          {
+              "key": "Kortumstr."
+          }
+      },
+      {
+          "type": "tags",
+          "id": "2AWyQJisUAyW78RytID03g2eKDz",
+          "attributes":
+          {
+              "key": "kdjskdjs"
+          }
+      }
+  ],
+  "links":
+  {
+      "next": "https://xxxx.xxx.xxxx/v2/tags?i=2AWyQQrMmzb5XFl3m20vlEOys9E"
+  },
+  "meta":
+  {
+      "instance": "apisrv-deployment-v2-edge-678f4cf5b6-cpg5j",
+      "trace": "69e0c7339b499e47e09542989e95c9a4",
+      "version": "r227-11-gd0581bdc"
+  }
+}

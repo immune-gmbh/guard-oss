@@ -1,0 +1,618 @@
+{
+  "brly/2021-001-swsmi-len-65529": {
+    "step": "firmware",
+    "score": "6.6",
+    "slug": "SMM Callout Vulnerability",
+    "description": "<0><1>BINARLY efiXplorer team</1></0> has identified SMM callout in ThinkPad 13 2nd Gen, which allows a local privileged user to access the System Management Mode and execute arbitrary code.",
+    "link": "https://binarly.io/advisories/BRLY-2021-001/index.html",
+    "group": "vulnerability"
+  },
+  "brly/rkloader": {
+    "step": "firmware",
+    "score": "N/A",
+    "slug": "rkloader Malware Detected inside the Firmware",
+    "description": "BINARLY efiXplorer team has discovered an Advanced Persistent Threat called rkloader inside your firmware.",
+    "link": "",
+    "group": "apt"
+  },
+  "brly/2021-025": {
+    "step": "firmware",
+    "score": "8.2",
+    "slug": "SMM Callout Vulnerability in Combined DXE/SMM Driver",
+    "description": "<0><1>BINARLY efiXplorer team</1></0> has discovered SMM callout vulnerability on a BullSequana Edge server allowing a possible attacker to hijack execution flow of a code running in System Management Mode. Exploiting this issue could lead to escalating privileges to SMM.",
+    "link": "https://binarly.io/advisories/BRLY-2021-025/index.html",
+    "group": "vulnerability"
+  },
+  "brly/2021-037": {
+    "step": "firmware",
+    "score": "8.2",
+    "slug": "SMM Memory Corruption Vulnerability in SMM Driver",
+    "description": "<0><1>BINARLY efiXplorer team</1></0> has discovered SMM memory corruption vulnerability on multiple HP devices allowing a possible attacker to write fixed or predictable data to SMRAM. Exploiting this issue could lead to escalating privileges to SMM.",
+    "link": "https://binarly.io/advisories/BRLY-2021-037/index.html",
+    "group": "vulnerability"
+  },
+  "brly/2021-035": {
+    "step": "firmware",
+    "score": "8.2",
+    "slug": "SMM Memory Corruption Vulnerability in SMM Driver",
+    "description": "<0><1>BINARLY efiXplorer team</1></0> has discovered a SMM memory corruption vulnerability on multiple HP devices allowing a possible attacker to write fixed or predictable data to SMRAM. Exploiting this issue could lead to escalating privileges to SMM.",
+    "link": "https://binarly.io/advisories/BRLY-2021-035/index.html",
+    "group": "vulnerability"
+  },
+  "brly/2021-032": {
+    "step": "firmware",
+    "score": "8.2",
+    "slug": "The Heap Buffer Overflow Vulnerability in Child SW SMI Handler",
+    "description": "<0><1>BINARLY efiXplorer team</1></0> has discovered a heap buffer overflow vulnerability in a child SW SMI handler on multiple HP devices that allows corruption of heap metadata.",
+    "link": "https://binarly.io/advisories/BRLY-2021-032/index.html",
+    "group": "vulnerability"
+  },
+  "brly/2021-023": {
+    "step": "firmware",
+    "score": "8.2",
+    "slug": "SMM Callout Vulnerability in Combined DXE/SMM Driver",
+    "description": "<0><1>BINARLY efiXplorer team</1></0> has discovered a SMM callout vulnerability on a BullSequana Edge server allowing a possible attacker to hijack the execution flow of a code running in System Management Mode. Exploiting this issue could lead to escalating privileges to SMM.",
+    "link": "https://binarly.io/advisories/BRLY-2021-023/index.html",
+    "group": "vulnerability"
+  },
+  "brly/2021-029": {
+    "step": "firmware",
+    "score": "7.5",
+    "slug": "SMM Memory Corruption Vulnerability in Combined DXE/SMM Driver",
+    "description": "<0><1>BINARLY efiXplorer team</1></0> has discovered a SMM memory corruption vulnerability on a BullSequana Edge server allowing a possible attacker to write fixed or predictable data to SMRAM. Exploiting this issue could lead to escalating privileges to SMM.",
+    "link": "https://binarly.io/advisories/BRLY-2021-029/index.html",
+    "group": "vulnerability"
+  },
+  "brly/intel-bssa-dft-intel-sa-00525": {
+    "step": "firmware",
+    "score": "7.5",
+    "slug": "intel BSSA DFT Vulnerability",
+    "description": "<0><1>BINARLY efiXplorer team</1></0> has discovered a potential security vulnerability in the customer build time configuration for the intel BIOS Shared SW Architecture (BSSA) Design for Test (DFT) feature may allow escalation of privilege.",
+    "link": "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00525.html",
+    "group": "vulnerability"
+  },
+  "brly/intel-bssa-dft": {
+    "step": "firmware",
+    "score": "7.5",
+    "slug": "intel BSSA DFT Vulnerability",
+    "description": "<0><1>BINARLY efiXplorer team</1></0> has discovered a potential security vulnerability in the customer build time configuration for the intel BIOS Shared SW Architecture (BSSA) Design for Test (DFT) feature may allow escalation of privilege.",
+    "link": "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00525.html",
+    "group": "vulnerability"
+  },
+  "brly/2021-050": {
+    "step": "firmware",
+    "score": "7.5",
+    "slug": "SMM Memory Corruption Vulnerability in SMM Driver",
+    "description": "<0><1>BINARLY efiXplorer team</1></0> has discovered SMM memory corruption vulnerability on intel platforms allowing a possible attacker to write fixed or predictable data to SMRAM. Exploiting this issue could lead to escalating privileges to SMM.",
+    "link": "https://binarly.io/advisories/BRLY-2021-050/index.html",
+    "group": "vulnerability"
+  },
+  "brly/2021-051": {
+    "step": "firmware",
+    "score": "7.5",
+    "slug": "SMM Memory Corruption Vulnerability in SMM Driver",
+    "description": "<0><1>BINARLY efiXplorer team</1></0> has discovered SMM memory corruption vulnerability on intel platforms allowing a possible attacker to write fixed or predictable data to SMRAM. Exploiting this issue could lead to escalating privileges to SMM.",
+    "link": "https://binarly.io/advisories/BRLY-2021-051/index.html",
+    "group": "vulnerability"
+  },
+  "brly/2021-013": {
+    "step": "firmware",
+    "score": "8.2",
+    "slug": "SMM Memory Corruption Vulnerability in Combined DXE/SMM Driver",
+    "description": "<0><1>BINARLY efiXplorer team</1></0> has discovered a SMM memory corruption vulnerability in Fujitsu devices allowing a possible attacker to write data to SMRAM. Exploiting this issue could lead to escalating privileges to SMM.",
+    "link": "https://binarly.io/advisories/BRLY-2021-013/index.html",
+    "group": "vulnerability"
+  },
+  "brly/2021-022": {
+    "step": "firmware",
+    "score": "7.5",
+    "slug": "SMM Callout Vulnerability in Combined DXE/SMM Driver",
+    "description": "<0><1>BINARLY efiXplorer team</1></0> has discovered a SMM callout vulnerability on a BullSequana Edge server allowing a possible attacker to hijack execution flow of a code running in System Management Mode. Exploiting this issue could lead to escalating privileges to SMM.",
+    "link": "https://binarly.io/advisories/BRLY-2021-022/index.html",
+    "group": "vulnerability"
+  },
+  "brly/2021-024": {
+    "step": "firmware",
+    "score": "7.5",
+    "slug": "SMM Memory Corruption Vulnerability in Combined DXE/SMM Driver",
+    "description": "<0><1>BINARLY efiXplorer team</1></0> has discovered a SMM memory corruption vulnerability on a BullSequana Edge server allowing a possible attacker to write fixed or predictable data to SMRAM. Exploiting this issue could lead to escalating privileges to SMM.",
+    "link": "https://binarly.io/advisories/BRLY-2021-024/index.html",
+    "group": "vulnerability"
+  },
+  "brly/lojax-secdxe": {
+    "step": "firmware",
+    "score": "N/A",
+    "slug": "Lojax-SecDXE Malware Detected Inside the Firmware",
+    "description": "BINARLY efiXplorer team has discovered an Advanced Persistent Threat called lojax-secdxe inside your firmware.",
+    "link": "",
+    "group": "apt"
+  },
+  "brly/usbrt-intel-sa-00057": {
+    "step": "firmware",
+    "score": "N/A",
+    "slug": "Intel SMM Exploit Vulnerability",
+    "description": "<0><1>BINARLY efiXplorer team</1></0> has discovered SMM exploit. A malicious attacker with local administrative access can leverage the vulnerable BIOS to gain access to System Management Mode (SMM) and take full control of the platform.",
+    "link": "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00057.html",
+    "group": "vulnerability"
+  },
+  "brly/2021-005": {
+    "step": "firmware",
+    "score": "8.2",
+    "slug": "Stack Buffer Overflow Vulnerability Leading to Arbitrary Code Execution in UEFI DXE Driver",
+    "description": "<0><1>BINARLY efiXplorer team</1></0> has discovered a stack overflow vulnerability that allows a local priviledged user to access UEFI DXE driver and execute arbitrary code.",
+    "link": "https://binarly.io/advisories/BRLY-2021-005/index.html",
+    "group": "vulnerability"
+  },
+  "brly/2021-021": {
+    "step": "firmware",
+    "score": "8.2",
+    "slug": "Stack Buffer Overflow Vulnerability Leading to Arbitrary Code Execution in UEFI DXE Driver",
+    "description": "<0><1>BINARLY efiXplorer team</1></0> has discovered a stack overflow vulnerability that allows a local priviledged user to access UEFI DXE driver and execute arbitrary code.",
+    "link": "https://binarly.io/advisories/BRLY-2021-021/index.html",
+    "group": "vulnerability"
+  },
+  "brly/moonbounce-core-dxe": {
+    "step": "firmware",
+    "score": "N/A",
+    "slug": "Moonbounce Malware Detected Inside the Firmware",
+    "description": "<0><1>BINARLY efiXplorer team</1></0> has discovered an Advanced Persistent Threat called lojax-secdxe inside your firmware.",
+    "link": "https://securelist.com/moonbounce-the-dark-side-of-uefi-firmware/105468/",
+    "group": "apt"
+  },
+  "brly/2021-053": {
+    "step": "firmware",
+    "score": "7.5",
+    "slug": "Stack Buffer Overflow Vulnerability Leading to Arbitrary Code Execution in DXE Driver",
+    "description": "<0><1>BINARLY efiXplorer team</1></0> has discovered a stack overflow vulnerability that allows a local root user to access UEFI DXE driver and execute arbitrary code.",
+    "link": "https://binarly.io/advisories/BRLY-2021-053/index.html",
+    "group": "vulnerability"
+  },
+  "brly/2021-028": {
+    "step": "firmware",
+    "score": "8.2",
+    "slug": "SMM Callout Vulnerability in Combined DXE/SMM Driver",
+    "description": "<0><1>BINARLY efiXplorer team</1></0> has discovered a SMM callout vulnerability on a BullSequana Edge server allowing a possible attacker to hijack execution flow of a code running in System Management Mode. Exploiting this issue could lead to escalating privileges to SMM.",
+    "link": "https://binarly.io/advisories/BRLY-2021-028/index.html",
+    "group": "vulnerability"
+  },
+  "brly/2021-008": {
+    "step": "firmware",
+    "score": "7.5",
+    "slug": "SMM Callout Vulnerability in SMM Driver",
+    "description": "<0><1>BINARLY efiXplorer team</1></0> has identified a SMM callout in a Fujitsu device, which allows an attacker to access the System Management Mode and execute arbitrary code.",
+    "link": "https://binarly.io/advisories/BRLY-2021-008/index.html",
+    "group": "vulnerability"
+  },
+  "brly/2021-040": {
+    "step": "firmware",
+    "score": "8.2",
+    "slug": "SMM Callout Vulnerability in SMM Driver",
+    "description": "<0><1>BINARLY efiXplorer team</1></0> has discovered a SMM callout vulnerability on multiple HP devices allowing a possible attacker to hijack execution flow of a code running in System Management Mode. Exploiting this issue could lead to escalating privileges to SMM.",
+    "link": "https://binarly.io/advisories/BRLY-2021-040/index.html",
+    "group": "vulnerability"
+  },
+  "brly/2021-020": {
+    "step": "firmware",
+    "score": "8.2",
+    "slug": "SMM Callout Vulnerability in Combined DXE/SMM",
+    "description": "<0><1>BINARLY efiXplorer team</1></0> has identified a SMM callout in a Fujitsu device, which allows an attacker to access the System Management Mode and execute arbitrary code.",
+    "link": "https://binarly.io/advisories/BRLY-2021-020/index.html",
+    "group": "vulnerability"
+  },
+  "brly/2021-004": {
+    "step": "firmware",
+    "score": "7.5",
+    "slug": "SMM Callout Vulnerability in SMM Driver",
+    "description": "<0><1>BINARLY efiXplorer team</1></0> has identified a SMM callout in multiple HP devices, which allows an attacker to access the System Management Mode and execute arbitrary code.",
+    "link": "https://binarly.io/advisories/BRLY-2021-004/index.html",
+    "group": "vulnerability"
+  },
+  "brly/2021-016": {
+    "step": "firmware",
+    "score": "8.2",
+    "slug": "SMM Memory Corruption Vulnerability in Combined DXE/SMM",
+    "description": "<0><1>BINARLY efiXplorer team</1></0> has discovered a SMM memory corruption vulnerability in a Fujitsu device allowing a possible attacker to write data to SMRAM. Exploiting this issue could lead to escalating privileges to SMM.",
+    "link": "https://binarly.io/advisories/BRLY-2021-016/index.html",
+    "group": "vulnerability"
+  },
+  "brly/usbrt-cve-2017-5721": {
+    "step": "firmware",
+    "score": "7.5",
+    "slug": "USBrt Arbitrary Code Execution",
+    "description": "<0><1>BINARLY efiXplorer team</1></0> has discovered an insufficient input validation in system firmware for intel NUC7i3BNK, NUC7i3BNH, NUC7i5BNK, NUC7i5BNH, NUC7i7BNH versions BN0049 and below allows local attackers to execute arbitrary code via manipulation of memory.",
+    "link": "https://nvd.nist.gov/vuln/detail/CVE-2017-5721",
+    "group": "vulnerability"
+  },
+  "brly/2021-006": {
+    "step": "firmware",
+    "score": "8.2",
+    "slug": "Stack Buffer Overflow Vulnerability Leading to Arbitrary Code Execution in UEFI DXE Driver",
+    "description": "<0><1>BINARLY efiXplorer team</1></0> has discovered a stack overflow vulnerability that allows a local priviledged user to access UEFI DXE driver and execute arbitrary code.",
+    "link": "https://binarly.io/advisories/BRLY-2021-006/index.html",
+    "group": "vulnerability"
+  },
+  "brly/2021-019": {
+    "step": "firmware",
+    "score": "7.5",
+    "slug": "SMM Callout Vulnerability in Combined DXE/SMM",
+    "description": "<0><1>BINARLY efiXplorer team</1></0> has identified a SMM callout in a Fujitsu device, which allows an attacker to access the System Management Mode and execute arbitrary code.",
+    "link": "https://binarly.io/advisories/BRLY-2021-019/index.html",
+    "group": "vulnerability"
+  },
+  "brly/2021-009": {
+    "step": "firmware",
+    "score": "8.2",
+    "slug": "SMM Memory Corruption Vulnerability in Combined DXE/SMM Driver",
+    "description": "<0><1>BINARLY efiXplorer team</1></0> has discovered a SMM memory corruption vulnerability in a Fujitsu device allowing a possible attacker to write fixed or predictable data to SMRAM. Exploiting this issue could lead to escalating privileges to SMM.",
+    "link": "https://binarly.io/advisories/BRLY-2021-009/index.html",
+    "group": "vulnerability"
+  },
+  "brly/2021-026": {
+    "step": "firmware",
+    "score": "7.5",
+    "slug": "SMM Memory Corruption Vulnerability in Combined DXE/SMM Driver",
+    "description": "<0><1>BINARLY efiXplorer team</1></0> has discovered a SMM memory corruption vulnerability on a BullSequana Edge server allowing a possible attacker to write fixed or predictable data to SMRAM. Exploiting this issue could lead to escalating privileges to SMM.",
+    "link": "https://binarly.io/advisories/BRLY-2021-026/index.html",
+    "group": "vulnerability"
+  },
+  "brly/2021-039": {
+    "step": "firmware",
+    "score": "8.2",
+    "slug": "Heap Buffer Overflow Vulnerability in Child SW SMI Handler",
+    "description": "<0><1>BINARLY efiXplorer team</1></0> has discovered a heap buffer overflow vulnerability in child SW SMI handler on multiple HP devices that allow corrupt heap metadata.",
+    "link": "https://binarly.io/advisories/BRLY-2021-039/index.html",
+    "group": "vulnerability"
+  },
+  "brly/2021-010": {
+    "step": "firmware",
+    "score": "8.2",
+    "slug": "SMM Memory Corruption Vulnerability in Combined DXE/SMM Driver",
+    "description": "<0><1>BINARLY efiXplorer team</1></0> has discovered a SMM memory corruption vulnerability in a Fujitsu device allowing a possible attacker to write fixed or predictable data to SMRAM. Exploiting this issue could lead to escalating privileges to SMM.",
+    "link": "https://binarly.io/advisories/BRLY-2021-010/index.html",
+    "group": "vulnerability"
+  },
+  "brly/2021-007": {
+    "step": "firmware",
+    "score": "7.7",
+    "slug": "Stack Buffer Overflow Vulnerability Leading to Arbitrary Code Execution in UEFI Application",
+    "description": "<0><1>BINARLY efiXplorer team</1></0> has discovered a stack overflow vulnerability that allows a local root user to access UEFI Runtime DXE application and execute arbitrary code.",
+    "link": "https://binarly.io/advisories/BRLY-2021-007/index.html",
+    "group": "vulnerability"
+  },
+  "brly/2021-031": {
+    "step": "firmware",
+    "score": "8.2",
+    "slug": "SMM Callout Vulnerability in Combined DXE/SMM Driver",
+    "description": "<0><1>BINARLY efiXplorer team</1></0> has discovered a SMM callout vulnerability on a BullSequana Edge server allowing a possible attacker to hijack execution flow of a code running in System Management Mode. Exploiting this issue could lead to escalating privileges to SMM.",
+    "link": "https://binarly.io/advisories/BRLY-2021-031/index.html",
+    "group": "vulnerability"
+  },
+  "brly/mosaicregressor": {
+    "step": "firmware",
+    "score": "N/A",
+    "slug": "Mosaicregressor Malware Detected Inside the Firmware",
+    "description": "<0><1>BINARLY efiXplorer team</1></0> has discovered an Advanced Persistent Threat called mosaicregressor inside your firmware.",
+    "link": "https://securelist.com/mosaicregressor/98849/",
+    "group": "apt"
+  },
+  "brly/2021-012": {
+    "step": "firmware",
+    "score": "8.2",
+    "slug": "SMM Memory Corruption Vulnerability in Combined DXE/SMM Driver",
+    "description": "<0><1>BINARLY efiXplorer team</1></0> has discovered a SMM memory corruption vulnerability in Fujitsu devices allowing a possible attacker to write data to SMRAM. Exploiting this issue could lead to escalating privileges to SMM.",
+    "link": "https://binarly.io/advisories/BRLY-2021-012/index.html",
+    "group": "vulnerability"
+  },
+  "brly/2021-033": {
+    "step": "firmware",
+    "score": "8.2",
+    "slug": "SMM Memory Corruption Vulnerability in SMM Driver",
+    "description": "<0><1>BINARLY efiXplorer team</1></0> has discovered a SMM memory corruption vulnerability on multiple HP devices allowing a possible attacker to write fixed or predictable data to SMRAM. Exploiting this issue could lead to escalating privileges to SMM.",
+    "link": "https://binarly.io/advisories/BRLY-2021-033/index.html",
+    "group": "vulnerability"
+  },
+  "brly/2021-036": {
+    "step": "firmware",
+    "score": "8.2",
+    "slug": "SMM Memory Corruption Vulnerability in SMM Driver",
+    "description": "<0><1>BINARLY efiXplorer team</1></0> has discovered a SMM memory corruption vulnerability on multiple HP devices allowing a possible attacker to write fixed or predictable data to SMRAM. Exploiting this issue could lead to escalating privileges to SMM.",
+    "link": "https://binarly.io/advisories/BRLY-2021-036/index.html",
+    "group": "vulnerability"
+  },
+  "brly/thinkpwn": {
+    "step": "firmware",
+    "score": "N/A",
+    "slug": "Lenovo ThinkPwn Vulnerability",
+    "description": "<0><1>BINARLY efiXplorer team</1></0> has discovered the Lenovo ThinkPwn vulnerability.",
+    "link": "https://github.com/Cr4sh/ThinkPwn",
+    "group": "vulnerability"
+  },
+  "brly/2021-014": {
+    "step": "firmware",
+    "score": "8.2",
+    "slug": "SMM Memory Corruption Vulnerability in SMM Driver",
+    "description": "<0><1>BINARLY efiXplorer team</1></0> has discovered a SMM memory corruption vulnerability in Fujitsu devices allowing a possible attacker to write data to SMRAM. Exploiting this issue could lead to escalating privileges to SMM.",
+    "link": "https://binarly.io/advisories/BRLY-2021-014/index.html",
+    "group": "vulnerability"
+  },
+  "brly/2021-018": {
+    "step": "firmware",
+    "score": "8.2",
+    "slug": "SMM Callout Vulnerability in Combined DXE/SMM",
+    "description": "<0><1>BINARLY efiXplorer team</1></0> has identified a SMM callout in a Fujitsu device, which allows an attacker to access the System Management Mode and execute arbitrary code.",
+    "link": "https://binarly.io/advisories/BRLY-2021-018/index.html",
+    "group": "vulnerability"
+  },
+  "brly/2021-038": {
+    "step": "firmware",
+    "score": "8.2",
+    "slug": "Heap Buffer Overflow Vulnerability in Child SW SMI Handler",
+    "description": "<0><1>BINARLY efiXplorer team</1></0> has discovered a heap buffer overflow vulnerability in the child SW SMI handler on multiple HP devices that allows heap data corruption.",
+    "link": "https://binarly.io/advisories/BRLY-2021-038/index.html",
+    "group": "vulnerability"
+  },
+  "brly/2022-004": {
+    "step": "firmware",
+    "score": "8.2",
+    "slug": "SMM Arbitrary Code Execution in USBRT SMM Driver",
+    "description": "<0><1>BINARLY efiXplorer team</1></0> has discovered SMM arbitrary code execution on Dell devices.",
+    "link": "https://binarly.io/advisories/BRLY-2022-004/index.html",
+    "group": "vulnerability"
+  },
+  "brly/especter": {
+    "step": "bootloader",
+    "score": "N/A",
+    "slug": "Especter Malware Detected Inside the Bootchain",
+    "description": "<0><1>BINARLY efiXplorer team</1></0> has discovered the especter bootkit inside your device bootchain.",
+    "link": "https://www.welivesecurity.com/deutsch/2021/10/06/especter-bootkit-neue-bedrohung-in-der-efi-systempartition/",
+    "group": "apt"
+  },
+  "brly/2021-003": {
+    "step": "firmware",
+    "score": "7.7",
+    "slug": "Stack Buffer Overflow Vulnerability Leading to Arbitrary Code Execution in UEFI Application",
+    "description": "<0><1>BINARLY efiXplorer team</1></0> has discovered a stack buffer overflow vulnerability that allows a local priviledged user to access UEFI Runtime DXE application and execute arbitrary code.",
+    "link": "https://binarly.io/advisories/BRLY-2021-003/index.html",
+    "group": "vulnerability"
+  },
+  "brly/2021-042": {
+    "step": "firmware",
+    "score": "8.2",
+    "slug": "SMM Memory Corruption Vulnerability in SMM Driver",
+    "description": "<0><1>BINARLY efiXplorer team</1></0> has discovered a SMM memory corruption vulnerability on multiple HP devices allowing a possible attacker to write fixed or predictable data to SMRAM. Exploiting this issue could lead to escalating privileges to SMM.",
+    "link": "https://binarly.io/advisories/BRLY-2021-042/index.html",
+    "group": "vulnerability"
+  },
+  "brly/usbrt-swsmi-cve-2020-12301": {
+    "step": "firmware",
+    "score": "8.2",
+    "slug": "Improper Initialization in BIOS Firmware",
+    "description": "<0><1>BINARLY efiXplorer team</1></0> has discovered improper initialization in BIOS firmware for intel(R) Server Board Families S2600ST, S2600BP and S2600WF may allow a privileged user to potentially enable escalation of privilege via local access.",
+    "link": "https://nvd.nist.gov/vuln/detail/CVE-2020-12301",
+    "group": "vulnerability"
+  },
+  "brly/2021-043": {
+    "step": "firmware",
+    "score": "8.2",
+    "slug": "SMM Arbitrary Code Execution in USBRT SMM Driver",
+    "description": "<0><1>BINARLY efiXplorer team</1></0> has discovered SMM arbitrary code execution on Dell devices.",
+    "link": "https://binarly.io/advisories/BRLY-2021-043/index.html",
+    "group": "vulnerability"
+  },
+  "brly/2022-028-rsbstuffing": {
+    "step": "firmware",
+    "score": "N/A",
+    "slug": "FirmwareBleed",
+    "description": "<0><1>BINARLY efiXplorer team</1></0> has discovered that the FirmwareBleed mitigations are missing inside your firmware image. Arbitrary code execution through System Management Mode is possible.",
+    "link": "https://binarly.io/posts/FirmwareBleed_The_industry_fails_to_adopt_Return_Stack_Buffer_mitigations_in_SMM/index.html",
+    "group": "mitigation-failure"
+  },
+  "brly/2021-034": {
+    "step": "firmware",
+    "score": "8.2",
+    "slug": "SMM Memory Corruption Vulnerability in SMM Driver",
+    "description": "<0><1>BINARLY efiXplorer team</1></0> has discovered a SMM memory corruption vulnerability on multiple HP devices allowing a possible attacker to write fixed or predictable data to SMRAM. Exploiting this issue could lead to escalating privileges to SMM.",
+    "link": "https://binarly.io/advisories/BRLY-2021-034/index.html",
+    "group": "vulnerability"
+  },
+  "brly/2021-030": {
+    "step": "firmware",
+    "score": "7.5",
+    "slug": "SMM Memory Corruption Vulnerability in Combined DXE/SMM Driver",
+    "description": "<0><1>BINARLY efiXplorer team</1></0> has discovered a SMM memory corruption vulnerability on a BullSequana Edge server allowing a possible attacker to write fixed or predictable data to SMRAM. Exploiting this issue could lead to escalating privileges to SMM.",
+    "link": "https://binarly.io/advisories/BRLY-2021-030/index.html",
+    "group": "vulnerability"
+  },
+  "brly/2021-041": {
+    "step": "firmware",
+    "score": "8.2",
+    "slug": "SMM Callout Vulnerability in SMM Driver",
+    "description": "<0><1>BINARLY efiXplorer team</1></0> has discovered a SMM callout vulnerability on multiple HP devices allowing a possible attacker to hijack execution flow of a code running in System Management Mode. Exploiting this issue could lead to escalating privileges to SMM.",
+    "link": "https://binarly.io/advisories/BRLY-2021-041/index.html",
+    "group": "vulnerability"
+  },
+  "brly/2021-017": {
+    "step": "firmware",
+    "score": "8.2",
+    "slug": "SMM Callout Vulnerability in Combined DXE/SMM",
+    "description": "<0><1>BINARLY efiXplorer team</1></0> has identified a SMM callout in a Fujitsu device, which allows an attacker to access the System Management Mode and execute arbitrary code.",
+    "link": "https://binarly.io/advisories/BRLY-2021-017/index.html",
+    "group": "vulnerability"
+  },
+  "brly/usbrt-usbsmi-cve-2020-12301": {
+    "step": "firmware",
+    "score": "N/A",
+    "slug": "Improper Initialization in BIOS firmware",
+    "description": "<0><1>BINARLY efiXplorer team</1></0> has discovered improper initialization in BIOS firmware for intel(R) Server Board Families S2600ST, S2600BP and S2600WF may allow a privileged user to potentially enable escalation of privilege via local access.",
+    "link": "https://nvd.nist.gov/vuln/detail/CVE-2020-12301",
+    "group": "vulnerability"
+  },
+  "brly/2021-027": {
+    "step": "firmware",
+    "score": "7.5",
+    "slug": "SMM Memory Corruption Vulnerability in Combined DXE/SMM Driver",
+    "description": "<0><1>BINARLY efiXplorer team</1></0> has discovered a SMM memory corruption vulnerability on a BullSequana Edge server allowing a possible attacker to write fixed or predictable data to SMRAM. Exploiting this issue could lead to escalating privileges to SMM.",
+    "link": "https://binarly.io/advisories/BRLY-2021-027/index.html",
+    "group": "vulnerability"
+  },
+  "brly/2021-015": {
+    "step": "firmware",
+    "score": "8.2",
+    "slug": "SMM Memory Corruption Vulnerability in Combined DXE/SMM",
+    "description": "<0><1>BINARLY efiXplorer team</1></0> has discovered a SMM memory corruption vulnerability in a Fujitsu device allowing a possible attacker to write data to SMRAM. Exploiting this issue could lead to escalating privileges to SMM.",
+    "link": "https://binarly.io/advisories/BRLY-2021-015/index.html",
+    "group": "vulnerability"
+  },
+  "brly/2021-011": {
+    "step": "firmware",
+    "score": "8.2",
+    "slug": "SMM Memory Corruption Vulnerability in Combined DXE/SMM Driver",
+    "description": "<0><1>BINARLY efiXplorer team</1></0> has discovered a SMM memory corruption vulnerability in Fujitsu devices allowing a possible attacker to write data to SMRAM. Exploiting this issue could lead to escalating privileges to SMM.",
+    "link": "https://binarly.io/advisories/BRLY-2021-011/index.html",
+    "group": "vulnerability"
+  },
+  "brly/2021-045": {
+    "step": "firmware",
+    "score": "8.2",
+    "slug": "SMM Callout Vulnerability in USBRT SMM Driver",
+    "description": "<0><1>BINARLY efiXplorer team</1></0> has identified SMM callout on Dell platforms, which allows a attacker to access the System Management Mode and execute arbitrary code.",
+    "link": "https://binarly.io/advisories/BRLY-2021-045/index.html",
+    "group": "vulnerability"
+  },
+  "brly/2021-009-1": {
+    "step": "firmware",
+    "score": "8.2",
+    "slug": "SMM Memory Corruption Vulnerability in Combined DXE/SMM Driver",
+    "description": "<0><1>BINARLY efiXplorer team</1></0> has discovered a SMM memory corruption vulnerability in a Fujitsu device allowing a possible attacker to write fixed or predictable data to SMRAM. Exploiting this issue could lead to escalating privileges to SMM.",
+    "link": "https://binarly.io/advisories/BRLY-2021-009/index.html",
+    "group": "vulnerability"
+  },
+  "brly/2021-029-1": {
+    "step": "firmware",
+    "score": "7.5",
+    "slug": "SMM Memory Corruption Vulnerability in Combined DXE/SMM Driver",
+    "description": "<0><1>BINARLY efiXplorer team</1></0> has discovered a SMM memory corruption vulnerability on a BullSequana Edge server allowing a possible attacker to write fixed or predictable data to SMRAM. Exploiting this issue could lead to escalating privileges to SMM.",
+    "link": "https://binarly.io/advisories/BRLY-2021-029/index.html",
+    "group": "vulnerability"
+  },
+  "brly/2021-010-1": {
+    "step": "firmware",
+    "score": "8.2",
+    "slug": "SMM Memory Corruption Vulnerability in Combined DXE/SMM Driver",
+    "description": "<0><1>BINARLY efiXplorer team</1></0> has discovered a SMM memory corruption vulnerability in a Fujitsu device allowing a possible attacker to write fixed or predictable data to SMRAM. Exploiting this issue could lead to escalating privileges to SMM.",
+    "link": "https://binarly.io/advisories/BRLY-2021-010/index.html",
+    "group": "vulnerability"
+  },
+  "brly/2021-011-1": {
+    "step": "firmware",
+    "score": "8.2",
+    "slug": "SMM Memory Corruption Vulnerability in Combined DXE/SMM Driver",
+    "description": "<0><1>BINARLY efiXplorer team</1></0> has discovered a SMM memory corruption vulnerability in Fujitsu devices allowing a possible attacker to write data to SMRAM. Exploiting this issue could lead to escalating privileges to SMM.",
+    "link": "https://binarly.io/advisories/BRLY-2021-011/index.html",
+    "group": "vulnerability"
+  },
+  "brly/2021-008-1": {
+    "step": "firmware",
+    "score": "7.5",
+    "slug": "SMM Callout Vulnerability in SMM Driver",
+    "description": "<0><1>BINARLY efiXplorer team</1></0> has identified a SMM callout in a Fujitsu device, which allows an attacker to access the System Management Mode and execute arbitrary code.",
+    "link": "https://binarly.io/advisories/BRLY-2021-008/index.html",
+    "group": "vulnerability"
+  },
+  "brly/2021-001": {
+    "step": "firmware",
+    "score": "6.6",
+    "slug": "SMM Callout Vulnerability",
+    "description": "<0><1>BINARLY efiXplorer team</1></0> has identified SMM callout in ThinkPad 13 2nd Gen, which allows a local privileged user to access the System Management Mode and execute arbitrary code.",
+    "link": "https://binarly.io/advisories/BRLY-2021-001/index.html",
+    "group": "vulnerability"
+  },
+  "brly/2022-027": {
+    "step": "firmware",
+    "score": "8.2",
+    "slug": "Stack Buffer Overflow Vulnerability",
+    "description": "<0><1>BINARLY efiXplorer team</1></0> has discovered a stack buffer overflow vulnerability on intel platforms allowing a possible attacker to execute arbitrary code during PEI phase.",
+    "link": "https://www.binarly.io/advisories/BRLY-2022-027/index.html",
+    "group": "vulnerability"
+  },
+  "brly/2022-014": {
+    "step": "firmware",
+    "score": "7.2",
+    "slug": "Arbitrary Write Vulnerability",
+    "description": "<0><1>BINARLY efiXplorer team</1></0> has discovered a arbitrary write vulnerability in PEI module allowing a possible attacker to execute arbitrary code during PEI phase.",
+    "link": "https://www.binarly.io/advisories/BRLY-2022-014/index.html",
+    "group": "vulnerability"
+  },
+  "brly/2022-011": {
+    "step": "firmware",
+    "score": "7.5",
+    "slug": "SMM Memory Corruption Vulnerability",
+    "description": "<0><1>BINARLY efiXplorer team</1></0> has discovered an SMM memory corruption vulnerability in an HP device allowing a possible attacker to write fixed or predictable data to SMRAM. Exploiting this issue could lead to escalating privileges to SMM.",
+    "link": "https://www.binarly.io/advisories/BRLY-2022-011/index.html",
+    "group": "vulnerability"
+  },
+  "brly/2022-013": {
+    "step": "firmware",
+    "score": "8.2",
+    "slug": "SMM Memory Corruption Vulnerability",
+    "description": "<0><1>BINARLY efiXplorer team</1></0> has discovered an SMM memory corruption vulnerability in an HP device allowing a possible attacker to write fixed or predictable data to SMRAM. Exploiting this issue could lead to escalating privileges to SMM.",
+    "link": "https://www.binarly.io/advisories/BRLY-2022-013/index.html",
+    "group": "vulnerability"
+  },
+  "brly/2022-016": {
+    "step": "firmware",
+    "score": "8.2",
+    "slug": "Stack Overflow Vulnerability",
+    "description": "<0><1>BINARLY efiXplorer team</1></0> has discovered stack overflow vulnerability in SMI handler on intel platforms allowing a possible attacker to execute arbitrary code in SMM.",
+    "link": "https://www.binarly.io/advisories/BRLY-2022-016/index.html",
+    "group": "vulnerability"
+  },
+  "brly/2021-047": {
+    "step": "firmware",
+    "score": "7.5",
+    "slug": "SMM Callout Vulnerability",
+    "description": "<0><1>BINARLY efiXplorer team</1></0> identified SMM callout on HP device, which allows a attacker to access the System Management Mode and execute arbitrary code.",
+    "link": "https://www.binarly.io/advisories/BRLY-2021-047/index.html",
+    "group": "vulnerability"
+  },
+  "brly/2022-015": {
+    "step": "firmware",
+    "score": "7.2",
+    "slug": "Arbitrary Code Execution in DXE Driver",
+    "description": "<0><1>BINARLY efiXplorer team</1></0> has discovered the ability of arbitrary code execution in DXE driver.",
+    "link": "https://www.binarly.io/advisories/BRLY-2022-015/index.html",
+    "group": "vulnerability"
+  },
+  "brly/2022-009": {
+    "step": "firmware",
+    "score": "8.2",
+    "slug": "Arbitrary Write Vulnerability",
+    "description": "<0><1>BINARLY efiXplorer team</1></0> has discovered a arbitrary write vulnerability on intel platforms allowing a possible attacker to execute arbitrary code during PEI phase.",
+    "link": "https://www.binarly.io/advisories/BRLY-2022-009/index.html",
+    "group": "vulnerability"
+  },
+  "brly/2022-010": {
+    "step": "firmware",
+    "score": "8.2",
+    "slug": "SMM Memory Corruption Vulnerability",
+    "description": "<0><1>BINARLY efiXplorer team</1></0> discovered an SMM memory corruption vulnerability in an HP device allowing a possible attacker to write fixed or predictable data to SMRAM. Exploiting this issue could lead to escalating privileges to SMM.",
+    "link": "https://www.binarly.io/advisories/BRLY-2022-010/index.html",
+    "group": "vulnerability"
+  },
+  "brly/2022-012": {
+    "step": "firmware",
+    "score": "8.2",
+    "slug": "SMM Memory Corruption Vulnerability",
+    "description": "<0><1>BINARLY efiXplorer team</1></0> has discovered an SMM memory corruption vulnerability in an HP device allowing a possible attacker to write fixed or predictable data to SMRAM. Exploiting this issue could lead to escalating privileges to SMM.",
+    "link": "https://www.binarly.io/advisories/BRLY-2022-012/index.html",
+    "group": "vulnerability"
+  },
+  "brly/2021-046": {
+    "step": "firmware",
+    "score": "7.5",
+    "slug": "SMM Callout Vulnerability",
+    "description": "<0><1>BINARLY efiXplorer team</1></0> has identified SMM callout on HP device, which allows a attacker to access the System Management Mode and execute arbitrary code.",
+    "link": "https://www.binarly.io/advisories/BRLY-2021-046/index.html",
+    "group": "vulnerability"
+  }
+}

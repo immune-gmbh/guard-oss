@@ -1,0 +1,5 @@
+# Ignore everything:
+/*
+
+# Only prettify webapp-v2
+!/webapp-v2

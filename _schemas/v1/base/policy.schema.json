@@ -1,0 +1,69 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://immu.ne/api-v1-policy.schema.json",
+
+  "title": "Policy",
+  "description": "Security policy. Used for deciding whether to appraise an incoming quote",
+
+  "type": "object",
+  "properties": {
+    "name":{
+      "description":"Human readable name of the device",
+      "type": "string"
+    },
+    "devices":{
+      "type":"array",
+      "items":{
+        "type":"string",
+        "description": "Device database ID",
+        "minLength": 1
+      },
+      "description":"Associated devices",
+      "uniqueItems": true
+    },
+    "template":{
+      "type":"array",
+      "items":{
+        "type":"string",
+        "pattern": "^[0-9]+$",
+        "description": "PCR number"
+      },
+      "uniqueItems": true,
+      "description":"Policy template. List of the PCRs that should be considered"
+    },
+    "minimal_csme":{
+      "type": ["string", "null"],
+      "description":"Earliest allowed version of the CSME"
+    },
+    "maximal_csme":{
+      "type": ["string", "null"],
+      "description":"Latest allowed version of the CSME"
+    },
+    "pcrs":{
+      "description": "PCRs and their allowed values. Null if this is a template policy.",
+      "type": ["object", "null"]
+    },
+    "valid_until":{
+      "type": ["string", "null"],
+      "pattern": "^[0-9]+$",
+      "description":"Unix timestamp of the policy's expiration date"
+    },
+    "valid_since":{
+      "type": ["string", "null"],
+      "pattern": "^[0-9]+$",
+      "description":"Unix timestamp of when the policy becomes valid"
+    },
+    "id":{
+      "type":"string",
+      "description": "Immutable database ID of the policy",
+      "readOnly": true,
+      "minLength": 1
+    },
+    "revoked":{
+      "type": "boolean",
+      "description": "True if the policy has been deleted",
+      "readOnly":true
+    }
+  },
+  "required":[ "name", "devices", "id", "revoked" ]
+}

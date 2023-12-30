@@ -1,0 +1,171 @@
+{
+  "type": "report/2",
+  "values": {
+    "host": {
+      "name": "Debian GNU/Linux 10 (buster)",
+      "hostname": "stboot",
+      "type": "linux",
+      "cpu_vendor": "GenuineIntel"
+    },
+    "smbios": {
+      "manufacturer": "FUJITSU",
+      "product": " ",
+      "bios_release_date": "07/04/2019",
+      "bios_vendor": "FUJITSU // American Megatrends Inc.",
+      "bios_version": "V5.0.0.12 R1.22.0.SR.1 for D3401-H2x              "
+    },
+    "tpm": {
+      "manufacturer": "IBM",
+      "vendor_id": "SW   TPM",
+      "spec_version": "Level 0, rev. 164 (17 Mar 2021)",
+      "eventlog": null,
+      "pcr": null
+    },
+    "me": {
+      "variant": "Business CSME",
+      "state": "normal",
+      "version": [
+        11,
+        8,
+        70,
+        3626
+      ],
+      "fitc_version": [
+        11,
+        6,
+        20,
+        1221
+      ],
+      "recovery_version": [
+        11,
+        8,
+        70,
+        3626
+      ],
+      "available_features": [
+        "Manageability",
+        "Capability Licensing Service",
+        "Protected Audio Video Path",
+        "Dynamic Application Loader",
+        "Cipher Transport Layer",
+        "Wireless Display",
+        "Platform Trust Technology"
+      ]
+    },
+    "txt": {
+      "ready": false
+    }
+  },
+  "annotations": [
+    {
+      "id": "uefi-vars-miss",
+      "path": "/uefi",
+      "fatal": false
+    },
+    {
+      "id": "tpm-eventlog-miss",
+      "path": "/tpm/eventlog",
+      "fatal": false
+    },
+    {
+      "id": "sgx-disabled",
+      "path": "/sgx",
+      "fatal": false
+    },
+    {
+      "id": "css-cpu-supports-txt",
+      "path": "/txt/ready",
+      "fatal": false
+    },
+    {
+      "id": "css-txt-register-space-accessible",
+      "path": "/txt/ready",
+      "fatal": false
+    },
+    {
+      "id": "css-txt-not-disabled-by-bios",
+      "path": "/txt/ready",
+      "fatal": false
+    },
+    {
+      "id": "css-txt-registers-are-locked",
+      "path": "/txt/ready",
+      "fatal": false
+    },
+    {
+      "id": "css-txt-heap-ranges-valid",
+      "path": "/txt/ready",
+      "fatal": false
+    },
+    {
+      "id": "css-txt-memory-reserved-in-e820",
+      "path": "/txt/ready",
+      "fatal": false
+    },
+    {
+      "id": "css-txt-memory-in-a-dma-protected-range",
+      "path": "/txt/ready",
+      "fatal": false
+    },
+    {
+      "id": "css-cpu-dpr-equals-hostbridge-dpr",
+      "path": "/txt/ready",
+      "fatal": false
+    },
+    {
+      "id": "css-cpu-hostbridge-dpr-register-locked",
+      "path": "/txt/ready",
+      "fatal": false
+    },
+    {
+      "id": "css-txt-region-contains-sinit-acm",
+      "path": "/txt/ready",
+      "fatal": false
+    },
+    {
+      "id": "css-sinit-acm-matches-chipset",
+      "path": "/txt/ready",
+      "fatal": false
+    },
+    {
+      "id": "css-sinit-acm-matches-cpu",
+      "path": "/txt/ready",
+      "fatal": false
+    },
+    {
+      "id": "css-bios-data-region-present",
+      "path": "/txt/ready",
+      "fatal": false
+    },
+    {
+      "id": "css-bios-data-region-valid",
+      "path": "/txt/ready",
+      "fatal": false
+    },
+    {
+      "id": "css-smrr-covers-smm-memory",
+      "path": "/txt/ready",
+      "fatal": false
+    },
+    {
+      "id": "css-tpm-connection",
+      "path": "/txt/ready",
+      "fatal": false
+    },
+    {
+      "id": "css-tpm-nvram-is-locked",
+      "path": "/txt/ready",
+      "fatal": false
+    },
+    {
+      "id": "css-aux-index-has-correct-config",
+      "path": "/txt/ready",
+      "fatal": false
+    },
+    {
+      "id": "sev-miss",
+      "path": "/sev",
+      "fatal": false
+    }
+  ]
+}

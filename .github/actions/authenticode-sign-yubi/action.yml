@@ -1,0 +1,68 @@
+name: 'authenticode-sign-yubi'
+description: 'Sign things like signtool would'
+inputs:
+  source:
+    description: 'Source file to sign'
+    required: true
+  target:
+    description: 'Where to save signed blob'
+    required: true
+  cert:
+    description: 'Certificate to use'
+    required: true
+  login:
+    description: 'Authentication secret'
+    required: true
+  key:
+    description: 'ID of private key to use'
+    required: true
+  connector:
+    description: 'Connector URI for YubiHSM'
+    required: true
+  timeserver:
+    description: 'Timestamp server'
+    required: true
+  description:
+    description: 'Put application / msi file name here'
+    required: true
+runs:
+  using: "composite"
+  steps:
+    - name: Install osslsigncode
+      shell: bash
+      run: |
+        test -f /usr/bin/osslsigncode && exit 0
+        sudo apt-get update
+        sudo apt-get -y install osslsigncode libengine-pkcs11-openssl
+    - name: Install YubiHSM pkcs11 libraries
+      shell: bash
+      run: |
+        test -f /usr/lib/x86_64-linux-gnu/pkcs11/yubihsm_pkcs11.so && exit 0
+        wget https://developers.yubico.com/YubiHSM2/Releases/yubihsm2-sdk-2021-04-ubuntu2004-amd64.tar.gz
+        tar -xzf yubihsm2-sdk-2021-04-ubuntu2004-amd64.tar.gz
+        cd yubihsm2-sdk
+        sudo dpkg -i libyubihsm-http1_2.2.0-1_amd64.deb libyubihsm1_2.2.0-1_amd64.deb yubihsm-pkcs11_2.2.0-1_amd64.deb
+    - name: Sign windows artifacts
+      shell: bash
+      env:
+        HSM_AUTH_SECRET: ${{ inputs.login }}
+        CONNECTOR: ${{ inputs.connector }}
+        CERT: ${{ inputs.cert }}
+        KEY_ID: ${{ inputs.key }}
+        DESC: ${{ inputs.description }}
+        TIME: ${{ inputs.timeserver }}
+        SOURCE: ${{ inputs.source }}
+        TARGET: ${{ inputs.target }}
+      run: |
+        echo "connector=$CONNECTOR" > yubihsm_pkcs11.conf
+        osslsigncode sign \
+          -pkcs11engine /usr/lib/x86_64-linux-gnu/engines-1.1/pkcs11.so \
+          -pkcs11module /usr/lib/x86_64-linux-gnu/pkcs11/yubihsm_pkcs11.so \
+          -t $TIME \
+          -n "$DESC" \
+          -certs $CERT \
+          -key $KEY_ID \
+          -in $SOURCE \
+          -out $TARGET \
+          -h sha256 \
+          -pass $HSM_AUTH_SECRET

@@ -1,0 +1,1 @@
+DROP INDEX IF EXISTS v2.devices_id_index;

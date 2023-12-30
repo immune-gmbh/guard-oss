@@ -1,0 +1,39 @@
+
+{
+  "data": {
+    "type": "risks",
+    "attributes": {
+      "risks": [
+        {
+          "issue_type_id": "uefi/official-dbx",
+          "num_occurences": 107
+        },
+        {
+          "issue_type_id": "uefi/no-exit-boot-srv",
+          "num_occurences": 105
+        },
+        {
+          "issue_type_id": "fw/update",
+          "num_occurences": 2
+        },
+        {
+          "issue_type_id": "windows/boot-config",
+          "num_occurences": 2
+        },
+        {
+          "issue_type_id": "brly/2022-009",
+          "num_occurences": 1
+        },
+        {
+          "issue_type_id": "brly/2022-028-rsbstuffing",
+          "num_occurences": 1
+        }
+      ]
+    }
+  },
+  "meta": {
+    "instance": "apisrv-deployment-v2-edge-f5bcd46c4-mjzql",
+    "trace": "b77e4f4a416d7a91ed30d545e57fd872",
+    "version": "r224-21-g47575764"
+  }
+}

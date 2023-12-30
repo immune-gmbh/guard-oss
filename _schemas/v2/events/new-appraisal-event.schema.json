@@ -1,0 +1,17 @@
+{
+  "specversion" : "1.0",
+  "type" : "app.immune.new-appraisal",
+  "source" : "apisrv-xyz-9830-dasd",
+  "subject": null,
+  "id" : "C234-1234-1234",
+  "time" : "2018-04-05T17:31:00Z",
+  "datacontenttype" : "application/json",
+  "data" : {
+    "device": {
+      ...
+      "last_appraisal": null
+    },
+    "previous": "<old>",
+    "current": "<old>"
+  }
+}

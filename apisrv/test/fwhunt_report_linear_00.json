@@ -1,0 +1,247 @@
+{
+  "Meta": {
+    "ModulesNum": 0
+  },
+  "Results": [
+    {
+      "Group": "vulnerabilities",
+      "Name": "BRLY-2021-011",
+      "Value": 1
+    },
+    {
+      "Group": "vulnerabilities",
+      "Name": "BRLY-2021-040",
+      "Value": 0
+    },
+    {
+      "Group": "vulnerabilities",
+      "Name": "BRLY-2021-003",
+      "Value": -1
+    },
+    {
+      "Group": "vulnerabilities",
+      "Name": "BRLY-2021-006",
+      "Value": -1
+    },
+    {
+      "Group": "vulnerabilities",
+      "Name": "BRLY-2021-018",
+      "Value": -1
+    },
+    {
+      "Group": "vulnerabilities",
+      "Name": "BRLY-2021-019",
+      "Value": -1
+    },
+    {
+      "Group": "vulnerabilities",
+      "Name": "BRLY-2021-024",
+      "Value": -1
+    },
+    {
+      "Group": "vulnerabilities",
+      "Name": "BRLY-2021-008",
+      "Value": -1
+    },
+    {
+      "Group": "vulnerabilities",
+      "Name": "BRLY-2021-009-1",
+      "Value": -1
+    },
+    {
+      "Group": "vulnerabilities",
+      "Name": "BRLY-2021-026",
+      "Value": -1
+    },
+    {
+      "Group": "vulnerabilities",
+      "Name": "BRLY-2021-028",
+      "Value": -1
+    },
+    {
+      "Group": "vulnerabilities",
+      "Name": "BRLY-2021-038",
+      "Value": -1
+    },
+    {
+      "Group": "vulnerabilities",
+      "Name": "BRLY-2021-043",
+      "Value": -1
+    },
+    {
+      "Group": "vulnerabilities",
+      "Name": "BRLY-2021-037",
+      "Value": -1
+    },
+    {
+      "Group": "vulnerabilities",
+      "Name": "BRLY-2021-042",
+      "Value": -1
+    },
+    {
+      "Group": "vulnerabilities",
+      "Name": "BRLY-2021-013",
+      "Value": -1
+    },
+    {
+      "Group": "vulnerabilities",
+      "Name": "BRLY-2021-023",
+      "Value": -1
+    },
+    {
+      "Group": "vulnerabilities",
+      "Name": "BRLY-2021-027",
+      "Value": -1
+    },
+    {
+      "Group": "vulnerabilities",
+      "Name": "BRLY-2021-012",
+      "Value": -1
+    },
+    {
+      "Group": "vulnerabilities",
+      "Name": "BRLY-2021-029-1",
+      "Value": -1
+    },
+    {
+      "Group": "vulnerabilities",
+      "Name": "BRLY-2021-017",
+      "Value": -1
+    },
+    {
+      "Group": "vulnerabilities",
+      "Name": "BRLY-2021-036",
+      "Value": -1
+    },
+    {
+      "Group": "vulnerabilities",
+      "Name": "BRLY-2021-041",
+      "Value": -1
+    },
+    {
+      "Group": "vulnerabilities",
+      "Name": "BRLY-2021-010-1",
+      "Value": -1
+    },
+    {
+      "Group": "vulnerabilities",
+      "Name": "BRLY-2021-011-1",
+      "Value": -1
+    },
+    {
+      "Group": "vulnerabilities",
+      "Name": "BRLY-2021-039",
+      "Value": -1
+    },
+    {
+      "Group": "vulnerabilities",
+      "Name": "BRLY-2022-004",
+      "Value": -1
+    },
+    {
+      "Group": "vulnerabilities",
+      "Name": "BRLY-2021-030",
+      "Value": -1
+    },
+    {
+      "Group": "vulnerabilities",
+      "Name": "BRLY-2021-015",
+      "Value": -1
+    },
+    {
+      "Group": "vulnerabilities",
+      "Name": "BRLY-2021-033",
+      "Value": -1
+    },
+    {
+      "Group": "vulnerabilities",
+      "Name": "BRLY-2021-045",
+      "Value": -1
+    },
+    {
+      "Group": "vulnerabilities",
+      "Name": "BRLY-2021-025",
+      "Value": -1
+    },
+    {
+      "Group": "vulnerabilities",
+      "Name": "BRLY-2021-010",
+      "Value": -1
+    },
+    {
+      "Group": "vulnerabilities",
+      "Name": "BRLY-2021-020",
+      "Value": -1
+    },
+    {
+      "Group": "vulnerabilities",
+      "Name": "BRLY-2021-032",
+      "Value": -1
+    },
+    {
+      "Group": "vulnerabilities",
+      "Name": "BRLY-2021-021",
+      "Value": -1
+    },
+    {
+      "Group": "vulnerabilities",
+      "Name": "BRLY-2021-034",
+      "Value": -1
+    },
+    {
+      "Group": "vulnerabilities",
+      "Name": "BRLY-2021-007",
+      "Value": -1
+    },
+    {
+      "Group": "vulnerabilities",
+      "Name": "BRLY-2021-016",
+      "Value": -1
+    },
+    {
+      "Group": "vulnerabilities",
+      "Name": "BRLY-2021-009",
+      "Value": -1
+    },
+    {
+      "Group": "vulnerabilities",
+      "Name": "BRLY-2021-005",
+      "Value": -1
+    },
+    {
+      "Group": "vulnerabilities",
+      "Name": "BRLY-2021-004",
+      "Value": -1
+    },
+    {
+      "Group": "vulnerabilities",
+      "Name": "BRLY-2021-022",
+      "Value": -1
+    },
+    {
+      "Group": "vulnerabilities",
+      "Name": "BRLY-2021-029",
+      "Value": -1
+    },
+    {
+      "Group": "vulnerabilities",
+      "Name": "BRLY-2021-008-1",
+      "Value": -1
+    },
+    {
+      "Group": "vulnerabilities",
+      "Name": "BRLY-2021-035",
+      "Value": -1
+    },
+    {
+      "Group": "vulnerabilities",
+      "Name": "BRLY-2021-031",
+      "Value": -1
+    },
+    {
+      "Group": "vulnerabilities",
+      "Name": "BRLY-2021-001",
+      "Value": -1
+    }
+  ]
+}

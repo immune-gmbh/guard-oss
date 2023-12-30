@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>{{.Service}} status</title>
+
+    <style>
+    .error { color: red; }
+    </style>
+  </head>
+
+  <body>
+    <h1>{{.Service}} status</h1>
+    <table border="0">
+      <tr><td>Service name</td><td>{{.Service}}</td></tr>
+      <tr><td>System time</td><td>{{.Timestamp}}</td></tr>
+      <tr><td>Webapp</td><td>{{.AppURL}}</td></tr>
+      <tr><td>API</td><td>{{.APIURL}}</td></tr>
+    </table>
+
+    <h2>Database connection</h2>
+    {{if .Database}}
+    <table border="0">
+      <tr><td>Hostname</td><td>{{.Database.Hostname}}</td></tr>
+      <tr><td>Role</td><td>{{.Database.Role}}</td></tr>
+      <tr><td>Round trip time</td><td>{{.Database.RoundTripTime}}</td></tr>
+    </table>
+    {{else}}
+    <p><span class="error">Connection failed:</span> {{.DatabaseError}}</p>
+    {{end}}
+
+    <h2>Blob storage</h2>
+    {{if .Store}}
+    <table border="0">
+      <tr><td>URL</td><td>{{.Store.URL}}</td></tr>
+      <tr><td>Bucket</td><td>{{.Store.Bucket}}</td></tr>
+      <tr><td>Round trip time</td><td>{{.Store.RoundTripTime}}</td></tr>
+    </table>
+    {{else}}
+    <p><span class="error">Connection failed:</span> {{.StoreError}}</p>
+    {{end}}
+
+    <h2>Authentication keyset</h2>
+    {{if .Keys}}
+    <table border="1">
+      <tr><th>Issuer</th><th>Key ID</th><th>Public key</th></tr>
+      {{range .Keys}}
+      <tr><td>{{.Issuer}}</td><td>{{.Kid}}</td><td>{{PKCS8 .Key}}</td></tr>
+      {{end}}
+    </table>
+    {{else}}
+    <p><span class="error">No authentication keys</span></p>
+    {{end}}
+
+  </body>
+</html>

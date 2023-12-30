@@ -1,0 +1,45 @@
+{
+  "data": {
+    "id": "a7f7c4ef-a96b-5d37-b442-9fce31e6d6f4",
+    "type": "user",
+    "attributes": {
+      "name": "Kai Notify the 1st",
+      "email": "kai1@immu.ne",
+      "invited": false,
+      "role": "user",
+      "activation_state": null,
+      "has_seen_intro": false,
+      "has_password": true,
+      "authenticated_google": false,
+      "authenticated_github": false
+    },
+    "relationships": {
+      "organisations": {
+        "data": [
+          {
+            "id": "a3e85ce4-7687-5078-8716-c6c3dfaf554f",
+            "type": "organisation"
+          }
+        ]
+      },
+      "address": {
+        "data": {
+          "id": "4d9a5fa8-08bc-5b02-a478-76b1f4d30e90",
+          "type": "address"
+        }
+      }
+    }
+  },
+  "included": [
+    {
+      "id": "4d9a5fa8-08bc-5b02-a478-76b1f4d30e90",
+      "type": "address",
+      "attributes": {
+        "street_and_number": "Kortumstraße 19-22",
+        "city": "Bochum",
+        "postal_code": "44789",
+        "country": "Germany"
+      }
+    }
+  ]
+}

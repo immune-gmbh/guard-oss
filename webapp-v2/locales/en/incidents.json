@@ -1,0 +1,281 @@
+{
+  "uefi/option-rom-set": {
+    "slug": "PCI Device Firmware Manipulated",
+    "description": {
+      "d1_one": "The firmware of the {{ vendor }} {{ name }} device that is executed during startup — also known as PCI Option ROM — changed unexpectedly. These firmware components change very rarely and only as a result of an PCI device firmware update. Another reason for a change to the embedded firmware is when a PCI device is replaced.",
+      "d1_other": "The firmware of {{ count }} devices that is executed during startup — also known as PCI Option ROM — changed unexpectedly. These firmware components change very rarely and only as a result of an PCI device firmware update. Another reason for a change to the embedded firmware is when a PCI device is replaced.",
+      "d2": "Embedded device firmware/PCI Option ROMs are code provided to the host's UEFI/BIOS. During startup the embedded firmware is fetched from the device and executed. The firmware runs at high privileged levels and is able to access data on the host before the operating system boot. An implementation of this attack is for example <thunderstrikeLink>Thunderstrike</thunderstrikeLink>."
+    },
+    "forensicsPre": "immune Guard was able to extract the following details about the affected devices.",
+    "cta": "Verify whether the device was recently updated and that this update did install a new PCI Option ROM. If you chose to accept this change immune Guard will record the current Option ROM as legitimate."
+  },
+  "csme/no-update": {
+    "slug": "Intel CSME Firmware Manipulated",
+    "description": {
+      "d1_0": "Some firmware components of the Converged Security and Management Engine (CSME) changed unexpectedly. CSME firmware components should only change after applying an official Intel-provided update but the data returned from the CMSE does not indicate a version change.",
+      "d1_one": "The {{ name }} firmware component of the Converged Security and Management Engine (CSME) changed unexpectedly. CSME firmware components should only change after applying an official Intel-provided update but the data returned from the CMSE does not indicate a version change.",
+      "d1_other": "{{ count }} firmware components of the Converged Security and Management Engine (CSME) changed unexpectedly. CSME firmware components should only change after applying an official Intel-provided update but the data returned from the CMSE does not indicate a version change.",
+      "d2": "The firmware CSME is microcontroller that runs independent of the host's CPU and takes care of various I/O tasks as well as security mechanisms like Boot Guard and SGX. Thus the CMSE has access to most data flowing in and out of the platform."
+    },
+    "forensicsPre": "immune Guard extracted to following information about the CSME components.",
+    "cta": "Restore the original unmodified firmware by applying the latest CSME update from Intel. If the problem persists, verify no malicious software has access to the platform's UEFI/BIOS flash nor is able to interact with the CSME before the UEFI/BIOS has finished locking down its interfaces."
+  },
+  "csme/downgrade": {
+    "slug": "Intel CSME Firmware Downgraded",
+    "intro_0": "The device's",
+    "intro_one": "The {{ name }} firmware component of the",
+    "intro_other": "{{ count }} firmware components of the",
+    "description": {
+      "d1_0": "Converged Security and Management Engine (CSME) firmware was reverted to a previous version. Outside of faulty update the CSME should never be downgraded. Updates often solve security issues with the firmware and reverting an update could make the device vulnerable to known security problems.",
+      "d1_one": "Converged Security and Management Engine (CSME) firmware was reverted to a previous version. Outside of faulty update the CSME should never be downgraded. Updates often solve security issues with the firmware and reverting an update could make the device vulnerable to known security problems.",
+      "d1_other": "Converged Security and Management Engine (CSME) firmware were reverted to a previous version. Outside of faulty update the CSME should never be downgraded. Updates often solve security issues with the firmware and reverting an update could make the device vulnerable to known security problems.",
+      "d2": "The firm The CSME is microcontroller that runs independent of the host's CPU and takes care of various I/O tasks as well as security mechanisms like Boot Guard and SGX. Thus the CMSE has access to most data flowing in and out of the platform."
+    },
+    "forensicsPre": "immune Guard was able to extract the following component versions after the incident.",
+    "cta": "Update to the latest firmware provided by Intel. If the problem persists this can be a sign of an downgrade attack. Verify no malicious software has access to the platform's UEFI/BIOS flash nor is able to interact with the CSME before the UEFI/BIOS has finished locking down its interfaces."
+  },
+  "uefi/boot-app-set": {
+    "slug": "Bootloader Manipulated",
+    "description": {
+      "d1_0": "The Bootloader responsible for loading the Operating System has changed in a way that doesn't indicate an official update.",
+      "d1_one": "The UEFI boot application \nThe Bootloader responsible for loading the Operating System has changed in a way that doesn't indicate an official update.",
+      "d1_other": "{{ count }} UEFI boot applications \nThe Bootloader responsible for loading the Operating System has changed in a way that doesn't indicate an official update."
+    },
+    "forensicsPre": "immune Guard was able to extract the following boot loaders after the incident.",
+    "cta": "This can be a sign of bootloader attack (Bootkit) or a valid unofficial update by a system administrator. We recommend to check the bootloader application for a potential threat."
+  },
+  "uefi/ibb-no-update": {
+    "slug": "Host Firmware Manipulated",
+    "description": {
+      "d1": "The initial code responsible setting up the device has unexpectedly changed in a way that does not suggest an update. The UEFI BIOS version and release date did not change while the code and data did.",
+      "d2": "The initial setup code, also called to Initial Boot Block (IBB) is among the first bits of code executed after power on. During this time most security mechanisms are disabled and all code is running with the highest privileges. Malicious IBB code could either inject code into the operating system or simply fail enable all security features to allow malware access to otherwise inaccessible data. Most of these changes cannot be detected in later stages of system's startups sequence."
+    },
+    "forensicsPre": "immune Guard was able to extract the following component versions after the incident.",
+    "cta": "Restore the original startup code by installing the latest UEFI BIOS update from the vendor. If the problem persists, verify no operating system level malware is able to bypass flash image protections and no unauthorized person has physical access to the machine. If the problem persists the flash memory on the device's PCB may be faulty."
+  },
+  "uefi/gpt-changed": {
+    "slug": "Hard Disk Modified",
+    "description": "The partition table of the hard disk the system was booted from was modified. The partition table influences what operating system is booted by the boot application. Thus, changing the partition table allows intercepting the startup sequence and injecting code.",
+    "forensicsPre": "immune Guard was able to extract the following partition table information after the incident.",
+    "cta": "The most common cause of changes to the partition table are operating system installations. If the operating system was not recently changes the change can be a sign of a bootloader attack (Bootkit) or valid update by a system administrator. We recommend to review the boot settings and get in contact with the system administrator."
+  },
+  "uefi/secure-boot-keys": {
+    "slug": "Secure Boot Keys Modified",
+    "description": {
+      "d1": "The cryptographic keys used to secure the device's boot sequence were modified. Control of these keys allows changing the UEFI Secure Boot security mechanism and thus injecting arbtrary code into the device. Changes to these keys are extremely rare and do not happen through firmware updates.",
+      "d2": "The UEFI BIOS verifies all code loaded during device startup using cryptographic signatures. The set of keys allowed to produce these signatures -- and thus the set of vendors allowed to run code inside the UEFI -- is controlled by the Platform Key (PK) and Key Exchange Keys (KEK). These keys are provisioned during manufacturing and normally change across the devices's lifecycle. Exceptions are replacing expired KEKs or refurbishing a device."
+    },
+    "forensicsPre": "immune Guard was able to extract the following keys used during Secure Boot.",
+    "cta": "Verify that the new keys were installed as part of an vendor-provided update and are legitimate. If this is not that case and the new keys were not installed by an administrator, apply the latest firmware update."
+  },
+  "uefi/secure-boot-variables": {
+    "slug": "Secure Boot Disabled",
+    "description": {
+      "d1": "The device's UEFI BIOS runs code without any verification of its origin. Anyone with physical acces to the machine or sufficient operating system privileges can inject code into the system's startup sequence.",
+      "d2": "The UEFI BIOS verifies all code loaded during device startup using cryptographic signatures. The set of keys allowed to produce these signatures -- and thus the set of vendors allowed to run code inside the UEFI -- is controlled by the Platform Key (PK) and Key Exchange Keys (KEK). These keys are provisioned during manufacturing and normally change across the devices' lifecycle. Exceptions are replacing expired KEKs or refurbishing a device."
+    },
+    "forensicsPre": "immune Guard was able to extract the following keys used during Secure Boot.",
+    "cta": "This can lead to attacks on bootloader, OS kernel and OS drivers. We recommend to enable the Secure Boot option from the UEFI BIOS settings menu or out-of-band. For further assistance and consultation get in contact with our support."
+  },
+  "uefi/secure-boot-dbx": {
+    "slug": "Compromised Keys in Use",
+    "description": {
+      "d1_0": "The list of compromised keys and signatures maintained by the device's UEFI BIOS was modified. During the modifications some entries were removed. This means code signed with these keys is allowed to run during device startup. This could include vulnerable drivers and known malware.",
+      "d1_one": "The list of compromised keys and signatures maintained by the device's UEFI BIOS was modified. During the modifications one entry was removed. This means code signed with these keys is allowed to run during device startup. This could include vulnerable drivers and known malware.",
+      "d1_other": "The list of compromised keys and signatures maintained by the device's UEFI BIOS was modified. During the modifications {{ count }} entries were removed. This means code signed with these keys is allowed to run during device startup. This could include vulnerable drivers and known malware.",
+      "d2": "The UEFI BIOS verifies all code loaded during device startup using cryptographic signatures. The UEFI maintains two sets of keys to decide which signatures to accept and which to reject. The set of signatures and keys to reject -- so called revocation list a.k.a. <code>dbx</code> needs to be updated regularly as keys get compromised and vulnerabilities are found in already signed drivers. Removing elements from the list is dangerous as the signed code is still available to attackers."
+    },
+    "forensicsPre": "immune Guard was able to extract the list of keys and signatures removed.",
+    "cta": "We recommend to manually update the <code>dbx</code> by Windows Update Service or Linux LVFS. If the problem persists, the UEFI Forum provides the authoritative <code>dbx</code> on <uefiLink>its website</uefiLink>"
+  },
+  "uefi/boot-failure": {
+    "slug": "Measured Boot Insecure",
+    "description": {
+      "d1": "An error occurred during the measurement of the UEFI BIOS or the operating system. The nature of the error is unknown but it's possible that security critical tasks like disabling interfaces did not finished. This could leave the device vulnerable to malware.",
+      "d2": "The UEFI BIOS logs a 32 bit error code after passing control to the operating system's boot loader. Non-zero error codes indicate a failure. The error code are not standardized and logged to PCRs 0-7 separately."
+    },
+    "forensicsPre": "immune Guard was able to extract all non-zero error codes.",
+    "cta": "We recommend to check the boot entries and UEFI BIOS settings and applying the latest update."
+  },
+  "uefi/boot-order": {
+    "slug": "Boot Order Changed",
+    "description": {
+      "d1": "The order of UEFI applications tried to boot the device after starup has changed. Injecting new applications into the boot order allows running arbitraty code before the operating system like installing backdoors.",
+      "d2": "After initializing the device the UEFI BIOS executes a sequence of UEFI applications. Each can either pass control back to UEFI or start the operating system. What applications are executed in which order can be configured by the device's owner."
+    },
+    "forensicsPre": "immune Guard extracted the following list of UEFI BIOS boot entries after the incident.",
+    "cta": "This can be a sign of bootloader attack (Bootkit) or a valid unscheduled update by a system administrator. We recommend to check the bootloader application for a potential threat."
+  },
+  "tpm/endorsement-cert-unverified": {
+    "slug": "Forged Hardware Trust Anchor",
+    "description": {
+      "d1": "The cryptographic certificate embedded into the device's Trusted Computing Module (TPM) could not be verified.",
+      "d2": "The device's TPM includes a digital certificate called the Endorsement Key (EK) certificate, issued by the TPM's vendor confirming its authenticity. Without a valid certificate the data received from the TPM may be forged and the device's security compromised."
+    },
+    "forensicsPre": "immune Guard extracted the following data from the EK certificate.",
+    "cta": "We recommend to replace the existing TPM with a legitimate one. If you are sure the TPM genuine, accepting this issue will silence it for this device."
+  },
+  "tpm/no-eventlog": {
+    "slug": "Integrity Monitoring is Limited",
+    "description": {
+      "d1": "The device does not maintain an event log during boot. immune Guard uses the device's event log to find root causes of integrity violations. Without changes to the device's firmware can still be detected but analysis is severely impaired.",
+      "d2": "The Trusted Computing Module's event log contains detail information about what is recorded in the device's TPM. The event log must be maintained for the whole startup sequence and be accessible to the immune Guard Agent. Without it immune Guard only has access to summary values. While the event log is not signed, its integrity can be verified by comparing it to the signed summary values received from the TPM."
+    },
+    "cta": "Verify that the immune Guard Agent has the necessary permissions to access to the operating system's version of TPM 2.0 event log. In case it is missing enable UEFI Secure Boot to enable TPM measurements."
+  },
+  "tpm/invalid-eventlog": {
+    "slug": "Integrity Log Manipulated",
+    "description": {
+      "d1": "The Trusted Computing Module's (TPM) event log received from the device was manipulated. immune Guard uses the device's event log to find root causes of integrity violations. The values in the event log do not match the signed summary received from the TPM. Modifications to the event log can only be done by the firmware and operating system.",
+      "d2": "The TPM event log contains detail information about what is recorded in the device's TPM. The event log must be maintained for the whole startup sequence and be accessible to the immune Guard Agent. Without it immune Guard only has access to summary values. While the event log is not signed, it's integrity can be verified by comparing it to the signed summary values received from the TPM."
+    },
+    "cta": "This can be a sign of an attack or an malware running with high privileges."
+  },
+  "tpm/dummy": {
+    "slug": "No Trust Anchor",
+    "description": {
+      "d1": "This device has no Trusted Computing Module (TPM) installed or it is not enabled. Without a hardware Trust Anchor immune Guard cannot depend on the data received from a device as it could be manipulated by malware.",
+      "d2": "immune Guard uses a device's trust anchor like TPM 2.0 to record data and code used during startup in a secure fashion. The trust anchor's memory is inaccessible to malware running on a device as well as hackers or rouge administrators."
+    },
+    "cta": "We recommend to enable the TPM 2.0 in BIOS/UEFI if present or install a TPM 2.0 into your hardware."
+  },
+  "grub/boot-changed": {
+    "slug": "Linux Operating System Modified",
+    "description": {
+      "notKernelNotInit": "Linux command line set by the bootloader was changed.",
+      "kernelNotInit": "The linux kernel image booted by the bootloader was changed in a way that does not indicate a update.",
+      "notKernelInit": "The initial RAM disk image booted by the bootloader was changed in a way that does not indicate a update.",
+      "kernelAndInit": "The linux kernel and initial RAM disk images booted by the bootloader were changed in a way that does not indicate a update.",
+      "d1": "The kernel and initial RAM disk and kernel images booted off disk are the first part of the operating system's boot sequence. Both files are not protected by signatures and can be modified by anyone with access to the disk. immune Guard records the cryptographic checksum and filesystem path of the respective image. The record is made right before boot and contains the actual file booted, even if it's replaced after boot. The same is done for the Linux kernel command line.",
+      "d2": "Changes to the kernel or initial RAM disk allows an attacker to inject code into the highest privileged parts of the operating system and disabling any security implemented there. Changes to the kernel command line also allows disabling security."
+    },
+    "forensicsPre": "immune Guard extracted the following GRUB configuration after the incident.",
+    "cta": {
+      "notKernelNotInit": "Verify that the Linux command line was changed by an scheduled update.",
+      "kernelNotInit": "Verify that the kernel image was changed by an scheduled update.",
+      "notKernelInit": "Verify that the initial RAM disk image was changed by an scheduled update.",
+      "kernelAndInit": "Verify that the Linux kernel and initial RAM disk images were changed by an scheduled update."
+    }
+  },
+  "eset/disabled": {
+    "slug": "ESET Disabled",
+    "description": {
+      "d1": "The kernel module of the ESET endpoint protection has been disabled manually.",
+      "d2": "immune Guard monitors the ESET endpoint protection's files, configuration and kernel module. If changes to the contents of the executables to the kernel module's configuration or if critical programs are not started during boot."
+    },
+    "cta": "Re-enable the kernel module."
+  },
+  "eset/not-started": {
+    "slug": "ESET Components Not Running",
+    "description": {
+      "d1_one": "The {{ ncsPath }} of the ESET endpoint protection were not started at boot.",
+      "d1_other": "Multiple components of the ESET endpoint protection were not started at boot.",
+      "d2": "immune Guard monitors the ESET endpoint protection's files, configuration and kernel module. If changes to the contents of the executables to the kernel module's configuration or if critical programs are not started during boot."
+    },
+    "forensicsPre": "immune Guard extracted the following list of all ESET service and their status.",
+    "cta": "Check that the ESET installation is correct and it's configured to start automatically."
+  },
+  "eset/excluded-set": {
+    "slug": "ESET Configuration Change",
+    "description": {
+      "noFilesNoProcess": "Some files and processes were",
+      "noFilesOneProcess": "The {{ process }} process was",
+      "noFilesMoreProcesses": "{{ processCount }} processes were",
+      "oneFileNoProcess": "The {{ file }} file was",
+      "oneFileOneProcess": "The {{ file }} file and the {{ process }} process were",
+      "oneFileMoreProcesses": "The {{ file }} file and {{ processCount }} processes were",
+      "moreFilesNoProcess": "{{ fileCount }} files were",
+      "moreFilesOneProcess": "{{ fileCount }} files and the {{ process }} process were",
+      "moreFilesMoreProcesses": "{{ fileCount }} files and {{ processCount }} processes were",
+      "d1": "added to the list of items ignored by the system's ESET endpoint protection.",
+      "d2": "immune Guard monitors the ESET endpoint protection's files, configuration and kernel module. If changes to the contents of the executables to the kernel module's configuration or if critical programs are not started during boot."
+    },
+    "forensicsPre": "immune Guard extracted the following list of changes to the ESET configuration.",
+    "cta": "Verify the change was correct and revert it if not."
+  },
+  "eset/manipulated": {
+    "slug": "ESET Components Manipulated",
+    "description": {
+      "d1_0": "Some software components of the SET endpoint protection have changed. immune Guard monitors critical parts for the ESET endpoint protection installation for changes to the files on disk.",
+      "d1_one": "The {{ path }} software component of the SET endpoint protection has changed. immune Guard monitors critical parts for the ESET endpoint protection installation for changes to the files on disk.",
+      "d1_other": "{{ count }} software components of the SET endpoint protection have changed. immune Guard monitors critical parts for the ESET endpoint protection installation for changes to the files on disk.",
+      "d2": "immune Guard monitors the ESET endpoint protection's files, configuration and kernel module. If changes to the contents of the executables to the kernel module's configuration or if critical programs are not started during boot."
+    },
+    "forensicsPre": "immune Guard extracted the following list of all manipulations to ESET components.",
+    "cta": "If the endpoint protection was not updated intentionally reinstall it."
+  },
+  "windows/boot-log-quotes": {
+    "slug": "Integrity Log Signature Mismatch",
+    "description": {
+      "d1": "The windows boot log signature does not match the contents of the log and indicates that the log might have been tampered with.",
+      "d2": "Windows keeps an integrity log across the system's hibernate/wakeup cycles. The logs are signed to make their contents verifiable in order to detect manipulations that would cover up malicious activities."
+    },
+    "cta": "This can be a sign of an attack or an malware running with high privileges. To verify that this is not a mistake make sure that the adiministrator did not change the windows quote key on the affected system."
+  },
+  "windows/boot-counter-replay": {
+    "slug": "Replay Attack on Integrity Log",
+    "description": {
+      "d1": "The windows boot counter indicates that the received integrity log might have been forged and does not match the booted system configuration.",
+      "d2": "Windows keeps an integrity log across the system's hibernate/wakeup cycles. In order to link them together each boot log has a unique counter value. If logs are removed or reorder the counter value allows immune Guard to detect that."
+    },
+    "forensicsPre": "immune Guard extracted the current and previous counter values.",
+    "cta": "If the Trusted Computing Module (TPM) has been replaced or reset this is okay, otherwise verify that there is no attack on your operating system. We recommend to get in contact with the system administrator."
+  },
+  "windows/boot-log": "windowsBootLogQuotes",
+  "ima/invalid-log": {
+    "slug": "Integrity Measurements Log Manipulated",
+    "description": {
+      "d1": "The integrity measurements log received from the device was manipulated. The log is used to monitor the contents of critical files by recording their contents every time they are changed.",
+      "d2": "Linux keeps a log of the contents of files used since the last start. Each time the file is read again its contents are recorded in the integrity log. The cryptographic checksum of the integrity log itself is periodically saved in the trust anchor. This way manipulations are detected."
+    },
+    "forensicsPre": "immune Guard extracted the expected and received PCR values.",
+    "cta": "This can be a sign of an attack or a valid unofficial change by a system administrator. We recommend to get in contact with the system administrator."
+  },
+  "ima/boot-aggregate": {
+    "slug": "Integrity Measurements Log Replaced",
+    "description": {
+      "d1": "The integrity measurements log received from the device does not match the boot state of the device. The boot aggregate value in the log does not match the PCR values quoted by the trust anchor.",
+      "d2": "Linux keeps a log of the contents of files used since the last start. This integrity measurements log need to be linked to the device's trust anchor in order to be trustworthy. This is done by including the state of the device observed right after start up as the first entry in the log. All subsequent entries require the first to be unchanged."
+    },
+    "forensicsPre": "immune Guard extracted the received and expected values for the boot aggregate.",
+    "cta": "This can be a sign of an attack or a valid unofficial change by a system administrator. We recommend to get in contact with the system administrator."
+  },
+  "ima/runtime-measurements": {
+    "slug": "Monitored Files Manipulated",
+    "description": {
+      "d1_one": "The {{ path }} file was changed since the last check. immune Guard verifies that the contents of important files are not changed.",
+      "d1_other": "{{ count }} files were changed since the last check. immune Guard verifies that the contents of important files are not changed.",
+      "d2": "Linux keeps a log of the contents of files used since the last start. Each time the file is read again its contents are recorded in the integrity log. This allows immune Guard to detect changes to files on the device's disk."
+    },
+    "forensicsPre": "immune Guard extracted the current and previous checksums of the file's contents.",
+    "cta": "Review that the change was not malicious."
+  },
+  "policy/intel-tsc": {
+    "slug": "Intel Transparent Supply Chain Not Enabled",
+    "description": {
+      "d1": "The device's policy requires support for Intel Transparent Supply Chain but its serial number is not registered with it. Devices need to be registered by the manufacturer with the Transparent Supply Chain database before leaving its premises. immune Guard could not find any record of the device.",
+      "d2": "Intel Transparent Supply Chain (TSC) is a database of the known good configuration the device left the manufacturing facility with. immune Guard queries that database and verify the configuration of the device matches the one in the TSC database. This was supply chain attacks like changes to the device firmware en-route to customers are detected."
+    },
+    "cta": "Contact your device vendor and verify they registered its serial number with their Intel TSC instance or disable the TSC requirement."
+  },
+  "policy/endpoint-protection": {
+    "slug": "No Endpoint Protection",
+    "description": {
+      "d1": "The device's policy requires an endpoint protection to be installed but none could be found.",
+      "d2": "immune Guard recognizes and protects common endpoint protection solutions ESET Endpoint Antivirus, Linux Integrity Measurement Architecture and Microsoft Defender."
+    },
+    "cta": "Verify a suitable endpoint protection like Microsoft Defender or Linux Integrity Measurement Architecture is enabled."
+  },
+  "tsc/endorsement-certificate": {
+    "slug": "Intel TSC Cannot Verify Trusted Platform Module",
+    "description": "Intel Transparent Supply Chain can't verify the TPM Endorsement Key of this device.",
+    "forensicsPre": "immune Guard gathered the following information from the Platform and Endorsement Key certificates.",
+    "cta": "This can be sign that the TPM device is spoofed or a software bug. We recommend to get in contact with our support"
+  },
+  "tsc/pcr-values": {
+    "slug": "Intel TSC Cannot Verify Host Firmware",
+    "description": "Intel Transparent Supply Chain can't verify the Host Firmware (UEFI/BIOS).",
+    "forensicsPre": "immune Guard gathered the expected and received PCR values of the device.",
+    "cta": "This can be sign that the Host Firmware was attacked during transit or as part of the supply chain. We recommend to get in contact with our support"
+  }
+}

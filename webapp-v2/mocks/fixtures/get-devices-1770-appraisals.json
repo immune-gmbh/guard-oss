@@ -1,0 +1,207 @@
+{
+  "data": [
+    {
+      "type": "appraisals",
+      "id": "11496",
+      "attributes": {
+        "issues": {
+          "type": "issues/v1",
+          "issues": [
+            {
+              "id": "uefi/boot-order",
+              "incident": true,
+              "aspect": "configuration",
+              "args": {
+                "variables": [
+                  {
+                    "name": "C:\\Boot\\Boot1.efi",
+                    "before": "0263829989b6fd954f72baaf2fc64bc2e2f01d692d4de72986ea808f6e99813f",
+                    "after": "7058299627365fc7a3dd7840fd3d56f29306cd30c0f2c13cb500fe79617290ff"
+                  },
+                  {
+                    "name": "C:\\Boot\\Boot2.efi",
+                    "before": "0263829989b6fd954f72baaf2fc64bc2e2f01d692d4de72986ea808f6e99813f",
+                    "after": "7058299627365fc7a3dd7840fd3d56f29306cd30c0f2c13cb500fe79617290ff"
+                  },
+                  {
+                    "name": "C:\\Boot\\Boot3.efi",
+                    "before": "0263829989b6fd954f72baaf2fc64bc2e2f01d692d4de72986ea808f6e99813f",
+                    "after": "7058299627365fc7a3dd7840fd3d56f29306cd30c0f2c13cb500fe79617290ff"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "csme/downgrade",
+              "incident": true,
+              "aspect": "firmware",
+              "args": {
+                "components": [
+                  {
+                    "name": "RBE Manifest",
+                    "before": "17.2.20",
+                    "after": "17.0.1.1"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "uefi/official-dbx",
+              "aspect": "configuration",
+              "incident": false,
+              "args": {
+                "fprs": [
+                  "0263829989b6fd954f72baaf2fc64bc2e2f01d692d4de72986ea808f6e99813f",
+                  "0263829989b6fd954f72baaf2fc64bc2e2f01d692d4de72986ea808f6e99813f",
+                  "0263829989b6fd954f72baaf2fc64bc2e2f01d692d4de72986ea808f6e99813f",
+                  "0263829989b6fd954f72baaf2fc64bc2e2f01d692d4de72986ea808f6e99813f",
+                  "0263829989b6fd954f72baaf2fc64bc2e2f01d692d4de72986ea808f6e99813f",
+                  "0263829989b6fd954f72baaf2fc64bc2e2f01d692d4de72986ea808f6e99813f",
+                  "0263829989b6fd954f72baaf2fc64bc2e2f01d692d4de72986ea808f6e99813f",
+                  "0263829989b6fd954f72baaf2fc64bc2e2f01d692d4de72986ea808f6e99813f",
+                  "0263829989b6fd954f72baaf2fc64bc2e2f01d692d4de72986ea808f6e99813f",
+                  "0263829989b6fd954f72baaf2fc64bc2e2f01d692d4de72986ea808f6e99813f",
+                  "0263829989b6fd954f72baaf2fc64bc2e2f01d692d4de72986ea808f6e99813f"
+                ]
+              }
+            },
+            {
+              "id": "fw/update",
+              "incident": false,
+              "aspect": "firmware",
+              "args": {
+                "updates": [
+                  {
+                    "name": "UEFI DBX",
+                    "current": "77",
+                    "next": "122"
+                  },
+                  {
+                    "name": "UEFI DBX",
+                    "current": "77",
+                    "next": "122"
+                  },
+                  {
+                    "name": "UEFI DBX",
+                    "current": "77",
+                    "next": "122"
+                  },
+                  {
+                    "name": "UEFI DBX",
+                    "current": "77",
+                    "next": "122"
+                  }
+                ]
+              }
+            },
+            { "id": "brly/2021-011", "incident": false, "aspect": "firmware" },
+            { "id": "brly/2021-040", "incident": false, "aspect": "firmware" },
+            { "id": "brly/2021-003", "incident": false, "aspect": "firmware" },
+            { "id": "brly/2021-006", "incident": false, "aspect": "firmware" },
+            { "id": "brly/2021-018", "incident": false, "aspect": "firmware" },
+            { "id": "brly/2021-019", "incident": false, "aspect": "firmware" },
+            { "id": "brly/2021-024", "incident": false, "aspect": "firmware" },
+            { "id": "brly/2021-009-1", "incident": false, "aspect": "firmware" },
+            { "id": "brly/2021-026", "incident": false, "aspect": "firmware" },
+            { "id": "brly/2021-028", "incident": false, "aspect": "firmware" },
+            { "id": "brly/2021-038", "incident": false, "aspect": "firmware" },
+            { "id": "brly/2021-043", "incident": false, "aspect": "firmware" },
+            { "id": "brly/2021-037", "incident": false, "aspect": "firmware" },
+            { "id": "brly/2021-042", "incident": false, "aspect": "firmware" },
+            { "id": "brly/2021-013", "incident": false, "aspect": "firmware" },
+            { "id": "brly/2021-023", "incident": false, "aspect": "firmware" },
+            { "id": "brly/2021-027", "incident": false, "aspect": "firmware" },
+            { "id": "brly/2021-012", "incident": false, "aspect": "firmware" },
+            { "id": "brly/2021-029-1", "incident": false, "aspect": "firmware" },
+            { "id": "brly/2021-017", "incident": false, "aspect": "firmware" },
+            { "id": "brly/2021-036", "incident": false, "aspect": "firmware" },
+            { "id": "brly/2021-041", "incident": false, "aspect": "firmware" },
+            { "id": "brly/2021-010-1", "incident": false, "aspect": "firmware" },
+            { "id": "brly/2021-011-1", "incident": false, "aspect": "firmware" },
+            { "id": "brly/2021-039", "incident": false, "aspect": "firmware" },
+            { "id": "brly/2022-004", "incident": false, "aspect": "firmware" },
+            { "id": "brly/2021-030", "incident": false, "aspect": "firmware" },
+            { "id": "brly/2021-015", "incident": false, "aspect": "firmware" },
+            { "id": "brly/2021-033", "incident": false, "aspect": "firmware" },
+            { "id": "brly/2021-045", "incident": false, "aspect": "firmware" },
+            { "id": "brly/2021-025", "incident": false, "aspect": "firmware" },
+            { "id": "brly/2021-010", "incident": false, "aspect": "firmware" },
+            { "id": "brly/2021-020", "incident": false, "aspect": "firmware" },
+            { "id": "brly/2021-032", "incident": false, "aspect": "firmware" },
+            { "id": "brly/2021-021", "incident": false, "aspect": "firmware" },
+            { "id": "brly/2021-034", "incident": false, "aspect": "firmware" },
+            { "id": "brly/2021-007", "incident": false, "aspect": "firmware" },
+            { "id": "brly/2021-016", "incident": false, "aspect": "firmware" },
+            { "id": "brly/2021-009", "incident": false, "aspect": "firmware" },
+            { "id": "brly/2021-005", "incident": false, "aspect": "firmware" },
+            { "id": "brly/2021-004", "incident": false, "aspect": "firmware" },
+            { "id": "brly/2021-022", "incident": false, "aspect": "firmware" },
+            { "id": "brly/2021-029", "incident": false, "aspect": "firmware" },
+            { "id": "brly/2021-035", "incident": false, "aspect": "firmware" },
+            { "id": "brly/2021-031", "incident": false, "aspect": "firmware" },
+            { "id": "brly/2021-001", "incident": false, "aspect": "firmware" }
+          ]
+        },
+        "appraised": "2022-01-11T14:23:38Z",
+        "expires": "2022-01-12T14:23:38Z",
+        "received": "2022-01-11T14:23:38Z",
+        "report": {
+          "type": "report/2",
+          "values": {
+            "host": {
+              "name": "Gentoo Linux",
+              "hostname": "Haruhi",
+              "type": "linux",
+              "cpu_vendor": "GenuineIntel"
+            },
+            "smbios": {
+              "manufacturer": "LENOVO",
+              "product": "20XWCTO1WW",
+              "serial": "PF2RQY9C",
+              "uuid": "9639c56a-d96c-11eb-80f0-902e165a43e4",
+              "bios_release_date": "09/29/2022",
+              "bios_vendor": "LENOVO",
+              "bios_version": "N32ET81W (1.57 )"
+            },
+            "nics": [
+              {
+                "name": "wlp0s20f3",
+                "ipv6": ["2003:e4:af23:eb00:8a86:29a1:b1b1:9725/64", "fe80::ee1b:16e1:fa8:63d7/64"],
+                "mac": "10:3D:1C:E8:19:CB"
+              }
+            ],
+            "agent_release": "v3.8.8",
+            "uefi": {},
+            "tpm": {},
+            "me": {},
+            "amt": {}
+          },
+          "annotations": []
+        },
+        "verdict": {
+          "type": "verdict/1",
+          "result": "vulnerable",
+          "supply_chain": "unsupported",
+          "configuration": "vulnerable",
+          "firmware": "trusted",
+          "bootloader": "trusted",
+          "operating_system": "trusted",
+          "endpoint_protection": "unsupported"
+        }
+      },
+      "relationships": {
+        "policy": {
+          "data": {
+            "type": "policies",
+            "id": "1368"
+          }
+        }
+      }
+    }
+  ],
+  "meta": {
+    "instance": "apisrv-v2-deployment-5f76b59b97-4xsjr",
+    "trace": "422ca95e2a1db44e9546a07c9e43018b",
+    "version": "r134"
+  }
+}

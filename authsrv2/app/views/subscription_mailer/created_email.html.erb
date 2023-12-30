@@ -1,0 +1,13 @@
+Hello, <%= @user.name %>
+<br><br>
+<%= @organisation.name%> has been created for immune Guard.
+<br>
+<% if @organisation.freeloader %>
+  As your organisation is running on our free plan, you will not be charged for anything.
+<% else %>
+  After the initial month, you'll be charged for the amount of devices used over the course of a month <strong>if</strong> you wish to continue using our product! Any free credits will be used up first.
+<% end %>
+<br>
+Got any questions? Reach out to us!
+<br><br>
+Thank you for being a customer and have a great day!

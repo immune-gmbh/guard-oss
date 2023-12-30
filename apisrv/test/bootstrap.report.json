@@ -1,0 +1,142 @@
+{
+  "type": "report/2",
+  "values": {
+    "host": {
+      "name": "Arch Linux",
+      "hostname": "bootstrap",
+      "type": "linux",
+      "cpu_vendor": "GenuineIntel"
+    },
+    "smbios": {
+      "manufacturer": "LENOVO",
+      "product": "2325WUG",
+      "bios_release_date": "04/30/2013",
+      "bios_vendor": "LENOVO",
+      "bios_version": "G2ET94WW (2.54 )"
+    },
+    "me": {
+      "variant": "ICU",
+      "state": "insecure",
+      "version": [
+        8,
+        1,
+        30,
+        1350
+      ],
+      "fitc_version": [
+        8,
+        1,
+        30,
+        1350
+      ],
+      "recovery_version": [
+        8,
+        1,
+        30,
+        1350
+      ],
+      "available_features": [
+        "Full network manageability",
+        "Manageability",
+        "Anti-Theft Technology",
+        "Capability Licensing Service",
+        "Intel Sensor Hub",
+        "ICC",
+        "Protected Audio Video Path",
+        "IPv6",
+        "KVM Remote Control",
+        "Dynamic Application Loader",
+        "Cipher Transport Layer",
+        "Wireless Lan",
+        "Wireless Display"
+      ],
+      "enabled_features": [
+        "Full network manageability",
+        "Manageability",
+        "Anti-Theft Technology",
+        "Capability Licensing Service",
+        "Intel Sensor Hub",
+        "ICC",
+        "Protected Audio Video Path",
+        "IPv6",
+        "KVM Remote Control",
+        "Dynamic Application Loader",
+        "Cipher Transport Layer",
+        "Wireless Lan",
+        "Wireless Display"
+      ],
+      "flash_locked": true
+    },
+    "amt": {
+      "enabled": false,
+      "provisioned": false,
+      "type": "Mobile, corporate AMT",
+      "webui": {
+        "enabled": false,
+        "active": false
+      },
+      "fuse": false,
+      "flash_protections": false,
+      "update": false,
+      "hw_crypto": false,
+      "zero_touch": false
+    }
+  },
+  "annotations": [
+    {
+      "id": "uefi-vars-miss",
+      "path": "/uefi",
+      "fatal": false
+    },
+    {
+      "id": "tpm-miss",
+      "path": "/tpm",
+      "fatal": false
+    },
+    {
+      "id": "me-version-inv",
+      "path": "/amt/enabled",
+      "fatal": true
+    },
+    {
+      "id": "me-version-miss",
+      "path": "/me/version",
+      "fatal": true
+    },
+    {
+      "id": "me-version-miss",
+      "path": "/amt/versions",
+      "fatal": true
+    },
+    {
+      "id": "me-version-miss",
+      "path": "/amt/zero_touch",
+      "fatal": true
+    },
+    {
+      "id": "me-version-miss",
+      "path": "/amt",
+      "fatal": true
+    },
+    {
+      "id": "amt-log-miss",
+      "path": "/me/audit_log",
+      "fatal": false
+    },
+    {
+      "id": "sgx-disabled",
+      "path": "/sgx",
+      "fatal": false
+    },
+    {
+      "id": "tpm-miss",
+      "path": "/txt",
+      "fatal": false
+    },
+    {
+      "id": "sev-miss",
+      "path": "/sev",
+      "fatal": false
+    }
+  ]
+}

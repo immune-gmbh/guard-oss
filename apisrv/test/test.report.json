@@ -1,0 +1,21 @@
+{
+  "type": "report/2",
+  "values": {
+    "host": {
+      "name": "Ubuntu 20.04.2 LTS",
+      "hostname": "test",
+      "type": "linux",
+      "cpu_vendor": "GenuineIntel"
+    },
+    "smbios": {
+      "manufacturer": "HP",
+      "product": "HP EliteBook 830 G6",
+      "serial": "5CG9391CQ7",
+      "uuid": "fc2afcfa-648d-54ca-971d-3c40973bc180",
+      "bios_release_date": "02/18/2020",
+      "bios_vendor": "HP",
+      "bios_version": "R70 Ver. 01.04.05"
+    }
+  },
+  "annotations": []
+}
