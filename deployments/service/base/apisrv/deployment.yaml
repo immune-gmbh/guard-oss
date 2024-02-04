@@ -1,0 +1,83 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: apisrv-deployment
+spec:
+  template:
+    metadata:
+      annotations:
+        prometheus.io/enable: "true"
+        prometheus.io/metric_path: "/v2/metrics"
+        prometheus.io/scrape_port: "8000"
+    spec:
+      serviceAccountName: guard
+      imagePullSecrets:
+        - name: ghcr-secret
+
+      volumes:
+        - name: config
+          configMap:
+            name: apisrv-v2-config
+        - name: keys
+          secret:
+            secretName: apisrv-v2-keys
+
+      initContainers:
+        # Used for migration
+        - name: migration
+          # Pached by the overlay
+          image: apisrv
+          args: ["--run-migrations"]
+
+          env:
+            # APISRV_DATABASE_URL
+            # APISRV_DATABASE_ADMIN_PWD
+            # APISRV_DATABASE_USER_PWD
+            - name: APISRV_DATABASE_SSLCERT
+              value: /db-certificate/chain.crt
+ 
+          volumeMounts:
+            # APISRV_DATABASE_SSLCERT
+            - name: db-certificate
+              mountPath: /db-certificate
+
+      containers:
+        # Main container
+        - name: apisrv
+          # Pached by the overlay
+          image: apisrv
+          args: ["--start"]
+
+          env:
+            # APISRV_DATABASE_URL
+            # APISRV_DATABASE_PASSWORD
+            - name: APISRV_DATABASE_SSLCERT
+              value: /db-certificate/chain.crt
+
+          ports:
+            - containerPort: 8000
+
+          # We give the container 30s to start
+          startupProbe:
+            tcpSocket:
+              port: 8000
+            periodSeconds: 2
+            failureThreshold: 15
+          livenessProbe:
+            timeoutSeconds: 5
+            httpGet:
+              port: 8000
+              path: /v2/healthy
+          readinessProbe:
+            timeoutSeconds: 5
+            httpGet:
+              port: 8000
+              path: /v2/ready
+
+          volumeMounts:
+            - name: db-certificate
+              mountPath: /db-certificate
+            - name: config
+              mountPath: /etc/immune
+            - name: keys
+              mountPath: /keys

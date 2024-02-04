@@ -1,0 +1,76 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ignored
+spec:
+  template:
+    metadata:
+      annotations:
+        # TODO: apisrv-auth.pub
+        immu.ne/public-key-0: "MFkwEwYH..."
+        # TODO: apisrv-enroll.pub
+        immu.ne/public-key-1: "MFkwEwYH..."
+    spec:
+      volumes:
+        - name: db-certificate
+          configMap:
+            name: database-config
+            items:
+              - key: certificate
+                path: chain.crt
+ 
+      initContainers:
+        - name: migration
+          env:
+            - name: APISRV_DATABASE_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: database-config
+                  key: admin-url
+            - name: APISRV_DATABASE_NAME
+              valueFrom:
+                configMapKeyRef:
+                  name: database-config
+                  key: apisrv-database
+            - name: APISRV_DATABASE_ADMIN_PWD
+              valueFrom:
+                secretKeyRef:
+                  name: database-secret
+                  key: admin-password
+            - name: APISRV_DATABASE_USER_PWD
+              valueFrom:
+                secretKeyRef:
+                  name: database-secret
+                  key: apisrv-password
+   
+      containers:
+        - name: apisrv
+          resources:
+            requests:
+              memory: "1Gi"
+          env:
+            - name: APISRV_DATABASE_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: database-config
+                  key: apisrv-url
+            - name: APISRV_DATABASE_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: database-secret
+                  key: apisrv-password
+            - name: APISRV_BUCKET_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: apisrv-v2-env-secret
+                  key: bucket-secret
+            - name: APISRV_INTELTSC_LENOVO_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: apisrv-v2-env-secret
+                  key: lenovo-password
+            - name: APISRV_INTELTSC_LENOVO_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: apisrv-v2-env-secret
+                  key: lenovo-secret

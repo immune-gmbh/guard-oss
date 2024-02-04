@@ -1,0 +1,189 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "immune.fullname" . }}-apisrv-config
+  labels:
+    {{- include "immune.selectorLabels" . | nindent 4 }}
+data:
+  apisrv.yaml: |
+    database:
+      certificate_file: /db-certificate/chain.crt
+      pool_size: 5
+    {{- if .Values.inteltsc.enable }}
+    inteltsc:
+      - vendor: "{{ .Values.inteltsc.vendor }}"
+        endpoint: "{{ .Values.inteltsc.endpoint }}"
+        username: "{{ .Values.inteltsc.username }}"
+        client_id: "{{ .Values.inteltsc.client_id }}"
+    {{- else }}
+    inteltsc: []
+    {{- end }}
+    bucket:
+      api_key: "{{ .Values.bucket.api_key }}"
+      name: "{{ .Values.bucket.name }}"
+      endpoint: "{{ .Values.bucket.endpoint }}"
+      region: "{{ .Values.bucket.region }}"
+    keys:
+      service_name: {{ include "immune.fullname" . }}-apisrv
+      discover: true
+      label_selector: "app.kubernetes.io/part-of={{ .Release.Name }}"
+      attestation: /keys/device-ca.key
+      enrollment: /keys/device-ca.key
+      authentication: /keys/token.key
+    telemetry:
+      console_log: true
+    webapp:
+      base_url: "http{{ if .Values.ingress.tls }}s{{ end }}://{{ .Values.appsrv.hostname }}"
+    web:
+      base_url: "http{{ if .Values.ingress.tls }}s{{ end }}://{{ .Values.apisrv.hostname }}/v2"
+      cors_origins:
+        - "http{{ if .Values.ingress.tls }}s{{ end }}://{{ .Values.cors.hostname }}"
+    events:
+      receiver: "http://{{ include "immune.fullname" . }}-authsrv.default.svc.cluster.local:3000/v2/events"
+      worker_pool: 1
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "immune.fullname" . }}-appsrv-config
+  labels:
+    {{- include "immune.selectorLabels" . | nindent 4 }}
+data:
+  env.production: |
+    FRONTEND_HOST=http{{ if .Values.ingress.tls }}s{{ end }}://{{ .Values.appsrv.hostname }}
+    APISRV_HOST=http{{ if .Values.ingress.tls }}s{{ end }}://{{ .Values.apisrv.hostname }}
+    AUTHSRV_HOST=http{{ if .Values.ingress.tls }}s{{ end }}://{{ .Values.authsrv.hostname }}
+    INTERNAL_AUTHSRV_HOST=http://{{ include "immune.fullname" . }}-authsrv.default.svc.cluster.local:3000
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "immune.fullname" . }}-authsrv-config
+  labels:
+    {{- include "immune.selectorLabels" . | nindent 4 }}
+data:
+  database.yml: |
+    production:
+      adapter: postgresql
+      encoding: unicode
+      pool: 5
+      url: <%= URI.parse(ENV.fetch("AUTHSRV_DATABASE_URL") { "postgres://localhost" }) %>
+      password: <%= ENV.fetch("AUTHSRV_DATABASE_PASSWORD") { "" } %>
+      <% if ENV["AUTHSRV_DATABASE_NAME"] %>
+      database: <%= ENV["AUTHSRV_DATABASE_NAME"] %>
+      <% end %>
+      sslmode: require
+      connect_timeout: 2
+      checkout_timeout: 5
+      variables:
+        statement_timeout: 5000
+  settings.yml: |
+    release: {{ .Chart.AppVersion | quote }}
+    agent_urls:
+      ubuntu: "https://packages.immune.app/v3.6.1/guard_1-v3.6.1.1_amd64.deb"
+      fedora: "https://packages.immune.app/v3.6.1/guard-1-v3.6.1-1.x86_64.rpm"
+      generic: "https://packages.immune.app/v3.6.1/guard-linux-v3.6.1"
+      windows: "https://packages.immune.app/v3.6.1/immuneGuard_en-us-v3.6.1.msi"
+    service_name: "{{ include "immune.fullname" . }}-authsrv"
+    internal_apisrv_url: "http://{{ include "immune.fullname" . }}-apisrv.default.svc.cluster.local:8000"
+    external_api_url: "http{{ if .Values.ingress.tls }}s{{ end }}://{{ .Values.authsrv.hostname }}/v2"
+    external_frontend_url: "http{{ if .Values.ingress.tls }}s{{ end }}://{{ .Values.appsrv.hostname }}"
+    payment:
+      disable: true
+    cors_origins:
+      - "http{{ if .Values.ingress.tls }}s{{ end }}://{{ .Values.cors.hostname }}"
+    authentication:
+      disable_activation: true
+      private_key_path: "/secrets/token.key"
+      label_selector: "app.kubernetes.io/part-of={{ .Release.Name }}"
+      google:
+        api_key: XYZ.apps.googleusercontent.com
+        callback_url: "http{{ if .Values.ingress.tls }}s{{ end }}://{{ .Values.authsrv.hostname }}/v2/oauth/callback/google"
+      github:
+        api_key: TODO
+        callback_url: "http{{ if .Values.ingress.tls }}s{{ end }}://{{ .Values.authsrv.hostname }}/v2/oauth/callback/github"
+    mail:
+      mailgun_domain: mg.example.com
+      sender_domain: example.com
+      asset_host: https://example.com
+  credentials.yml.enc: {{ .Values.authsrv.encrypted_credentials }}
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "immune.fullname" . }}-db-config
+  labels:
+    {{- include "immune.selectorLabels" . | nindent 4 }}
+data:
+  admin-url: {{ .Values.postgres.admin.url }}
+  certificate: |
+    {{- .Values.postgres.ca_certificate | nindent 4 }}
+  apisrv-url: {{ .Values.postgres.apisrv.url }}
+  authsrv-url: {{ .Values.postgres.authsrv.url }}
+  apisrv-database: {{ .Values.postgres.apisrv.db }}
+  authsrv-database: {{ .Values.postgres.authsrv.db }}
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "immune.fullname" . }}-appsrv-nginx-conf
+  labels:
+    {{- include "immune.selectorLabels" . | nindent 4 }}
+data:
+  nginx.conf: |
+    user nginx;
+    worker_processes 3;
+    error_log stderr;
+    events {
+        worker_connections 10240;
+    }
+    http {
+        log_format  main
+            'remote_addr:$remote_addr\t'
+            'time_local:$time_local\t'
+            'method:$request_method\t'
+            'uri:$request_uri\t'
+            'host:$host\t'
+            'status:$status\t'
+            'bytes_sent:$body_bytes_sent\t'
+            'referer:$http_referer\t'
+            'useragent:$http_user_agent\t'
+            'forwardedfor:$http_x_forwarded_for\t'
+            'request_time:$request_time';
+        access_log /dev/stdout main;
+        proxy_cache_path /var/cache/nginx levels=1:2 keys_zone=STATIC:10m inactive=7d use_temp_path=off;
+        upstream nextjs_upstream {
+            server 127.0.0.1:3000;
+        }
+        server {
+            listen 8000 default_server;
+            server_name _;
+            server_tokens off;
+            gzip on;
+            gzip_proxied any;
+            gzip_comp_level 4;
+            gzip_types text/css application/javascript image/svg+xml;
+            proxy_http_version 1.1;
+            proxy_set_header Upgrade $http_upgrade;
+            proxy_set_header Connection 'upgrade';
+            proxy_set_header Host $host;
+            proxy_cache_bypass $http_upgrade;
+            location /healthz {
+                stub_status on;
+                allow all;
+            }
+            location /_next/static {
+                proxy_cache STATIC;
+                proxy_pass http://nextjs_upstream;
+            }
+            location /static {
+                proxy_cache STATIC;
+                proxy_ignore_headers Cache-Control;
+                proxy_cache_valid 60m;
+                proxy_pass http://nextjs_upstream;
+            }
+            location / {
+                proxy_pass http://nextjs_upstream;
+            }
+        }
+    }

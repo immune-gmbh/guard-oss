@@ -1,0 +1,44 @@
+apiVersion: kustomize.config.k8s.io/v1alpha1
+kind: Component
+
+# Replace "api.example.com" with your webapp hostname.
+# Replace "ingressclassname" with your Ingress class
+patches:
+  - patch: |-
+      - op: add
+        path: /spec/ingressClassName
+        value: "ingressclassname"
+
+      - op: add
+        path: /spec/rules/0/host
+        value: "example.com"
+
+    target:
+      kind: Ingress
+      name: appsrv-.*v1
+
+  - patch: |-
+      - op: add
+        path: /spec/template/spec/volumes/-
+        value:
+          name: environment
+          configMap:
+            name: appsrv-v1-config
+            items:
+              - key: env.production
+                path: .env.production
+
+      - op: add
+        path: /spec/template/spec/containers/0/volumeMounts
+        value:
+          - name: environment
+            mountPath: /build/.env.production
+            subPath: .env.production
+
+    target:
+      name: appsrv-deployment-v1
+
+configMapGenerator:
+  - name: appsrv-v1-config
+    files:
+      - env.production

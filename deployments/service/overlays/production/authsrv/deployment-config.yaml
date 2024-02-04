@@ -1,0 +1,65 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ignored
+spec:
+  template:
+    metadata:
+      annotations:
+        # TODO: authsrv-auth.pub
+        immu.ne/public-key-0: "MFkwEwYH..."
+    spec:
+      volumes:
+        - name: db-certificate
+          configMap:
+            name: database-config
+            items:
+              - key: certificate
+                path: chain.crt
+        - name: keys
+          secret:
+            secretName: authsrv-v2-keys
+ 
+      initContainers:
+        - name: migration
+          env:
+            - name: AUTHSRV_DATABASE_URL
+              valueFrom:
+                configMapKeyRef:
+                  key: authsrv-url
+                  name: database-config
+            - name: AUTHSRV_DATABASE_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  key: authsrv-password
+                  name: database-secret
+  
+      containers:
+        - name: authsrv
+          resources:
+            requests:
+              memory: "2Gi"
+          env:
+            - name: AUTHSRV_DATABASE_URL
+              valueFrom:
+                configMapKeyRef:
+                  key: authsrv-url
+                  name: database-config
+            - name: AUTHSRV_DATABASE_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                   key: authsrv-password
+                   name: database-secret
+
+        - name: cron
+          env:
+            - name: AUTHSRV_DATABASE_URL
+              valueFrom:
+                configMapKeyRef:
+                  key: authsrv-url
+                  name: database-config
+            - name: AUTHSRV_DATABASE_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                   key: authsrv-password
+                   name: database-secret

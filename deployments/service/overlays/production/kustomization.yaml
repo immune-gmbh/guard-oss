@@ -1,0 +1,48 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+nameSuffix: -production
+
+commonLabels:
+  immune.app/environment: production
+
+resources:
+- ../../base
+- database-config.yaml
+- database-secret.yaml
+
+components:
+- apisrv
+- authsrv
+- appsrv
+
+replicas:
+- count: 2
+  name: apisrv-deployment-v2
+- count: 1
+  name: authsrv-deployment-v2
+- count: 1
+  name: appsrv-deployment-v1
+
+images:
+- name: apisrv
+  newName: ghcr.io/immune-gmbh/apisrv
+  newTag: r194
+- name: appsrv
+  newName: ghcr.io/immune-gmbh/appsrv
+  newTag: r194
+- name: authsrv
+  newName: ghcr.io/immune-gmbh/authsrv
+  newTag: r194
+
+patches:
+- patch: |-
+    - op: add
+      path: /spec/strategy
+      value:
+        type: RollingUpdate
+        rollingUpdate:
+          maxUnavailable: 0
+          maxSurge: 1
+  target:
+    kind: Deployment

@@ -1,0 +1,42 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "immune.fullname" . }}-authsrv
+  labels:
+    {{- include "immune.labels" . | nindent 4 }}
+spec:
+  ports:
+    - protocol: TCP
+      port: 3000
+      targetPort: 3000
+  selector:
+    app.kubernetes.io/name: {{ include "immune.fullname" . }}-authsrv
+    app.kubernetes.io/instance: {{ include "immune.fullname" . }}-authsrv
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "immune.fullname" . }}-appsrv
+  labels:
+    {{- include "immune.labels" . | nindent 4 }}
+spec:
+  ports:
+    - protocol: TCP
+      port: 8000
+      targetPort: 8000
+  selector:
+    app.kubernetes.io/name: {{ include "immune.fullname" . }}-appsrv
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "immune.fullname" . }}-apisrv
+  labels:
+    {{- include "immune.labels" . | nindent 4 }}
+spec:
+  ports:
+    - protocol: TCP
+      port: 8000
+      targetPort: 8000
+  selector:
+    app.kubernetes.io/name: {{ include "immune.fullname" . }}-apisrv

@@ -1,0 +1,7 @@
+apiVersion: v2
+name: immune
+description: Immune Guard
+icon: https://immune.app/favicon.png
+type: application
+version: 0.1.0
+appVersion: "r194"

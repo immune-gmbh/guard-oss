@@ -1,0 +1,50 @@
+release: "r194"
+agent_urls:
+  ubuntu: "https://packages.immune.app/v3.6.1/guard_1-v3.6.1.1_amd64.deb"
+  fedora: "https://packages.immune.app/v3.6.1/guard-1-v3.6.1-1.x86_64.rpm"
+  generic: "https://packages.immune.app/v3.6.1/guard-linux-v3.6.1"
+  windows: "https://packages.immune.app/v3.6.1/immuneGuard_en-us-v3.6.1.msi"
+
+service_name: "authsrv-v2"
+internal_apisrv_url: "http://apisrv-v2-production.default.svc.cluster.local:8000"
+
+# URL of the API including version
+external_api_url: "https://api.example.com/v2"
+
+# Base URL of the webapp
+external_frontend_url: "https://example.com"
+cors_origins:
+  # Hostname (!) and scheme of the webapp
+  - "https://example.com"
+
+authentication:
+  # Disables email verification of new accounts. Set to false if Mailgun is
+  # configured.
+  disable_activation: true
+
+  private_key_path: "/secrets/token.key"
+  label_selector: "app.kubernetes.io/part-of=immune-guard,immune.app/environment=production"
+
+  google:
+    # Google OAuth 2 client id
+    api_key: XYZ.apps.googleusercontent.com
+    # Replace with API hostname
+    callback_url: "https://api.example.com/v2/oauth/callback/google"
+
+  github:
+    # Github OAuth 2 client id
+    api_key: TODO
+    # Replace with API hostname
+    callback_url: "https://api.example.com/v2/oauth/callback/github"
+
+mail:
+  # TODO
+  mailgun_domain: mg.example.com
+  sender_domain: example.com
+  asset_host: https://example.com
+
+#telemetry:
+#  enabled: true
+#  protocol: otlp
+#  endpoint: "http://collector.infra.svc.cluster.local:4318/v1/traces"
+#  name: authsrv-v2

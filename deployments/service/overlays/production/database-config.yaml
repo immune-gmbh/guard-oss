@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: database-config
+data:
+    admin-url: "postgres://<pg-admin>@<pg-hostname>:<pg-port>/<default-db>"
+    certificate: |
+      -----BEGIN CERTIFICATE-----
+      ....
+      -----END CERTIFICATE-----
+    apisrv-url: "postgres://apisrv@<pg-hostname>:<pg-port>/<apisrv-db-name>"
+    authsrv-url: "postgres://<authsrv-db-role>@<pg-hostname>:<pg-port>/<authsrv-db-name>"
+    apisrv-database: apisrv
+    authsrv-database: <authsrv-db-name>

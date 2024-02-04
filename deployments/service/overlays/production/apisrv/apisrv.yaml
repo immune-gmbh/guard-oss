@@ -1,0 +1,57 @@
+database:
+  certificate_file: /db-certificate/chain.crt
+  pool_size: 5
+
+inteltsc: []
+  #- vendor: Lenovo
+  #  endpoint: "https://tsc.intel.com/lenovo-dcg/"
+  #  # Email to login with
+  #  username: TODO
+  #  # OAuth 2 client ID
+  #  client_id: TODO
+  #  # Configured with APISRV_INTELTSC_LENOVO_PASSWORD and
+  #  # APISRV_INTELTSC_LENOVO_SECRET set in env-secret.yaml
+  #  #password: 
+  #  #client_scret: 
+
+bucket:
+  # S3 API key
+  api_key: TODO
+  # S3 bucket name
+  name: TODO
+  # S3 API endpoint URL
+  endpoint: TODO
+  # S3 API region
+  region: TODO
+
+keys:
+  # value for "iss" and "aud" claims
+  service_name: apisrv-v2
+  # key discovery via kubelet
+  discover: true
+  label_selector: "app.kubernetes.io/part-of=immune-guard,immune.app/environment=production"
+  # key used to sign device key certificates
+  attestation: /keys/device-ca.key
+  enrollment: /keys/device-ca.key
+  authentication: /keys/token.key
+
+telemetry:
+  console_log: true
+#  lightstep: collector.infra.svc.cluster.local:4317
+#  disable_tls: true
+#  service: apisrv-v2
+
+webapp:
+  # Base URL of the webapp
+  base_url: "https://example.com"
+
+web:
+  # URL of the API including version
+  base_url: "https://api.example.com/v2"
+  cors_origins:
+    # Hostname (!) and scheme of the webapp
+    - "https://example.com"
+
+events:
+  receiver: "http://authsrv-v2-production.default.svc.cluster.local:3000/v2/events"
+  worker_pool: 1

@@ -1,0 +1,66 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    nginx.ingress.kubernetes.io/proxy-body-size: 24m
+  name: apisrv
+spec:
+  rules:
+    - http:
+        paths:
+          - path: /v2/configuration
+            pathType: Prefix
+            backend:
+              service:
+                name: apisrv-v2
+                port:
+                  number: 8000
+          - path: /v2/info
+            pathType: Prefix
+            backend:
+              service:
+                name: apisrv-v2
+                port:
+                  number: 8000
+          - path: /v2/enroll
+            pathType: Prefix
+            backend:
+              service:
+                name: apisrv-v2
+                port:
+                  number: 8000
+          - path: /v2/attest
+            pathType: Prefix
+            backend:
+              service:
+                name: apisrv-v2
+                port:
+                  number: 8000
+          - path: /v2/policies
+            pathType: Prefix
+            backend:
+              service:
+                name: apisrv-v2
+                port:
+                  number: 8000
+          - path: /v2/devices
+            pathType: Prefix
+            backend:
+              service:
+                name: apisrv-v2
+                port:
+                  number: 8000
+          - path: /v2/appraisals
+            pathType: Prefix
+            backend:
+              service:
+                name: apisrv-v2
+                port:
+                  number: 8000
+          - path: /v2/changes
+            pathType: Prefix
+            backend:
+              service:
+                name: apisrv-v2
+                port:
+                  number: 8000

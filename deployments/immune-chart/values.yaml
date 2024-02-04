@@ -1,0 +1,202 @@
+# Default values for immune.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+appsrv:
+  hostname: "app.example.org"
+  replicaCount: 1
+  image:
+    repository: ghcr.io/immune-gmbh/appsrv
+    pullPolicy: IfNotPresent
+    # Overrides the image tag whose default is the chart appVersion.
+    tag: ""
+  resources:
+    {}
+    # limits:
+    #   cpu: 100m
+    #   memory: 128Mi
+    # requests:
+    #   cpu: 100m
+    #   memory: 128Mi
+  podAnnotations: {}
+  podSecurityContext:
+    {}
+    # fsGroup: 2000
+  securityContext:
+    {}
+    # capabilities:
+    #   drop:
+    #   - ALL
+    # readOnlyRootFilesystem: true
+    # runAsNonRoot: true
+    # runAsUser: 1000
+  nodeSelector: {}
+  tolerations: []
+  affinity: {}
+
+apisrv:
+  hostname: "api.example.org"
+  replicaCount: 2
+  keys:
+    auth:
+      pub: ""
+      priv: ""
+    enroll:
+      pub: ""
+      priv: ""
+  image:
+    repository: ghcr.io/immune-gmbh/apisrv
+    pullPolicy: IfNotPresent
+    # Overrides the image tag whose default is the chart appVersion.
+    tag: ""
+  resources:
+    # limits:
+    #   cpu: 100m
+    #   memory: 128Mi
+    requests:
+      #   cpu: 100m
+      memory: 1Gi
+  podAnnotations: {}
+  podSecurityContext:
+    {}
+    # fsGroup: 2000
+  securityContext:
+    {}
+    # capabilities:
+    #   drop:
+    #   - ALL
+    # readOnlyRootFilesystem: true
+    # runAsNonRoot: true
+    # runAsUser: 1000
+  nodeSelector: {}
+  tolerations: []
+  affinity: {}
+
+authsrv:
+  hostname: "auth.example.org"
+  replicaCount: 1
+  keys:
+    rails_master_key: "" # 32 Hex Chars
+    secret_key_base: "" # 64 Hex Chars
+    auth:
+      pub: ""
+      priv: ""
+  encrypted_credentials: ""
+  image:
+    repository: ghcr.io/immune-gmbh/authsrv
+    pullPolicy: IfNotPresent
+    # Overrides the image tag whose default is the chart appVersion.
+    tag: ""
+  resources:
+    # limits:
+    #   cpu: 100m
+    #   memory: 128Mi
+    requests:
+      #   cpu: 100m
+      memory: 2Gi
+  podAnnotations: {}
+  podSecurityContext:
+    {}
+    # fsGroup: 2000
+  securityContext:
+    {}
+    # capabilities:
+    #   drop:
+    #   - ALL
+    # readOnlyRootFilesystem: true
+    # runAsNonRoot: true
+    # runAsUser: 1000
+  nodeSelector: {}
+  tolerations: []
+  affinity: {}
+
+cors:
+  hostname: "example.org"
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+serviceAccount:
+  # Specifies whether a service account should be created
+  create: true
+  # Annotations to add to the service account
+  annotations: {}
+  # The name of the service account to use.
+  # If not set and create is true, a name is generated using the fullname template
+  name: ""
+
+# DB Settings
+postgres:
+  ca_certificate: ""
+  admin:
+    url: ""
+    db: ""
+    username: ""
+    password: ""
+  apisrv:
+    url: ""
+    db: ""
+    username: ""
+    password: ""
+  authsrv:
+    url: ""
+    db: ""
+    username: ""
+    password: ""
+
+# S3 Bucket Configuration
+bucket:
+  api_key: ""
+  secret_key: ""
+  name: ""
+  endpoint: ""
+  region: ""
+
+# Enable Intel TSC Integration
+inteltsc:
+  enable: false
+  vendor: Lenovo
+  endpoint: "https://tsc.intel.com/lenovo-dcg/"
+  username: ""
+  client_id: ""
+  password: ""
+  client_secret: ""
+
+mailgun:
+  enable: false
+  api_key: ""
+
+stripe:
+  enable: false
+  secret_key: ""
+  webhook_signing_key: ""
+
+github:
+  enable: false
+  api_secret: ""
+
+google:
+  enable: false
+  api_secret: ""
+
+ingress:
+  enabled: true
+  className: "nginx"
+  annotations:
+    {}
+    # nginx.ingress.kubernetes.io/proxy-body-size: 24m
+    # kubernetes.io/ingress.class: nginx
+    # kubernetes.io/tls-acme: "true"
+  tls: []
+  #  - secretName: chart-example-tls
+  #    hosts:
+  #      - chart-example.local
+
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 100
+  targetCPUUtilizationPercentage: 80
+  # targetMemoryUtilizationPercentage: 80
+
+selectorLabels: {}

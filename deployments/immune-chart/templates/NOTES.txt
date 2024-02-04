@@ -1,0 +1,10 @@
+{{- if .Values.ingress.enabled }}
+Access the application by URL: 
+
+http{{ if $.Values.ingress.tls }}s{{ end }}://{{ .Values.appsrv.hostname }}/
+
+{{- else }}
+
+Please configure an ingress to enable access to the application.
+
+{{- end }}

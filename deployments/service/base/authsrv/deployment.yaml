@@ -1,0 +1,149 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: authsrv-deployment
+spec:
+  template:
+    metadata:
+      annotations:
+        prometheus.io/enable: "true"
+        prometheus.io/metric_path: "/-/metrics"
+        prometheus.io/scrape_port: "3000"
+
+    spec:
+      serviceAccountName: guard
+      imagePullSecrets:
+        - name: ghcr-secret
+
+      volumes:
+        # db-certificate
+        - name: credentials
+          configMap:
+            name: authsrv-v2-config
+            items:
+              - key: credentials.yml.enc
+                path: production.yml.enc
+        - name: settings
+          configMap:
+            name: authsrv-v2-config
+            items:
+              - key: settings.yml
+                path: production.yml
+        - name: database
+          configMap:
+            name: authsrv-v2-database
+
+      initContainers:
+        # Used for migration
+        - name: migration
+          # Pached by the overlay
+          image: authsrv
+          args: ["--run-migrations"]
+
+          envFrom:
+            - secretRef:
+                name: authsrv-v2-env-secret
+
+          env:
+            - name: RAILS_ENV
+              value: production
+            - name: AUTHSRV_DATABASE_USER_ROLE
+              value: authsrv
+            # AUTHSRV_DATABASE_URL
+            # AUTHSRV_DATABASE_NAME
+            # AUTHSRV_DATABASE_PASSWORD
+
+          volumeMounts:
+            - name: db-certificate
+              mountPath: /db-certificate
+            - name: credentials
+              mountPath: /work/config/credentials
+            - name: settings
+              mountPath: /work/config/settings/production.yml
+              subPath: production.yml
+            - name: database
+              mountPath: /work/config/database.yml
+              subPath: database.yml
+ 
+      containers:
+        # Main container
+        - name: authsrv
+          # Pached by the overlay
+          image: authsrv
+          args: ["--start-rails"]
+
+          ports:
+            - containerPort: 3000
+
+          envFrom:
+            - secretRef:
+                name: authsrv-v2-env-secret
+
+          env:
+            # AUTHSRV_DATABASE_URL
+            # AUTHSRV_DATABASE_NAME
+            # AUTHSRV_DATABASE_PASSWORD
+            - name: RAILS_ENV
+              value: production
+
+          # We give the container 30s to start
+          startupProbe:
+            tcpSocket:
+              port: 3000
+            periodSeconds: 2
+            failureThreshold: 15
+          livenessProbe:
+            timeoutSeconds: 5
+            httpGet:
+              port: 3000
+              path: /v2/healthy
+          readinessProbe:
+            timeoutSeconds: 5
+            httpGet:
+              port: 3000
+              path: /v2/ready
+
+          volumeMounts:
+            # keep in sync with database.yml
+            - name: db-certificate
+              mountPath: /db-certificate
+            - name: credentials
+              mountPath: /work/config/credentials
+            - name: settings
+              mountPath: /work/config/settings/production.yml
+              subPath: production.yml
+            - name: database
+              mountPath: /work/config/database.yml
+              subPath: database.yml
+            - name: keys
+              mountPath: /secrets
+ 
+        # crond container
+        - name: cron
+          # Pached by the overlay
+          image: authsrv
+          args: ["--start-cron"]
+
+          envFrom:
+            - secretRef:
+                name: authsrv-v2-env-secret
+
+          env:
+            # AUTHSRV_DATABASE_URL
+            # AUTHSRV_DATABASE_NAME
+            # AUTHSRV_DATABASE_PASSWORD
+            - name: RAILS_ENV
+              value: production
+
+          volumeMounts:
+            # keep in sync with database.yml
+            - name: db-certificate
+              mountPath: /db-certificate
+            - name: credentials
+              mountPath: /work/config/credentials
+            - name: settings
+              mountPath: /work/config/settings/production.yml
+              subPath: production.yml
+            - name: database
+              mountPath: /work/config/database.yml
+              subPath: database.yml

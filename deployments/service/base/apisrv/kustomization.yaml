@@ -1,0 +1,14 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+commonLabels:
+  app.kubernetes.io/name: apisrv
+  app.kubernetes.io/instance: apisrv-v2
+
+nameSuffix:
+  -v2
+
+resources:
+  - deployment.yaml
+  - service.yaml
+  - ingress.yaml

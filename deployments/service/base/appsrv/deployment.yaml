@@ -1,0 +1,58 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: appsrv-deployment
+spec:
+  template:
+    spec:
+      imagePullSecrets:
+        - name: ghcr-secret
+
+      containers:
+        # Node container
+        - name: appsrv
+          image: appsrv
+
+          startupProbe:
+            tcpSocket:
+              port: 3000
+            periodSeconds: 2
+            failureThreshold: 15
+          livenessProbe:
+            httpGet:
+              port: 3000
+              path: /
+         
+        # Nginx
+        - name: static
+          image: nginx:stable
+
+          volumeMounts:
+            - mountPath: /etc/nginx
+              readOnly: true
+              name: nginx-conf
+
+          startupProbe:
+            tcpSocket:
+              port: 8000
+            periodSeconds: 2
+            failureThreshold: 15
+          livenessProbe:
+            httpGet:
+              port: 8000
+              path: /healthz
+          readinessProbe:
+            httpGet:
+              port: 8000
+              path: /
+
+          ports:
+            - containerPort: 8000
+
+      volumes:
+        - name: nginx-conf
+          configMap:
+            name: appsrv-default-config
+            items:
+              - key: nginx.conf
+                path: nginx.conf

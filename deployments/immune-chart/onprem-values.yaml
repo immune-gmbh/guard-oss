@@ -1,0 +1,73 @@
+appsrv:
+  hostname: "app.immune.range.local"
+
+apisrv:
+  hostname: "api.immune.range.local"
+  keys:
+    auth:
+      pub: "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE523xR8E6Z67Qv2co/H6E6I2rxH5WU/Kc4S2GRqdE/+JV+WUkklSqfUEMbiP3ODVKTIt6oAC3r9FPOs5xkdhjMQ=="
+      priv: "MHcCAQEEIKFv3vRzACfGWVcXYuxr/+pd71YQuMR/qZ/mEI20Tg9uoAoGCCqGSM49AwEHoUQDQgAE523xR8E6Z67Qv2co/H6E6I2rxH5WU/Kc4S2GRqdE/+JV+WUkklSqfUEMbiP3ODVKTIt6oAC3r9FPOs5xkdhjMQ=="
+    enroll:
+      pub: "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEsTqnhkI276uXeFJvi/m5Ls5TwoCzABpH9FIYZ+z3BcyiXno2nqpivsESva1SIE0RHzjd4OIHX24FQ+UrGUsCtg=="
+      priv: "MHcCAQEEIDDyZjiADkrbr34S6tcHOlHS+BishZyEynZMuNCZA1r0oAoGCCqGSM49AwEHoUQDQgAEsTqnhkI276uXeFJvi/m5Ls5TwoCzABpH9FIYZ+z3BcyiXno2nqpivsESva1SIE0RHzjd4OIHX24FQ+UrGUsCtg=="
+
+authsrv:
+  hostname: "api.immune.range.local"
+  keys:
+    rails_master_key: "074fde20d93ab71902e64121310ada79"
+    secret_key_base: "234733c890070093f817ba0771be0870276ba74e827865699b12bd471a2b56ab3cea124750c9880b5159649a0f066fd7fe2a75733b0693d5b8aba51074a3f909"
+    auth:
+      pub: "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAERjE8Sc85wLZoo6O+oRvZb0Z/OBm0s+r+bXZoD2L95BmuE+hNFyBiJ067XQMOflI/aO6HLLpMdb4b4F3rwkdcyQ=="
+      priv: "MHcCAQEEIHpschVGIY4pot/eflZJzsl4Oa/IMNoz7QgCe/NQHdf0oAoGCCqGSM49AwEHoUQDQgAERjE8Sc85wLZoo6O+oRvZb0Z/OBm0s+r+bXZoD2L95BmuE+hNFyBiJ067XQMOflI/aO6HLLpMdb4b4F3rwkdcyQ=="
+  encrypted_credentials: "4Io9HI0ev4LDqZasihCYs/gWQFPOLHbd6TVBkLzKaFWEjRRir3He3vIj67px45f8yhO4hYZSNdHnzJ4Wfug1iQ/0zO2nNACvg7j/JNVJ93XfsR6xd6ZJwJZNbibDYz16Ksf4XzIrvcdjjE3rt9CEhbdMEdJrsNdGT60as3vQrIn4lemekWcs63ceRVlo9uOMUInsw9wQrb70gD9QXYgROsiDsL5675b7wiiYKnlv/Pgmiuozx+UNkM/TKuVxLFAaTtKfl/082ZQI9h7I6CEmenpZMx+hQm7PyXemuZTXEK9kbhsi6BxL2m3EAFz0Tm3M6LrtefCmPpCKS8uY/YNpECsfM4w9WvS2DmB5YjkYCZEwS93bo78hFVMJunnLE10he2x/219aFaIsISbs3RgsBPdfTBRIHO582v+GMqX3jXj2EbvI7oX2AfxO1x3qOaTm1t9Rtcpv5LR3EpBWmxGQibZcTAFgUGSI4fUEvqUovK5cL45CMS8hck/CsHof6kE0iyDwyFXKaK670LI3GH9NETURaFkDLwHsAto/7X7GnU4yagKtmC/yoBM/5+e646x7WTsZOuE1+vpGQgr1/MIP0uuta0q8OrF/Rr0IoFNac6CZeJYwGX8vIfdNISVDw+0QLXiQJunF1uriAmjS1vPBg8CLNXwG/PKuD9xGNw8oKi0=--wL0eZS1oIVDozCGv--7rW7NnWH6mRlZXJchg35gg=="
+
+cors:
+  hostname: "immune.range.local"
+
+imagePullSecrets:
+  - name: ghcr-secret
+
+# DB Settings
+postgres:
+  ca_certificate: |
+    -----BEGIN CERTIFICATE-----
+    MIIDGzCCAgOgAwIBAgIQPVT5p1bOp68dC8cS2p4DODANBgkqhkiG9w0BAQsFADAY
+    MRYwFAYDVQQDEw1wb3N0Z3Jlc3FsLWNhMB4XDTIyMDgwODIwMDAzNVoXDTIzMDgw
+    ODIwMDAzNVowGDEWMBQGA1UEAxMNcG9zdGdyZXNxbC1jYTCCASIwDQYJKoZIhvcN
+    AQEBBQADggEPADCCAQoCggEBANy5ubK0Noxh6S4uls2khFiBbbm123p7pCUttm04
+    Tsn0LGD3/Cifr4Ea7JegLUJ5BYAfmEEpfZuP3hXmxrjBLIzcHAURUz5P9uR7xpwT
+    UQtHjDw/Nu8ymaXNO05Zfnk+ZkUnjVd3Q0iziLEm+2k+AhpM35cedo+a0SLVa9h2
+    Kk3pSo0mXVXccae3hQEvZoyCsvW7BCWFXitvzDAMNgnBvWPxWiJPiBTosNJGMgrb
+    Y3lEZ6BG56rCRnhzYykHT2+rLCYOLKLNY/HGqjfrW0bLeamn7r8mvA/H8Vfan6hy
+    VmK8BWyn+4ObMmttxn1nA1JRvDIsTWBP7UWgYephTegEEN0CAwEAAaNhMF8wDgYD
+    VR0PAQH/BAQDAgKkMB0GA1UdJQQWMBQGCCsGAQUFBwMBBggrBgEFBQcDAjAPBgNV
+    HRMBAf8EBTADAQH/MB0GA1UdDgQWBBSWgDAX9TIi2Da/m0Mh7EgW275d1DANBgkq
+    hkiG9w0BAQsFAAOCAQEADR7u0YHTp2QLTw4gFS8pDggHLpSzdeZFrEaS/HyeJdco
+    JNBxnbntGVMOIq+M/An+S4sIEcaNqYrqn+G3AHjYh42/X3i99pABs+Ds5jl7AB7p
+    ux9NjVTAHw7zR2IsUD3INC1EcLrB6YTdOtU1VyFhuGYVLpsonKDPiBdeAA6D0Ek2
+    Z5MujMT5P0YBqShnS25dpYSfPb8hWDsBkTtAtLqA0B/MQfGLi20ro3MuD45QBM7y
+    BrdaWnah8UHwCCdTX+PrygYuV4XhINEEM7is6ocSPmnKglC0E8V7AjNefQoWIMQX
+    L3BnSZsASCnuUQuOeGnIAifcBPrU98pt4TPXOXujJQ==
+    -----END CERTIFICATE-----
+  admin:
+    url: "postgres://postgres@postgresql.default.svc.cluster.local:5432/postgres"
+    db: "postgres"
+    username: "postgres"
+    password: "fGjqA6UHsu"
+  apisrv:
+    url: "postgres://apisrv@postgresql.default.svc.cluster.local:5432/apisrv"
+    db: "apisrv"
+    username: "apisrv"
+    password: "NXIo+c7a/ScKUe+Vguitjq6TGWneRED7LpBqUWTU5g8="
+  authsrv:
+    url: "postgres://authsrv@postgresql.default.svc.cluster.local:5432/authsrv"
+    db: "authsrv"
+    username: "authsrv"
+    password: "iKe13uoW5gRMHrVdCUo6+pvc8FTgf7vf3tLJBGCsq/w="
+
+bucket:
+  api_key: "jsK07NRaf4YLn1bG"
+  secret_key: "9mBZsXkAy7vYpgkHAKQ3omxCcBl4gi7T"
+  name: "immune"
+  endpoint: "http://minio.default.svc.cluster.local:9000/"
+  region: "us-east-1"

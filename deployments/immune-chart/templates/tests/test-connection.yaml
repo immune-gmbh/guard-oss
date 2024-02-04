@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "{{ include "immune.fullname" . }}-test-connection"
+  labels:
+    {{- include "immune.labels" . | nindent 4 }}
+  annotations:
+    "helm.sh/hook": test
+spec:
+  containers:
+    - name: wget
+      image: busybox
+      command: ['wget']
+      args: ['{{ include "immune.fullname" . }}-apisrv:8000']
+  restartPolicy: Never

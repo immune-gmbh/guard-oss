@@ -1,0 +1,15 @@
+production:
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  url: <%= URI.parse(ENV.fetch("AUTHSRV_DATABASE_URL") { "postgres://localhost" }) %>
+  password: <%= ENV.fetch("AUTHSRV_DATABASE_PASSWORD") { "" } %>
+  <% if ENV["AUTHSRV_DATABASE_NAME"] %>
+  database: <%= ENV["AUTHSRV_DATABASE_NAME"] %>
+  <% end %>
+  sslmode: require
+  sslrootcert: "/db-certificate/chain.crt"
+  connect_timeout: 2
+  checkout_timeout: 5
+  variables:
+    statement_timeout: 5000

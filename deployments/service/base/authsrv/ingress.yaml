@@ -1,0 +1,92 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: authsrv
+spec:
+  rules:
+    - http:
+        paths:
+          - path: /v2/organisations
+            pathType: Prefix
+            backend:
+              service:
+                name: authsrv
+                port:
+                  number: 3000
+          - path: /v2/session
+            pathType: Prefix
+            backend:
+              service:
+                name: authsrv
+                port:
+                  number: 3000
+          - path: /v2/users
+            pathType: Prefix
+            backend:
+              service:
+                name: authsrv
+                port:
+                  number: 3000
+          - path: /v2/subscriptions
+            pathType: Prefix
+            backend:
+              service:
+                name: authsrv
+                port:
+                  number: 3000
+          - path: /v2/memberships
+            pathType: Prefix
+            backend:
+              service:
+                name: authsrv
+                port:
+                  number: 3000
+          - path: /v2/password_reset
+            pathType: Prefix
+            backend:
+              service:
+                name: authsrv
+                port:
+                  number: 3000
+          - path: /v2/events
+            pathType: Prefix
+            backend:
+              service:
+                name: authsrv
+                port:
+                  number: 3000
+          - path: /v2/healthy
+            pathType: Prefix
+            backend:
+              service:
+                name: authsrv
+                port:
+                  number: 3000
+          - path: /v2/ready
+            pathType: Prefix
+            backend:
+              service:
+                name: authsrv
+                port:
+                  number: 3000
+          - path: /v2/stripe_webhooks
+            pathType: Prefix
+            backend:
+              service:
+                name: authsrv
+                port:
+                  number: 3000
+          - path: /v2/oauth
+            pathType: Prefix
+            backend:
+              service:
+                name: authsrv
+                port:
+                  number: 3000
+          - path: /v2/appconfig
+            pathType: Prefix
+            backend:
+              service:
+                name: authsrv
+                port:
+                  number: 3000
