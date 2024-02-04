@@ -1,5 +1,5 @@
-immune Guard
-============
+immune Guard SaaS
+=================
 
 The following documents how to install, configure and run immune Guard.
 
@@ -16,12 +16,14 @@ authentication services as well as a server serving the web frontend.
 **Attestation service (apisrv)**: Receives telemetry data and manages devices
 and their security policy.
 
-**Authentication service (authsrv)**: Handles user authentication and sends
+**Authentication service (authsrv2)**: Handles user authentication and sends
 alerts.
 
-**Web frontend (appsrv)**: Serves the web frontend
+**Web frontend (webapp-v2)**: Serves the web frontend
 
-**Operator tool (ops)**: Command line tool for various administrative tasks.
+**Operator tool (deployments/tool)**: Command line tool for various administrative tasks.
+
+**Agent tool for (external repository)**: Gather the data from the system to monitor.
 
 Please find it [here](https://github.com/immune-gmbh/agent).
 
@@ -44,6 +46,8 @@ The immune Guard installation consists of a set of Kubernetes resources. Before
 deploying these need to be filled in with various installation specific values.
 This section guides you through what files need to be modified. The
 configuration files have comments where values need to be replaced.
+
+**Switch to the deployments directory.**
 
 ### Postgres
 
